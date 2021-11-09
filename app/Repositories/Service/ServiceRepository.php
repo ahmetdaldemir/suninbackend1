@@ -1,9 +1,5 @@
 <?php namespace App\Repositories\Service;
 
-use App\Models\Category;
-use App\Models\CategoryLanguage;
-use App\Models\Language;
-use App\Models\PropertyLanguage;
 use App\Models\Service;
 use App\Models\ServiceLanguage;
 use Illuminate\Support\Str;
@@ -71,6 +67,8 @@ class ServiceRepository implements ServiceRepositoryInterface
             $servicelanguage = new ServiceLanguage();
             $servicelanguage->id = Str::uuid()->toString();
             $servicelanguage->title = $value;
+            $servicelanguage->service_id = $data->service_id;
+            $servicelanguage->lang_id = $key;
             $servicelanguage->description = $data->service_description[$key];
             $servicelanguage->save();
         }
