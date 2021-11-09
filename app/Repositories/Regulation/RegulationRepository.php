@@ -68,7 +68,7 @@ class RegulationRepository implements RegulationRepositoryInterface
             $regulationlanguage = new RegulationLanguage();
             $regulationlanguage->id = Str::uuid()->toString();
             $regulationlanguage->title = $value;
-            $regulationlanguage->regulation_id = $regulation->regulation_id;
+            $regulationlanguage->regulation_id = $data->regulation_id;
             $regulationlanguage->lang_id = $key;
             $regulationlanguage->description = $data->regulation_description[$key];
             $regulationlanguage->save();
