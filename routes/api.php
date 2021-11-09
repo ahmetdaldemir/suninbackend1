@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\DestinationController;
 use App\Http\Controllers\Admin\VillaController;
 use App\Http\Controllers\Admin\TenantController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\RegulationController;
 
 use App\Http\Controllers\Auth\ApiAuthController;
 use App\Http\Controllers\Landlord\MyCalenderController;
@@ -81,6 +82,13 @@ Route::group(['middleware' => ['tokenisvalid']], function () {
     Route::post('/service/update', [ServiceController::class, 'update']);
     Route::get('/service/{id}', [ServiceController::class, 'show']);
     Route::delete('/service/{id}', [ServiceController::class, 'destroy']);
+
+
+    Route::post('/regulation', [RegulationController::class, 'store']);
+    Route::get('/regulation', [RegulationController::class, 'index']);
+    Route::post('/regulation/update', [RegulationController::class, 'update']);
+    Route::get('/regulation/{id}', [RegulationController::class, 'show']);
+    Route::delete('/regulation/{id}', [RegulationController::class, 'destroy']);
 });
 
 

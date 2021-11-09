@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Rent/RepositoryVillaServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepositoryInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Villa/VillaRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Villa/VillaRepositoryInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
