@@ -27,6 +27,7 @@ class DestinationRepository implements DestinationRepositoryInterface
     {
         $destination = new Destination();
         $destination->id = Str::uuid()->toString();
+        $destination->parent_id = $data->parent_id;
         $destination->title = $data->title;
         $destination->save();
     }
@@ -35,6 +36,7 @@ class DestinationRepository implements DestinationRepositoryInterface
     {
         $destination = Destination::find($data->id);
         $destination->id =  $data->id;
+        $destination->parent_id = $data->parent_id;
         $destination->title = $data->title;
         $destination->save();
     }

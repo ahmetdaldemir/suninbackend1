@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs/Model.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dcf1137aff56a47938a990df837b8111e73a6603" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_123959_create_destinations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_123959_create_destinations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/oauth-private.key" beforeDir="false" afterPath="$PROJECT_DIR$/storage/oauth-private.key" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/oauth-public.key" beforeDir="false" afterPath="$PROJECT_DIR$/storage/oauth-public.key" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/Service/RepositoryService.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/Service/RepositoryService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Destination/DestinationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Destination/DestinationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/RepositoryBackendServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/RepositoryBackendServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Service/ServiceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Service/ServiceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_09_172255_service.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_09_172255_service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +281,7 @@
       <workItem from="1636360038348" duration="671000" />
       <workItem from="1636438505434" duration="10316000" />
       <workItem from="1636462943555" duration="630000" />
-      <workItem from="1636474386586" duration="2233000" />
+      <workItem from="1636474386586" duration="4658000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>
@@ -349,6 +350,11 @@
           <url>file://$PROJECT_DIR$/database/seeders/PermissionSeeder.php</url>
           <line>20</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/routes/api.php</url>
+          <line>2</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

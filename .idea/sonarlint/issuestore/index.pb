@@ -19,8 +19,6 @@ n
 >database/migrations/2021_10_04_124224_create_sliders_table.php,7/1/7154b241d4fe6114e6d65afdb7b645634e0b870a
 p
 @database/migrations/2021_10_04_124216_create_languages_table.php,b/6/b69c81c9a4e9473b1304bebc678298a3c66c119f
-s
-Cdatabase/migrations/2021_10_20_105047_create_my_calenders_table.php,d/c/dcf1137aff56a47938a990df837b8111e73a6603
 F
 app/Console/Kernel.php,7/c/7cc3fc289d685e79a47c29e2cb905c549625e76b
 _
