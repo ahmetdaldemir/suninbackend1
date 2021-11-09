@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="" />
+    <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs/Model.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_123959_create_destinations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_123959_create_destinations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/oauth-private.key" beforeDir="false" afterPath="$PROJECT_DIR$/storage/oauth-private.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/oauth-public.key" beforeDir="false" afterPath="$PROJECT_DIR$/storage/oauth-public.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/Service/RepositoryService.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/Service/RepositoryService.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -195,15 +205,15 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kargomat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/resources/stubs" />
       <recent name="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs" />
+      <recent name="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/resources/stubs" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Landlord" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
@@ -269,6 +279,8 @@
       <workItem from="1636276367783" duration="10370000" />
       <workItem from="1636360038348" duration="671000" />
       <workItem from="1636438505434" duration="10316000" />
+      <workItem from="1636462943555" duration="630000" />
+      <workItem from="1636474386586" duration="2233000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>

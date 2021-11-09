@@ -27,6 +27,7 @@ class CategoryController extends Controller
         foreach ($categories as $category) {
             $data[] = array(
                 'id' => $category->id,
+                'parent_id' => $category->parent_id,
                 'lang' => $category->get_data()
             );
         }
@@ -44,9 +45,11 @@ class CategoryController extends Controller
 
         //        $upload = new Upload($request);
         $id = Str::uuid()->toString();
+        $parent_id = Str::uuid()->toString();
         $upload = "test";
         $category = new Category();
         $category->id = $id;
+        $category->parent_id = $parent_id;
         $category->image = $upload;
         $category->save();
 
@@ -103,6 +106,7 @@ class CategoryController extends Controller
         $upload = "test";
         $category = Category::find($request->category_id);
         $category->image = $upload;
+        $category->parent_id = $request->parent_id;
         $category->save();
 
 
