@@ -62,13 +62,13 @@ class ServiceRepository implements ServiceRepositoryInterface
 
     public function update(object $data)
     {
-        $service = Service::find($data->id);
-        $x = ServiceLanguage::where('service_id', $service->id)->delete();
+        $service = Service::find($data->service_id);
+        $x = ServiceLanguage::where('service_id', $data->service_id)->delete();
         foreach ($data->service as $key => $value) {
             $servicelanguage = new ServiceLanguage();
             $servicelanguage->id = Str::uuid()->toString();
             $servicelanguage->title = $value;
-            $servicelanguage->service_id = $service->id;
+            $servicelanguage->service_id = $data->service_id;
             $servicelanguage->lang_id = $key;
             $servicelanguage->description = $data->service_description[$key];
             $servicelanguage->save();
