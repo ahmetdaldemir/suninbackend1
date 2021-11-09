@@ -1,6 +1,7 @@
 <?php
 
 namespace Salman\RepositoryPattern\Service;
+use Illuminate\Support\Facades\Artisan;
 
 
 
@@ -21,7 +22,7 @@ class RepositoryService {
 
         self::MakeProvider();
         self::MakeInterface($name);
-        self::MakeModel($name);
+        self::MakeModelClass($name);
         self::MakeRepositoryClass($name);
         self::MakeControllerClass($name,$category);
     }
@@ -79,5 +80,6 @@ class RepositoryService {
             self::GetStubs('Model')
         );
         file_put_contents(base_path("/app/Models/{$name}.php"), $template);
+        Artisan::call('make:migration '.$name.'');
     }
 }

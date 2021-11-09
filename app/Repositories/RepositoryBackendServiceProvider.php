@@ -8,6 +8,8 @@ use App\Repositories\Language\LanguageRepositoryInterface;
 use App\Repositories\Language\LanguageRepository;
 use App\Repositories\Property\PropertyRepository;
 use App\Repositories\Property\PropertyRepositoryInterface;
+use App\Repositories\Service\ServiceRepository;
+use App\Repositories\Service\ServiceRepositoryInterface;
 use App\Repositories\Tenant\TenantRepository;
 use App\Repositories\Tenant\TenantRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
@@ -34,6 +36,10 @@ class RepositoryBackendServiceProvider extends ServiceProvider
         $this->app->bind(
             TenantRepositoryInterface::class,
             TenantRepository::class
+        );
+        $this->app->bind(
+            ServiceRepositoryInterface::class,
+            ServiceRepository::class
         );
     }
 }
