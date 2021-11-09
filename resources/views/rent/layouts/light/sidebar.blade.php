@@ -5,7 +5,7 @@
               <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>Home    </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Dashboard</li>
-                  <li><a href="{{route('default')}}">Default</a></li>
+                  <li><a href="/">Default</a></li>
                   <li><a href="{{route('crypto')}}">Crypto</a></li>
                   <li><a href="{{route('ecommerce')}}">Ecommerce</a></li>
               </ul>
@@ -17,7 +17,7 @@
               <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>Rezervasyonlar </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Yönetim</li>
-                  <li><a href="{{route('default')}}">Yeni Rezervasyon Ekle</a></li>
+                  <li><a href="/">Yeni Rezervasyon Ekle</a></li>
                   <li><a href="{{route('crypto')}}">Ev Rezervasyonları</a></li>
                   <li><a href="{{route('ecommerce')}}">Talepler</a></li>
               </ul>
@@ -26,42 +26,42 @@
               <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>Takip & Operasyon </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Yönetim</li>
-                  <li><a href="{{route('default')}}">Ev Takip</a></li>
-                  <li><a href="{{route('default')}}">Ev Operasyon</a></li>
-                  <li><a href="{{route('default')}}">Ev Temizlik</a></li>
-                  <li><a href="{{route('default')}}">Ev Karşılama</a></li>
-                  <li><a href="{{route('default')}}">Tedarikçi Onayları</a></li>
-                  <li><a href="{{route('default')}}">Hatırlatıcılar</a></li>
-                  <li><a href="{{route('default')}}">Log Analiz</a></li>
+                  <li><a href="/">Ev Takip</a></li>
+                  <li><a href="/">Ev Operasyon</a></li>
+                  <li><a href="/">Ev Temizlik</a></li>
+                  <li><a href="/">Ev Karşılama</a></li>
+                  <li><a href="/">Tedarikçi Onayları</a></li>
+                  <li><a href="/">Hatırlatıcılar</a></li>
+                  <li><a href="/">Log Analiz</a></li>
               </ul>
           </li>
           <li>
               <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>Muhasebe </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Yönetim</li>
-                  <li><a href="{{route('default')}}">Genel</a></li>
-                  <li><a href="{{route('crypto')}}">Firma İncele</a></li>
-                  <li><a href="{{route('crypto')}}">Bakiyeler</a></li>
-                  <li><a href="{{route('crypto')}}">Münferit Yolcular</a></li>
-                  <li><a href="{{route('crypto')}}">Faturalar</a></li>
-                  <li><a href="{{route('crypto')}}">Bakiyeler</a></li>
-                  <li><a href="{{route('crypto')}}">Giriş Kontrolü</a></li>
-                  <li><a href="{{route('crypto')}}">Bakiyeler</a></li>
-                  <li><a href="{{route('crypto')}}">Ödeme Takip Listesi</a></li>
-                  <li><a href="{{route('crypto')}}">Kasa Takip Listesi</a></li>
-                  <li><a href="{{route('crypto')}}">Firma Ayarları</a></li>
-                  <li><a href="{{route('crypto')}}">Tanımlama</a></li>
+                  <li><a href="/">Genel</a></li>
+                  <li><a href="/">Firma İncele</a></li>
+                  <li><a href="/">Bakiyeler</a></li>
+                  <li><a href="/">Münferit Yolcular</a></li>
+                  <li><a href="/">Faturalar</a></li>
+                  <li><a href="/">Bakiyeler</a></li>
+                  <li><a href="/">Giriş Kontrolü</a></li>
+                  <li><a href="/">Bakiyeler</a></li>
+                  <li><a href="/">Ödeme Takip Listesi</a></li>
+                  <li><a href="/">Kasa Takip Listesi</a></li>
+                  <li><a href="/">Firma Ayarları</a></li>
+                  <li><a href="/">Tanımlama</a></li>
               </ul>
           </li>
           <li>
               <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>CRM (Müşteri İlişkileri) </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">CRM</li>
-                  <li><a href="{{route('')}}">Ayarlar ve Tanımlamalar</a></li>
-                  <li><a href="{{route('')}}">Kupon Kodları</a></li>
-                  <li><a href="{{route('')}}">İndirimler &amp; Kampanyalar</a></li>
-                  <li><a href="{{route('')}}">Müşteriler</a></li>
-                  <li><a href="{{route('')}}">Yorum Sistemi</a></li>
+                  <li><a href="/">Ayarlar ve Tanımlamalar</a></li>
+                  <li><a href="/">Kupon Kodları</a></li>
+                  <li><a href="/">İndirimler &amp; Kampanyalar</a></li>
+                  <li><a href="/">Müşteriler</a></li>
+                  <li><a href="/">Yorum Sistemi</a></li>
               </ul>
           </li>
           <li>
