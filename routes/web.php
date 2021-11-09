@@ -19,7 +19,7 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
         return view('rent/dashboard/index');
     });
 });
-
+/////------------------------------------------------------------------------------------------------------////
 Route::domain('suninturkey.xyz')->group(function () {
 
  Route::get('/', function () {
