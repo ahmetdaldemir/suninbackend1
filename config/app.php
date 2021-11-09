@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         \App\Repositories\RepositoryBackendServiceProvider::class,
+        \App\Repositories\Rent\RepositoryVillaServiceProvider::class,
 
 
     ],

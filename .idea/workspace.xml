@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Rent/RepositoryVillaServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepositoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Villa/VillaRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Villa/VillaRepositoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Regulation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Regulation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Regulation/RegulationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Regulation/RegulationRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Service/ServiceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Service/ServiceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_09_202425_regulation.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_09_202425_regulation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,18 +213,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/rent/villa" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/rent/villa" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Rent" />
+      <recent name="$PROJECT_DIR$/app/Repositories/Rent" />
+      <recent name="$PROJECT_DIR$/app/Repositories/Villa" />
       <recent name="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/resources/stubs" />
-      <recent name="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Landlord" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/admin" />
