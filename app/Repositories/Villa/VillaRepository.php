@@ -25,7 +25,7 @@ class VillaRepository implements VillaRepositoryInterface
     public function all()
     {
         $data = [];
-        $villa = Villa::all();
+        $villa = Villa::where('tenant_id',$tenant_id)->get();
         foreach ($villa as $service) {
             $data[] = array(
                 'id' => $service->id,

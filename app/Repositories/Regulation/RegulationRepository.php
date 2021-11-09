@@ -62,13 +62,13 @@ class RegulationRepository implements RegulationRepositoryInterface
 
     public function update(object $data)
     {
-        $regulation = Regulation::find($data->id);
-        $x = RegulationLanguage::where('regulation_id', $regulation->id)->delete();
+        $regulation = Regulation::find($data->regulation_id);
+        $x = RegulationLanguage::where('regulation_id', $regulation->regulation_id)->delete();
         foreach ($data->regulation as $key => $value) {
             $regulationlanguage = new RegulationLanguage();
             $regulationlanguage->id = Str::uuid()->toString();
             $regulationlanguage->title = $value;
-            $regulationlanguage->regulation_id = $regulation->id;
+            $regulationlanguage->regulation_id = $regulation->regulation_id;
             $regulationlanguage->lang_id = $key;
             $regulationlanguage->description = $data->regulation_description[$key];
             $regulationlanguage->save();

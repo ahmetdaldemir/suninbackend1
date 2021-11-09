@@ -34,6 +34,7 @@ class VillaController extends Controller
     public function store(Request $request)
     {
         return $this->villaRepository->create($request);
+        redirect()->back();
     }
 
 
@@ -49,11 +50,13 @@ class VillaController extends Controller
     public function update(Request $request, Villa $villa)
     {
         return $this->villaRepository->update($request);
+        redirect()->back();
     }
 
 
     public function destroy(Villa $villa)
     {
         $this->villaRepository->delete($villa->id);
+        redirect()->back();
     }
 }
