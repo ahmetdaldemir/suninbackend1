@@ -1,0 +1,13 @@
+<svg id="Group_7" data-name="Group 7" xmlns="http://www.w3.org/2000/svg" width="142" height="42" viewBox="0 0 142 42">
+  <text id="Çalışma_Saatleri" data-name="Çalışma Saatleri" transform="translate(46.013 14.5)" fill="#fff" font-size="12" font-family="HelveticaNeue-Medium, Helvetica Neue" font-weight="500"><tspan x="0" y="0">Çalışma Saatleri</tspan></text>
+  <text id="_09:00_-_18:00" data-name="09:00 - 18:00" transform="translate(46 36)" fill="#fff" font-size="16" font-family="HelveticaNeue-Medium, Helvetica Neue" font-weight="500"><tspan x="0" y="0">09:00 - 18:00</tspan></text>
+  <g id="Group_5" data-name="Group 5">
+    <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="20.5" cy="21" rx="20.5" ry="21" fill="#fff"/>
+    <g id="clock-svgrepo-com" transform="translate(4.216 4.716)">
+      <g id="Group_1" data-name="Group 1">
+        <path id="Path_4" data-name="Path 4" d="M15.772,0A15.772,15.772,0,1,0,31.545,15.772,15.759,15.759,0,0,0,15.772,0Zm1.342,28.861V28.19a1.342,1.342,0,0,0-2.684,0v.671A13.184,13.184,0,0,1,2.69,17.12h.6a1.342,1.342,0,0,0,0-2.684h-.6A13.184,13.184,0,0,1,14.431,2.7V3.29a1.342,1.342,0,1,0,2.684,0v-.6A13.184,13.184,0,0,1,28.855,14.431H28.19a1.342,1.342,0,0,0,0,2.684h.671A13.2,13.2,0,0,1,17.114,28.861Z" fill="#38b3d0"/>
+        <path id="Path_5" data-name="Path 5" d="M132.278,124.9a1.349,1.349,0,0,0-1.342,1.342v5.9l-6.109,7.522a1.361,1.361,0,0,0,.2,1.877,1.344,1.344,0,0,0,1.813-.2l6.515-7.922a1.43,1.43,0,0,0,.271-.806v-6.373A1.35,1.35,0,0,0,132.278,124.9Z" transform="translate(-116.505 -116.843)" fill="#38b3d0"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+
+uphp:S115"\Rename this constant "NoPool" to match the regular expression ^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$.(Ãù§•øÿÿÿÿ
+vphp:S115"]Rename this constant "Private" to match the regular expression ^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$.(õ ½Áùÿÿÿÿ
+wphp:S115"^Rename this constant "KidsPool" to match the regular expression ^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$.(„Ê—ÿÿÿÿÿ
+{php:S115"bRename this constant "DetachedPool" to match the regular expression ^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$.(ÓÑ‘Èıÿÿÿÿ
