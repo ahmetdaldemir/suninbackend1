@@ -76,11 +76,11 @@ Route::group(['middleware' => ['tokenisvalid']], function () {
     Route::get('/tenants/{id}', [TenantController::class, 'show']);
     Route::delete('/tenants/{id}', [TenantController::class, 'destroy']);
 
-    Route::post('/services', [ServiceController::class, 'store']);
-    Route::get('/services', [ServiceController::class, 'index']);
-    Route::post('/services/update', [ServiceController::class, 'update']);
-    Route::get('/services/{id}', [ServiceController::class, 'show']);
-    Route::delete('/services/{id}', [ServiceController::class, 'destroy']);
+    Route::post('/service', [ServiceController::class, 'store']);
+    Route::get('/service', [ServiceController::class, 'index']);
+    Route::post('/service/update', [ServiceController::class, 'update']);
+    Route::get('/service/{id}', [ServiceController::class, 'show']);
+    Route::delete('/service/{id}', [ServiceController::class, 'destroy']);
 });
 
 
