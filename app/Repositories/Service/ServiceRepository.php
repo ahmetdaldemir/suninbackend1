@@ -62,7 +62,7 @@ class ServiceRepository implements ServiceRepositoryInterface
 
     public function update(object $data)
     {
-        $service = new Service();
+        $service = Service::find($data->id);
         $service->id = $data->id;
         $service->save();
 
