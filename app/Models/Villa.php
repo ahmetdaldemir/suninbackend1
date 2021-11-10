@@ -39,3 +39,17 @@ class VillaImage extends Model
     public $timestamps = false;
 
 }
+
+class VillaService extends Model
+{
+    use HasFactory;
+    public $timestamps = false;
+
+}
+
+class VillaRegulation extends Model
+{
+    use HasFactory;
+    public $timestamps = false;
+
+}

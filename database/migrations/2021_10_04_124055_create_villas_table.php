@@ -29,10 +29,14 @@ class CreateVillasTable extends Migration
 
             $table->text('address')->nullable();
             $table->text('map')->nullable();
+
             $table->string('central_distance')->nullable();
             $table->string('restaurant_distance')->nullable();
             $table->string('plaj_distance')->nullable();
             $table->string('hospital_distance')->nullable();
+            $table->string('market_distance')->nullable();
+            $table->string('bus_station_distance')->nullable();
+            $table->string('airport_distance')->nullable();
 
             $table->string('i_cal')->nullable();
 
@@ -96,6 +100,23 @@ class CreateVillasTable extends Migration
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('property_id');
             $table->foreign('property_id')->references('id')->on('properties')->onUpdate('cascade')->onDelete('cascade');
+        });
+
+        Schema::create('villa_services', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->uuid('villa_id');
+            $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
+            $table->uuid('service_id');
+            $table->foreign('service_id')->references('id')->on('services')->onUpdate('cascade')->onDelete('cascade');
+        });
+
+
+        Schema::create('villa_regulations', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->uuid('villa_id');
+            $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
+            $table->uuid('regulation_id');
+            $table->foreign('regulation_id')->references('id')->on('regulations')->onUpdate('cascade')->onDelete('cascade');
         });
 
     }

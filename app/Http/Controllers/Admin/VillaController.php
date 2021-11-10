@@ -9,6 +9,8 @@ use App\Models\VillaCategory;
 use App\Models\VillaImage;
 use App\Models\VillaLanguage;
 use App\Models\VillaProperty;
+use App\Models\VillaRegulation;
+use App\Models\VillaService;
 use App\Services\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
@@ -60,6 +62,9 @@ class VillaController extends Controller
         $villa->restaurant_distance = $request->restaurantDistance; //varchar(255)
         $villa->plaj_distance = $request->plajDistance; //varchar(255)
         $villa->hospital_distance = $request->hospitalDistance; //varchar(255)
+        $villa->market_distance = $request->market_distance; //varchar(255)
+        $villa->bus_station_distance = $request->bus_station_distance; //varchar(255)
+        $villa->airport_distance = $request->airport_distance; //varchar(255)
         $villa->i_cal = $request->villaType; //varchar(255)
         $villa->destination_id = $request->destination_id; //char(36)
         $villa->tenant_id = "7b251e11-2ffd-4038-8e95-50067c2w1cf2"; //char(36)
@@ -97,6 +102,25 @@ class VillaController extends Controller
             $villa_categories->villa_id = $id;
             $villa_categories->category_id = $item;
             $villa_categories->save();
+        }
+
+
+        foreach ($request->services as $item) {
+            $villa_services_id = Str::uuid()->toString();
+            $villa_services = new VillaService();
+            $villa_services->id = $villa_services_id;
+            $villa_services->villa_id = $id;
+            $villa_services->service_id = $item;
+            $villa_services->save();
+        }
+
+        foreach ($request->regulations as $item) {
+            $villa_regulations_id = Str::uuid()->toString();
+            $villa_regulations = new VillaRegulation();
+            $villa_regulations->id = $villa_regulations_id;
+            $villa_regulations->villa_id = $id;
+            $villa_regulations->regulation_id = $item;
+            $villa_regulations->save();
         }
 
 
