@@ -14,4 +14,14 @@ final class BusinessType extends Enum
     public const Rent = 'rent';
     public const Admin = 'admin';
     public const Landlord = 'landlord';
+
+
+    public static function map() : array
+    {
+        return [
+            static::Rent => 'rent',
+            static::Admin => 'admin',
+            static::Landlord => 'landlord',
+        ];
+    }
 }

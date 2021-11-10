@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\BusinessType;
 use App\Enums\PoolType;
 use App\Enums\VillaType;
 use App\Http\Controllers\Admin\CategoryController;
@@ -104,5 +105,9 @@ Route::group(['prefix'=>'landlord','as'=>'landlord.','middleware' => ['tokenisva
     Route::get('/villatype', function()
     {
         return VillaType::map();
+    });
+    Route::get('/tenanttype', function()
+    {
+        return BusinessType::map();
     });
 });

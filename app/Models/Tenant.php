@@ -14,6 +14,6 @@ class Tenant extends Model
 
 
     protected $casts = [
-        'dataya' => 'json',
+        'info' => 'array',
     ];
 }

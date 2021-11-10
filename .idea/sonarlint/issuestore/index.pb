@@ -29,8 +29,6 @@ G
 app/Models/PoolType.php,7/7/77f635160c95ebaa4558a238fd332e8235042a5c
 F
 app/Enums/PoolType.php,2/3/2349fa74d8dca7459f6bcca14e9b101a821d3913
-G
-app/Enums/VillaType.php,0/0/0010008695c77935c20f9b6a2e9094e4e43593b7
 f
 6app/Http/Controllers/Landlord/MyCalenderController.php,a/f/af2cc4934579a4e31c799c05a180b4c244ee73ed
 d
@@ -162,8 +160,6 @@ Y
 )resources/views/rent/villa/edit.blade.php,5/0/50329023e244178f3b94e16a8be51753a0d9c015
 `
 0app/Http/Controllers/Admin/ServiceController.php,9/4/94aaf4664131ac532d1ac34d86ba33b857685749
->
-routes/api.php,b/3/b337d07ab0e7d54bf5547a0321a43ecafbd73ec1
 >
 routes/web.php,6/b/6b9a783d9b43fee50fd28f56dbd1856d2608f305
 ]
