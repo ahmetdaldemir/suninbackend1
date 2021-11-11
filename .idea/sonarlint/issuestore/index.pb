@@ -5,8 +5,6 @@
 +app/Http/Controllers/PropertyController.php,f/c/fc35499438c34dca526d71bb436fa4fce8aa73d9
 l
 <database/migrations/2021_10_04_124005_create_blogs_table.php,c/2/c2808373f83fd902884bc18444b74758370d97bd
-n
->vendor/laravel/framework/src/Illuminate/Foundation/helpers.php,4/d/4d24c28e41e72678a3c364bc656b5cf35eaf8f21
 ^
 .app/Http/Controllers/DestinationController.php,7/f/7f196bc4c77d1b9655ce185645a857a6dbf1940a
 ƒ
@@ -57,8 +55,6 @@ l
 <database/migrations/2019_10_12_000000_create_users_table.php,f/7/f769f40946cade8ebb82f07dca42afc5a2a87118
 n
 >database/migrations/2019_09_15_000020_create_domains_table.php,7/e/7ee0c19fbbccd8e0fe662a89a4f9456d34df8544
-E
-app/Services/ICal.php,8/7/8797c9571bab9f34839fb0cfb138c0d3d2598362
 m
 =database/migrations/2021_10_04_124118_create_i_cals_table.php,7/1/7151d7f7735ea71cf381604b094d1a8bb29705be
 n
@@ -146,8 +142,6 @@ a
 1database/migrations/2021_11_09_172255_service.php,1/b/1b0f5e728d9fa30f4e83f738e878b1e0a6692e85
 ^
 .app/Repositories/Service/ServiceRepository.php,7/4/74124b920ac6a69808eddc364934101368656059
->
-config/app.php,7/3/734f7be25e8008acc7129e73cd116d5de913e6fd
 c
 3app/Repositories/Villa/VillaRepositoryInterface.php,a/1/a1abba9ff5a35bd67468816fff2094958a66a83c
 h
@@ -160,13 +154,7 @@ Y
 )resources/views/rent/villa/edit.blade.php,5/0/50329023e244178f3b94e16a8be51753a0d9c015
 `
 0app/Http/Controllers/Admin/ServiceController.php,9/4/94aaf4664131ac532d1ac34d86ba33b857685749
->
-routes/web.php,6/b/6b9a783d9b43fee50fd28f56dbd1856d2608f305
-]
--app/Http/Controllers/Rent/VillaController.php,7/4/747e77b8b4df087fad70c3a5ff326fd03458c1f8
 Z
 *app/Repositories/Villa/VillaRepository.php,7/0/7007017da5e73d52b82243d2d3292da48788da0c
-Z
-*resources/views/rent/villa/index.blade.php,e/6/e66ed4b0ccd6b939edcfa50e9db8c3d113f6f8d6
 [
 +resources/views/rent/villa/create.blade.php,a/a/aa4629a6dc5b547da7d616be7aa2efa6694f93c7

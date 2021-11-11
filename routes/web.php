@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\Rent\VillaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/clear-cache', function() {
@@ -14,10 +15,17 @@ Route::get('/clear-cache', function() {
 
 
 
+// Route::domain('rent.suninturkey.xyz')->group(function () {
+//     Route::get('/', function() {
+//         return view('rent/dashboard/index');
+//     });
+//     Route::get('villa', [Rent\VillaController::class, 'index']);
+// });
 Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::get('/', function() {
         return view('rent/dashboard/index');
     });
+    Route::get('villa', 'App\Http\Controllers\Rent\VillaController@index');
 });
 /////------------------------------------------------------------------------------------------------------////
 Route::domain('suninturkey.xyz')->group(function () {

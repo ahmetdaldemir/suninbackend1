@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'faedbc1e4f92843cc84e6ca73dc6793058b52452',
+        'reference' => 'aae1a0bba2a088d8f5676d12d67016c9008cc52b',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -433,6 +433,15 @@
                 0 => 'v8.67.0',
             ),
         ),
+        'intervention/image' => array(
+            'pretty_version' => '2.7.0',
+            'version' => '2.7.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../intervention/image',
+            'aliases' => array(),
+            'reference' => '9a8cc99d30415ec0b3f7649e1647d03a55698545',
+            'dev_requirement' => false,
+        ),
         'jamesh/laravel-uuid' => array(
             'pretty_version' => '2.0.0',
             'version' => '2.0.0.0',
@@ -485,12 +494,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'faedbc1e4f92843cc84e6ca73dc6793058b52452',
+            'reference' => 'aae1a0bba2a088d8f5676d12d67016c9008cc52b',
             'dev_requirement' => false,
         ),
         'laravel/passport' => array(

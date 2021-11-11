@@ -39,7 +39,16 @@ class VillaController extends Controller
     public function store(Request $request)
     {
 
-        return $request->file('photos');
+        $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];
+        $files = $request->file('photos');
+        foreach ($files as $file) {
+            $filename = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+            $check = in_array($extension, $allowedfileExtension);
+            if ($check) {
+                $filenames[] = $file->store('photos');
+            }
+        }
 
         $code = 0;
         $languages = new Language();
@@ -67,7 +76,7 @@ class VillaController extends Controller
         $villa->airport_distance = $request->airport_distance; //varchar(255)
         $villa->i_cal = $request->villaType; //varchar(255)
         $villa->destination_id = $request->destination_id; //char(36)
-        $villa->tenant_id = "7b251e11-2ffd-4038-8e95-50067c2w1cf2"; //char(36)
+        $villa->tenant_id = $request->tenant_id; //char(36)
         $villa->save();
 
         $i = 0;
@@ -124,9 +133,8 @@ class VillaController extends Controller
         }
 
 
-        $villa_images = new Upload($request);
 
-        foreach ($villa_images as $item) {
+        foreach ($filenames as $item) {
             $villa_images_id = Str::uuid()->toString();
             $villa_image = new VillaImage();
             $villa_image->id = $villa_images_id;
@@ -144,7 +152,8 @@ class VillaController extends Controller
      * @param \App\Models\Villa $villa
      * @return \Illuminate\Http\Response
      */
-    public function show(Villa $villa)
+    public
+    function show(Villa $villa)
     {
         $villa = Villa::all();
         return response()->json($villa, 201);
@@ -156,7 +165,8 @@ class VillaController extends Controller
      * @param \App\Models\Villa $villa
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public
+    function edit($id)
     {
         $data['property'] = Villa::find($id);
         $data['propertylanguage'] = VillaLanguage::where('property_id', $id)->get();
@@ -170,7 +180,8 @@ class VillaController extends Controller
      * @param \App\Models\Villa $villa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public
+    function update(Request $request, $id)
     {
         if (!is_null($request->file)) {
             $upload = new Upload($request);
@@ -199,7 +210,8 @@ class VillaController extends Controller
      * @param \App\Models\Villa $villa
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public
+    function destroy($id)
     {
         $villa = Villa::find($id);
         $villa->delete();
