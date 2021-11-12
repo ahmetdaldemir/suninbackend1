@@ -11,9 +11,9 @@ use App\Models\VillaLanguage;
 use App\Models\VillaProperty;
 use App\Models\VillaRegulation;
 use App\Models\VillaService;
+use App\Services\ICal;
 use App\Services\Upload;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
 
 class VillaController extends Controller
@@ -39,15 +39,15 @@ class VillaController extends Controller
     public function store(Request $request)
     {
 
+        $filenames = [];
+
         $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];
         $files = $request->file('photos');
         foreach ($files as $file) {
             $filename = $file->getClientOriginalName();
             $extension = $file->getClientOriginalExtension();
             $check = in_array($extension, $allowedfileExtension);
-            if ($check) {
-                $filenames[] = $file->store('photos');
-            }
+            $filenames[] = $file->store('photos');
         }
 
         $code = 0;
@@ -56,7 +56,7 @@ class VillaController extends Controller
         $data = Villa::latest()->first();
         $villa = new Villa();
         $villa->id = $id;
-        $villa->code += 1;
+        $villa->code = "CODE".rand(11999,99999999);
         $villa->type = $request->villaType; //varchar(255)
         $villa->capacity = $request->person; //varchar(255)
         $villa->rooms = $request->room; //varchar(255)
@@ -71,12 +71,13 @@ class VillaController extends Controller
         $villa->restaurant_distance = $request->restaurantDistance; //varchar(255)
         $villa->plaj_distance = $request->plajDistance; //varchar(255)
         $villa->hospital_distance = $request->hospitalDistance; //varchar(255)
-        $villa->market_distance = $request->market_distance; //varchar(255)
-        $villa->bus_station_distance = $request->bus_station_distance; //varchar(255)
-        $villa->airport_distance = $request->airport_distance; //varchar(255)
+        $villa->market_distance = $request->marketDistance; //varchar(255)
+        $villa->bus_station_distance = $request->stationDistance; //varchar(255)
+        $villa->airport_distance = $request->airportDistance; //varchar(255)
         $villa->i_cal = $request->villaType; //varchar(255)
         $villa->destination_id = $request->destination_id; //char(36)
         $villa->tenant_id = $request->tenant_id; //char(36)
+        $villa->owner_id = $request->owner_id; //char(36)
         $villa->save();
 
         $i = 0;
@@ -132,16 +133,21 @@ class VillaController extends Controller
             $villa_regulations->save();
         }
 
-
-
-        foreach ($filenames as $item) {
-            $villa_images_id = Str::uuid()->toString();
-            $villa_image = new VillaImage();
-            $villa_image->id = $villa_images_id;
-            $villa_image->villa_id = $id;
-            $villa_image->image = $item;
-            $villa_image->save();
+        if(count($filenames) > 0)
+        {
+            foreach ($filenames as $item) {
+                $villa_images_id = Str::uuid()->toString();
+                $villa_image = new VillaImage();
+                $villa_image->id = $villa_images_id;
+                $villa_image->villa_id = $id;
+                $villa_image->image = $item;
+                $villa_image->save();
+            }
         }
+
+//        $data = Villa::latest()->first();
+//        $x = new ICal($data->code);
+//        $ical = $x->create();
 
         return response()->json($villa, 200);
     }
@@ -217,6 +223,17 @@ class VillaController extends Controller
         $villa->delete();
         $villalanguage = VillaLanguage::where('property_id', $id)->delete();
         return response()->json("Başarılı", 200);
+
+    }
+
+    public function ical()
+    {
+        $data = Villa::latest()->first();
+        $x = new ICal($data->code);
+        $ical = $x->create();
+        $array = explode(' ', $ical->getContent());
+        print_r($array);
+
 
     }
 }

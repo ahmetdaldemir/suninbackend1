@@ -1,7 +1,7 @@
 <?php namespace App\Services;
 
-use Eluceo\iCal\Component\Calendar;
-use Eluceo\iCal\Component\Event;
+
+use Spatie\IcalendarGenerator\Components\Calendar;
 
 class ICal
 {
@@ -17,22 +17,19 @@ class ICal
 
     public function create()
     {
-        $vCalendar = new Calendar($this->domain."/".$this->code);
-        $vCalendar->setName($this->code);
-        $vCalendar->setTimezone('America/New_York');
-
-        $vEvent = new Event();
-        $vEvent
-            ->setDtStart()
-            ->setDtEnd(new \DateTime('2012-12-24'))
-            ->setNoTime(true)
-            ->setSummary('Christmas');
-
-        $vCalendar->addComponent($vEvent);
-
-        header('Content-Type: text/calendar; charset=utf-8');
-        header('Content-Disposition: attachment; filename="cal.ics"');
-
-        echo $vCalendar->render();
+        $calendar = Calendar::create('Test198711ad');
+        return response($calendar->get(), 200, [
+            'Content-Type' => 'text/calendar',
+            'Content-Disposition' => 'attachment; filename="my-awesome-calendar.ics"',
+            'charset' => 'utf-8',
+        ]);
     }
+
+    public function get()
+    {
+        $x = Calendar::create('Test1987')->get();
+        return $x;
+    }
+
+
 }

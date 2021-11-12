@@ -1,9 +1,8 @@
-<?php namespace App\Repositories\Villa;
+<?php namespace App\Repositories\Rent\Villa;
 
 use App\Models\Villa;
 use App\Models\VillaLanguage;
 use Illuminate\Support\Str;
-
 
 class VillaRepository implements VillaRepositoryInterface
 {

@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Rent\Villa;
 
-interface VillaRepositoryInterface
+interface CategoryRepositoryInterface
 {
 
     public function get($id);

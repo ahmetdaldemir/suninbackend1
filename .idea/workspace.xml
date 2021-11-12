@@ -2,18 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4d24c28e41e72678a3c364bc656b5cf35eaf8f21" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/8797c9571bab9f34839fb0cfb138c0d3d2598362" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sunin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sunin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VillaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RepositoryVillaServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RepositoryVillaServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/RepositoryBackendServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/RepositoryBackendServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Tenant/TenantRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Tenant/TenantRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ICal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ICal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_124055_create_villas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_124055_create_villas_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
@@ -199,6 +207,8 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/eluceo/ical" />
       <path value="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern" />
+      <path value="$PROJECT_DIR$/vendor/spatie/icalendar-generator" />
+      <path value="$PROJECT_DIR$/vendor/spatie/enum" />
     </include_path>
   </component>
   <component name="ProjectId" id="1z0b82GK8oHmD546mMiusC7WFqK" />
@@ -217,23 +227,23 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mycar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories/Language" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/rent/villa" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Rent" />
-      <recent name="$PROJECT_DIR$/app/Repositories/Rent" />
-      <recent name="$PROJECT_DIR$/app/Repositories/Villa" />
-      <recent name="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/resources/stubs" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/admin" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Landlord" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Repositories/Language" />
+      <recent name="$PROJECT_DIR$/resources/views/rent/villa" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Rent" />
+      <recent name="$PROJECT_DIR$/app/Repositories/Rent" />
+      <recent name="$PROJECT_DIR$/app/Repositories/Villa" />
     </key>
   </component>
   <component name="RunManager">
@@ -293,6 +303,8 @@
       <workItem from="1636438505434" duration="10316000" />
       <workItem from="1636462896326" duration="4377000" />
       <workItem from="1636557080284" duration="18358000" />
+      <workItem from="1636639424934" duration="779000" />
+      <workItem from="1636653546847" duration="13012000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>
@@ -366,6 +378,16 @@
     <MESSAGE value="test" />
     <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="743" y="274" width="424" height="491" key="FileChooserDialogImpl" timestamp="1636661667515">
+      <screen x="0" y="24" width="1920" height="1008" />
+    </state>
+    <state x="743" y="274" width="424" height="491" key="FileChooserDialogImpl/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1636661667515" />
+    <state x="651" y="255" width="618" height="522" key="find.popup" timestamp="1636661997190">
+      <screen x="0" y="24" width="1920" height="1008" />
+    </state>
+    <state x="651" y="255" width="618" height="522" key="find.popup/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1636661997190" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -373,6 +395,16 @@
           <url>file://$PROJECT_DIR$/database/seeders/PermissionSeeder.php</url>
           <line>20</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Repositories/Category/CategoryRepository.php</url>
+          <line>2</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/vendor/spatie/icalendar-generator/src/Components/Calendar.php</url>
+          <line>16</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -52,6 +52,16 @@ class TenantRepository implements TenantRepositoryInterface
         $tenant->type = $data->type;
         $tenant->info = $properties;
         $tenant->save();
+        $id = $tenant->id;
+
+        $user = new User();
+        $user->tenant_id = $id;
+        $user->name = $data->title;
+        $user->email = $data->email;
+        $user->password = bcrypt('123456');
+        $user->save();
+
+        //$this->dispatch();
 
         return $tenant;
     }

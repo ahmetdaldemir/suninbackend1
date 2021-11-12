@@ -9,6 +9,8 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/eluceo/ical" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/salmanzafar/laravel-repository-pattern" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/enum" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/icalendar-generator" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

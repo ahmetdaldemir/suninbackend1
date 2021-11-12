@@ -47,6 +47,10 @@ class CreateVillasTable extends Migration
             $table->uuid('tenant_id');
             $table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');
 
+            $table->uuid('owner_id');
+            $table->foreign('owner_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');
+
+
             $table->softDeletes();
             $table->timestamps();
         });

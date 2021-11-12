@@ -2,6 +2,8 @@
 
 namespace App\Repositories;
 
+use App\Repositories\Category\CategoryRepository;
+use App\Repositories\Category\CategoryRepositoryInterface;
 use App\Repositories\Destination\DestinationRepository;
 use App\Repositories\Destination\DestinationRepositoryInterface;
 use App\Repositories\Language\LanguageRepositoryInterface;
@@ -46,6 +48,11 @@ class RepositoryBackendServiceProvider extends ServiceProvider
         $this->app->bind(
             RegulationRepositoryInterface::class,
             RegulationRepository::class
+        );
+
+        $this->app->bind(
+            CategoryRepositoryInterface::class,
+            CategoryRepository::class
         );
     }
 }

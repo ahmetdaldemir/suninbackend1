@@ -9,6 +9,7 @@ class Service extends Model
 {
     use HasFactory, SoftDeletes;
     public $incrementing = false;
+
     public function get_data()
     {
         return ServiceLanguage::where('service_id', $this->id)->get();

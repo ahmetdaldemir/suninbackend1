@@ -3,8 +3,8 @@
 namespace App\Repositories\Rent;
 
 
-use App\Repositories\Villa\VillaRepository;
-use App\Repositories\Villa\VillaRepositoryInterface;
+use App\Repositories\Rent\Villa\VillaRepository;
+use App\Repositories\Rent\Villa\VillaRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryVillaServiceProvider extends ServiceProvider

@@ -50,7 +50,7 @@ class ClassLoader
      * @var array[]
      * @psalm-var array<string, array<string, int>>
      */
-    private $prefixLengthsPsr4 = array();
+    public $prefixLengthsPsr4 = array();
     /**
      * @var array[]
      * @psalm-var array<string, array<int, string>>

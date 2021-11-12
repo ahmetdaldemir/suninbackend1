@@ -70,6 +70,7 @@ Route::group(['middleware' => ['tokenisvalid']], function () {
     Route::post('/villa/update', [VillaController::class, 'update']);
     Route::get('/villa/{id}', [VillaController::class, 'show']);
     Route::delete('/villa/{id}', [VillaController::class, 'destroy']);
+    Route::get('/ical', [VillaController::class, 'ical']);
 
 
     Route::post('/tenants', [TenantController::class, 'store']);
