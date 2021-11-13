@@ -231,9 +231,7 @@ class VillaController extends Controller
         $data = Villa::latest()->first();
         $x = new ICal($data->code);
         $ical = $x->create();
-        $array = explode(' ', $ical->getContent());
-        print_r($array);
-
+        print_r($ical->getContent());
 
     }
 }

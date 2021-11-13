@@ -23,12 +23,18 @@ class VillaRepository implements VillaRepositoryInterface
 
     public function all()
     {
+        $session = session()->get('rent_session');
         $data = [];
-        $services = Villa::all();
-        foreach ($services as $service) {
+        $villas = Villa::where('owner_id',$session['tenant_id'])->get();
+        foreach ($villas as $villa) {
             $data[] = array(
-                'id' => $service->id,
-                'lang' => $service->get_data()
+                'id' => $villa->id,
+                'type' => $villa->type,
+                'rooms' => $villa->rooms,
+                'pool' => $villa->pool,
+                'deposit' => $villa->deposit,
+                'clean_price' => $villa->clean_price,
+                'lang' => $villa->get_data()
             );
         }
         return $data;

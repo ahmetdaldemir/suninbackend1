@@ -84,13 +84,14 @@ class ApiAuthController extends Controller
                     'id'=>$user->id,
                     'name'=>$user->name,
                     'email'=>$user->email,
+                    'tenant_id'=>$user->tenant_id,
                     'access_token'=>$tokenResult->accessToken,
                     'token'=>$token,
                     'token_type'=>'Bearer',
                     'expires_at'=>Carbon::parse($tokenResult->token->expires_at)->toDateTimeString()
                 ];
 
-                Cache::put($key,$data,30);
+                Cache::put($key,$data,3600);
 
                 return response()->json([
                     'type' => $user->tenant()->first()->type,
@@ -109,6 +110,7 @@ class ApiAuthController extends Controller
 
     public function logout(Request $request)
     {
+        Auth::logout();
         $token = $request->user()->token();
         $token->revoke();
         $response = ['message' => 'You have been successfully logged out!'];

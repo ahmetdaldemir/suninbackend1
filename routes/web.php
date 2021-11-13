@@ -14,25 +14,23 @@ Route::get('/clear-cache', function() {
 })->name('clear.cache');
 
 
-
-// Route::domain('rent.suninturkey.xyz')->group(function () {
-//     Route::get('/', function() {
-//         return view('rent/dashboard/index');
-//     });
-//     Route::get('villa', [Rent\VillaController::class, 'index']);
-// });
 Route::domain('rent.suninturkey.xyz')->group(function () {
-    Route::get('/', function() {
-        return view('rent/dashboard/index');
-    });
-    Route::get('villa', 'App\Http\Controllers\Rent\VillaController@index');
+
+    Route::get('/', 'App\Http\Controllers\Rent\DashboardController@index');
+    Route::get('logout', 'App\Http\Controllers\Auth\ApiAuthController@logout');
+    Route::get('villa', 'App\Http\Controllers\Rent\VillaController@index')->name('villa');
+    Route::get('villa/create', 'App\Http\Controllers\Rent\VillaController@create')->name('villa/create');
+
+
+
+
+    Route::get('reservation/create', 'App\Http\Controllers\Rent\VillaController@index')->name('reservation/create');
+    Route::get('reservation', 'App\Http\Controllers\Rent\VillaController@index')->name('reservation');
+    Route::get('requests', 'App\Http\Controllers\Rent\VillaController@index')->name('requests');
 });
 /////------------------------------------------------------------------------------------------------------////
 Route::domain('suninturkey.xyz')->group(function () {
 
- Route::get('/', function () {
-     return view('welcome');
- });
 
 //Route::get('/', function(){
 //    return redirect()->route('layout-light');
@@ -58,10 +56,13 @@ Route::get('/app',function(){
     return view('login');
 });
 
+
+Route::get('/', [MainController::class, 'index']);
 Route::get('/contact', [MainController::class, 'contact']);
 Route::get('/blog', [MainController::class, 'blog']);
 Route::get('/about', [MainController::class, 'about']);
 Route::get('detail', [MainController::class, 'detail'])->name('detail');
 Route::get('listing', [MainController::class, 'listing'])->name('listing');
 Route::get('add_listing', [MainController::class, 'add_listing'])->name('add_listing');
+
 });

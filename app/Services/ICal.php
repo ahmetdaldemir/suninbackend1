@@ -17,10 +17,10 @@ class ICal
 
     public function create()
     {
-        $calendar = Calendar::create('Test198711ad');
+        $calendar = Calendar::create('Test198711adssas');
         return response($calendar->get(), 200, [
             'Content-Type' => 'text/calendar',
-            'Content-Disposition' => 'attachment; filename="my-awesome-calendar.ics"',
+            'Content-Disposition' => 'attachment; filename="Test198711adssas.ics"',
             'charset' => 'utf-8',
         ]);
     }

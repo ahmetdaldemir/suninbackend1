@@ -9,6 +9,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Villa extends Model
 {
     use HasFactory,SoftDeletes;
+
+    public function get_data()
+    {
+        return VillaLanguage::where('villa_id',$this->id)->get();
+    }
 }
 
 class VillaProperty extends Model
