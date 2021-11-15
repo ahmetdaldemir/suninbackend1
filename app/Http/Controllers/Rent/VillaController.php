@@ -37,7 +37,8 @@ class VillaController extends Controller
 
     public function index()
     {
-        $data['villa']  = $this->villaRepository->all();
+        $data['villa'] = $this->villaRepository->all();
+        //dd($data);
         return view('rent/villa/index',$data);
     }
 
@@ -58,13 +59,13 @@ class VillaController extends Controller
     public function store(Request $request)
     {
         return $this->villaRepository->create($request);
-        redirect()->back();
+        //redirect()->back();
     }
 
     public function edit(Request $request)
     {
         $data['category']  = $this->categoryRepository->all();
-        return $this->villaRepository->get($request->id);
+        //return $this->villaRepository->get($request->id);
         return view('rent/villa/edit',$data);
     }
 

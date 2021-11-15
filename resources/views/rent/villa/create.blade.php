@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action="#" method="POST">
+                    <form action="{{route('villa/store')}}" method="POST">
                         <div class="setup-content" id="step-1">
                             <div class="col-xs-12">
                                 <div class="col-md-12">
@@ -208,9 +208,10 @@
                                         <label class="control-label">Kurallar</label>
                                         <div class="row checkbox checkbox-solid-success">
                                             @foreach($regulations as $regulation)
-                                            <div class="col-4 col-md-3 col-sm-6">
+
+                                             <div class="col-4 col-md-3 col-sm-6">
                                                 <input id="rules-{{$regulation['id']}}" type="checkbox" value="{{$regulation['id']}}">
-                                                <label for="rules-{{$regulation['id']}}">{{$regulation['lang'][0]->title}}</label>
+                                                <label for="rules-{{$regulation['id']}}">{{json_decode($regulation['lang'],TRUE)[0]['title']}}</label>
                                             </div>
                                             @endforeach
                                         </div>

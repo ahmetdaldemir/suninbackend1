@@ -12,11 +12,9 @@ class DashboardController extends Controller
 
     public function __construct()
     {
-        if(!Session::get('rent_session'))
-        {
+
             $this->getCache();
-        }
-    }
+     }
 
     public function index()
     {

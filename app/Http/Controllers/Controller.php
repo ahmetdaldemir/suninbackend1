@@ -52,7 +52,10 @@ class Controller extends BaseController
     {
         $x = ltrim(request()->getRequestUri(),"/?");
         $y =   Cache::get($x);
-
+        if($y == null)
+        {
+            return redirect('sunintukey.xyz/app');
+        }
         $this->tenant_id = $y['tenant_id'];
         Session::put('rent_session', $y);
     }

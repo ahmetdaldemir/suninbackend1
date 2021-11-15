@@ -126,8 +126,6 @@ g
 0app/Repositories/Property/PropertyRepository.php,1/d/1d7bf4688d58f6fc873d6e24aff1ddb9c8a35be0
 c
 3app/Http/Controllers/Admin/RegulationController.php,6/d/6d23d4e4b2b4fc59a9877b496a53568a73571125
-m
-=app/Repositories/Regulation/RegulationRepositoryInterface.php,1/1/1195d4c358cf56522ded09f0743383e1ac152fa5
 e
 5app/Repositories/RepositoryBackendServiceProvider.php,d/f/dfd82e2ef946dc6573e17e7c5ca933dbfd640ddb
 F
@@ -148,8 +146,6 @@ Y
 0app/Http/Controllers/Admin/ServiceController.php,9/4/94aaf4664131ac532d1ac34d86ba33b857685749
 d
 4database/migrations/2021_11_09_202425_regulation.php,a/d/ad816be604d23f2e9f9b3548c695200cc37a0d48
-d
-4app/Repositories/Regulation/RegulationRepository.php,8/d/8d94300f5e065d42a211303909a26ae3882dea4d
 m
 =database/migrations/2021_10_04_124055_create_villas_table.php,6/8/689ff0586b746728711a5a42986229d2fd69c0bc
 _
