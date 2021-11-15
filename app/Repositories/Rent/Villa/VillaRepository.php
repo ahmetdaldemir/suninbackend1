@@ -48,6 +48,7 @@ class VillaRepository implements VillaRepositoryInterface
     public function create(object $data)
     {
         //        $upload = new Upload($request);
+        dd($data);
         $id = Str::uuid()->toString();
         $service = new Villa();
         $service->id = $id;

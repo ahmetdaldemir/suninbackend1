@@ -39,6 +39,16 @@ class VillaController extends Controller
     {
         $data['villa'] = $this->villaRepository->all();
         //dd($data);
+        //$month_name = array("January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December");
+        //$gunlerIng = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+        $month_name = array("Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran","Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık");
+        $gunler = array("Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar");
+
+        $date = date('m');
+        for ($i=$date;$i<13;$i++){
+            $data['month']['name'] = $month_name[$i];
+            for
+        }
         return view('rent/villa/index',$data);
     }
 
@@ -51,7 +61,7 @@ class VillaController extends Controller
         $data['regulations']  = $this->regulationRepository->all();
         $data['services']  = $this->serviceRepository->all();
         $data['categories']  = $this->categoryRepository->all();
-        //dd($data);
+        //dd($data['regulations']);
         return view('rent/villa/create',$data);
     }
 

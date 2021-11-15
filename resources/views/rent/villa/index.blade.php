@@ -8,6 +8,10 @@
 @endsection
 
 @section('style')
+<style>
+    .detail {display: none;}
+    .show {display: table-row;}
+</style>
 @endsection
 
 @section('breadcrumb-title')
@@ -32,6 +36,7 @@
                     <table id="villa" class="table table-border-horizontal">
                         <thead>
                             <tr>
+                                <th></th>
                                 <th scope="col">Villa Tipi</th>
                                 <th scope="col">Oda</th>
                                 <th scope="col">Pool</th>
@@ -44,6 +49,7 @@
                             @foreach($villa as $result)
 
                             <tr>
+                                <td class="avability" data-id="villa_{{$result['id']}}"> + </td>
                                 <td>{{$result['type']}}</td>
                                 <td>{{$result['rooms']}}</td>
                                 <td>{{$result['pool']}}</td>
@@ -52,6 +58,18 @@
                                 <td>
                                     <a href="{{'villa/edit'.'/'.$result['id']}}" class="btn btn-shadow-primary">Düzenle</a>
                                     <a class="btn btn-shadow-warning delete" data-id="{{$result['id']}}">Sil</a>
+                                </td>
+                            </tr>
+                            <tr class="detail villa_{{$result['id']}}">
+                                <td colspan="7">
+                                    @foreach($months as $month)
+                                        <div class="month">
+                                            <div class="title"></div>
+                                        @foreach($month as $day)
+                                            <div class="day">{{$day}}</div>
+                                        @endforeach
+                                        </div>
+                                    @endforeach
                                 </td>
                             </tr>
                             @endforeach
@@ -64,7 +82,6 @@
 </div>
 <!-- Container-fluid Ends-->
 @endsection
-
 @section('script')
 <script src="{{asset('rent/js/typeahead/handlebars.js')}}"></script>
 <script src="{{asset('rent/js/typeahead/typeahead.bundle.js')}}"></script>

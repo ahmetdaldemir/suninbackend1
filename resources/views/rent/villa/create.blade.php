@@ -197,7 +197,7 @@
                                             @foreach($services as $service)
                                                 <div class="col-4 col-md-3 col-sm-6">
                                                     <input id="service-{{$service['id']}}" type="checkbox" value="{{$service['id']}}">
-                                                    <label for="service-{{$service['id']}}"></label>
+                                                    <label for="service-{{$service['id']}}">{{@json_decode($service['lang'],TRUE)[0]['title']}}</label>
                                                 </div>
                                             @endforeach
                                         </div>
@@ -208,10 +208,10 @@
                                         <label class="control-label">Kurallar</label>
                                         <div class="row checkbox checkbox-solid-success">
                                             @foreach($regulations as $regulation)
-
+                                                <?php //dd(json_decode($regulation['lang'],TRUE)[0]['title']);?>
                                              <div class="col-4 col-md-3 col-sm-6">
                                                 <input id="rules-{{$regulation['id']}}" type="checkbox" value="{{$regulation['id']}}">
-                                                <label for="rules-{{$regulation['id']}}">{{json_decode($regulation['lang'],TRUE)[0]['title']}}</label>
+                                                <label for="rules-{{$regulation['id']}}">{{@json_decode($regulation['lang'],TRUE)[0]['title']}}</label>
                                             </div>
                                             @endforeach
                                         </div>
