@@ -1,15 +1,15 @@
-<?php namespace App\Repositories\Rent\Villa;
+<?php namespace App\Repositories\Rent\Blog;
 
-use App\Models\Villa;
-use App\Models\VillaLanguage;
+use App\Models\Blog;
+use App\Models\BlogLanguage;
 use Illuminate\Support\Str;
 
-class VillaRepository implements VillaRepositoryInterface
+class BlogRepository implements BlogRepositoryInterface
 {
     public function get($id)
     {
         $data = [];
-        $services = Villa::find($id);
+        $services = Blog::find($id);
         foreach ($services as $service) {
             $data[] = array(
                 'id' => $service->id,
@@ -24,7 +24,7 @@ class VillaRepository implements VillaRepositoryInterface
     {
         $session = session()->get('rent_session');
         $data = [];
-        $villas = Villa::where('owner_id',$session['tenant_id'])->get();
+        $villas = Blog::where('owner_id',$session['tenant_id'])->get();
         foreach ($villas as $villa) {
             $data[] = array(
                 'id' => $villa->id,
@@ -41,21 +41,20 @@ class VillaRepository implements VillaRepositoryInterface
 
     public function delete($id)
     {
-        Villa::destroy($id);
+        Blog::destroy($id);
     }
 
     public function create(object $data)
     {
-        //        $upload = new Upload($request);
-        dd($data);
+        //        $upload = new Upload($request);dd($data);
         $id = Str::uuid()->toString();
-        $service = new Villa();
+        $service = new Blog();
         $service->id = $id;
         $service->save();
 
 
         foreach ($data->service as $key => $value) {
-            $servicelanguage = new VillaLanguage();
+            $servicelanguage = new BlogLanguage();
             $servicelanguage->id = Str::uuid()->toString();
             $servicelanguage->service_id = $id;
             $servicelanguage->title = $value;

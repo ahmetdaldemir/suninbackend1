@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Rent;
 
 use App\Http\Controllers\Controller;
@@ -15,7 +14,6 @@ use Illuminate\Http\Request;
 
 class VillaController extends Controller
 {
-
     private VillaRepositoryInterface $villaRepository;
     private CategoryRepositoryInterface $categoryRepository;
     private LanguageRepositoryInterface $languageRepository;
@@ -46,8 +44,8 @@ class VillaController extends Controller
 
         $date = date('m');
         for ($i=$date;$i<13;$i++){
-            $data['month']['name'] = $month_name[$i];
-            for
+            $data['month']['name'] = @$month_name[$i];
+            //for
         }
         return view('rent/villa/index',$data);
     }

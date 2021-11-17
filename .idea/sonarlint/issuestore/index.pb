@@ -126,8 +126,6 @@ g
 0app/Repositories/Property/PropertyRepository.php,1/d/1d7bf4688d58f6fc873d6e24aff1ddb9c8a35be0
 c
 3app/Http/Controllers/Admin/RegulationController.php,6/d/6d23d4e4b2b4fc59a9877b496a53568a73571125
-e
-5app/Repositories/RepositoryBackendServiceProvider.php,d/f/dfd82e2ef946dc6573e17e7c5ca933dbfd640ddb
 F
 app/Models/Service.php,d/9/d9239d695b6c2b4c35afac873c4b54ab2eb80358
 I
@@ -138,8 +136,6 @@ a
 .app/Repositories/Service/ServiceRepository.php,7/4/74124b920ac6a69808eddc364934101368656059
 c
 3app/Repositories/Villa/VillaRepositoryInterface.php,a/1/a1abba9ff5a35bd67468816fff2094958a66a83c
-h
-8app/Repositories/Rent/RepositoryVillaServiceProvider.php,8/9/89d1cacacaa0343ffb0045115ccdc7924948fcc6
 Y
 )resources/views/rent/villa/edit.blade.php,5/0/50329023e244178f3b94e16a8be51753a0d9c015
 `
