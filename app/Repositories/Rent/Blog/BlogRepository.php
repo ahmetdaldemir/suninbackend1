@@ -24,16 +24,11 @@ class BlogRepository implements BlogRepositoryInterface
     {
         $session = session()->get('rent_session');
         $data = [];
-        $villas = Blog::where('owner_id',$session['tenant_id'])->get();
-        foreach ($villas as $villa) {
+        $results = Blog::where('tenant_id',$session['tenant_id'])->get();
+        foreach ($results as $result) {
             $data[] = array(
-                'id' => $villa->id,
-                'type' => $villa->type,
-                'rooms' => $villa->rooms,
-                'pool' => $villa->pool,
-                'deposit' => $villa->deposit,
-                'clean_price' => $villa->clean_price,
-                'lang' => $villa->get_data()
+                'id' => $result->id,
+                'lang' => $result->get_data()
             );
         }
         return $data;
@@ -52,7 +47,6 @@ class BlogRepository implements BlogRepositoryInterface
         $service->id = $id;
         $service->save();
 
-
         foreach ($data->service as $key => $value) {
             $servicelanguage = new BlogLanguage();
             $servicelanguage->id = Str::uuid()->toString();
@@ -66,10 +60,10 @@ class BlogRepository implements BlogRepositoryInterface
 
     public function update(object $data)
     {
-        $service = Villa::find($data->service_id);
-        $x = VillaLanguage::where('service_id', $data->service_id)->delete();
+        $service = Blog::find($data->service_id);
+        $x = BlogLanguage::where('service_id', $data->service_id)->delete();
         foreach ($data->service as $key => $value) {
-            $servicelanguage = new VillaLanguage();
+            $servicelanguage = new BlogLanguage();
             $servicelanguage->id = Str::uuid()->toString();
             $servicelanguage->title = $value;
             $servicelanguage->service_id = $data->service_id;

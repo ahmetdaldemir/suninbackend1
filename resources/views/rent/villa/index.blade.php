@@ -11,6 +11,14 @@
 <style>
     .detail {display: none;}
     .show {display: table-row;}
+    .table.date td {
+        border-top: 1px solid #f2f4ff;
+        padding: 3px;
+        width: 5px;
+    }
+    .detail b {
+        padding-top: 12px;
+    }
 </style>
 @endsection
 
@@ -62,14 +70,89 @@
                             </tr>
                             <tr class="detail villa_{{$result['id']}}">
                                 <td colspan="7">
-                                    @foreach($months as $month)
-                                        <div class="month">
-                                            <div class="title"></div>
-                                        @foreach($month as $day)
-                                            <div class="day">{{$day}}</div>
-                                        @endforeach
-                                        </div>
-                                    @endforeach
+                                    <?php
+                                    $thisay=date("n");
+                                    $avability = array(
+                                        '01.12.2021' => 'asdfasfdsf',
+                                        '02.12.2021' => 'asdfasfdsf',
+                                        '08.01.2022' => 'asdfasfdsf',
+                                        '09.01.2022' => 'asdfasfdsf',
+                                        '10.01.2022' => 'asdfasfdsf',
+                                        '11.01.2022' => 'asdfasfdsf',
+                                        '09.12.2022' => 'asdfasfdsf',
+                                        '10.12.2022' => 'asdfasfdsf',
+                                        '11.12.2022' => 'asdfasfdsf',
+                                        '14.02.2022' => 'asdfasfdsf',
+                                        '10.02.2022' => 'asdfasfdsf',
+                                        '11.02.2022' => 'asdfasfdsf',
+                                    );
+
+                                    $ay=date("n");
+                                    $gun=date("j");
+                                    $today=date("j");
+                                    $l=date("l");
+                                    $t=date("t");
+
+
+                                    $time = strtotime(date("Y-m-d"));
+/*
+                                    $ay=date("n", strtotime("+1 month", $time));
+                                    $gun=date("j", strtotime("+1 month", $time));
+                                    $today=date("j", strtotime("+1 month", $time));
+                                    $l=date("l", strtotime("+1 month", $time));
+                                    $t=date("t", strtotime("+1 month", $time));*/
+                                    $aylar=array("","Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık");
+                                    $gunler=array("P","S","Ç","P","C","Ct","P");
+                                    ?>
+                                    <?php for($x=0;$x<12;$x++){ $ay = date("n", strtotime("+".$x." month", $time))?>
+                                    <div class="row"><br>
+                                        <b><?php echo $aylar[$ay]." ".date("Y")?></b>
+                                        <?php
+                                        $bir=($gun-1)*24*60*60;
+                                        //ayın kaç çektiği bulunuyor
+                                        $son=date("t", strtotime("+".$x." month", $time));
+                                        //işlem sonu
+                                        $basla=1;
+                                        $check = $gun;
+                                        $doldur=0;//ayın ilk gününe kadar olan sütunlara yazı yazmamak için tanımlanmış değişken
+                                        ?>
+                                        <table class="table date">
+                                            <tr>
+                                                <?php for($j=1;$j<=31;$j++){?>
+                                                <?php if($basla<=$son){
+                                                $date = sprintf("%02s", $basla ).'.'.date("m", strtotime("+".$x." month", $time)).'.'.date("Y", strtotime("+".$x." month", $time));
+                                                // echo $date;//@$avability[$date];
+                                                ?>
+                                                <?php $asd = @$avability[$date];?>
+                                                <?php if(@isset($asd)){?>
+                                                <?php if($gun!=$basla AND $check!=$basla){?>
+                                                <td width='10' style="background:red;" align='center' title="<?=$date?>"><b><div class='style2'><?=$basla?></div></b></td>
+                                                <?php }elseif ($today=$basla AND $check!=$basla){?>
+                                                <td width='10' style="background:red;" align='center'><b><div class='style3'><?=$basla?></div></b></td>
+                                                <?php }elseif ($check=$basla AND $thisay==$ay){?>
+                                                <td width='10' style="background:red;" align='center'><b><div class='style3'><a href='index.php?gun=<?=$basla?>&month=<?=$ay?>'><?=$basla?></a></div></b></td>
+                                                <?php }else{?>
+                                                <td width='10' style="background:red;" align='center'><b><div class='style2'><?=$basla?></div></b></td>
+                                                <?php }?>
+                                                <?php $basla+=1;$doldur=1;?>
+                                                <?php }else{?>
+                                                <?php if($gun!=$basla AND $check!=$basla){?>
+                                                <td width='10' align='center' title="<?=$date?>"><b><div class='style2'><?=$basla?></div></b></td>
+                                                <?php }elseif ($today=$basla AND $check!=$basla){?>
+                                                <td width='10' align='center'><b><div class='style3'><?=$basla?></div></b></td>
+                                                <?php }elseif ($check=$basla AND $thisay==$ay){?>
+                                                <td width='10' align='center'><b><div class='style3'><a href='index.php?gun=<?=$basla?>&month=<?=$ay?>'><?=$basla?></a></div></b></td>
+                                                <?php }else{?>
+                                                <td width='10' align='center'><b><div class='style2'><?=$basla?></div></b></td>
+                                                <?php }?>
+                                                <?php $basla+=1;$doldur=1;?>
+                                                <?php }?>
+                                                <?php }}?>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <?php }?>
+
                                 </td>
                             </tr>
                             @endforeach

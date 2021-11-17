@@ -20,6 +20,11 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::get('logout', 'App\Http\Controllers\Auth\ApiAuthController@logout');
     Route::get('villa', 'App\Http\Controllers\Rent\VillaController@index')->name('villa');
     Route::get('villa/create', 'App\Http\Controllers\Rent\VillaController@create')->name('villa/create');
+    Route::get('villa/store', 'App\Http\Controllers\Rent\VillaController@store')->name('villa/store');
+
+    Route::get('blog', 'App\Http\Controllers\Rent\BlogController@index')->name('blog');
+    Route::get('blog/create', 'App\Http\Controllers\Rent\BlogController@create')->name('blog/create');
+    Route::get('blog/store', 'App\Http\Controllers\Rent\BlogController@store')->name('blog/store');
 
 
 

@@ -3,8 +3,6 @@
 public/.htaccess,c/9/c9fe70f275af093c7fb3ed73b451fadc91069bac
 [
 +app/Http/Controllers/PropertyController.php,f/c/fc35499438c34dca526d71bb436fa4fce8aa73d9
-l
-<database/migrations/2021_10_04_124005_create_blogs_table.php,c/2/c2808373f83fd902884bc18444b74758370d97bd
 ^
 .app/Http/Controllers/DestinationController.php,7/f/7f196bc4c77d1b9655ce185645a857a6dbf1940a
 ƒ
@@ -41,8 +39,6 @@ C
 app/Models/Rule.php,3/b/3b88f470afe833c8fe26442fb744706815663b20
 C
 app/Models/User.php,a/9/a90f2e50cb06863b54effced365aa5f1fe7d9c88
-C
-app/Models/Blog.php,e/f/ef033270b3e2308a69681bec7cb34771193bab9a
 E
 app/Models/Slider.php,7/1/71bc4e6cad62c8b6e027ce7a7c76aecffa1e8ae8
 d
@@ -122,8 +118,6 @@ T
 $resources/views/pages/list.blade.php,8/c/8c983f05a8692826695e22883c1309702db2a928
 g
 7app/Repositories/Service/ServiceRepositoryInterface.php,5/4/543a18931ac1576b248c11e93286c949695e1786
-`
-0app/Repositories/Property/PropertyRepository.php,1/d/1d7bf4688d58f6fc873d6e24aff1ddb9c8a35be0
 c
 3app/Http/Controllers/Admin/RegulationController.php,6/d/6d23d4e4b2b4fc59a9877b496a53568a73571125
 F
@@ -144,8 +138,6 @@ d
 4database/migrations/2021_11_09_202425_regulation.php,a/d/ad816be604d23f2e9f9b3548c695200cc37a0d48
 m
 =database/migrations/2021_10_04_124055_create_villas_table.php,6/8/689ff0586b746728711a5a42986229d2fd69c0bc
-_
-/app/Http/Controllers/Admin/TenantController.php,c/8/c8913b1e78efd27e71fc8f654eff3236de3c3dd9
 E
 app/Models/Tenant.php,1/0/1055246f044f62f7a0853b16bfc5df393e6a44c9
 q
@@ -174,3 +166,21 @@ E
 app/Services/ICal.php,8/7/8797c9571bab9f34839fb0cfb138c0d3d2598362
 d
 4resources/views/rent/layouts/light/sidebar.blade.php,8/8/88bc8a6b9da513d09ac888144742cb81dbbb3f73
+S
+#app/Http/Controllers/Controller.php,2/e/2ed23e1749f02eb8e561f0a531d07863e7cf9fb9
+a
+1app/Http/Controllers/Rent/DashboardController.php,1/e/1e6b2d513056c20c6ce8088bd938fe0fc61dbf8a
+m
+=app/Repositories/Regulation/RegulationRepositoryInterface.php,1/1/1195d4c358cf56522ded09f0743383e1ac152fa5
+d
+4app/Repositories/Regulation/RegulationRepository.php,8/d/8d94300f5e065d42a211303909a26ae3882dea4d
+]
+-app/Http/Controllers/Rent/VillaController.php,7/4/747e77b8b4df087fad70c3a5ff326fd03458c1f8
+[
++resources/views/rent/villa/create.blade.php,a/a/aa4629a6dc5b547da7d616be7aa2efa6694f93c7
+f
+6app/Repositories/Rent/Blog/BlogRepositoryInterface.php,1/5/15497aa5f77631ee09ffab0bdbb6b34fe62f3233
+h
+8app/Repositories/Rent/RepositoryVillaServiceProvider.php,8/9/89d1cacacaa0343ffb0045115ccdc7924948fcc6
+e
+5app/Repositories/RepositoryBackendServiceProvider.php,d/f/dfd82e2ef946dc6573e17e7c5ca933dbfd640ddb

@@ -17,7 +17,7 @@
     <!-- Loader starts-->
     <div class="loader-wrapper">
       <div class="typewriter">
-        <h1>New Era Admin Loading..</h1>
+        <h1>Sunin Turkey Yükleniyor..</h1>
       </div>
     </div>
     <!-- Loader ends-->

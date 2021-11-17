@@ -8,7 +8,7 @@
               </ul>
           </li>
           <li>
-              <a class="bar-icons" href="#"><i class="pe-7s-note2"></i><span>Rezervasyon </span></a>
+              <a class="bar-icons" href="#"><i class="pe-7s-note2"></i><span>Kayıt </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Rezervasyonlar</li>
                   <li><a href="{{route('reservation/create')}}">Yeni Rezervasyon Ekle</a></li>
@@ -74,9 +74,9 @@
               <a class="bar-icons" href="#"><i class="pe-7s-server"></i><span>Ayarlar </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Ayarlar</li>
-                  <li><a href="">Döviz Kurları</a></li>
-                  <li><a href="">Ödeme Sistemi</a></li>
-                  <li><a href="">Sistem Varsayılanları</a></li>
+                  <li><a href="/asdsadasd">Döviz Kurları</a></li>
+                  <li><a href="/dsfsdf">Ödeme Sistemi</a></li>
+                  <li><a href="/fsdfsd">Sistem Varsayılanları</a></li>
                   <li><a href="/System/Schedules">Sistem Araçları</a></li>
                   <li><a href="/System/Documents">Dokümanlar</a></li>
               </ul>
@@ -97,6 +97,14 @@
                   <li class="iconbar-header">Villalar</li>
                   <li><a href="{{route('villa/create')}}">Villa Ekle</a></li>
                   <li><a href="{{route('villa')}}">Villa Listesi</a></li>
+              </ul>
+          </li>
+          <li>
+              <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>Blog </span></a>
+              <ul class="iconbar-mainmenu custom-scrollbar">
+                  <li class="iconbar-header">Bloglar</li>
+                  <li><a href="{{route('blog/create')}}">Blog Ekle</a></li>
+                  <li><a href="{{route('blog')}}">Blog Listesi</a></li>
               </ul>
           </li>
           <li>
