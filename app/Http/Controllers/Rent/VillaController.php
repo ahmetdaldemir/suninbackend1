@@ -73,7 +73,6 @@ class VillaController extends Controller
     public function edit(Request $request)
     {
         $data['category']  = $this->categoryRepository->all();
-        //return $this->villaRepository->get($request->id);
         return view('rent/villa/edit',$data);
     }
 

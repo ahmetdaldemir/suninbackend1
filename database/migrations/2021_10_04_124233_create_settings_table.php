@@ -23,7 +23,7 @@ class CreateSettingsTable extends Migration
             $table->string('chatscript')->nullable();
             $table->string('google_tag_manager')->nullable();
             $table->string('google_analytics')->nullable();
-            $table->string('languages')->nullable();
+            $table->json('languages')->nullable();
             $table->enum('payment_methods')->nullable();
             $table->uuid('tenant_id');
             $table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');

@@ -8,19 +8,20 @@ use Illuminate\Http\Request;
 
 class Upload
 {
-    public function __construct(Request $request)
-    {
-        $uploadedFile = $request->file('photos');
-        foreach ($uploadedFile as $item)
-        {
-            $filename = time() ."_". Str::of($item->getClientOriginalName())->slug('-');
-            Storage::disk('local')->putFileAs(
-                'files/' . $filename,
-                $item,
-                $filename
-            );
-            return $filename;
-        }
 
+    protected $uploadedFile;
+
+    public function __construct(object $request)
+    {
+        $this->uploadedFile = $request->file('photos');
+    }
+
+    public function upload($folder)
+    {
+
+        $ext =  $this->uploadedFile->getClientOriginalExtension();
+        $fileName = time().'_'. Str::slug($this->uploadedFile->getClientOriginalName()).".".$ext;
+        $this->uploadedFile->storeAs($folder, $fileName, 'public');
+        return $fileName;
     }
 }

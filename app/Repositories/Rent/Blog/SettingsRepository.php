@@ -1,11 +1,11 @@
-<?php namespace App\Repositories\Rent\Blog;
+<?php namespace App\Repositories\Rent\Settings;
 
-use App\Models\Blog;
+use App\Models\Setting;
 use App\Models\BlogLanguage;
 use App\Services\Upload;
 use Illuminate\Support\Str;
 
-class BlogRepository implements BlogRepositoryInterface
+class SettingsRepository implements SettingsRepositoryInterface
 {
     protected $session;
     public function __construct()
@@ -16,7 +16,7 @@ class BlogRepository implements BlogRepositoryInterface
     public function get($id)
     {
         $data = [];
-        $results = Blog::where('id',$id)->get();
+        $results = Setting::where('id',$id)->get();
         foreach ($results as $service) {
             $data[] = array(
                 'id' => $service->id,
@@ -31,7 +31,7 @@ class BlogRepository implements BlogRepositoryInterface
     {
         $session = session()->get('rent_session');
         $data = [];
-        $results = Blog::where('tenant_id', $session['tenant_id'])->get();
+        $results = Setting::where('tenant_id', $session['tenant_id'])->get();
         foreach ($results as $result) {
             $data[] = array(
                 'id' => $result->id,
@@ -43,7 +43,7 @@ class BlogRepository implements BlogRepositoryInterface
 
     public function delete($id)
     {
-        Blog::destroy($id);
+        Setting::destroy($id);
     }
 
     public function create(object $data)

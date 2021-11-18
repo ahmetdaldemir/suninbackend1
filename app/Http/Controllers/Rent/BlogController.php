@@ -2,7 +2,6 @@
 namespace App\Http\Controllers\Rent;
 
 use App\Http\Controllers\Controller;
-use App\Models\Blog;
 use App\Repositories\Language\LanguageRepositoryInterface;
 use App\Repositories\Rent\Blog\BlogRepositoryInterface;
 use Illuminate\Http\Request;
@@ -19,15 +18,21 @@ class BlogController extends Controller
         $this->languageRepository = $languageRepository;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $data['blog'] = $this->blogRepository->all();
+        $data['update'] = false;
+        if($request->id){
+            $data['blog'] = $this->blogRepository->get($request->id);
+            $data['update'] = true;
+        }
+        //dd($data['blog']);
+        $data['blogs'] = $this->blogRepository->all();
         $data['languages']  = $this->languageRepository->all();
         return view('rent/blog/index',$data);
     }
 
 
-    public function create(Request $request)
+    public function create()
     {
         $data['languages']  = $this->languageRepository->all();
         return view('rent/blog/create',$data);
@@ -36,14 +41,15 @@ class BlogController extends Controller
 
     public function edit(Request $request)
     {
-        $data['blog'] = $this->store($request->id);
+        $data['blogs'] = $this->blogRepository->all();
         $data['languages']  = $this->languageRepository->all();
-        return view('rent/blog/create',$data);
+        return view('rent/blog/index',$data);
     }
 
     public function store(Request $request)
     {
-        return response()->json($this->blogRepository->create($request),Response::HTTP_CREATED);
+        $this->blogRepository->create($request);
+        return redirect()->back();
     }
 
     public function show($id)
@@ -53,7 +59,7 @@ class BlogController extends Controller
 
     public function update(Request $request)
     {
-         response()->json($this->blogRepository->update($request),Response::HTTP_CREATED);
+         $this->blogRepository->update($request);
          return redirect()->back();
     }
 

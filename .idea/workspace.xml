@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c2808373f83fd902884bc18444b74758370d97bd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef033270b3e2308a69681bec7cb34771193bab9a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Blog/BlogRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Blog/BlogRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/layouts/light/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/layouts/light/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/layouts/light/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/layouts/light/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/blog/BlogRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/blog/BlogRepositoryInterface.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +290,8 @@
       <workItem from="1636956623954" duration="2456000" />
       <workItem from="1637137582558" duration="1581000" />
       <workItem from="1637167252089" duration="1517000" />
-      <workItem from="1637168944448" duration="622000" />
+      <workItem from="1637168944448" duration="697000" />
+      <workItem from="1637179338230" duration="68000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>

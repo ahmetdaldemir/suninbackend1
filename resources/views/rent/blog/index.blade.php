@@ -34,42 +34,57 @@
         <div class="col-12 col-sm-12 col-lg-8">
             <div class="card">
                 <div class="card-header">
-                    <h5>Blog Ekle</h5>
+                    <h5>{{!$update ? 'Blog Ekle':'Blog Düzenle'}}</h5>
                 </div>
                 <div class="card-body">
-                    <form method="GET">
+                    <form action="{{!$update ? route('blog/store'):route('blog/update')}}" method="POST" enctype="multipart/form-data">
+                        @if($update)
                         <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Blog Resmi</label>
-                                        <input class="form-control" type="file" required="required" multiple>
-                                    </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">Blog Resmi</label>
+                                    <img src="{{Storage::url('app/public/blog/' . $blog[0]['image'])}}" width="200"/>
+                                    <input name="image" type="hidden" value="{{$blog[0]['image']}}" />
                                 </div>
                             </div>
+                        </div>
+                        @endif
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">Blog Resmi</label>
+                                    <input class="form-control" type="file" name="photos">
+                                </div>
+                            </div>
+                        </div>
                         <ul class="nav nav-tabs nav-material" id="icon-tab" role="tablist">
                             <?php $i=0?>
-                            @foreach($languages as $lang)
+                            @foreach($languages as $key => $lang)
                                 <li class="nav-item"><a class="nav-link {{$i==0? 'active show':null}}" id="lang-{{$lang['code']}}" data-toggle="tab" href="#lang-{{$lang['id']}}" role="tab" aria-controls="icon-home" aria-selected="true"><i class="icofont icofont-ui-home"></i>{{$lang['title'].' ('.$lang['code'].')'}}</a><div class="material-border"></div></li>
                                 <?php $i++?>
                             @endforeach
                         </ul>
                         <div class="tab-content" id="icon-tabContent">
                             <?php $i=0?>
-                            @foreach($languages as $lang)
+                            @foreach($languages as $key => $lang)
                                 <div class="tab-pane fade {{$i==0? 'active show':null}}" id="lang-{{$lang['id']}}" role="tabpanel" aria-labelledby="lang-{{$lang['code']}}">
                                     <div class="form-group">
                                         <label class="control-label">Blog Başlık ({{$lang['code']}})</label>
-                                        <input name="title[{{$lang['id']}}]" class="form-control" type="text" placeholder="Blog Başlık" required="required">
+                                        <input name="title[{{$lang['id']}}]" class="form-control" type="text" value="{{@$blog[0]['lang'][$key]['title']}}" placeholder="Blog Başlık" required="required">
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">Açıklama ({{$lang['code']}})</label>
-                                        <textarea name="description[{{$lang['id']}}]" class="form-control editor" id="desc_{{$lang['code']}}">{{$lang['code']}}</textarea>
+                                        <textarea name="description[{{$lang['id']}}]" class="form-control editor" id="desc_{{$lang['code']}}">{{@$blog[0]['lang'][$key]['description']}}</textarea>
                                     </div>
                                 </div>
                                 <?php $i++?>
                             @endforeach
+                            @csrf
+                            @if($update)
+                                <input name="blog_id" type="hidden" value="{{$blog[0]['id']}}" />
+                            @endif
                         </div>
-                        <button class="btn btn-primary nextBtn pull-right" type="submit">Kaydet</button>
+                        <button class="btn btn-primary nextBtn pull-right" type="submit">{{!$update ? 'Kaydet':'Güncelle'}}</button>
                     </form>
                 </div>
             </div>
@@ -88,13 +103,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @if($blog)
-                            @foreach($blog as $result)
+                        @if($blogs)
+                            @foreach($blogs as $result)
                             <tr>
-                                <td>{{$result['title']}}</td>
+                                <td>{{@$result['lang'][0]->title}}</td>
                                 <td>
-                                    <a href="{{'blog/edit'.'/'.$result['id']}}" class="btn btn-shadow-primary">Düzenle</a>
-                                    <a class="btn btn-shadow-warning delete" data-id="{{$result['id']}}">Sil</a>
+                                    <a href="{{'/blog'.'/'.$result['id']}}" class="btn btn-shadow-primary">Düzenle</a>
+                                    <a href="{{'/blog/delete/'.$result['id']}}" class="btn btn-shadow-warning delete" data-id="{{$result['id']}}">Sil</a>
                                 </td>
                             </tr>
                             @endforeach
