@@ -74,6 +74,7 @@
               <a class="bar-icons" href="#"><i class="pe-7s-server"></i><span>Ayarlar </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Ayarlar</li>
+                  <li><a href="{{route('settings')}}">Ayarlar</a></li>
                   <li><a href="/asdsadasd">Döviz Kurları</a></li>
                   <li><a href="/dsfsdf">Ödeme Sistemi</a></li>
                   <li><a href="/fsdfsd">Sistem Varsayılanları</a></li>

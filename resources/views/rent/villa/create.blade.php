@@ -51,42 +51,58 @@
                             <div class="col-xs-12">
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">Kategori</label>
-                                                <select class="form-control digits" id="exampleFormControlSelect9">
+                                                <select name="categories" class="form-control digits" id="exampleFormControlSelect9">
                                                     @foreach($categories as $category)
                                                     <option value="{{$category['id']}}">{{$category['lang'][0]->title}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">Villa Sahibi</label>
-                                                <select class="form-control digits" id="exampleFormControlSelect9">
+                                                <select name="owner_id" class="form-control digits" id="exampleFormControlSelect9">
                                                     <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Type</label>
+                                                <select name="type" class="form-control digits" id="exampleFormControlSelect9">
+                                                    <option value="VILLA">VILLA</option>
+                                                    <option value="APART">APART</option>
+                                                    <option value="HOME">HOME</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Kapasite(kişi)</label>
+                                                <input name="capacity" class="form-control" type="number" placeholder="Kapasite(kişi)" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label">Yatak Odası Sayısı</label>
-                                                <input class="form-control" type="number" placeholder="Yatak Odası Sayısı" required="required">
+                                                <input name="bedrooms" class="form-control" type="number" placeholder="Yatak Odası Sayısı" required="required">
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label">Banyo Sayısı</label>
-                                                <input class="form-control" type="number" placeholder="Banyo Sayısı" required="required">
+                                                <input name="bathrooms" class="form-control" type="number" placeholder="Banyo Sayısı" required="required">
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label">Havuz Tipi</label>
-                                                <select name="pool_type" class="form-control digits" id="">
+                                                <select name="pool" class="form-control digits" id="">
                                                     <option value="NO_POOL">NO_POOL</option>
                                                     <option value="PRIVATE">PRIVATE</option>
                                                     <option value="KIDS_POOL">KIDS_POOL</option>
@@ -129,7 +145,7 @@
                                         <h4>Adres / Özellik Bilgileri</h4>
                                         <div class="form-group">
                                             <label class="control-label">Bölge</label>
-                                            <select class="form-control digits" id="exampleFormControlSelect9">
+                                            <select name="destination_id" class="form-control digits" id="exampleFormControlSelect9">
                                                 @foreach($destinations as $destination)
                                                     <option value="{{$destination['id']}}">{{$destination['title']}}</option>
                                                 @endforeach
@@ -141,13 +157,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Adres</label>
-                                            <input class="form-control" type="text" placeholder="Adres" required="required">
+                                            <input name="address" class="form-control" type="text" placeholder="Adres" required="required">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Harita Linki</label>
-                                            <input class="form-control" type="text" placeholder="Harita Linki" required="required">
+                                            <input name="map" class="form-control" type="text" placeholder="Harita Linki" required="required">
                                         </div>
                                     </div>
                                 </div>
@@ -155,25 +171,43 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="control-label">Merkeze Uzaklık</label>
-                                            <input class="form-control" type="text" placeholder="Merkeze Uzaklık" required="required">
+                                            <input name="central_distance" class="form-control" type="text" placeholder="Merkeze Uzaklık" required="required">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="control-label">Restaurantlara Uzaklık</label>
-                                            <input class="form-control" type="text" placeholder="Restaurantlara Uzaklık" required="required">
+                                            <input name="restaurant_distance" class="form-control" type="text" placeholder="Restaurantlara Uzaklık" required="required">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="control-label">Plaja Uzaklık</label>
-                                            <input class="form-control" type="text" placeholder="Plaja Uzaklık" required="required">
+                                            <input name="plaj_distance" class="form-control" type="text" placeholder="Plaja Uzaklık" required="required">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="control-label">Hastaneye Uzaklık</label>
-                                            <input class="form-control" type="text" placeholder="Hastaneye Uzaklık" required="required">
+                                            <input name="hospital_distance" class="form-control" type="text" placeholder="Hastaneye Uzaklık" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Marketlere Uzaklık</label>
+                                            <input name="market_distance" class="form-control" type="text" placeholder="Marketlere Uzaklık" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Otobüs Duraklarına Uzaklık</label>
+                                            <input name="bus_station_distance" class="form-control" type="text" placeholder="Otobüs Duraklarına Uzaklık" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Havaalanına Uzaklık</label>
+                                            <input name="airport_distance" class="form-control" type="text" placeholder="Havaalanına Uzaklık" required="required">
                                         </div>
                                     </div>
                                 </div>
@@ -183,7 +217,7 @@
                                         <div class="row checkbox checkbox-solid-success">
                                             @foreach($properties as $property)
                                             <div class="col-4 col-md-3 col-sm-6">
-                                                <input id="atribute-{{$property['id']}}" type="checkbox" value="{{$property['id']}}">
+                                                <input name="properties[]" id="atribute-{{$property['id']}}" type="checkbox" value="{{$property['id']}}">
                                                 <label for="atribute-{{$property['id']}}">{{$property['lang'][0]->title}}</label>
                                             </div>
                                             @endforeach
@@ -196,7 +230,7 @@
                                         <div class="row checkbox checkbox-solid-success">
                                             @foreach($services as $service)
                                                 <div class="col-4 col-md-3 col-sm-6">
-                                                    <input id="service-{{$service['id']}}" type="checkbox" value="{{$service['id']}}">
+                                                    <input name="services[]" id="service-{{$service['id']}}" type="checkbox" value="{{$service['id']}}">
                                                     <label for="service-{{$service['id']}}">{{@json_decode($service['lang'],TRUE)[0]['title']}}</label>
                                                 </div>
                                             @endforeach
@@ -210,7 +244,7 @@
                                             @foreach($regulations as $regulation)
                                                 <?php //dd(json_decode($regulation['lang'],TRUE)[0]['title']);?>
                                              <div class="col-4 col-md-3 col-sm-6">
-                                                <input id="rules-{{$regulation['id']}}" type="checkbox" value="{{$regulation['id']}}">
+                                                <input name="regulation[]" id="rules-{{$regulation['id']}}" type="checkbox" value="{{$regulation['id']}}">
                                                 <label for="rules-{{$regulation['id']}}">{{@json_decode($regulation['lang'],TRUE)[0]['title']}}</label>
                                             </div>
                                             @endforeach
@@ -225,17 +259,18 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="control-label">Resimler</label>
-                                        <input class="form-control" type="file" required="required" multiple>
+                                        <input class="form-control" type="file" multiple>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">Videolar</label>
-                                        <input class="form-control" type="file" required="required" multiple>
+                                        <input class="form-control" type="file" multiple>
                                     </div>
                                     <button class="btn btn-primary nextBtn pull-right" type="button">İleri</button>
                                 </div>
                             </div>
                         </div>
                         <div class="setup-content" id="step-4">
+                            @csrf
                             <div class="col-xs-12">
                                 <div class="col-md-12">
                                     <button class="btn btn-success pull-right" type="submit">Kaydı Tamamla!</button>
@@ -266,7 +301,6 @@
     <script src="{{asset('rent/js/counter/counter-custom.js')}}"></script>
     <script src="{{asset('rent/js/custom-card/custom-card.js')}}"></script>
     <script src="{{asset('rent/js/notify/bootstrap-notify.min.js')}}"></script>
-    <script src="{{asset('rent/js/dashboard/default.js')}}"></script>
     <script src="{{asset('rent/js/notify/index.js')}}"></script>
     <script src="{{asset('rent/js/datepicker/date-picker/datepicker.js')}}"></script>
     <script src="{{asset('rent/js/datepicker/date-picker/datepicker.en.js')}}"></script>

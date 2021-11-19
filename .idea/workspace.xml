@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/blog/BlogRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/blog/BlogRepositoryInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/SettingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Settings/SettingsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Settings/SettingsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/layouts/light/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/layouts/light/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/settings/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/settings/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,6 +297,10 @@
       <workItem from="1637167252089" duration="1517000" />
       <workItem from="1637168944448" duration="697000" />
       <workItem from="1637179338230" duration="68000" />
+      <workItem from="1637252069507" duration="749000" />
+      <workItem from="1637252847831" duration="19000" />
+      <workItem from="1637257323634" duration="62000" />
+      <workItem from="1637261147570" duration="685000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>

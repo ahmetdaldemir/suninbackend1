@@ -67,7 +67,7 @@ class VillaController extends Controller
     public function store(Request $request)
     {
         return $this->villaRepository->create($request);
-        //redirect()->back();
+        redirect()->back();
     }
 
     public function edit(Request $request)

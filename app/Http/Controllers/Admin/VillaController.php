@@ -38,7 +38,6 @@ class VillaController extends Controller
      */
     public function store(Request $request)
     {
-
         $filenames = [];
 
         $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];

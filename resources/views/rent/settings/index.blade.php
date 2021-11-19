@@ -26,20 +26,30 @@
                     <h5>Ayarlar</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('settings/store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('settings/update')}}" method="POST" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="control-label">Logo</label>
-                                    <input class="form-control" type="file" name="photos">
+                                    <input class="form-control" type="file" name="logo_file">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <img src="{{Storage::url('app/public/blog/' . @$settings['logo'])}}" width="100%"/>
+                                    <input name="logo_image" type="hidden" value="{{@$settings['logo']}}" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="control-label">Favicon</label>
-                                    <input class="form-control" type="file" name="favicon">
+                                    <input class="form-control" type="file" name="favicon_file">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <img src="{{Storage::url('app/public/blog/' . @$settings['favicon'])}}" width="100%"/>
+                                    <input name="favicon_image" type="hidden" value="{{@$settings['favicon']}}" />
                                 </div>
                             </div>
                         </div>
@@ -47,7 +57,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">Telefon</label>
-                                    <input class="form-control" type="text" name="phone">
+                                    <input class="form-control" type="text" name="phone" value="{{@$settings['phone']}}">
                                 </div>
                             </div>
                         </div>
@@ -55,7 +65,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">whatsapp</label>
-                                    <input class="form-control" type="text" name="whatsapp">
+                                    <input class="form-control" type="text" name="whatsapp" value="{{@$settings['whatsapp']}}">
                                 </div>
                             </div>
                         </div>
@@ -63,7 +73,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">email</label>
-                                    <input class="form-control" type="text" name="email">
+                                    <input class="form-control" type="text" name="email" value="{{@$settings['email']}}">
                                 </div>
                             </div>
                         </div>
@@ -71,7 +81,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">chatscript</label>
-                                    <input class="form-control" type="text" name="chatscript">
+                                    <input class="form-control" type="text" name="chatscript" value="{{@$settings['chatscript']}}">
                                 </div>
                             </div>
                         </div>
@@ -79,7 +89,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">Google Etiket Yönetimi</label>
-                                    <input class="form-control" type="text" name="google_tag_manager">
+                                    <input class="form-control" type="text" name="google_tag_manager" value="{{@$settings['google_tag_manager']}}">
                                 </div>
                             </div>
                         </div>
@@ -87,21 +97,25 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">Google Analytics</label>
-                                    <input class="form-control" type="text" name="google_analytics">
+                                    <input class="form-control" type="text" name="google_analytics" value="{{@$settings['google_analytics']}}">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">Diller (Default)</label>
-                                    <select class="form-control" name="languages">
-                                        @foreach($languages as $lang)
-                                        <option value="{{$lang['id']}}">{{$lang['code']}}</option>
-                                        @endforeach
-                                    </select>
+                                <label class="control-label">Aktif Diller</label>
+                                <div class="form-group m-checkbox-inline mb-0">
+                                    <?php $select = json_decode($settings['languages']);?>
+                                    @foreach($languages as $key => $lang)
+                                    <div class="checkbox checkbox-dark">
+                                        <input name="language[]" value="{{$lang['id']}}" id="inline-{{$key}}" type="checkbox"{{@$select[$key]==$lang['id'] ? ' checked':null}}>
+                                        <label for="inline-{{$key}}">{{$lang['code']}}</label>
+                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
+                            @csrf
+                            <input type="hidden" name="id" value="{{$settings->id}}">
                         </div>
                         <button class="btn btn-primary nextBtn pull-right" type="submit">Güncelle</button>
                     </form>

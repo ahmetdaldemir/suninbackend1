@@ -20,9 +20,8 @@ class SettingsController extends Controller
 
     public function index()
     {
-        $session = session()->get('rent_session');
         $data['settings'] = $this->settingsRepository->get();
-        $data['settings'] = $this->languageRepository->get();
+        $data['languages'] = $this->languageRepository->all();
         return view('rent/settings/index',$data);
     }
 

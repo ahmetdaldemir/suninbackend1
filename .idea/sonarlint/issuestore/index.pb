@@ -184,3 +184,17 @@ h
 8app/Repositories/Rent/RepositoryVillaServiceProvider.php,8/9/89d1cacacaa0343ffb0045115ccdc7924948fcc6
 e
 5app/Repositories/RepositoryBackendServiceProvider.php,d/f/dfd82e2ef946dc6573e17e7c5ca933dbfd640ddb
+\
+,app/Http/Controllers/Rent/BlogController.php,1/d/1d418ef7f913b1b395206351d928e1d4d5f05755
+_
+/app/Http/Controllers/Admin/TenantController.php,c/8/c8913b1e78efd27e71fc8f654eff3236de3c3dd9
+a
+1app/Http/Controllers/Admin/PropertyController.php,1/7/17f2284735916e3ff630d17dd5a1513e3a6b5a41
+C
+app/Models/Blog.php,e/f/ef033270b3e2308a69681bec7cb34771193bab9a
+l
+<database/migrations/2021_10_04_124005_create_blogs_table.php,c/2/c2808373f83fd902884bc18444b74758370d97bd
+`
+0app/Repositories/Property/PropertyRepository.php,1/d/1d7bf4688d58f6fc873d6e24aff1ddb9c8a35be0
+]
+-app/Repositories/Rent/Blog/BlogRepository.php,d/e/de9e9b198d893735389c6b71ac9b2b7e1d5f0271
