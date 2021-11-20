@@ -27,7 +27,9 @@ class CreatePropertiesTable extends Migration
             $table->uuid('lang_id');
             $table->foreign('lang_id')->references('id')->on('language')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('property_id')->references('id')->on('properties')->onUpdate('cascade')->onDelete('cascade');
-         });
+            $table->softDeletes();
+
+        });
     }
 
     /**

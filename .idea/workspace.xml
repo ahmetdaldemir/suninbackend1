@@ -2,26 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Rent/Tenant/TenantRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/BaseModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/BlogController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Currency.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Currency.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Destination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ICal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ICal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Landlord.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Landlord.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Language.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/MyCalender.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MyCalender.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PaymentMethod.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PaymentMethod.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/PoolType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PoolType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Pos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Property.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Property.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Regulation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Regulation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Rule.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Rule.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Slider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Tenant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tenant.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Villa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Villa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Blog/SettingsRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Blog/SettingsRepositoryInterface.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RepositoryVillaServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RepositoryVillaServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/BlogRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/BlogRepositoryInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/CategoryRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/CategoryRepositoryInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Tenant/TenantRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/RepositoryBackendServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/RepositoryBackendServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Settings/BlogRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Settings/BlogRepositoryInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/settings/SettingsRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/settings/SettingsRepositoryInterface.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/ICal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ICal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_15_000010_create_tenants_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_15_000010_create_tenants_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_15_000020_create_domains_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_15_000020_create_domains_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_123649_create_properties_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_123649_create_properties_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_123724_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_123724_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_123948_create_rules_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_123948_create_rules_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_124005_create_blogs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_124005_create_blogs_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_124055_create_villas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_124055_create_villas_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_124216_create_languages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_124216_create_languages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_124224_create_sliders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_124224_create_sliders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_202306_create_currencies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_202306_create_currencies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_11_172137_flags.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_11_172137_flags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_09_172255_service.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_09_172255_service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_09_202425_regulation.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_09_202425_regulation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/layouts/light/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/layouts/light/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/user/agents.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/user/agents.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/spatie/laravel-activitylog/src/Traits/LogsActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/spatie/laravel-activitylog/src/Traits/LogsActivity.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,11 +261,13 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories/Rent" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Repositories/Rent" />
       <recent name="$PROJECT_DIR$/app/Repositories/Rent/Category" />
       <recent name="$PROJECT_DIR$/resources/views/admin" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
@@ -315,7 +353,7 @@
       <workItem from="1637257323634" duration="62000" />
       <workItem from="1637261147570" duration="1074000" />
       <workItem from="1637349236450" duration="610000" />
-      <workItem from="1637391493841" duration="4934000" />
+      <workItem from="1637391493841" duration="14835000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>
@@ -390,10 +428,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="693" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1637395459133">
+    <state x="749" y="197" width="412" height="645" key="#com.intellij.ide.util.MemberChooser" timestamp="1637407733589">
       <screen x="0" y="24" width="1920" height="1008" />
     </state>
-    <state x="693" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1637395459133" />
+    <state x="749" y="197" width="412" height="645" key="#com.intellij.ide.util.MemberChooser/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1637407733589" />
+    <state x="667" y="54" width="566" height="937" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1637399055912">
+      <screen x="0" y="24" width="1920" height="1008" />
+    </state>
+    <state x="667" y="54" width="566" height="937" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1637399055912" />
+    <state x="693" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1637408136839">
+      <screen x="0" y="24" width="1920" height="1008" />
+    </state>
+    <state x="693" y="274" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1637408136839" />
+    <state x="187" y="98" width="1536" height="843" key="MergeDialog" timestamp="1637401683373">
+      <screen x="0" y="24" width="1920" height="1008" />
+    </state>
+    <state x="187" y="98" width="1536" height="843" key="MergeDialog/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1637401683373" />
+    <state x="1187" y="227" width="681" height="568" key="NewPhpClassDialog" timestamp="1637406971208">
+      <screen x="0" y="24" width="1920" height="1008" />
+    </state>
+    <state x="1187" y="227" width="681" height="568" key="NewPhpClassDialog/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1637406971208" />
+    <state x="675" y="298" width="736" height="580" key="find.popup" timestamp="1637407601930">
+      <screen x="0" y="24" width="1920" height="1008" />
+    </state>
+    <state x="675" y="298" width="736" height="580" key="find.popup/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1637407601930" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -412,6 +470,11 @@
           <url>file://$PROJECT_DIR$/vendor/spatie/icalendar-generator/src/Components/Calendar.php</url>
           <line>16</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Repositories/Rent/User/UserRepository.php</url>
+          <line>2</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -35,6 +35,8 @@ class CreateSlidersTable extends Migration
             $table->foreign('slider_id')->references('id')->on('sliders')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('language_id');
             $table->foreign('language_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
     }
 

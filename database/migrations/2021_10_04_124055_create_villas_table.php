@@ -65,6 +65,8 @@ class CreateVillasTable extends Migration
             $table->uuid('lang_id');
             $table->foreign('lang_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
 
         Schema::create('villa_contract', function (Blueprint $table) {
@@ -81,6 +83,8 @@ class CreateVillasTable extends Migration
             $table->uuid('villa_id');
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('currency_id')->references('id')->on('currencies')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
 
 
@@ -89,6 +93,8 @@ class CreateVillasTable extends Migration
             $table->string('image');
             $table->uuid('villa_id');
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
 
         Schema::create('villa_categories', function (Blueprint $table) {
@@ -97,6 +103,8 @@ class CreateVillasTable extends Migration
             $table->uuid('villa_id');
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
 
         Schema::create('villa_properties', function (Blueprint $table) {
@@ -105,6 +113,8 @@ class CreateVillasTable extends Migration
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('property_id');
             $table->foreign('property_id')->references('id')->on('properties')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
 
         Schema::create('villa_services', function (Blueprint $table) {
@@ -113,6 +123,8 @@ class CreateVillasTable extends Migration
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('service_id');
             $table->foreign('service_id')->references('id')->on('services')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
 
 
@@ -122,6 +134,8 @@ class CreateVillasTable extends Migration
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('regulation_id');
             $table->foreign('regulation_id')->references('id')->on('regulations')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
 
     }

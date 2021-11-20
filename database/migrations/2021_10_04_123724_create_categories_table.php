@@ -27,7 +27,9 @@ class CreateCategoriesTable extends Migration
             $table->uuid('category_id');
             $table->foreign('lang_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
-          });
+            $table->softDeletes();
+
+        });
     }
 
     /**

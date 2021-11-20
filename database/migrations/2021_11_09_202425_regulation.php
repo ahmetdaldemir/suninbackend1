@@ -27,6 +27,8 @@ class Regulation extends Migration
             $table->foreign('regulation_id')->references('id')->on('regulations')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('lang_id');
             $table->foreign('lang_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
     }
 

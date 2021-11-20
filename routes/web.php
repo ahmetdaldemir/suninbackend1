@@ -55,10 +55,10 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::post('rols/store', 'App\Http\Controllers\Rent\RolsController@store')->name('rols/store');
     Route::post('rols/update', 'App\Http\Controllers\Rent\RolsController@update')->name('rols/update');
     /**Mesajlar**/
-    Route::get('messages', 'App\Http\Controllers\Rent\MessagesController@index')->name('messages');
-    Route::get('messages/{id}', 'App\Http\Controllers\Rent\MessagesController@index')->name('messagesuserUpdate');
-    Route::post('messages/store', 'App\Http\Controllers\Rent\MessagesController@store')->name('messages/store');
-    Route::post('messages/update', 'App\Http\Controllers\Rent\MessagesController@update')->name('messages/update');
+    Route::get('messages', 'App\Http\Controllers\Rent\MessageController@index')->name('messages');
+    Route::get('messages/{id}', 'App\Http\Controllers\Rent\MessageController@index')->name('messagesuserUpdate');
+    Route::post('messages/store', 'App\Http\Controllers\Rent\MessageController@store')->name('messages/store');
+    Route::post('messages/update', 'App\Http\Controllers\Rent\MessageController@update')->name('messages/update');
     /**Kontratlar**/
     Route::get('contracts', 'App\Http\Controllers\Rent\ContractsController@index')->name('contracts');
     Route::get('contracts/{id}', 'App\Http\Controllers\Rent\ContractsController@index')->name('contractsUpdate');

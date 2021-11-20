@@ -27,6 +27,8 @@ class Service extends Migration
             $table->foreign('service_id')->references('id')->on('services')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('lang_id');
             $table->foreign('lang_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
     }
 

@@ -2,14 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-
-class Property extends Model
+class Property extends BaseModel
 {
-    use HasFactory,SoftDeletes;
-    public $incrementing = false;
 
     public function property_language()
     {
@@ -22,10 +16,7 @@ class Property extends Model
     }
 }
 
-class PropertyLanguage extends Model
+class PropertyLanguage extends BaseModel
 {
-    use HasFactory;
-    public $incrementing = false;
     public $timestamps = false;
-
 }

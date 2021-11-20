@@ -18,10 +18,10 @@ class CreateTenantsTable extends Migration
         Schema::create('tenants', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('type')->default(\App\Enums\BusinessType::Rent);
-
             // your custom columns may go here
             $table->timestamps();
             $table->json('data')->nullable();
+            $table->softDeletes();
         });
     }
 

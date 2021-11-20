@@ -1,7 +1,10 @@
-<?php namespace App\Repositories\Rent\Settings;
+<?php
 
-interface SettingRepositoryInterface
+namespace App\Repositories\Rent\Message;
+
+interface MessageRepositoryInterface
 {
+
     public function get($id);
 
     public function all();

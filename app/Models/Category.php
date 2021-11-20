@@ -1,19 +1,7 @@
-<?php
+<?php namespace App\Models;
 
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Jamesh\Uuid\HasUuid;
-use Spatie\Permission\Traits\HasRoles;
-
-class Category extends Model
+class Category extends BaseModel
 {
-    use HasFactory,SoftDeletes;
-    public $incrementing = false;
-
-
     public function get_data()
     {
         return CategoryLanguage::where('category_id',$this->id)->get();
@@ -21,10 +9,8 @@ class Category extends Model
 }
 
 
-class CategoryLanguage extends Model
+class CategoryLanguage extends BaseModel
 {
-    use HasFactory;
-    public $incrementing = false;
     public $timestamps = false;
 
 }

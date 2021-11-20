@@ -3,8 +3,14 @@
       <ul class="iconMenu-bar custom-scrollbar">
           <li>
               <a class="bar-icons" href="/"><i class="pe-7s-home"></i><span>Yönetim </span></a>
+          </li>
+          <li>
+              <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>Villa </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
-                  <li class="iconbar-header">Yönetim</li>
+                  <li class="iconbar-header">Villalar</li>
+                  <li><a href="{{route('villa/create')}}">Villa Ekle</a></li>
+                  <li><a href="{{route('villa')}}">Villa Listesi</a></li>
+                  <li><a href="{{route('contracts')}}">Kontratlar</a></li>
               </ul>
           </li>
           <li>
@@ -34,13 +40,9 @@
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Yönetim</li>
                   <li><a href="{{route('crypto')}}">Genel</a></li>
-                  <li><a href="{{route('crypto')}}">Firma İncele</a></li>
                   <li><a href="{{route('crypto')}}">Bakiyeler</a></li>
-                  <li><a href="{{route('crypto')}}">Münferit Yolcular</a></li>
                   <li><a href="{{route('crypto')}}">Faturalar</a></li>
-                  <li><a href="{{route('crypto')}}">Bakiyeler</a></li>
                   <li><a href="{{route('crypto')}}">Giriş Kontrolü</a></li>
-                  <li><a href="{{route('crypto')}}">Bakiyeler</a></li>
                   <li><a href="{{route('crypto')}}">Ödeme Takip Listesi</a></li>
                   <li><a href="{{route('crypto')}}">Kasa Takip Listesi</a></li>
                   <li><a href="{{route('crypto')}}">Firma Ayarları</a></li>
@@ -48,76 +50,45 @@
               </ul>
           </li>
           <li>
-              <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>CRM </span></a>
+              <a class="bar-icons" href="#"><i class="pe-7s-id"></i><span>Kullanıcı </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
-                  <li class="iconbar-header">Müşteri İlişkileri</li>
-                  <li><a href="{{route('crypto')}}">Ayarlar ve Tanımlamalar</a></li>
-                  <li><a href="{{route('crypto')}}">Kupon Kodları</a></li>
-                  <li><a href="{{route('crypto')}}">İndirimler &amp; Kampanyalar</a></li>
-                  <li><a href="{{route('crypto')}}">Müşteriler</a></li>
-                  <li><a href="{{route('crypto')}}">Yorum Sistemi</a></li>
+                  <li class="iconbar-header">Kullanıcılar & Mesajlar</li>
+                  <li><a href="{{route('users')}}">Kullanıcılar</a></li>
+                  <li><a href="{{route('rols')}}">Roller</a></li>
               </ul>
           </li>
           <li>
               <a class="bar-icons" href="#"><i class="pe-7s-id"></i><span>Mesajlar </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
-                  <li class="iconbar-header">Kullanıcılar & Mesajlar</li>
-                  <li><a href="{{route('agents')}}">Acentalar</a></li>
-                  <li><a href="{{route('branches')}}">Şubeler</a></li>
-                  <li><a href="{{route('users')}}">Kullanıcılar</a></li>
-                  <li><a href="{{route('rols')}}">Roller</a></li>
+                  <li class="iconbar-header">Mesajlar</li>
                   <li><a href="{{route('messages')}}">Mesajlar</a></li>
-                  <li><a href="{{route('contracts')}}">Komisyon Oranları</a></li>
-              </ul>
-          </li>
-          <li>
-              <a class="bar-icons" href="#"><i class="pe-7s-server"></i><span>Ayarlar </span></a>
-              <ul class="iconbar-mainmenu custom-scrollbar">
-                  <li class="iconbar-header">Ayarlar</li>
-                  <li><a href="{{route('settings')}}">Ayarlar</a></li>
-                  <li><a href="/asdsadasd">Döviz Kurları</a></li>
-                  <li><a href="/dsfsdf">Ödeme Sistemi</a></li>
-                  <li><a href="/fsdfsd">Sistem Varsayılanları</a></li>
-                  <li><a href="/System/Schedules">Sistem Araçları</a></li>
-                  <li><a href="/System/Documents">Dokümanlar</a></li>
-              </ul>
-          </li>
-          <li>
-              <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>Tanımlar  </span></a>
-              <ul class="iconbar-mainmenu custom-scrollbar">
-                  <li class="iconbar-header">Tanımlamalar</li>
-                  <li><a href="/Contracts/Villa/SupplementDefs?fd=1">Villa Tanımları</a></li>
-                  <li><a href="/System/Countries">Bölgeler ve Havaalanları</a></li>
-                  <li><a href="/System/ParameterGroups">Parametre Grupları</a></li>
-                  <li><a href="/System/Currencies">Kurlar</a></li>
-              </ul>
-          </li>
-          <li>
-              <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>Villa </span></a>
-              <ul class="iconbar-mainmenu custom-scrollbar">
-                  <li class="iconbar-header">Villalar</li>
-                  <li><a href="{{route('villa/create')}}">Villa Ekle</a></li>
-                  <li><a href="{{route('villa')}}">Villa Listesi</a></li>
               </ul>
           </li>
           <li>
               <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>Blog </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Bloglar</li>
-                  <li><a href="{{route('blog/create')}}">Blog Ekle</a></li>
                   <li><a href="{{route('blog')}}">Blog Listesi</a></li>
               </ul>
           </li>
           <li>
-              <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>Takvim </span></a>
+              <a class="bar-icons" href="#"><i class="pe-7s-home"></i><span>CRM </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
-                  <li class="iconbar-header">Takvim Senkronizasyon</li>
-              </ul>
-          </li>
-          <li>
-              <a class="bar-icons" href="#"><i class="pe-7s-edit"></i><span>Linkler </span></a>
-              <ul class="iconbar-mainmenu custom-scrollbar">
-                  <li class="iconbar-header">Diğer Linkler</li>
+                  <li class="iconbar-header">Müşteri İlişkileri</li>
+                  <li><a href="{{route('crypto')}}">Kupon Kodları</a></li>
+                  <li><a href="{{route('crypto')}}">İndirimler &amp; Kampanyalar</a></li>
+                  <li><a href="{{route('crypto')}}">Müşteriler</a></li>
+                  <li><a href="{{route('crypto')}}">Yorum Sistemi</a></li>
+                  <li><a href="{{route('settings')}}">Ayarlar</a></li>
+                  <li><a href="/asdsadasd">Döviz Kurları</a></li>
+                  <li><a href="/dsfsdf">Ödeme Sistemi</a></li>
+                  <li><a href="/fsdfsd">Sistem Varsayılanları</a></li>
+                  <li><a href="/System/Schedules">Sistem Araçları</a></li>
+                  <li><a href="/System/Documents">Dokümanlar</a></li>
+                  <li><a href="/Contracts/Villa/SupplementDefs?fd=1">Villa Tanımları</a></li>
+                  <li><a href="/System/Countries">Bölgeler</a></li>
+                  <li><a href="/System/Countries">Havaalanları</a></li>
+                  <li><a href="/System/ParameterGroups">Parametre Grupları</a></li>
               </ul>
           </li>
       </ul>

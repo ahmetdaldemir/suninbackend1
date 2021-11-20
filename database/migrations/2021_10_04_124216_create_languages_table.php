@@ -30,6 +30,8 @@ class CreateLanguagesTable extends Migration
             $table->uuid('tenant_id');
             $table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('status')->default(false);
+            $table->softDeletes();
+
             $table->timestamps();
         });
     }

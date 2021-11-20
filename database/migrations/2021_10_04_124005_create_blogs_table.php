@@ -32,12 +32,16 @@ class CreateBlogsTable extends Migration
             $table->foreign('language_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('blog_id');
             $table->foreign('blog_id')->references('id')->on('blogs')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
         Schema::create('blog_images', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('image');
             $table->uuid('blog_id');
             $table->foreign('blog_id')->references('id')->on('blogs')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+
         });
     }
 

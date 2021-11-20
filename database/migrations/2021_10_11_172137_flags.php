@@ -17,6 +17,8 @@ class Flags extends Migration
             $table->id();
             $table->string('title');
             $table->string('path');
+            $table->softDeletes();
+
             $table->timestamps();
         });
     }

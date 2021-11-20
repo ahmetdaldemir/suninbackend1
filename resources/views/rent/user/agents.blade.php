@@ -26,7 +26,7 @@
                         <h5>{{!$update ? 'Acenta Ekle':'Acenta Düzenle'}}</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{!$update ? route('agent/store'):route('agent/update')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{!$update ? route('agents/store'):route('agents/update')}}" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">

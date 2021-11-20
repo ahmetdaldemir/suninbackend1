@@ -2,13 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-
-class Villa extends Model
+class Villa extends BaseModel
 {
-    use HasFactory,SoftDeletes;
 
     public function get_data()
     {
@@ -32,45 +27,33 @@ class Villa extends Model
     }
 }
 
-class VillaProperty extends Model
+class VillaProperty extends BaseModel
 {
-    use HasFactory;
     public $timestamps = false;
-
 }
 
 
-class VillaCategory extends Model
+class VillaCategory extends BaseModel
 {
-    use HasFactory;
     public $timestamps = false;
-
 }
 
-class VillaLanguage extends Model
+class VillaLanguage extends BaseModel
 {
-    use HasFactory;
     public $timestamps = false;
-
 }
 
-class VillaImage extends Model
+class VillaImage extends BaseModel
 {
-    use HasFactory;
     public $timestamps = false;
-
 }
 
-class VillaService extends Model
+class VillaService extends BaseModel
 {
-    use HasFactory;
     public $timestamps = false;
-
 }
 
-class VillaRegulation extends Model
+class VillaRegulation extends BaseModel
 {
-    use HasFactory;
     public $timestamps = false;
-
 }
