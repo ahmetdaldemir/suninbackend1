@@ -10,11 +10,9 @@ class Blog extends BaseModel
 }
 class BlogLanguage extends BaseModel
 {
-    public $incrementing = false;
     public $timestamps = false;
 }
 class BlogImage extends BaseModel
 {
-    public $incrementing = false;
     public $timestamps = false;
 }

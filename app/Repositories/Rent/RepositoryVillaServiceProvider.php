@@ -26,7 +26,6 @@ use Illuminate\Support\ServiceProvider;
 
 class RepositoryVillaServiceProvider extends ServiceProvider
 {
-
     public function register()
     {
         $this->app->bind(

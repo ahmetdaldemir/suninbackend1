@@ -4,6 +4,7 @@ namespace Spatie\Activitylog\Traits;
 
 use Carbon\CarbonInterval;
 use DateInterval;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Arr;

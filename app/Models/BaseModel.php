@@ -12,12 +12,11 @@ use Spatie\Permission\Traits\HasRoles;
 class BaseModel extends Model
 {
     use LogsActivity;
-    use HasFactory,HasRoles,HasUuid;
+    use HasFactory,HasRoles,HasUuid,SoftDeletes;
     public $incrementing = false;
-
 
     public function getActivitylogOptions(): LogOptions
     {
-        // TODO: Implement getActivitylogOptions() method.
+        return LogOptions::defaults()->logOnly(['name', 'text']);
     }
 }

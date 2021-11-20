@@ -5,6 +5,8 @@ use DateTime;
 use Spatie\CalendarLinks\Link;
 use Spatie\IcalendarGenerator\Components\Calendar;
 use Spatie\IcalendarGenerator\Components\Event;
+use Spatie\IcalendarGenerator\Properties\CalendarAddressProperty;
+use Spatie\IcalendarGenerator\ValueObjects\CalendarAddress;
 
 class ICal
 {
@@ -20,32 +22,14 @@ class ICal
 
     public function create()
     {
-       $x = Calendar::create('xvİLLA')
-            ->event(Event::create('öZGÜR')
-                ->startsAt(new DateTime('2021-05-05'))
-                ->endsAt(new DateTime('2021-05-10'))
-            )
-           ->event(Event::create('AHMET')
-               ->startsAt(new DateTime('2021-05-05'))
-               ->endsAt(new DateTime('2021-05-10'))
-           )
-           ->event(Event::create('RAMAZAN')
-               ->startsAt(new DateTime('2021-05-05'))
-               ->endsAt(new DateTime('2021-05-10'))
-           )
-            ->get();
-       return $x;
-//        return response($x, 200, [
-//            'Content-Type' => 'text/calendar',
-//            'Content-Disposition' => 'attachment; filename="Test198711adssas.ics"',
-//            'charset' => 'utf-8',
-//        ]);
-    }
 
-    public function get()
-    {
-        $x = Calendar::create('Test1987')->get();
-        return $x;
+        $name = rand(1111,9999);
+        $calendar = Calendar::create($name);
+        return response($calendar->get(), 200, [
+            'Content-Type' => 'text/calendar',
+            'Content-Disposition' => 'attachment; filename="'.$name.'.ics"',
+            'charset' => 'utf-8',
+        ]);
     }
 
 

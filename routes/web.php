@@ -35,10 +35,10 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::get('settings', 'App\Http\Controllers\Rent\SettingsController@index')->name('settings');
     Route::post('settings/update', 'App\Http\Controllers\Rent\SettingsController@update')->name('settings/update');
     /**Kullanıcılar**/
-    Route::get('users', 'App\Http\Controllers\Rent\UserController@index')->name('user');
+    Route::get('users', 'App\Http\Controllers\Rent\UserController@index')->name('users');
     Route::get('users/{id}', 'App\Http\Controllers\Rent\UserController@index')->name('userUpdate');
-    Route::post('users/store', 'App\Http\Controllers\Rent\UserController@store')->name('user/store');
-    Route::post('users/update', 'App\Http\Controllers\Rent\UserController@update')->name('user/update');
+    Route::post('users/store', 'App\Http\Controllers\Rent\UserController@store')->name('users/store');
+    Route::post('users/update', 'App\Http\Controllers\Rent\UserController@update')->name('users/update');
     /**Şubeler**/
     Route::get('branches', 'App\Http\Controllers\Rent\BranchesController@index')->name('branches');
     Route::get('branches/{id}', 'App\Http\Controllers\Rent\BranchesController@index')->name('branchesUpdate');
@@ -56,6 +56,7 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::post('rols/update', 'App\Http\Controllers\Rent\RolsController@update')->name('rols/update');
     /**Mesajlar**/
     Route::get('messages', 'App\Http\Controllers\Rent\MessageController@index')->name('messages');
+    Route::get('messages/read/{id}', 'App\Http\Controllers\Rent\MessageController@read')->name('messages/read');
     Route::get('messages/{id}', 'App\Http\Controllers\Rent\MessageController@index')->name('messagesuserUpdate');
     Route::post('messages/store', 'App\Http\Controllers\Rent\MessageController@store')->name('messages/store');
     Route::post('messages/update', 'App\Http\Controllers\Rent\MessageController@update')->name('messages/update');

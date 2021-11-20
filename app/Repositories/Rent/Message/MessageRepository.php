@@ -1,6 +1,7 @@
 <?php namespace App\Repositories\Rent\Message;
 
 use App\Models\Message;
+use Illuminate\Support\Str;
 
 
 class MessageRepository implements MessageRepositoryInterface
@@ -19,6 +20,13 @@ class MessageRepository implements MessageRepositoryInterface
     public function delete($id)
     {
         Message::destroy($id);
+    }
+
+    public function read($id)
+    {
+        $blog = Message::find($id);
+        $blog->is_read = 1;
+        $blog->save();
     }
 
     public function create(object $data)

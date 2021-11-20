@@ -7,16 +7,17 @@ use Symfony\Component\HttpFoundation\Response;
 
 class MessageController extends Controller
 {
-    private MessageRepositoryInterface $messagesRepository;
+    private MessageRepositoryInterface $messageRepository;
 
-    public function __construct(MessageRepositoryInterface $messagesRepository)
+    public function __construct(MessageRepositoryInterface $messageRepository)
     {
-        $this->messagesRepository = $messagesRepository;
+        $this->messageRepository = $messageRepository;
     }
 
     public function index()
     {
-        return view('rent/message/index');
+        $data['messages'] = $this->messageRepository->all();
+        return view('rent/message/index',$data);
     }
 
     public function create()
@@ -26,25 +27,30 @@ class MessageController extends Controller
 
     public function store(Request $request)
     {
-        $this->messagesRepository->create($request);
+        $this->messageRepository->create($request);
         return redirect()->back();
     }
 
     public function show($id)
     {
-        $data['message'] =  $this->messagesRepository->get($id);
+       $data['message'] =  $this->messageRepository->get($id);
         return view('rent/message/show',$data);
     }
 
     public function update(Request $request)
     {
-        $this->messagesRepository->create($request);
+        $this->messageRepository->create($request);
         return redirect()->back();
      }
 
     public function destroy($id)
     {
-        $this->messagesRepository->delete($id);
+        $this->messageRepository->delete($id);
         return response()->json("Başarılı",  Response::HTTP_OK);
+    }
+    public function read($id)
+    {
+        $this->messageRepository->read($id);
+        return response()->json("success",  Response::HTTP_OK);
     }
 }
