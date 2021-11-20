@@ -12,6 +12,8 @@ use App\Repositories\Property\PropertyRepository;
 use App\Repositories\Property\PropertyRepositoryInterface;
 use App\Repositories\Regulation\RegulationRepository;
 use App\Repositories\Regulation\RegulationRepositoryInterface;
+use App\Repositories\Rent\User\UserRepositoryInterface;
+use App\Repositories\Rent\User\UserRepository;
 use App\Repositories\Service\ServiceRepository;
 use App\Repositories\Service\ServiceRepositoryInterface;
 use App\Repositories\Tenant\TenantRepository;
@@ -54,5 +56,12 @@ class RepositoryBackendServiceProvider extends ServiceProvider
             CategoryRepositoryInterface::class,
             CategoryRepository::class
         );
+
+        $this->app->bind(
+            UserRepositoryInterface::class,
+            UserRepository::class
+        );
+
+
     }
 }

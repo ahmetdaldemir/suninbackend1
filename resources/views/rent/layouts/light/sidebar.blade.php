@@ -62,12 +62,12 @@
               <a class="bar-icons" href="#"><i class="pe-7s-id"></i><span>Mesajlar </span></a>
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Kullanıcılar & Mesajlar</li>
-                  <li><a href="/Agent/AgentList">Acentalar</a></li>
-                  <li><a href="/Agent/BranchList">Şubeler</a></li>
-                  <li><a href="/Agent/UserList?prnId=1">Kullanıcılar</a></li>
-                  <li><a href="/Agent/RoleList">Roller</a></li>
-                  <li><a href="/Agent/Messages">Mesajlar</a></li>
-                  <li><a href="/Contracts/All/Profits">Komisyon Oranları</a></li>
+                  <li><a href="{{route('agents')}}">Acentalar</a></li>
+                  <li><a href="{{route('branches')}}">Şubeler</a></li>
+                  <li><a href="{{route('users')}}">Kullanıcılar</a></li>
+                  <li><a href="{{route('rols')}}">Roller</a></li>
+                  <li><a href="{{route('messages')}}">Mesajlar</a></li>
+                  <li><a href="{{route('contracts')}}">Komisyon Oranları</a></li>
               </ul>
           </li>
           <li>

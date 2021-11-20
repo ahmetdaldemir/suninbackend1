@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('rent/css/prism.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('rent/css/chartist.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('rent/css/date-picker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('rent/css/select2.css')}}">
 @endsection
 
 @section('style')
@@ -51,25 +52,30 @@
                             <div class="col-xs-12">
                                 <div class="col-md-12">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label">Kategori</label>
-                                                <select name="categories" class="form-control digits" id="exampleFormControlSelect9">
+                                                <label for="categories" class="control-label">Kategori</label>
+                                                <select name="categories[]" class="form-control digits category-multiple col-sm-12" multiple="multiple" id="categories">
                                                     @foreach($categories as $category)
                                                     <option value="{{$category['id']}}">{{$category['lang'][0]->title}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Villa Sahibi</label>
-                                                <select name="owner_id" class="form-control digits" id="exampleFormControlSelect9">
-                                                    <option>5</option>
+                                                <select name="tenant_id" class="form-control digits" id="exampleFormControlSelect9" required>
+                                                    <option>Seçiniz</option>
+                                                    @foreach($tenants as $tenant)
+                                                    <option value="{{$tenant['id']}}"><?=$tenant['title']?></option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Type</label>
                                                 <select name="type" class="form-control digits" id="exampleFormControlSelect9">
@@ -81,6 +87,12 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Oda Sayısı</label>
+                                                <input name="rooms" class="form-control" type="number" placeholder="Oda Sayısı" required="required">
+                                            </div>
+                                        </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label">Kapasite(kişi)</label>
@@ -259,11 +271,11 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="control-label">Resimler</label>
-                                        <input class="form-control" type="file" multiple>
+                                        <input name="photos" class="form-control" type="file" multiple>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label">Videolar</label>
-                                        <input class="form-control" type="file" multiple>
+                                        <input name="video" class="form-control" type="text" >
                                     </div>
                                     <button class="btn btn-primary nextBtn pull-right" type="button">İleri</button>
                                 </div>
@@ -306,5 +318,6 @@
     <script src="{{asset('rent/js/datepicker/date-picker/datepicker.en.js')}}"></script>
     <script src="{{asset('rent/js/datepicker/date-picker/datepicker.custom.js')}}"></script>
     <script src="{{asset('rent/js/form-wizard/form-wizard-two.js')}}"></script>
-    <script src="{{asset('rent/js/chat-menu.js')}}"></script>
+    <script src="{{asset('rent/js/select2/select2.full.min.js')}}"></script>
+    <script src="{{asset('rent/js/select2/select2-custom.js')}}"></script>
 @endsection

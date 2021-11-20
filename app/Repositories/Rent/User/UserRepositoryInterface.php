@@ -1,8 +1,6 @@
-<?php
+<?php namespace App\Repositories\Rent\User;
 
-namespace App\Repositories\Rent\Villa;
-
-interface CategoryRepositoryInterface
+interface UserRepositoryInterface
 {
 
     public function get($id);

@@ -1,4 +1,4 @@
-<?php namespace App\Repositories\Rent\Villa;
+<?php namespace App\Repositories\Rent\Category;
 
 use App\Models\Category;
 use App\Models\CategoryLanguage;

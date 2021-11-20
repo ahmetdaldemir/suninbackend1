@@ -39,6 +39,7 @@ class CreateVillasTable extends Migration
             $table->string('airport_distance')->nullable();
 
             $table->string('i_cal')->nullable();
+            $table->string('video')->nullable();
 
 
             $table->uuid('destination_id');

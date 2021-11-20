@@ -14,6 +14,22 @@ class Villa extends Model
     {
         return VillaLanguage::where('villa_id',$this->id)->get();
     }
+    public function get_category()
+    {
+        return VillaCategory::where('villa_id',$this->id)->get();
+    }
+    public function get_service()
+    {
+        return VillaService::where('villa_id',$this->id)->get();
+    }
+    public function get_regulation()
+    {
+        return VillaRegulation::where('villa_id',$this->id)->get();
+    }
+    public function get_property()
+    {
+        return VillaProperty::where('villa_id',$this->id)->get();
+    }
 }
 
 class VillaProperty extends Model

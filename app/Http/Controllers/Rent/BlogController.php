@@ -31,13 +31,11 @@ class BlogController extends Controller
         return view('rent/blog/index',$data);
     }
 
-
     public function create()
     {
         $data['languages']  = $this->languageRepository->all();
         return view('rent/blog/create',$data);
     }
-
 
     public function edit(Request $request)
     {

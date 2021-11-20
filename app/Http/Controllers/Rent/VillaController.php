@@ -8,8 +8,10 @@ use App\Repositories\Destination\DestinationRepositoryInterface;
 use App\Repositories\Language\LanguageRepositoryInterface;
 use App\Repositories\Property\PropertyRepositoryInterface;
 use App\Repositories\Regulation\RegulationRepositoryInterface;
+use App\Repositories\Rent\Tenant\TenantRepositoryInterface;
 use App\Repositories\Rent\Villa\VillaRepositoryInterface;
 use App\Repositories\Service\ServiceRepositoryInterface;
+use App\Services\ICal;
 use Illuminate\Http\Request;
 
 class VillaController extends Controller
@@ -21,8 +23,16 @@ class VillaController extends Controller
     private PropertyRepositoryInterface $propertyRepository;
     private RegulationRepositoryInterface $regulationRepository;
     private ServiceRepositoryInterface $serviceRepository;
+    private TenantRepositoryInterface $tenantRepository;
 
-    public function __construct(VillaRepositoryInterface $villaRepository,CategoryRepositoryInterface $categoryRepository,ServiceRepositoryInterface $serviceRepository,RegulationRepositoryInterface $regulationRepository,PropertyRepositoryInterface $propertyRepository,LanguageRepositoryInterface $languageRepository,DestinationRepositoryInterface $destinationRepository)
+    public function __construct(VillaRepositoryInterface $villaRepository,
+                                CategoryRepositoryInterface $categoryRepository,
+                                ServiceRepositoryInterface $serviceRepository,
+                                RegulationRepositoryInterface $regulationRepository,
+                                PropertyRepositoryInterface $propertyRepository,
+                                LanguageRepositoryInterface $languageRepository,
+                                DestinationRepositoryInterface $destinationRepository,
+                                TenantRepositoryInterface $tenantRepository)
     {
         $this->villaRepository = $villaRepository;
         $this->categoryRepository = $categoryRepository;
@@ -31,6 +41,7 @@ class VillaController extends Controller
         $this->regulationRepository = $regulationRepository;
         $this->serviceRepository = $serviceRepository;
         $this->propertyRepository = $propertyRepository;
+        $this->tenantRepository = $tenantRepository;
     }
 
     public function index()
@@ -50,8 +61,7 @@ class VillaController extends Controller
         return view('rent/villa/index',$data);
     }
 
-
-    public function create(Request $request)
+    public function create()
     {
         $data['languages']  = $this->languageRepository->all();
         $data['destinations']  = $this->destinationRepository->all();
@@ -59,10 +69,9 @@ class VillaController extends Controller
         $data['regulations']  = $this->regulationRepository->all();
         $data['services']  = $this->serviceRepository->all();
         $data['categories']  = $this->categoryRepository->all();
-        //dd($data['regulations']);
+        $data['tenants']  = $this->tenantRepository->type('landlord');
         return view('rent/villa/create',$data);
     }
-
 
     public function store(Request $request)
     {
@@ -72,7 +81,13 @@ class VillaController extends Controller
 
     public function edit(Request $request)
     {
-        $data['category']  = $this->categoryRepository->all();
+        $data['villa'] = $this->villaRepository->get($request->id);
+        $data['categories']  = $this->categoryRepository->all();
+        $data['languages']  = $this->languageRepository->all();
+        $data['destinations']  = $this->destinationRepository->all();
+        $data['regulations']  = $this->regulationRepository->all();
+        $data['services']  = $this->serviceRepository->all();
+        $data['properties']  = $this->propertyRepository->all();
         return view('rent/villa/edit',$data);
     }
 
@@ -88,5 +103,13 @@ class VillaController extends Controller
     {
         $this->villaRepository->delete($villa->id);
         redirect()->back();
+    }
+
+    public function ical()
+    {
+        $data = Villa::latest()->first();
+        $x = new ICal($data->code);
+        $ical = $x->create();
+        print_r($ical->getContent());
     }
 }

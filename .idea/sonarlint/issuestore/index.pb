@@ -198,3 +198,5 @@ l
 0app/Repositories/Property/PropertyRepository.php,1/d/1d7bf4688d58f6fc873d6e24aff1ddb9c8a35be0
 ]
 -app/Repositories/Rent/Blog/BlogRepository.php,d/e/de9e9b198d893735389c6b71ac9b2b7e1d5f0271
+C
+config/database.php,6/9/69e3bd8ddf957a32ec5a3b80a87f8cc4bfe36a27
