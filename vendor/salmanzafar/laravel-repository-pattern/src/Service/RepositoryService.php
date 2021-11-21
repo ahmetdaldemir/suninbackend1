@@ -17,7 +17,7 @@ class RepositoryService {
         if (!file_exists($path=base_path('/app/Repositories')))
             mkdir($path, 0777, true);
 
-        if (!file_exists($path=base_path('/app/Repositories/'.$name.'')))
+        if (!file_exists($path=base_path('/app/Repositories/'.$category.'/'.$name.'')))
             mkdir($path, 0777, true);
 
         self::MakeProvider();

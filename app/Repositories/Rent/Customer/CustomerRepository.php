@@ -1,6 +1,7 @@
 <?php namespace App\Repositories\Rent\Customer;
 
 use App\Models\Customer;
+use Illuminate\Support\Str;
 
 
 class CustomerRepository implements CustomerRepositoryInterface
@@ -23,11 +24,38 @@ class CustomerRepository implements CustomerRepositoryInterface
 
     public function create(object $data)
     {
-        Customer::save($data);
+        $session = session()->get('rent_session');
+        $id = Str::uuid()->toString();
+        $result = new Customer();
+        $result->id = $id;
+        $result->fullName = $data->fullName;
+        $result->email = $data->email;
+        $result->phone = $data->phone;
+        $result->taxTitle = $data->taxTitle;
+        $result->tax = $data->tax;
+        $result->taxNumber = $data->taxNumber;
+        $result->taxAddress = $data->taxAddress;
+        $result->address = $data->taxAddress;
+        $result->is_einvoice = $data->is_einvoice;
+        $result->is_status = $data->is_status;
+        $result->tenant_id = $session['tenant_id'];
+        $result->save();
     }
+
 
     public function update(object $data)
     {
-        Customer::find($id)->update($data);
+        $result = Customer::find($data->id);
+        $result->fullName = $data->fullName;
+        $result->email = $data->email;
+        $result->phone = $data->phone;
+        $result->taxTitle = $data->taxTitle;
+        $result->tax = $data->tax;
+        $result->taxNumber = $data->taxNumber;
+        $result->taxAddress = $data->taxAddress;
+        $result->address = $data->taxAddress;
+        $result->is_einvoice = $data->is_einvoice;
+        $result->is_status = $data->is_status;
+        $result->save();
     }
 }

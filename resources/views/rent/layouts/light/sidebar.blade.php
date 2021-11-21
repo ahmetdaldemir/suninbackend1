@@ -77,7 +77,7 @@
                   <li class="iconbar-header">Müşteri İlişkileri</li>
                   <li><a href="{{route('crypto')}}">Kupon Kodları</a></li>
                   <li><a href="{{route('crypto')}}">İndirimler &amp; Kampanyalar</a></li>
-                  <li><a href="{{route('crypto')}}">Müşteriler</a></li>
+                  <li><a href="{{route('customers')}}">Müşteriler</a></li>
                   <li><a href="{{route('crypto')}}">Yorum Sistemi</a></li>
                   <li><a href="{{route('settings')}}">Ayarlar</a></li>
                   <li><a href="/asdsadasd">Döviz Kurları</a></li>

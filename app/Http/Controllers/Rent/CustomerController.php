@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers\Rent;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Customer\CustomerRepositoryInterface;
+use App\Repositories\Rent\Customer\CustomerRepositoryInterface;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -16,12 +16,19 @@ class CustomerController extends Controller
 
     public function index()
     {
-        return response()->json($this->CustomerRepository->all(), Response::HTTP_OK);
+        $data['customers'] = $this->CustomerRepository->all();
+        return view('rent/customers/index',$data);
     }
 
     public function store(Request $request)
     {
-        return response()->json($this->CustomerRepository->create($request),Response::HTTP_CREATED);
+        $this->CustomerRepository->create($request);
+        return redirect()->to('customers');
+    }
+
+    public function create()
+    {
+        return view('rent/customers/create');
     }
 
     public function show($id)
@@ -31,12 +38,19 @@ class CustomerController extends Controller
 
     public function update(Request $request)
     {
-        return response()->json($this->CustomerRepository->update($request),Response::HTTP_CREATED);
-     }
+        $this->CustomerRepository->update($request);
+        return redirect()->to('customers');
+    }
+
+    public function edit(Request $request)
+    {
+        $data['customer'] = $this->CustomerRepository->get($request->id);
+        return view('rent/customers/edit',$data);
+    }
 
     public function destroy($id)
     {
         $this->CustomerRepository->delete($id);
-        return response()->json("Başarılı",  Response::HTTP_OK);
+        return redirect()->to('customers');
     }
 }
