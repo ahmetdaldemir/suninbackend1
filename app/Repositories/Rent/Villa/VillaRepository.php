@@ -26,7 +26,6 @@ class VillaRepository implements VillaRepositoryInterface
                 'property' => $result->get_property()
             );
         }
-
         return $data;
     }
 

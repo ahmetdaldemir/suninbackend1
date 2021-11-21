@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Message extends Migration
+class Customer extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,18 @@ class Message extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('customer', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('reply')->default(0);
             $table->string('fullName');
             $table->string('email');
             $table->string('phone');
-            $table->string('subject')->nullable();
-            $table->boolean('is_read')->default(0);
-            $table->string('comment');
+            $table->string('address');
+            $table->string('taxTitle');
+            $table->string('tax');
+            $table->string('taxNumber');
+            $table->string('taxAddress');
+            $table->boolean('is_einvoice')->default(0);
+            $table->boolean('is_status')->default(0);
             $table->uuid('tenant_id');
             $table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');
             $table->softDeletes();
@@ -36,6 +39,6 @@ class Message extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        //
     }
 }

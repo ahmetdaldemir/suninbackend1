@@ -28,13 +28,12 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         $this->messageRepository->create($request);
-        return redirect()->back();
     }
 
     public function show($id)
     {
-       $data['message'] =  $this->messageRepository->get($id);
-        return view('rent/message/show',$data);
+        $data =  $this->messageRepository->get($id);
+        return response()->json(['messages' => $data], 200);
     }
 
     public function update(Request $request)
@@ -51,6 +50,6 @@ class MessageController extends Controller
     public function read($id)
     {
         $this->messageRepository->read($id);
-        return response()->json("success",  Response::HTTP_OK);
+        return response()->json(['success' => 'İştem Tamamlandı!'], 200);
     }
 }

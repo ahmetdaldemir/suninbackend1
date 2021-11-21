@@ -9,12 +9,13 @@ class MessageRepository implements MessageRepositoryInterface
 
     public function get($id)
     {
-        return Message::find($id);
+        return Message::where('reply',$id)->get();
     }
 
     public function all()
     {
-        return Message::all();
+        $session = session()->get('rent_session');
+        return Message::where('reply','0')->where('tenant_id',$session['tenant_id'])->get();
     }
 
     public function delete($id)
@@ -24,14 +25,24 @@ class MessageRepository implements MessageRepositoryInterface
 
     public function read($id)
     {
-        $blog = Message::find($id);
-        $blog->is_read = 1;
-        $blog->save();
+        $result = Message::find($id);
+        $result->is_read = 1;
+        $result->save();
     }
 
     public function create(object $data)
     {
-        Message::save($data);
+        $session = session()->get('rent_session');
+        $result = new Message();
+        $result->id = Str::uuid()->toString();
+        $result->reply = $data->id;
+        $result->fullName = $session['name'];
+        $result->email = $session['email'];
+        $result->phone = '';
+        $result->comment = $data->comment;
+        $result->is_read = 1;
+        $result->tenant_id = $session['tenant_id'];
+        $result->save();
     }
 
     public function update(object $data)

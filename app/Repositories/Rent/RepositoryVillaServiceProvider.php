@@ -7,6 +7,8 @@ use App\Repositories\Rent\Blog\BlogRepositoryInterface;
 use App\Repositories\Rent\Category\CategoryRepository;
 use App\Repositories\Rent\Category\CategoryRepositoryInterface;
 
+use App\Repositories\Rent\Customer\CustomerRepository;
+use App\Repositories\Rent\Customer\CustomerRepositoryInterface;
 use App\Repositories\Rent\Message\MessageRepositoryInterface;
 use App\Repositories\Rent\Message\MessageRepository;
 
@@ -55,6 +57,10 @@ class RepositoryVillaServiceProvider extends ServiceProvider
         $this->app->bind(
             UserRepositoryInterface::class,
             UserRepository::class
+        );
+        $this->app->bind(
+            CustomerRepositoryInterface::class,
+            CustomerRepository::class
         );
     }
 }

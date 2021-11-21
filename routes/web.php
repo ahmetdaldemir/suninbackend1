@@ -57,7 +57,7 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     /**Mesajlar**/
     Route::get('messages', 'App\Http\Controllers\Rent\MessageController@index')->name('messages');
     Route::get('messages/read/{id}', 'App\Http\Controllers\Rent\MessageController@read')->name('messages/read');
-    Route::get('messages/{id}', 'App\Http\Controllers\Rent\MessageController@index')->name('messagesuserUpdate');
+    Route::post('messages/show/{id}', 'App\Http\Controllers\Rent\MessageController@show')->name('messages/show');
     Route::post('messages/store', 'App\Http\Controllers\Rent\MessageController@store')->name('messages/store');
     Route::post('messages/update', 'App\Http\Controllers\Rent\MessageController@update')->name('messages/update');
     /**Kontratlar**/

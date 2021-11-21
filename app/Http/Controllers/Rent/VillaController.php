@@ -13,6 +13,7 @@ use App\Repositories\Rent\Villa\VillaRepositoryInterface;
 use App\Repositories\Service\ServiceRepositoryInterface;
 use App\Services\ICal;
 use Illuminate\Http\Request;
+use Spatie\IcalendarGenerator\Components\Calendar;
 
 class VillaController extends Controller
 {
@@ -107,9 +108,17 @@ class VillaController extends Controller
 
     public function ical()
     {
-        $data = Villa::latest()->first();
-        $x = new ICal($data->code);
-        $ical = $x->create();
-        dd($ical);
+//        $data = Villa::latest()->first();
+//        $x = new ICal($data->code);
+//        $ical = $x->create();
+//        dd($ical);
+        $name = rand(1111,9999);
+        $calendar = Calendar::create($name);
+        return response($calendar->get(), 200, [
+            'Content-Disposition' => 'attachment; filename="'.$name.'.ics"',
+            'Content-Type' => 'application/force-download',
+            'charset' => 'utf-8',
+        ]);
+        readfile(''.$name.'.ics');
     }
 }

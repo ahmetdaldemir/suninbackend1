@@ -37,7 +37,7 @@
                             <div class="people-list" id="people-list">
                                 <ul class="list">
                                     @foreach($messages as $message)
-                                    <li class="open clearfix{{$message->is_read ? '':' read'}}" data-id="{{$message->id}}" data-email="{{$message->id}}" data-phone="{{$message->id}}" data-comment="{{$message->id}}">
+                                    <li class="open clearfix{{$message->is_read ? '':' read'}}" data-id="{{$message->id}}" data-name="{{$message->fullName}}" data-email="{{$message->email}}" data-phone="{{$message->phone}}" data-subject="{{$message->subject}}" data-comment="{{$message->comment}}">
                                         <div class="status-circle away"></div>
                                         <div class="about">
                                             <div class="name">{{$message->fullName}}</div>
@@ -64,7 +64,7 @@
                                 <!-- chat-header start-->
                                 <div class="chat-header clearfix">
                                     <div class="about">
-                                        <div class="name"></div><span class="font-primary f-12">Typing...</span>
+                                        <div class="name"></div><span class="font-primary f-12"></span>
                                         <div class="status digits">Last Seen 3:55 PM</div>
                                     </div>
                                     <ul class="list-inline float-left float-sm-right chat-menu-icons">
@@ -76,14 +76,8 @@
                                     <ul>
                                         <li class="clearfix">
                                             <div class="message other-message pull-right">
-                                                <div class="message-data"><span class="message-data-time">10:14 am</span></div>
-                                                Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so?
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="message my-message">
-                                                <div class="message-data text-right"><span class="message-data-time">10:12 am</span></div>
-                                                Are we meeting today? Project has been already finished and I have results to show you.
+                                                <div class="message-data"><span class="message-data-time"></span></div>
+                                                <div class="message-comment"></div>
                                             </div>
                                         </li>
                                     </ul>
@@ -96,9 +90,9 @@
                                                 <div class="picker"></div>
                                             </div>
                                             <div class="input-group text-box">
-                                                <input class="form-control input-txt-bx" id="message-to-send" type="text" name="message-to-send" placeholder="Type a message......">
+                                                <input class="form-control input-txt-bx" id="message-to-send" type="text" name="reply" placeholder="Mesaj yaz......">
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-primary" type="button">SEND</button>
+                                                    <button class="btn btn-primary reply" data-id="" type="button">Cevapla</button>
                                                 </div>
                                             </div>
                                         </div>

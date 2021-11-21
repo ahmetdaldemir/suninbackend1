@@ -27,9 +27,10 @@ class ICal
         $calendar = Calendar::create($name);
         return response($calendar->get(), 200, [
             'Content-Type' => 'text/calendar',
-            'Content-Disposition' => 'attachment; filename="'.$name.'.ics"',
+            'Content-Disposition' => 'attachment; filename="my-awesome-calendar.ics"',
             'charset' => 'utf-8',
         ]);
+
     }
 
 
