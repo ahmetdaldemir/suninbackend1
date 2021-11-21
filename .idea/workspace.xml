@@ -3,22 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Message/MessageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Message/MessageRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RepositoryVillaServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RepositoryVillaServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/ICal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ICal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_20_085813_message.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_20_085813_message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PermissionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PermissionSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/dashboard/ecommerce.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/dashboard/ecommerce.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/layouts/light/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/layouts/light/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/message/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/message/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/console.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/console.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs/Model.stub" beforeDir="false" afterPath="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs/Model.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs/Repository.stub" beforeDir="false" afterPath="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs/Repository.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs/RepositoryInterface.stub" beforeDir="false" afterPath="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs/RepositoryInterface.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/Service/RepositoryService.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/Service/RepositoryService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/resources/stubs/Model.stub" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/resources/stubs/Model.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/resources/stubs/Repository.stub" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/resources/stubs/Repository.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/resources/stubs/RepositoryInterface.stub" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/salmanzafar/laravel-repository-pattern/src/resources/stubs/RepositoryInterface.stub" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,26 +212,26 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mycar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/vendor/salmanzafar/stubs" />
+      <recent name="$PROJECT_DIR$/app/Repositories/Rent" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Rent" />
+      <recent name="$PROJECT_DIR$/app/Repositories/Language" />
+      <recent name="$PROJECT_DIR$/resources/views/rent/villa" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Repositories/Rent" />
       <recent name="$PROJECT_DIR$/app/Repositories/Rent/Category" />
       <recent name="$PROJECT_DIR$/resources/views/admin" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Landlord" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Repositories/Rent" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Rent" />
-      <recent name="$PROJECT_DIR$/app/Repositories/Language" />
-      <recent name="$PROJECT_DIR$/resources/views/rent/villa" />
-      <recent name="$PROJECT_DIR$/app/Repositories/Villa" />
     </key>
   </component>
   <component name="RunManager">
@@ -314,7 +306,8 @@
       <workItem from="1637257323634" duration="62000" />
       <workItem from="1637261147570" duration="1074000" />
       <workItem from="1637349236450" duration="610000" />
-      <workItem from="1637391493841" duration="27732000" />
+      <workItem from="1637391493841" duration="28360000" />
+      <workItem from="1637485273296" duration="242000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>

@@ -21,35 +21,34 @@ class RepositoryService {
             mkdir($path, 0777, true);
 
         self::MakeProvider();
-        self::MakeInterface($name);
+        self::MakeInterface($name,$category);
         self::MakeModelClass($name);
-        self::MakeRepositoryClass($name);
+        self::MakeRepositoryClass($name,$category);
         self::MakeControllerClass($name,$category);
     }
 
 
-    protected static function MakeInterface($name)
+    protected static function MakeInterface($name,$category)
     {
         $template = str_replace(
-            ['{{modelName}}'],
-            [$name],
-
+            ['{{modelName}}','{{categoryName}}'],
+            [$name,$category],
             self::GetStubs('RepositoryInterface')
         );
 
-        file_put_contents(base_path("/app/Repositories/{$name}/{$name}RepositoryInterface.php"), $template);
+        file_put_contents(base_path("/app/Repositories/{$category}/{$name}RepositoryInterface.php"), $template);
 
     }
 
-    protected static function MakeRepositoryClass($name)
+    protected static function MakeRepositoryClass($name,$category)
     {
         $template = str_replace(
-            ['{{modelName}}'],
-            [$name],
+            ['{{modelName}}','{{categoryName}}'],
+            [$name,$category],
             self::GetStubs('Repository')
         );
 
-        file_put_contents(base_path("/app/Repositories/{$name}/{$name}Repository.php"), $template);
+        file_put_contents(base_path("/app/Repositories/{$category}/{$name}Repository.php"), $template);
 
     }
 

@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Repositories\{{modelName}};
+<?php namespace App\Repositories\{{categoryName}}\{{modelName}};
 
 interface {{modelName}}RepositoryInterface
 {
