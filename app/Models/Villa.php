@@ -1,8 +1,4 @@
-<?php
-
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+<?php namespace App\Models;
 
 class Villa extends BaseModel
 {
@@ -46,6 +42,10 @@ class Villa extends BaseModel
         }
     }
 
+    public function images()
+    {
+        return $this->hasMany(VillaImage::class, 'villa_id','id');
+    }
 
 }
 

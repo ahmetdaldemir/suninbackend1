@@ -43,6 +43,33 @@ class ContractRepository implements ContractRepositoryInterface
 
     public function update(object $data)
     {
-        Contract::find($id)->update($data);
+        $result = Contract::find($data->id);
+        $result->startDate = $data->startDate;
+        $result->finishDate = $data->finishDate;
+        $result->currency = $data->currency;
+        $result->price = $data->price;
+        $result->commission = $data->commission;
+        $result->discount = $data->discount;
+        $result->is_active = $data->is_active;
+        $result->save();
+    }
+
+    public function copy(object $data)
+    {
+        $post = Contract::find($data->id);
+        $id = Str::uuid()->toString();
+        Contract::insertGetId([
+            "id" => $id,
+            "startDate" => $post->startDate,
+            "finishDate" => $post->finishDate,
+            "currency" => $post->currency,
+            "price" => $post->price,
+            "commission" => $post->commission,
+            "discount" => $post->discount,
+            "is_active" => $post->is_active,
+            "villa_id" => $post->villa_id,
+            "tenant_id" => $post->tenant_id
+        ]);
+        return $id;
     }
 }

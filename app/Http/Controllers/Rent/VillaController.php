@@ -92,14 +92,18 @@ class VillaController extends Controller
         return view('rent/villa/edit',$data);
     }
 
+    public function images($id)
+    {
+        $data['villa'] = Villa::find($id);
+        return view('rent/villa/images',$data);
+    }
 
     public function update(Request $request, Villa $villa)
     {
         return $this->villaRepository->update($request);
         redirect()->back();
     }
-
-
+    
     public function destroy(Villa $villa)
     {
         $this->villaRepository->delete($villa->id);

@@ -163,7 +163,6 @@
                 <div class="typo-section-sq bottom-big">
                     <div class="typo-section-header-sq">
                         <h2 class="text-align-center-sq">Fırsat Villalar</h2>
-
                         <p class="text-align-center-sq">Hemen rezervasyon yaptırın inirimlerden sizde faydalanın...</p>
                     </div>
 
@@ -204,7 +203,7 @@
                                         <a class="image-sq" href="{{route('detail')}}">
 										<span class="image-wrapper">
 											<span class="image-inner">
-												<img src="{{'storage/app/'.$villa['image']}}" alt="" class="">
+												<img src="{{Storage::url($villa['image'])}}" alt="" class="">
 											</span>
 										</span>
                                         </a>

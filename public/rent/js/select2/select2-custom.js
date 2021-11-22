@@ -10,8 +10,8 @@ setTimeout(function(){
             $(".js-example-basic-multiple").select2();
 
             // With Placeholder
-            $(".js-example-placeholder-multiple").select2({
-                placeholder: "Select Your Name"
+            $(".category-multiple").select2({
+                placeholder: "Villa Kategori Seç"
             });
 
             //Limited Numbers

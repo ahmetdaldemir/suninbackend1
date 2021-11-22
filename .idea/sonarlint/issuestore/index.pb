@@ -152,8 +152,6 @@ J
 ,app/Repositories/Tenant/TenantRepository.php,f/2/f211801a9c6902c6f25e0e37c41f7fe47d73fa0a
 n
 >vendor/laravel/framework/src/Illuminate/Foundation/helpers.php,4/d/4d24c28e41e72678a3c364bc656b5cf35eaf8f21
->
-config/app.php,7/3/734f7be25e8008acc7129e73cd116d5de913e6fd
 F
 config/filesystems.php,0/8/0851bcf6cd0903bba3a25c52b3b65e4e473a57d6
 G
@@ -174,14 +172,10 @@ m
 =app/Repositories/Regulation/RegulationRepositoryInterface.php,1/1/1195d4c358cf56522ded09f0743383e1ac152fa5
 d
 4app/Repositories/Regulation/RegulationRepository.php,8/d/8d94300f5e065d42a211303909a26ae3882dea4d
-]
--app/Http/Controllers/Rent/VillaController.php,7/4/747e77b8b4df087fad70c3a5ff326fd03458c1f8
 [
 +resources/views/rent/villa/create.blade.php,a/a/aa4629a6dc5b547da7d616be7aa2efa6694f93c7
 f
 6app/Repositories/Rent/Blog/BlogRepositoryInterface.php,1/5/15497aa5f77631ee09ffab0bdbb6b34fe62f3233
-h
-8app/Repositories/Rent/RepositoryVillaServiceProvider.php,8/9/89d1cacacaa0343ffb0045115ccdc7924948fcc6
 e
 5app/Repositories/RepositoryBackendServiceProvider.php,d/f/dfd82e2ef946dc6573e17e7c5ca933dbfd640ddb
 \

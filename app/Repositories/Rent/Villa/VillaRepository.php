@@ -2,7 +2,7 @@
 
 use App\Models\Villa;
 use App\Models\VillaCategory;
-use App\Models\VillaImage;
+use App\Models\VillaImage as images;
 use App\Models\VillaLanguage;
 use App\Models\VillaProperty;
 use App\Models\VillaRegulation;
@@ -54,7 +54,7 @@ class VillaRepository implements VillaRepositoryInterface
 
     public function create(object $data)
     {
-        $filenames = [];
+          $filenames = [];
          $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];
         $files = $data->file('photos');
         if($files){
@@ -153,6 +153,22 @@ class VillaRepository implements VillaRepositoryInterface
 
     public function update(object $data)
     {
+        $session = session()->get('rent_session');
+
+
+        $filenames = [];
+        $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];
+        $files = $data->file('photos');
+        if($files){
+            foreach ($files as $file) {
+                $filename = $file->getClientOriginalName();
+                $extension = $file->getClientOriginalExtension();
+                $check = in_array($extension, $allowedfileExtension);
+                $filenames[] = $file->store('photos');
+            }
+        }
+
+
         $service = Villa::find($data->service_id);
         $x = VillaLanguage::where('service_id', $data->service_id)->delete();
         foreach ($data->service as $key => $value) {
@@ -164,7 +180,8 @@ class VillaRepository implements VillaRepositoryInterface
             $servicelanguage->description = $data->service_description[$key];
             $servicelanguage->save();
         }
-        $villa = Villa::find($data->villa_id);
+        $id = $data->villa_id;
+        $villa = Villa::find($id);
         $villa->type = $data->type; //varchar(255)
         $villa->capacity = $data->capacity; //varchar(255)
         $villa->rooms = $data->rooms; //varchar(255)
@@ -186,7 +203,7 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->destination_id = $data->destination_id; //char(36)
         $villa->tenant_id = $session['tenant_id']; //char(36)
         $villa->owner_id = $data->owner_id; //char(36)
-        $blog->save();
+        $villa->save();
 
         VillaLanguage::where('villa_id', $data->villa_id)->delete();
         VillaCategory::where('villa_id', $data->villa_id)->delete();
@@ -247,4 +264,10 @@ class VillaRepository implements VillaRepositoryInterface
             }
         }
     }
+
+    public function images($id)
+    {
+        return images::where('villa_id',$id)->get();
+    }
+
 }

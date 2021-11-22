@@ -5,6 +5,7 @@
 @endsection
 
 @section('style')
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/sweetalert.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('rent/css/date-picker.css')}}">
 <style>
 td {width: 200px;}
@@ -40,9 +41,9 @@ td {width: 200px;}
                                     <td></td>
                                     <td class="row-template">
                                         <div class="btn-group">
-                                            <button class="btn btn-primary btn-sm bold save-period"><i class="fa fa-save fa-fw"></i> Kaydet</button>
-                                            <button class="btn btn-warning btn-sm bold copy-period" data-toggle="tooltip" title="Kopyala"><i class="fa fa-copy fa-fw"></i></button>
-                                            <button class="btn btn-danger btn-sm bold delete-period" data-toggle="tooltip" title="Sil"><i class="fa fa-trash-o fa-fw"></i></button>
+                                            <button class="btn btn-primary btn-sm save-period"><i class="fa fa-save fa-fw"></i> Kaydet</button>
+                                            <button class="btn btn-warning btn-sm copy-period" title="Kopyala"><i class="fa fa-copy fa-fw"></i></button>
+                                            <button class="btn btn-danger btn-sm delete-period" title="Sil"><i class="fa fa-trash-o fa-fw"></i></button>
                                         </div>
                                     </td>
                                     <td class="row-new">
@@ -178,6 +179,7 @@ td {width: 200px;}
 <script src="/rent/js/datepicker/date-picker/datepicker.js"></script>
 <script src="/rent/js/datepicker/date-picker/datepicker.en.js"></script>
 <script src="/rent/js/datepicker/date-time-picker/moment.min.js"></script>
+<script src="{{url('/rent/js/sweet-alert/sweetalert.min.js')}}"></script>
 <script src="{{asset('rent/js/contractApp.js')}}"></script>
 <script>
 $(document).ready(function () {

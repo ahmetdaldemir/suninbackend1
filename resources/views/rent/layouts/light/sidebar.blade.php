@@ -10,7 +10,6 @@
                   <li class="iconbar-header">Villalar</li>
                   <li><a href="{{route('villa/create')}}">Villa Ekle</a></li>
                   <li><a href="{{route('villa')}}">Villa Listesi</a></li>
-                  <li><a href="{{route('contracts')}}">Kontratlar</a></li>
               </ul>
           </li>
           <li>
@@ -69,6 +68,7 @@
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Bloglar</li>
                   <li><a href="{{route('blog')}}">Blog Listesi</a></li>
+                  <li><a href="{{route('slider')}}">Silder(SlideShow)</a></li>
               </ul>
           </li>
           <li>
@@ -80,7 +80,7 @@
                   <li><a href="{{route('customers')}}">Müşteriler</a></li>
                   <li><a href="{{route('crypto')}}">Yorum Sistemi</a></li>
                   <li><a href="{{route('settings')}}">Ayarlar</a></li>
-                  <li><a href="/asdsadasd">Döviz Kurları</a></li>
+                  <li><a href="{{route('currency')}}">Döviz Kurları</a></li>
                   <li><a href="/dsfsdf">Ödeme Sistemi</a></li>
                   <li><a href="/fsdfsd">Sistem Varsayılanları</a></li>
                   <li><a href="/System/Schedules">Sistem Araçları</a></li>

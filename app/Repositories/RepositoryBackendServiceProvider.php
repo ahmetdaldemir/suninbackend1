@@ -12,6 +12,8 @@ use App\Repositories\Property\PropertyRepository;
 use App\Repositories\Property\PropertyRepositoryInterface;
 use App\Repositories\Regulation\RegulationRepository;
 use App\Repositories\Regulation\RegulationRepositoryInterface;
+use App\Repositories\Rent\Slider\SliderRepository;
+use App\Repositories\Rent\Slider\SliderRepositoryInterface;
 use App\Repositories\Rent\User\UserRepositoryInterface;
 use App\Repositories\Rent\User\UserRepository;
 use App\Repositories\Service\ServiceRepository;
@@ -62,6 +64,9 @@ class RepositoryBackendServiceProvider extends ServiceProvider
             UserRepository::class
         );
 
-
+        $this->app->bind(
+            SliderRepositoryInterface::class,
+            SliderRepository::class
+        );
     }
 }

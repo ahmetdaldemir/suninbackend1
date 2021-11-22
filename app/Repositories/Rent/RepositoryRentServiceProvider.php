@@ -12,7 +12,6 @@ use App\Repositories\Rent\Contract\ContractRepositoryInterface;
 
 use App\Repositories\Rent\Currency\CurrencyRepository;
 use App\Repositories\Rent\Currency\CurrencyRepositoryInterface;
-
 use App\Repositories\Rent\Customer\CustomerRepository;
 use App\Repositories\Rent\Customer\CustomerRepositoryInterface;
 
@@ -22,6 +21,8 @@ use App\Repositories\Rent\Message\MessageRepository;
 use App\Repositories\Rent\Settings\SettingsRepository;
 use App\Repositories\Rent\Settings\SettingsRepositoryInterface;
 
+use App\Repositories\Rent\Slider\SliderRepository;
+use App\Repositories\Rent\Slider\SliderRepositoryInterface;
 use App\Repositories\Rent\User\UserRepository;
 use App\Repositories\Rent\User\UserRepositoryInterface;
 
@@ -72,6 +73,11 @@ class RepositoryRentServiceProvider extends ServiceProvider
         $this->app->bind(
             ContractRepositoryInterface::class,
             ContractRepository::class
+        );
+
+        $this->app->bind(
+            SliderRepositoryInterface::class,
+            SliderRepository::class
         );
 
         $this->app->bind(

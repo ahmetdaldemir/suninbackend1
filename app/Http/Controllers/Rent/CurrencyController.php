@@ -1,42 +1,58 @@
 <?php namespace App\Http\Controllers\Rent;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Currency\CurrencyRepositoryInterface;
+use App\Repositories\Rent\Currency\CurrencyRepositoryInterface;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class CurrencyController extends Controller
 {
-    private CurrencyRepositoryInterface $CurrencyRepository;
+    private CurrencyRepositoryInterface $currencyRepository;
 
-    public function __construct(CurrencyRepositoryInterface $CurrencyRepository)
+    public function __construct(CurrencyRepositoryInterface $currencyRepository)
     {
-        $this->CurrencyRepository = $CurrencyRepository;
+        $this->currencyRepository = $currencyRepository;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json($this->CurrencyRepository->all(), Response::HTTP_OK);
+        $data['update'] = false;
+        if($request->id){
+            $data['currency'] = $this->currencyRepository->get($request->id);
+            $data['update'] = true;
+        }
+        $data['currencies'] = $this->currencyRepository->all();
+        //dd($data['currencies']);
+        return view('rent/currency/index',$data);
+    }
+
+    public function edit(Request $request)
+    {
+        $data['currencies'] = $this->currencyRepository->all();
+        return view('rent/currency/index',$data);
     }
 
     public function store(Request $request)
     {
-        return response()->json($this->CurrencyRepository->create($request),Response::HTTP_CREATED);
+        $this->currencyRepository->create($request);
+        return redirect()->back();
     }
 
     public function show($id)
     {
-        return response()->json($this->CurrencyRepository->get($id), Response::HTTP_OK);
-     }
+        return response()->json($this->currencyRepository->get($id), Response::HTTP_CONTINUE);
+    }
 
     public function update(Request $request)
     {
-        return response()->json($this->CurrencyRepository->update($request),Response::HTTP_CREATED);
-     }
+        $this->currencyRepository->update($request);
+        return redirect()->back();
+    }
 
     public function destroy($id)
     {
-        $this->CurrencyRepository->delete($id);
-        return response()->json("Başarılı",  Response::HTTP_OK);
+        $this->currencyRepository->delete($id);
+        response()->json("Başarılı",  Response::HTTP_NO_CONTENT);
+        return redirect()->back();
     }
 }

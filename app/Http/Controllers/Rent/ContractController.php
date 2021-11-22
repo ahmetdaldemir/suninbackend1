@@ -36,10 +36,10 @@ class ContractController extends Controller
         return response()->json(['success' => true,'data' => $data], 200);
     }
 
-    public function store(Request $request)
+    public function copy(Request $request)
     {
-        $this->userRepository->create($request);
-        return redirect()->back();
+        $data = $this->contractRepository->copy($request);
+        return response()->json(['success' => true,'data' => $data], 200);
     }
 
     public function show(Request $request)
@@ -50,14 +50,13 @@ class ContractController extends Controller
 
     public function update(Request $request)
     {
-        $this->userRepository->update($request);
-        return redirect()->back();
+        $this->contractRepository->update($request);
+        return response()->json(['success' => true], 200);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $this->userRepository->delete($id);
-        response()->json("Başarılı", Response::HTTP_NO_CONTENT);
-        return redirect()->back();
+        $this->contractRepository->delete($request->id);
+        return response()->json(['success' => true], 200);
     }
 }

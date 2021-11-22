@@ -13,6 +13,7 @@ Route::get('/clear-cache', function() {
     return "Cache is cleared";
 })->name('clear.cache');
 
+//Route::get('/imageslink', function () { Artisan::call('storage:link');});
 
 Route::domain('rent.suninturkey.xyz')->group(function () {
 
@@ -24,7 +25,14 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::post('villa/store', 'App\Http\Controllers\Rent\VillaController@store')->name('villa/store');
     Route::get('villa/edit/{id}', 'App\Http\Controllers\Rent\VillaController@edit')->name('villa/edit');
     Route::post('villa/update', 'App\Http\Controllers\Rent\VillaController@update')->name('villa/update');
+    Route::get('villa/images/{id}', 'App\Http\Controllers\Rent\VillaController@images')->name('villa/images');
     Route::get('villa/contracts/{id}', 'App\Http\Controllers\Rent\ContractController@index')->name('villa/contracts');
+    Route::post('villa/contracts/create', 'App\Http\Controllers\Rent\ContractController@create')->name('villa/contracts/create');
+    Route::post('villa/contracts/update', 'App\Http\Controllers\Rent\ContractController@update')->name('villa/contracts/update');
+    Route::post('villa/contracts/show', 'App\Http\Controllers\Rent\ContractController@show')->name('villa/contracts/show');
+    Route::post('villa/contracts/copy', 'App\Http\Controllers\Rent\ContractController@copy')->name('villa/contracts/copy');
+    Route::post('villa/contracts/save', 'App\Http\Controllers\Rent\ContractController@save')->name('villa/contracts/save');
+    Route::post('villa/contracts/delete', 'App\Http\Controllers\Rent\ContractController@destroy')->name('villa/contracts/delete');
 
     /**Bloglar**/
     Route::get('blog', 'App\Http\Controllers\Rent\BlogController@index')->name('blog');
@@ -33,6 +41,21 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::post('blog/store', 'App\Http\Controllers\Rent\BlogController@store')->name('blog/store');
     Route::get('blog/delete/{id}', 'App\Http\Controllers\Rent\BlogController@destroy')->name('blog/delete');
     Route::post('blog/update', 'App\Http\Controllers\Rent\BlogController@update')->name('blog/update');
+    /**Slider**/
+    Route::get('slider', 'App\Http\Controllers\Rent\SliderController@index')->name('slider');
+    Route::get('slider/{id}', 'App\Http\Controllers\Rent\SliderController@index')->name('sliderUpdate');
+    Route::get('slider/create', 'App\Http\Controllers\Rent\SliderController@create')->name('slider/create');
+    Route::post('slider/store', 'App\Http\Controllers\Rent\SliderController@store')->name('slider/store');
+    Route::get('slider/delete/{id}', 'App\Http\Controllers\Rent\SliderController@destroy')->name('slider/delete');
+    Route::post('slider/update', 'App\Http\Controllers\Rent\SliderController@update')->name('slider/update');
+    /**Kurlar**/
+    Route::get('currency', 'App\Http\Controllers\Rent\CurrencyController@index')->name('currency');
+    Route::get('currency/{id}', 'App\Http\Controllers\Rent\CurrencyController@index')->name('currencyUpdate');
+    Route::get('currency/create', 'App\Http\Controllers\Rent\CurrencyController@create')->name('currency/create');
+    Route::post('currency/store', 'App\Http\Controllers\Rent\CurrencyController@store')->name('currency/store');
+    Route::get('currency/delete/{id}', 'App\Http\Controllers\Rent\CurrencyController@destroy')->name('currency/delete');
+    Route::post('currency/update', 'App\Http\Controllers\Rent\CurrencyController@update')->name('currency/update');
+    /**Bloglar**/
     Route::get('settings', 'App\Http\Controllers\Rent\SettingsController@index')->name('settings');
     Route::post('settings/update', 'App\Http\Controllers\Rent\SettingsController@update')->name('settings/update');
     /**Kullanıcılar**/

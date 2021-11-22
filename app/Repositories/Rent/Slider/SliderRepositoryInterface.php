@@ -1,6 +1,6 @@
-<?php namespace App\Repositories\Rent\Blog;
+<?php namespace App\Repositories\Rent\Slider;
 
-interface BlogRepositoryInterface
+interface SliderRepositoryInterface
 {
     public function get($id);
 
