@@ -64,6 +64,7 @@
                                 <td>{{$result['deposit']}}</td>
                                 <td>{{$result['clean_price']}}</td>
                                 <td>
+                                    <a href="{{'/villa/contracts/'.$result['id']}}" class="btn btn-shadow-danger">Kontratlar</a>
                                     <a href="{{'/villa/edit'.'/'.$result['id']}}" class="btn btn-shadow-primary">Düzenle</a>
                                     <a class="btn btn-shadow-warning delete" data-id="{{$result['id']}}">Sil</a>
                                 </td>

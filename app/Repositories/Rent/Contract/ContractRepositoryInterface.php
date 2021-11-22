@@ -5,7 +5,7 @@ interface ContractRepositoryInterface
 
     public function get($id);
 
-    public function all();
+    public function all($id);
 
     public function delete($id);
 

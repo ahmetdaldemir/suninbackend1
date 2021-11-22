@@ -12,9 +12,9 @@ class ContractRepository implements ContractRepositoryInterface
         return Contract::find($id);
     }
 
-    public function all()
+    public function all($id)
     {
-        return Contract::all();
+        return Contract::where('villa_id',$id)->get();
     }
 
     public function delete($id)
@@ -35,8 +35,10 @@ class ContractRepository implements ContractRepositoryInterface
         $result->commission = $data->commission;
         $result->discount = $data->discount;
         $result->is_active = $data->is_active;
+        $result->villa_id = $data->villa_id;
         $result->tenant_id = $session['tenant_id'];
         $result->save();
+        return $result->id;
     }
 
     public function update(object $data)

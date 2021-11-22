@@ -26,19 +26,14 @@ class ContractController extends Controller
     {
         $data['villa'] = $this->villaRepository->get($request->id);
         $data['contracts'] = $this->contractRepository->get($request->id);
-        $data['currency'] = $this->currencyRepository->all();
+        $data['currencies'] = $this->currencyRepository->all();
         return view('rent/contracts/index',$data);
     }
 
     public function create(Request $request)
     {
-        $this->contractRepository->create($request);
-    }
-
-    public function edit(Request $request)
-    {
-        $data['user'] = $this->userRepository->all();
-        return view('rent/blog/index', $data);
+        $data = $this->contractRepository->create($request);
+        return response()->json(['success' => true,'data' => $data], 200);
     }
 
     public function store(Request $request)
@@ -47,9 +42,10 @@ class ContractController extends Controller
         return redirect()->back();
     }
 
-    public function show($id)
+    public function show(Request $request)
     {
-        return response()->json($this->userRepository->get($id), Response::HTTP_CONTINUE);
+        $data = $this->contractRepository->all($request->id);
+        return response()->json(['success' => true,'data' => $data], 200);
     }
 
     public function update(Request $request)
