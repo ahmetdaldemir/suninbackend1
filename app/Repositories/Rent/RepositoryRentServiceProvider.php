@@ -7,8 +7,15 @@ use App\Repositories\Rent\Blog\BlogRepositoryInterface;
 use App\Repositories\Rent\Category\CategoryRepository;
 use App\Repositories\Rent\Category\CategoryRepositoryInterface;
 
+use App\Repositories\Rent\Contract\ContractRepository;
+use App\Repositories\Rent\Contract\ContractRepositoryInterface;
+
+use App\Repositories\Rent\Currency\CurrencyRepository;
+use App\Repositories\Rent\Currency\CurrencyRepositoryInterface;
+
 use App\Repositories\Rent\Customer\CustomerRepository;
 use App\Repositories\Rent\Customer\CustomerRepositoryInterface;
+
 use App\Repositories\Rent\Message\MessageRepositoryInterface;
 use App\Repositories\Rent\Message\MessageRepository;
 
@@ -26,7 +33,7 @@ use App\Repositories\Rent\Tenant\TenantRepositoryInterface;
 
 use Illuminate\Support\ServiceProvider;
 
-class RepositoryVillaServiceProvider extends ServiceProvider
+class RepositoryRentServiceProvider extends ServiceProvider
 {
     public function register()
     {
@@ -61,6 +68,15 @@ class RepositoryVillaServiceProvider extends ServiceProvider
         $this->app->bind(
             CustomerRepositoryInterface::class,
             CustomerRepository::class
+        );
+        $this->app->bind(
+            ContractRepositoryInterface::class,
+            ContractRepository::class
+        );
+
+        $this->app->bind(
+            CurrencyRepositoryInterface::class,
+            CurrencyRepository::class
         );
     }
 }

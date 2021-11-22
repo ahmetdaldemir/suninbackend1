@@ -1,6 +1,7 @@
 <?php namespace App\Repositories\Rent\Contract;
 
 use App\Models\Contract;
+use Illuminate\Support\Str;
 
 
 class ContractRepository implements ContractRepositoryInterface
@@ -23,7 +24,19 @@ class ContractRepository implements ContractRepositoryInterface
 
     public function create(object $data)
     {
-        Contract::save($data);
+        $session = session()->get('rent_session');
+        $id = Str::uuid()->toString();
+        $result = new Contract();
+        $result->id = $id;
+        $result->startDate = $data->startDate;
+        $result->finishDate = $data->finishDate;
+        $result->currency = $data->currency;
+        $result->price = $data->price;
+        $result->commission = $data->commission;
+        $result->discount = $data->discount;
+        $result->is_active = $data->is_active;
+        $result->tenant_id = $session['tenant_id'];
+        $result->save();
     }
 
     public function update(object $data)

@@ -24,6 +24,7 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::post('villa/store', 'App\Http\Controllers\Rent\VillaController@store')->name('villa/store');
     Route::get('villa/edit/{id}', 'App\Http\Controllers\Rent\VillaController@edit')->name('villa/edit');
     Route::post('villa/update', 'App\Http\Controllers\Rent\VillaController@update')->name('villa/update');
+    Route::get('villa/contracts/{id}', 'App\Http\Controllers\Rent\ContractController@index')->name('villa/contracts');
 
     /**Bloglar**/
     Route::get('blog', 'App\Http\Controllers\Rent\BlogController@index')->name('blog');
@@ -60,6 +61,13 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::post('messages/show/{id}', 'App\Http\Controllers\Rent\MessageController@show')->name('messages/show');
     Route::post('messages/store', 'App\Http\Controllers\Rent\MessageController@store')->name('messages/store');
     Route::post('messages/update', 'App\Http\Controllers\Rent\MessageController@update')->name('messages/update');
+    /**Müşteriler**/
+    Route::get('customers', 'App\Http\Controllers\Rent\CustomerController@index')->name('customers');
+    Route::get('customers/create', 'App\Http\Controllers\Rent\CustomerController@create')->name('customers/create');
+    Route::get('customers/edit/{id}', 'App\Http\Controllers\Rent\CustomerController@edit')->name('customers/edit');
+    Route::post('customers/store', 'App\Http\Controllers\Rent\CustomerController@store')->name('customers/store');
+    Route::post('customers/update', 'App\Http\Controllers\Rent\CustomerController@update')->name('customers/update');
+    Route::get('customers/delete/{id}', 'App\Http\Controllers\Rent\CustomerController@destroy')->name('customers/delete');
     /**Kontratlar**/
     Route::get('contracts', 'App\Http\Controllers\Rent\ContractsController@index')->name('contracts');
     Route::get('contracts/{id}', 'App\Http\Controllers\Rent\ContractsController@index')->name('contractsUpdate');
@@ -75,7 +83,7 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::get('requests', 'App\Http\Controllers\Rent\VillaController@index')->name('requests');
 });
 /////------------------------------------------------------------------------------------------------------////
-Route::domain('suninturkey.xyz')->group(function () {
+Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
 
 
 //Route::get('/', function(){

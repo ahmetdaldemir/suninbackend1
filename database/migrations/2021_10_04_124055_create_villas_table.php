@@ -91,6 +91,7 @@ class CreateVillasTable extends Migration
         Schema::create('villa_images', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('image');
+            $table->boolean('is_default')->default(0);
             $table->uuid('villa_id');
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
             $table->softDeletes();

@@ -1,4 +1,4 @@
-<?php namespace App\Repositories\Rent\Villa;
+<?php namespace App\Repositories\View\Villa;
 
 use App\Models\Villa;
 use App\Models\VillaCategory;
@@ -7,14 +7,16 @@ use App\Models\VillaLanguage;
 use App\Models\VillaProperty;
 use App\Models\VillaRegulation;
 use App\Models\VillaService;
+use App\Repositories\BaseRepository;
 use Illuminate\Support\Str;
 
-class VillaRepository implements VillaRepositoryInterface
+class VillaRepository extends BaseRepository implements VillaRepositoryInterface
 {
     public function get($id)
     {
         $data = [];
         $results = Villa::where('id',$id)->get();
+        dd($results);
         foreach ($results as $result) {
             $data[] = array(
                 'id' => $result->id,
@@ -30,17 +32,13 @@ class VillaRepository implements VillaRepositoryInterface
 
     public function all()
     {
-        $session = session()->get('rent_session');
         $data = [];
-        $villas = Villa::where('owner_id',$session['tenant_id'])->get();
+        $villas = Villa::where('owner_id',$this->view_tenant_id)->get();
         foreach ($villas as $villa) {
             $data[] = array(
                 'id' => $villa->id,
-                'type' => $villa->type,
-                'rooms' => $villa->rooms,
-                'pool' => $villa->pool,
-                'deposit' => $villa->deposit,
-                'clean_price' => $villa->clean_price,
+                'villa' => $villa,
+                'image' => $villa->default_image(),
                 'lang' => $villa->get_data()
             );
         }

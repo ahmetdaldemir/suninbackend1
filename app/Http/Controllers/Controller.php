@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Domain;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 
 class Controller extends BaseController
@@ -59,4 +61,6 @@ class Controller extends BaseController
         $this->tenant_id = $y['tenant_id'];
         Session::put('rent_session', $y);
     }
+
+
 }

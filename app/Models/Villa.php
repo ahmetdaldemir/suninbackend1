@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 class Villa extends BaseModel
 {
 
@@ -9,22 +11,42 @@ class Villa extends BaseModel
     {
         return VillaLanguage::where('villa_id',$this->id)->get();
     }
+
     public function get_category()
     {
         return VillaCategory::where('villa_id',$this->id)->get();
     }
+
     public function get_service()
     {
         return VillaService::where('villa_id',$this->id)->get();
     }
+
     public function get_regulation()
     {
         return VillaRegulation::where('villa_id',$this->id)->get();
     }
+
     public function get_property()
     {
         return VillaProperty::where('villa_id',$this->id)->get();
     }
+
+    public function destination()
+    {
+        return $this->belongsTo(Destination::class, 'destination_id');
+    }
+    public function default_image()
+    {
+        $x = VillaImage::where('villa_id',$this->id)->where('is_default',TRUE)->first();
+        if($x)
+        {
+            return $x->image;
+
+        }
+    }
+
+
 }
 
 class VillaProperty extends BaseModel

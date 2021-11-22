@@ -1,8 +1,3 @@
-<?php
+<?php namespace App\Models;
 
-namespace App\Models;
-
-
-class Currency extends BaseModel
-{
-}
+class Currency extends BaseModel { }

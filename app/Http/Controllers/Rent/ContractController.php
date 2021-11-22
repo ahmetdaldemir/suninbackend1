@@ -1,42 +1,67 @@
 <?php namespace App\Http\Controllers\Rent;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Contract\ContractRepositoryInterface;
+use App\Repositories\Rent\Contract\ContractRepositoryInterface;
+use App\Repositories\Rent\Currency\CurrencyRepositoryInterface;
+use App\Repositories\Rent\User\UserRepositoryInterface;
+use App\Repositories\Rent\Villa\VillaRepositoryInterface;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class ContractController extends Controller
 {
-    private ContractRepositoryInterface $ContractRepository;
+    private UserRepositoryInterface $userRepository;
+    private VillaRepositoryInterface $villaRepository;
+    private ContractRepositoryInterface $contractRepository;
+    private CurrencyRepositoryInterface $currencyRepository;
 
-    public function __construct(ContractRepositoryInterface $ContractRepository)
+    public function __construct(ContractRepositoryInterface $contractRepository,CurrencyRepositoryInterface $currencyRepository,UserRepositoryInterface $userRepository, VillaRepositoryInterface $villaRepository)
     {
-        $this->ContractRepository = $ContractRepository;
+        $this->contractRepository = $contractRepository;
+        $this->userRepository = $userRepository;
+        $this->villaRepository = $villaRepository;
+        $this->currencyRepository = $currencyRepository;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json($this->ContractRepository->all(), Response::HTTP_OK);
+        $data['villa'] = $this->villaRepository->get($request->id);
+        $data['contracts'] = $this->contractRepository->get($request->id);
+        $data['currency'] = $this->currencyRepository->all();
+        return view('rent/contracts/index',$data);
+    }
+
+    public function create(Request $request)
+    {
+        $this->contractRepository->create($request);
+    }
+
+    public function edit(Request $request)
+    {
+        $data['user'] = $this->userRepository->all();
+        return view('rent/blog/index', $data);
     }
 
     public function store(Request $request)
     {
-        return response()->json($this->ContractRepository->create($request),Response::HTTP_CREATED);
+        $this->userRepository->create($request);
+        return redirect()->back();
     }
 
     public function show($id)
     {
-        return response()->json($this->ContractRepository->get($id), Response::HTTP_OK);
-     }
+        return response()->json($this->userRepository->get($id), Response::HTTP_CONTINUE);
+    }
 
     public function update(Request $request)
     {
-        return response()->json($this->ContractRepository->update($request),Response::HTTP_CREATED);
-     }
+        $this->userRepository->update($request);
+        return redirect()->back();
+    }
 
     public function destroy($id)
     {
-        $this->ContractRepository->delete($id);
-        return response()->json("Başarılı",  Response::HTTP_OK);
+        $this->userRepository->delete($id);
+        response()->json("Başarılı", Response::HTTP_NO_CONTENT);
+        return redirect()->back();
     }
 }

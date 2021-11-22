@@ -20,6 +20,7 @@ class Contract extends Migration
             $table->string('price');
             $table->string('is_active');
             $table->string('discount');
+            $table->string('commission');
             $table->uuid('tenant_id');
             $table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('villa_id');
