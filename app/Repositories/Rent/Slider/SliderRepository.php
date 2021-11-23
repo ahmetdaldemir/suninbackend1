@@ -50,7 +50,7 @@ class SliderRepository implements SliderRepositoryInterface
     {
         $session = session()->get('rent_session');
         $filename = new Upload($data);
-        $image = $filename->upload('blog');
+        $image = $filename->upload('slider');
 
         $id = Str::uuid()->toString();
         $result = new Slider();

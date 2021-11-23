@@ -18,6 +18,8 @@ use App\Repositories\Rent\Customer\CustomerRepositoryInterface;
 use App\Repositories\Rent\Message\MessageRepositoryInterface;
 use App\Repositories\Rent\Message\MessageRepository;
 
+use App\Repositories\Rent\Module\ModuleRepository;
+use App\Repositories\Rent\Module\ModuleRepositoryInterface;
 use App\Repositories\Rent\Settings\SettingsRepository;
 use App\Repositories\Rent\Settings\SettingsRepositoryInterface;
 
@@ -85,6 +87,10 @@ class RepositoryRentServiceProvider extends ServiceProvider
         $this->app->bind(
             CurrencyRepositoryInterface::class,
             CurrencyRepository::class
+        );
+        $this->app->bind(
+            ModuleRepositoryInterface::class,
+            ModuleRepository::class
         );
     }
 }

@@ -73,84 +73,25 @@
         <div class="sq-slick hero-big slide-up-sq" data-mobile-arrows="false" data-tablet-arrows="false"
              data-mobile-dots="true" data-tablet-dots="true" data-fade="true" data-speed="500" data-ease="linear">
             <!-- .slide-up .fade .top .bottom -->
+            @foreach($sliders as $slider)
+                <div class="">
+                    <div class="caption-content" style="margin-top: 150px;">
+                        <h1 class="font-weight-extrabold-sq">{{$slider['lang']->where('language_id',$lang_id)->first()->title}}</h1>
+                    </div>
+                    <div class="caption-outside">
+                        <a class="button anchor-sq" href="#top">
+                            <i class="icon big icon-compass"></i>
+                            <span>Devam</span>
+                        </a>
+                    </div>
 
-            <!--Slide 01-->
-            <div class="">
-                <div class="caption-content" style="margin-top: 150px;">
-                    <h1 class="font-weight-extrabold-sq">Luxury Villa, Özel Hissedin...</h1>
-                </div>
-                <div class="caption-outside">
-                    <a class="button anchor-sq" href="#top">
-                        <i class="icon big icon-compass"></i>
-                        <span>Devam</span>
-                    </a>
-                </div>
-
-                <div class="image-wrapper">
-                    <div class="image-inner">
-                        <img class="image-sq" src="{{asset('view/images/hero/hero_big_28.jpg')}}" alt="">
+                    <div class="image-wrapper">
+                        <div class="image-inner">
+                            <img class="image-sq" src="{{Storage::url('slider/'.$slider['slider']->image)}}" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!--Slide 02-->
-            <div>
-                <div class="caption-content">
-                    <h1 class="font-weight-extrabold-sq">Yeni Maceralar</h1>
-                </div>
-
-                <div class="caption-outside">
-                    <a class="button anchor-sq" href="#top">
-                        <i class="icon big icon-compass"></i>
-                        <span>Find</span>
-                    </a>
-                </div>
-
-                <div class="image-wrapper">
-                    <div class="image-inner">
-                        <img class="image-sq" src="{{asset('view/images/hero/hero_big_29.jpg')}}" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <!--Slide 03-->
-            <div>
-                <div class="caption-content">
-                    <h1 class="font-weight-extrabold-sq">Yeni Hikayeler</h1>
-                </div>
-
-                <div class="caption-outside">
-                    <a class="button anchor-sq" href="#top">
-                        <i class="icon big icon-compass"></i>
-                        <span>Read</span>
-                    </a>
-                </div>
-
-                <div class="image-wrapper">
-                    <div class="image-inner">
-                        <img class="image-sq" src="{{asset('view/images/hero/hero_big_30.jpg')}}" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <!--Slide 04-->
-            <div>
-                <div class="caption-content">
-                    <h1 class="font-weight-extrabold-sq">Yeni Yerler</h1>
-                </div>
-                <div class="caption-outside">
-                    <a class="button anchor-sq" href="#top">
-                        <i class="icon big icon-arrow-down2"></i>
-                        <span>View</span>
-                    </a>
-                </div>
-
-                <div class="image-wrapper">
-                    <div class="image-inner">
-                        <img class="image-sq" src="{{asset('view/images/hero/hero_big_31.jpg')}}" alt="">
-                    </div>
-                </div>
-            </div>
+            @endforeach
 
         </div>
 
@@ -168,33 +109,26 @@
 
                     <div class="ui grid ">
                         <div class="v-ic container-fluid">
-                            <div class="v-icon"><a href=""><img src="{{asset('view/images/honeymoon.svg')}}"
-                                                                class="img">
-                                    <p>Balayı Villaları</p></a></div>
-                            <div class="v-icon"><a href=""><img src="{{asset('view/images/kids.svg')}}" class="img">
-                                    <p>Çocuk Havuzlu</p></a></div>
-                            <div class="v-icon"><a href=""><img src="{{asset('view/images/sea.svg')}}" class="img">
-                                    <p>Deniz Manzaralı</p></a></div>
-                            <div class="v-icon"><a href=""><img src="{{asset('view/images/villa.svg')}}" class="img">
-                                    <p>Özel Villalar</p></a></div>
-                            <div class="v-icon"><a href=""><img src="{{asset('view/images/winter.svg')}}" class="img">
-                                    <p>Kış Aylarına Uygun</p></a></div>
-                            <div class="v-icon"><a href=""><img src="{{asset('view/images/pets.svg')}}" class="img">
-                                    <p>Evcil Hayvan İzinli</p></a></div>
-                            <div class="v-icon"><a href=""><img src="{{asset('view/images/securty.svg')}}" class="img">
-                                    <p>Korunaklı Villalar</p></a></div>
+                            @foreach($categories as $category)
+                                @if($category['category']->is_view == 1)
+                                    <div class="v-icon"><a href="">
+                                            <img src="{{asset('view/images/honeymoon.svg')}}" class="img"
+                                                 alt="{{$category['lang']->where('lang_id',$lang_id)->first()->title}}">
+                                            <p>{{$category['lang']->where('lang_id',$lang_id)->first()->title}}</p></a>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
 
                     <div class="ui grid">
-
 
                         @foreach($villas as $villa)
                             <div class="twelve wide mobile four wide tablet four wide computer column">
                                 <div class="property-item">
                                     <div class="property-item-inner">
 
-                                        <div class="price-tag-sq">Jakuzi-{{$villa['id']}}</div>
+                                        <div class="price-tag-sq">Jakuzi</div>
                                         <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
                                             <i class="icon icon-add-wishlist"></i>
                                         </a>
@@ -216,13 +150,16 @@
                                                     <i class="icon icon-heart"></i> 7.8
                                                 </div>
                                                 <div class="icons-column">
-                                                    <i class="icon icon-account-group-5"></i> x {{$villa['villa']->capacity}} Kişi
+                                                    <i class="icon icon-account-group-5"></i>
+                                                    x {{$villa['villa']->capacity}} Kişi
                                                 </div>
                                                 <div class="icons-column">
-                                                    <i class="icon icon-door-simple"></i> x {{$villa['villa']->rooms}} Oda
+                                                    <i class="icon icon-door-simple"></i> x {{$villa['villa']->rooms}}
+                                                    Oda
                                                 </div>
                                                 <div class="icons-column">
-                                                    <i class="icon icon-bed-double"></i> x 2 {{$villa['villa']->capacity}}
+                                                    <i class="icon icon-bed-double"></i> x
+                                                    2 {{$villa['villa']->capacity}}
                                                 </div>
                                             </div>
 
@@ -230,7 +167,8 @@
 
                                         <div class="property-name">
                                             <div class="title-row">
-                                                <a href="{{route('detail')}}" class="title-sq">{{$villa['lang']->where('lang_id',$lang_id)->first()->title}}</a>
+                                                <a href="{{route('detail')}}"
+                                                   class="title-sq">{{$villa['lang']->where('lang_id',$lang_id)->first()->title}}</a>
                                                 <a href="{{route('detail')}}" class="button-sq-top">
                                                     Hemen İncele
                                                 </a>
@@ -238,7 +176,8 @@
 
                                         </div>
                                         <div class="property-fl">
-                                            <p><i class="icon icon-pin2"></i> {{$villa['villa']->destination->title}}</p>
+                                            <p><i class="icon icon-pin2"></i> {{$villa['villa']->destination->title}}
+                                            </p>
                                             <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
                                         </div>
 
@@ -626,11 +565,11 @@
                         <div class="magic-grid article-sq hover-scale">
 
 
-                           @foreach($blogs as $blog)
-                            <div class="item">
-                                <div class="item-inner">
+                            @foreach($blogs as $blog)
+                                <div class="item">
+                                    <div class="item-inner">
 
-                                    <a class="image-sq" href="article.html">
+                                        <a class="image-sq" href="article.html">
                     	                <span class="image-wrapper">
                     	                    <span class="image-inner">
                     	                        <img class="image-sq"
@@ -638,19 +577,20 @@
                                                      alt="">
                     	                    </span>
                     	                </span>
-                                    </a>
+                                        </a>
 
-                                    <div class="typo-sq">
-                                        <p class="typo-label-sq" data-label-before="Beauty"
-                                           data-label-after="Book a home in"></p>
-                                        <p class="typo-title-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
-                                        <p class="typo-desc-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->description}}</p>
+                                        <div class="typo-sq">
+                                            <p class="typo-label-sq" data-label-before="Beauty"
+                                               data-label-after="Book a home in"></p>
+                                            <p class="typo-title-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
+                                            <p class="typo-desc-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->description}}</p>
 
-                                        <a href="" class="read-more-sq">Devamını Oku... <i class="icon icon-arrow-right-122"></i></a>
+                                            <a href="" class="read-more-sq">Devamını Oku... <i
+                                                        class="icon icon-arrow-right-122"></i></a>
+                                        </div>
+
                                     </div>
-
                                 </div>
-                            </div>
                             @endforeach
 
 
