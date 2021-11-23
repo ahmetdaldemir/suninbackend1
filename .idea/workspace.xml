@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_124055_create_villas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_124055_create_villas_table.php" afterDir="false" />
-    </list>
+    <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -303,7 +299,7 @@
       <workItem from="1637391493841" duration="28360000" />
       <workItem from="1637485273296" duration="19386000" />
       <workItem from="1637569516977" duration="27000" />
-      <workItem from="1637610390708" duration="2831000" />
+      <workItem from="1637610390708" duration="3144000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>

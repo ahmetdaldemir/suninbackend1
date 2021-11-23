@@ -14,7 +14,10 @@ use App\Repositories\Rent\Villa\VillaRepositoryInterface;
 use App\Repositories\Service\ServiceRepositoryInterface;
 use App\Services\ICal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Spatie\IcalendarGenerator\Components\Calendar;
+use function Psy\debug;
 
 class VillaController extends Controller
 {
@@ -77,8 +80,8 @@ class VillaController extends Controller
 
     public function store(Request $request)
     {
-        return $this->villaRepository->create($request);
-        redirect()->back();
+        $this->villaRepository->create($request);
+        return redirect()->to('villa');
     }
 
     public function edit(Request $request)
@@ -90,40 +93,32 @@ class VillaController extends Controller
         $data['regulations']  = $this->regulationRepository->all();
         $data['services']  = $this->serviceRepository->all();
         $data['properties']  = $this->propertyRepository->all();
+
+        foreach ($data['villa'][0]['category'] as $category){
+            $data['villa_category'][] = $category['category_id'];
+        }
+        foreach ($data['villa'][0]['property'] as $property){
+            $data['villa_property'][] = $property['property_id'];
+        }
+        foreach ($data['villa'][0]['service'] as $service){
+            $data['villa_service'][] = $service['service_id'];
+        }
+        foreach ($data['villa'][0]['regulation'] as $regulation){
+            $data['villa_regulation'][] = $regulation['regulation_id'];
+        }
         return view('rent/villa/edit',$data);
     }
 
-    public function images($id)
-    {
-        $data['images'] = $this->villaRepository->imagelist($id);
-        return view('rent/villa/images',$data);
-    }
-    public function sortSave(Request $request)
-    {
-        $data = $this->villaRepository->images($request->id);
-        dd($data);
-        VillaImage::where('villa_id', $request->id)->update([
-            "sort" => $request->sort
-        ]);
-        /*$data['villa'] = Villa::find($id);*/
-        return view('rent/villa/images',$data);
-    }
-
-    public function mainImage(Request $request)
-    {
-        Villa::where('villa_id',$request->villa_id)->update(['image'=> $request->image]);
-        return response()->json(['success' => 'İştem Tamamlandı!'], 200);
-    }
     public function update(Request $request, Villa $villa)
     {
-        return $this->villaRepository->update($request);
-        redirect()->back();
+        $this->villaRepository->update($request);
+        return redirect()->to('villa');
     }
     
     public function destroy(Villa $villa)
     {
         $this->villaRepository->delete($villa->id);
-        redirect()->back();
+        return redirect()->to('villa');
     }
 
     public function ical()
@@ -140,5 +135,40 @@ class VillaController extends Controller
             'charset' => 'utf-8',
         ]);
         readfile(''.$name.'.ics');
+    }
+
+    public function images($id)
+    {
+        $data['villa'] = $this->villaRepository->get($id);
+        $data['images'] = $this->villaRepository->imagelist($id);
+        return view('rent/villa/images',$data);
+    }
+    public function imageSave(Request $request)
+    {
+        $this->villaRepository->createImage($request);
+        return redirect()->to('villa/images/'.$request->villa_id);
+    }
+    public function sortSave(Request $request)
+    {
+        foreach ($request->sort as $key => $sort){
+            VillaImage::where('villa_id', $request->villa_id)->where('id', $sort)->update(["sort" => $key]);
+        }
+        return response()->json(['success' => 'İştem Tamamlandı!'], 200);
+    }
+    public function mainImage(Request $request)
+    {
+        //dd($request);
+        Villa::where('id',$request->id)->update(['image'=> $request->image]);
+        return response()->json(['success' => 'İştem Tamamlandı!'], 200);
+    }
+    public function imagedestroy(Request $request)
+    {
+        $this->villaRepository->imagedestroy($request->id);
+        $image_path = Storage::url($request->image);  // Value is not URL but directory file path
+        if(File::exists($image_path)) {
+            File::delete($image_path);
+            return response()->json(['success' => 'Resim Silindi!'], 200);
+        }
+        return response()->json(['error' => 'Resim Silinemedi!'], 200);
     }
 }

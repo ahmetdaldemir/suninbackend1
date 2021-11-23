@@ -28,6 +28,11 @@ class Villa extends BaseModel
         return VillaProperty::where('villa_id',$this->id)->get();
     }
 
+    public function get_images()
+    {
+        return VillaImage::where('villa_id',$this->id)->get();
+    }
+
     public function destination()
     {
         return $this->belongsTo(Destination::class, 'destination_id');

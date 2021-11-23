@@ -192,3 +192,15 @@ l
 -app/Repositories/Rent/Blog/BlogRepository.php,d/e/de9e9b198d893735389c6b71ac9b2b7e1d5f0271
 C
 config/database.php,6/9/69e3bd8ddf957a32ec5a3b80a87f8cc4bfe36a27
+>
+config/app.php,7/3/734f7be25e8008acc7129e73cd116d5de913e6fd
+]
+-app/Http/Controllers/Rent/VillaController.php,7/4/747e77b8b4df087fad70c3a5ff326fd03458c1f8
+_
+/app/Repositories/Rent/Villa/VillaRepository.php,8/3/831fb5b306008fa519ce90ce8446a43c088eddc7
+D
+app/Models/Villa.php,2/7/27252a82c9554dca31456b2a9fe6f5c0043ec7c1
+m
+=database/migrations/2021_10_04_124055_create_villas_table.php,6/8/689ff0586b746728711a5a42986229d2fd69c0bc
+[
++resources/views/rent/villa/images.blade.php,e/f/ef6b16c6ea7c0400d17ac054c1383a7e2778d9d2

@@ -6,15 +6,9 @@
 
 @section('style')
 <style>
-    .detail {display: none;}
-    .table.date td {
-        border-top: 1px solid #f2f4ff;
-        padding: 3px;
-        width: 5px;
-    }
-    .detail b {
-        padding-top: 12px;
-    }
+.detail {display: none;}
+.table.date td {border-top: 1px solid #f2f4ff;padding: 3px;width: 5px;}
+.detail b {padding-top: 12px;}
 </style>
 @endsection
 

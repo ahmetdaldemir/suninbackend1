@@ -9,16 +9,11 @@
 
 @section('style')
 <style>
-    .detail {display: none;}
-    .show {display: table-row;}
-    .table.date td {
-        border-top: 1px solid #f2f4ff;
-        padding: 3px;
-        width: 5px;
-    }
-    .detail b {
-        padding-top: 12px;
-    }
+.detail {display: none;}
+.show {display: table-row;}
+.table.date td {border-top: 1px solid #f2f4ff;padding: 3px;width: 5px;}
+.detail b {padding-top: 12px;}
+#villa img {width: 70px;}
 </style>
 @endsection
 
@@ -40,34 +35,36 @@
                 <div class="card-header">
                     <h5>Villa Listesi</h5><span>Tüm <code>Villalar</code> </span>
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive product-table">
                     <table id="villa" class="table table-border-horizontal">
                         <thead>
                             <tr>
                                 <th></th>
-                                <th scope="col">Villa Tipi</th>
-                                <th scope="col">Oda</th>
-                                <th scope="col">Pool</th>
-                                <th scope="col">Deposit</th>
+                                <th scope="col">Resim</th>
+                                <th scope="col">Başlık(seo)</th>
                                 <th scope="col">Ücret</th>
+                                <th scope="col">Oda</th>
+                                <th scope="col">Deposit</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($villa as $result)
-
                             <tr>
                                 <td class="avability" data-id="villa_{{$result['id']}}"> + </td>
-                                <td>{{$result['type']}}</td>
-                                <td>{{$result['rooms']}}</td>
-                                <td>{{$result['pool']}}</td>
-                                <td>{{$result['deposit']}}</td>
+                                <td><img src="{{Storage::url($result['image'])}}"></td>
+                                <td>
+                                    <h6> {{$result['lang'][0]['title']}} ({{$result['lang'][0]['seo']}})</h6><span><b>Tipi: </b>{{$result['type']}}</span>
+                                </td>
                                 <td>{{$result['clean_price']}}</td>
+                                <td class="font-success">{{$result['rooms']}}</td>
+                                <td>{{$result['deposit']}}</td>
                                 <td>
                                     <a href="{{'/villa/contracts/'.$result['id']}}" class="btn btn-shadow-danger">Kontratlar</a>
                                     <a href="{{'/villa/images/'.$result['id']}}" class="btn btn-shadow-danger">Resimler</a>
                                     <a href="{{'/villa/edit'.'/'.$result['id']}}" class="btn btn-shadow-primary">Düzenle</a>
                                     <a class="btn btn-shadow-warning delete" data-id="{{$result['id']}}">Sil</a>
+                                    <!--<button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>-->
                                 </td>
                             </tr>
                             <tr class="detail villa_{{$result['id']}}">

@@ -26,6 +26,10 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::get('villa/edit/{id}', 'App\Http\Controllers\Rent\VillaController@edit')->name('villa/edit');
     Route::post('villa/update', 'App\Http\Controllers\Rent\VillaController@update')->name('villa/update');
     Route::get('villa/images/{id}', 'App\Http\Controllers\Rent\VillaController@images')->name('villa/images');
+    Route::post('villa/images/sortSave', 'App\Http\Controllers\Rent\VillaController@sortSave')->name('villa/sortSave');
+    Route::post('villa/images/mainImage', 'App\Http\Controllers\Rent\VillaController@mainImage')->name('villa/mainImage');
+    Route::post('villa/images/save', 'App\Http\Controllers\Rent\VillaController@imageSave')->name('villa/images/save');
+    Route::post('villa/images/delete', 'App\Http\Controllers\Rent\VillaController@imagedestroy')->name('villa/images/delete');
     Route::get('villa/contracts/{id}', 'App\Http\Controllers\Rent\ContractController@index')->name('villa/contracts');
     Route::post('villa/contracts/create', 'App\Http\Controllers\Rent\ContractController@create')->name('villa/contracts/create');
     Route::post('villa/contracts/update', 'App\Http\Controllers\Rent\ContractController@update')->name('villa/contracts/update');
