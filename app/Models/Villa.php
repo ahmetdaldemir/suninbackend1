@@ -54,7 +54,6 @@ class VillaProperty extends BaseModel
     public $timestamps = false;
 }
 
-
 class VillaCategory extends BaseModel
 {
     public $timestamps = false;

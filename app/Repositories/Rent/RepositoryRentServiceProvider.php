@@ -26,6 +26,8 @@ use App\Repositories\Rent\Slider\SliderRepositoryInterface;
 use App\Repositories\Rent\User\UserRepository;
 use App\Repositories\Rent\User\UserRepositoryInterface;
 
+use App\Repositories\Rent\Villa\VillaImageRepositoryInterface;
+use App\Repositories\Rent\Villa\VillaImageRepostory;
 use App\Repositories\Rent\Villa\VillaRepository;
 use App\Repositories\Rent\Villa\VillaRepositoryInterface;
 

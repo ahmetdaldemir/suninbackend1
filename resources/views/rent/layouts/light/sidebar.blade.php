@@ -87,7 +87,7 @@
                   <li><a href="/System/Documents">Dokümanlar</a></li>
                   <li><a href="/Contracts/Villa/SupplementDefs?fd=1">Villa Tanımları</a></li>
                   <li><a href="/System/Countries">Bölgeler</a></li>
-                  <li><a href="/System/Countries">Havaalanları</a></li>
+                  <li><a href="{{route('system')}}">Havaalanları</a></li>
                   <li><a href="/System/ParameterGroups">Parametre Grupları</a></li>
               </ul>
           </li>

@@ -40,6 +40,7 @@ class CreateVillasTable extends Migration
 
             $table->string('i_cal')->nullable();
             $table->string('video')->nullable();
+            $table->string('image')->nullable();
 
 
             $table->uuid('destination_id');
@@ -91,7 +92,7 @@ class CreateVillasTable extends Migration
         Schema::create('villa_images', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('image');
-            $table->boolean('is_default')->default(0);
+            $table->mediumInteger('sort')->default(0);
             $table->uuid('villa_id');
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
             $table->softDeletes();
@@ -105,7 +106,6 @@ class CreateVillasTable extends Migration
             $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->softDeletes();
-
         });
 
         Schema::create('villa_properties', function (Blueprint $table) {
@@ -115,7 +115,6 @@ class CreateVillasTable extends Migration
             $table->uuid('property_id');
             $table->foreign('property_id')->references('id')->on('properties')->onUpdate('cascade')->onDelete('cascade');
             $table->softDeletes();
-
         });
 
         Schema::create('villa_services', function (Blueprint $table) {
@@ -136,7 +135,6 @@ class CreateVillasTable extends Migration
             $table->uuid('regulation_id');
             $table->foreign('regulation_id')->references('id')->on('regulations')->onUpdate('cascade')->onDelete('cascade');
             $table->softDeletes();
-
         });
 
     }

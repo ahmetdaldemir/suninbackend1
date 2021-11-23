@@ -8,18 +8,9 @@
 @endsection
 
 @section('style')
-    <style>
-        .detail {display: none;}
-        .show {display: table-row;}
-        .table.date td {
-            border-top: 1px solid #f2f4ff;
-            padding: 3px;
-            width: 5px;
-        }
-        .detail b {
-            padding-top: 12px;
-        }
-    </style>
+<style>
+.gallery img {width: 100%;}
+</style>
 @endsection
 
 @section('breadcrumb-title')
@@ -38,24 +29,22 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Hover Effect <span class="digits">11</span></h5>
+                    <h5>Villa Resimleri <span class="digits">İşlemler</span></h5>
                 </div>
                 <div class="card-body">
                     <div class="row gallery my-gallery" id="aniimated-thumbnials10" itemscope="">
                         <form>
-                        <div class="row ui-sortable" id="draggableMultiple">
-
-                        @foreach($villa->images as $image)
-
-                                <figure class="col-md-3 col-6 img-hover hover-11" itemprop="associatedMedia" itemscope=""><a href="../assets/images/big-lightgallry/08.jpg" itemprop="contentUrl" data-size="1600x950">
-                                <div><img src="../assets/images/lightgallry/08.jpg" itemprop="thumbnail" alt="Image description"></div></a>
-                            <figcaption itemprop="caption description">Image caption  1</figcaption>
-                            <input type='hidden' name='sort[]' value='$id' />
-                        </figure>
-                        @endforeach
-                        </div>
+                            <div class="row ui-sortable" id="draggableMultiple">
+                            @foreach($images as $image)
+                            <figure class="col-md-2 col-3 img-hover hover-11" itemprop="associatedMedia" itemscope=""><a href="{{Storage::url($image['image'])}}" itemprop="contentUrl" data-size="1600x950">
+                                <div><img src="{{Storage::url($image['image'])}}" itemprop="thumbnail" alt="Image description"></div></a>
+                                <figcaption itemprop="caption description"></figcaption>
+                                <input type='hidden' name='sort[]' value='{{$image['id']}}' />
+                            </figure>
+                            @endforeach
+                            </div>
                         </form>
-                    </div>
+                        <button type="button" class="btn btn-success sort-save">Sıralamayı Kaydet</button>
                     </div>
                 </div>
             </div>

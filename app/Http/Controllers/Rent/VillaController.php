@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Rent;
 
 use App\Http\Controllers\Controller;
 use App\Models\Villa;
+use App\Models\VillaImage;
 use App\Repositories\Category\CategoryRepositoryInterface;
 use App\Repositories\Destination\DestinationRepositoryInterface;
 use App\Repositories\Language\LanguageRepositoryInterface;
@@ -94,10 +95,25 @@ class VillaController extends Controller
 
     public function images($id)
     {
-        $data['villa'] = Villa::find($id);
+        $data['images'] = $this->villaRepository->imagelist($id);
+        return view('rent/villa/images',$data);
+    }
+    public function sortSave(Request $request)
+    {
+        $data = $this->villaRepository->images($request->id);
+        dd($data);
+        VillaImage::where('villa_id', $request->id)->update([
+            "sort" => $request->sort
+        ]);
+        /*$data['villa'] = Villa::find($id);*/
         return view('rent/villa/images',$data);
     }
 
+    public function mainImage(Request $request)
+    {
+        Villa::where('villa_id',$request->villa_id)->update(['image'=> $request->image]);
+        return response()->json(['success' => 'İştem Tamamlandı!'], 200);
+    }
     public function update(Request $request, Villa $villa)
     {
         return $this->villaRepository->update($request);

@@ -2,7 +2,7 @@
 
 use App\Models\Villa;
 use App\Models\VillaCategory;
-use App\Models\VillaImage as images;
+use App\Models\VillaImage;
 use App\Models\VillaLanguage;
 use App\Models\VillaProperty;
 use App\Models\VillaRegulation;
@@ -265,9 +265,7 @@ class VillaRepository implements VillaRepositoryInterface
         }
     }
 
-    public function images($id)
-    {
-        return images::where('villa_id',$id)->get();
+    public function imagelist($id){
+        return VillaImage::where('villa_id',$id)->get();
     }
-
 }
