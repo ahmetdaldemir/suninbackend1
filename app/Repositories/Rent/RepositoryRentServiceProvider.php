@@ -20,6 +20,8 @@ use App\Repositories\Rent\Message\MessageRepository;
 
 use App\Repositories\Rent\Module\ModuleRepository;
 use App\Repositories\Rent\Module\ModuleRepositoryInterface;
+use App\Repositories\Rent\Permission\PermissionRepository;
+use App\Repositories\Rent\Permission\PermissionRepositoryInterface;
 use App\Repositories\Rent\Settings\SettingsRepository;
 use App\Repositories\Rent\Settings\SettingsRepositoryInterface;
 
@@ -91,6 +93,10 @@ class RepositoryRentServiceProvider extends ServiceProvider
         $this->app->bind(
             ModuleRepositoryInterface::class,
             ModuleRepository::class
+        );
+        $this->app->bind(
+            PermissionRepositoryInterface::class,
+            PermissionRepository::class
         );
     }
 }

@@ -98,7 +98,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label">Açıklama ({{$lang['code']}})</label>
-                                                        <textarea name="description[{{$lang['id']}}]" class="form-control" id="">{{$villa[0]['lang'][$key]['description']}}</textarea>
+                                                        <textarea name="description[{{$lang['id']}}]" class="form-control editor" id="desc_{{$lang['id']}}">{{$villa[0]['lang'][$key]['description']}}</textarea>
                                                     </div>
                                                 </div>
                                                 <?php $i++?>
@@ -126,6 +126,12 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
+                                                <label class="control-label">Oda Sayısı</label>
+                                                <input name="rooms" class="form-control" type="number" value="{{$villa[0]['rooms']}}" placeholder="Oda Sayısı" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
                                                 <label class="control-label">Kapasite(kişi)</label>
                                                 <input name="capacity" class="form-control" type="number" value="{{$villa[0]['capacity']}}" placeholder="Kapasite(kişi)" required="required">
                                             </div>
@@ -140,17 +146,6 @@
                                             <div class="form-group">
                                                 <label class="control-label">Banyo Sayısı</label>
                                                 <input name="bathrooms" class="form-control" type="number" value="{{$villa[0]['bathrooms']}}" placeholder="Banyo Sayısı" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label">Havuz Tipi</label>
-                                                <select name="pool" class="form-control digits" id="">
-                                                    <option value="NO_POOL"{{$villa[0]['pool'] == 'NO_POOL' ? ' selected':null}}>NO_POOL</option>
-                                                    <option value="PRIVATE"{{$villa[0]['pool'] == 'PRIVATE' ? ' selected':null}}>PRIVATE</option>
-                                                    <option value="KIDS_POOL"{{$villa[0]['pool'] == 'KIDS_POOL' ? ' selected':null}}>KIDS_POOL</option>
-                                                    <option value="DETACHED_POOl"{{$villa[0]['pool'] == 'DETACHED_POOl' ? ' selected':null}}>DETACHED_POOl</option>
-                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -217,6 +212,17 @@
                                             <div class="form-group">
                                                 <label class="control-label">Video Link</label>
                                                 <input name="videos" class="form-control" type="text" value="{{$villa[0]['videos']}}" placeholder="Video Linki">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Havuz Tipi</label>
+                                                <select name="pool" class="form-control digits" id="">
+                                                    <option value="NO_POOL"{{$villa[0]['pool'] == 'NO_POOL' ? ' selected':null}}>NO_POOL</option>
+                                                    <option value="PRIVATE"{{$villa[0]['pool'] == 'PRIVATE' ? ' selected':null}}>PRIVATE</option>
+                                                    <option value="KIDS_POOL"{{$villa[0]['pool'] == 'KIDS_POOL' ? ' selected':null}}>KIDS_POOL</option>
+                                                    <option value="DETACHED_POOl"{{$villa[0]['pool'] == 'DETACHED_POOl' ? ' selected':null}}>DETACHED_POOl</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -304,4 +310,44 @@
     <script src="{{asset('rent/js/form-wizard/form-wizard-two.js')}}"></script>
     <script src="{{asset('rent/js/select2/select2.full.min.js')}}"></script>
     <script src="{{asset('rent/js/select2/select2-custom.js')}}"></script>
+    <script src="{{asset('rent/js/editor/ckeditor/ckeditor.js')}}"></script>
+    <script src="{{asset('rent/js/editor/ckeditor/styles.js')}}"></script>
+    <script src="{{asset('rent/js/editor/ckeditor/adapters/jquery.js')}}"></script>
+    <script src="{{asset('rent/js/editor/ckeditor/ckeditor.custom.js')}}"></script>
+    <script>
+        $(".editor").each(function () {
+            let id = $(this).attr('id');
+            CKEDITOR.replace(id, {
+                toolbar: [{
+                    name: 'clipboard',
+                    items: ['Undo', 'Redo']
+                },
+                    {
+                        name: 'styles',
+                        items: ['Styles', 'Format']
+                    },
+                    {
+                        name: 'basicstyles',
+                        items: ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat']
+                    },
+                    {
+                        name: 'paragraph',
+                        items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote']
+                    },
+                    {
+                        name: 'links',
+                        items: ['Link', 'Unlink']
+                    },
+                    {
+                        name: 'tools',
+                        items: ['Maximize']
+                    },
+                    {
+                        name: 'editing',
+                        items: ['Scayt']
+                    }
+                ],
+            });
+        });
+    </script>
 @endsection

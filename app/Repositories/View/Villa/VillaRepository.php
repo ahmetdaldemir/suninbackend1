@@ -38,7 +38,6 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
             $data[] = array(
                 'id' => $villa->id,
                 'villa' => $villa,
-                'image' => $villa->default_image(),
                 'lang' => $villa->get_data()
             );
         }

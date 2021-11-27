@@ -87,7 +87,7 @@
 
                     <div class="image-wrapper">
                         <div class="image-inner">
-                            <img class="image-sq" src="{{Storage::url('slider/'.$slider['slider']->image)}}" alt="">
+                            <img class="image-sq" src="{{Storage::url($slider['slider']->image)}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                             @foreach($categories as $category)
                                 @if($category['category']->is_view == 1)
                                     <div class="v-icon"><a href="">
-                                            <img src="{{asset('view/images/honeymoon.svg')}}" class="img"
+                                            <img src="{{Storage::url($category['category']->image)}}" class="img"
                                                  alt="{{$category['lang']->where('lang_id',$lang_id)->first()->title}}">
                                             <p>{{$category['lang']->where('lang_id',$lang_id)->first()->title}}</p></a>
                                     </div>
@@ -137,7 +137,7 @@
                                         <a class="image-sq" href="{{route('detail')}}">
 										<span class="image-wrapper">
 											<span class="image-inner">
-												<img src="{{Storage::url($villa['image'])}}" alt="" class="">
+												<img src="{{Storage::url($villa['villa']->image)}}" alt="" class="">
 											</span>
 										</span>
                                         </a>
@@ -573,8 +573,8 @@
                     	                <span class="image-wrapper">
                     	                    <span class="image-inner">
                     	                        <img class="image-sq"
-                                                     src="{{asset('storage/app/public/blog/')}}{{$blog['blog']['image']}}"
-                                                     alt="">
+                                                     src="{{Storage::url($blog['blog']->image)}}"
+                                                     alt="{{$blog['lang']->where('language_id',$lang_id)->first()->title}}">
                     	                    </span>
                     	                </span>
                                         </a>
@@ -585,8 +585,7 @@
                                             <p class="typo-title-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
                                             <p class="typo-desc-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->description}}</p>
 
-                                            <a href="" class="read-more-sq">Devamını Oku... <i
-                                                        class="icon icon-arrow-right-122"></i></a>
+                                            <a href="" class="read-more-sq">Devamını Oku... <i class="icon icon-arrow-right-122"></i></a>
                                         </div>
 
                                     </div>

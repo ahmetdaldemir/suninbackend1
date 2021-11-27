@@ -20,44 +20,29 @@
     <!-- Container-fluid starts-->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-sm-12 col-lg-5">
+            <div class="col-12 col-sm-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>{{!$update ? 'Rol Ekle':'Rol Düzenle'}}</h5>
+                        <h5>{{!$update ? 'İzin Ekle':'İzin Düzenle'}}</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{!$update ? route('rols/store'):route('rols/update')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{!$update ? route('permission/store'):route('permission/update')}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" value="{{!$update ?  NULL : $permission['id']}}">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label class="control-label">Kullanıcı Adı</label>
-                                        <input class="form-control" type="text" name="name" value="{{@$rol['name']}}">
+                                        <label class="control-label">İzin Adı</label>
+                                        <input class="form-control" type="text" name="name" value="{{@$permission['name']}}">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Şifre</label>
-                                        <input class="form-control" type="password" name="password">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Eposta Adresi</label>
-                                        <input class="form-control" type="text" name="email" value="{{@$rol['email']}}">
-                                    </div>
-                                </div>
-                                @csrf
                             </div>
                             <button class="btn btn-primary nextBtn pull-right" type="submit">{{!$update ? 'Kaydet':'Güncelle'}}</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-lg-7">
+            <div class="col-12 col-sm-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
                         <h5>Tüm Bloglar</h5>
@@ -72,14 +57,14 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if($rols)
-                                @foreach($rols as $result)
+                            @if($permissions)
+                                @foreach($permissions as $permission)
                                     <tr>
-                                        <td>{{@$result['name']}}</td>
-                                        <td>{{@$result['email']}}</td>
+                                        <td>{{@$permission['name']}}</td>
+                                        <td>{{@$permission['email']}}</td>
                                         <td>
-                                            <a href="{{'/rols/'.$result['id']}}" class="btn btn-shadow-primary">Düzenle</a>
-                                            <a href="{{'/rol/delete/'.$result['id']}}" class="btn btn-shadow-warning delete" data-id="{{$result['id']}}">Sil</a>
+                                            <a href="{{'/permission/edit/'.$permission['id']}}" class="btn btn-shadow-primary">Düzenle</a>
+                                            <a href="{{'/permission/delete/'.$permission['id']}}" class="btn btn-shadow-warning delete" data-id="{{$permission['id']}}">Sil</a>
                                         </td>
                                     </tr>
                                 @endforeach

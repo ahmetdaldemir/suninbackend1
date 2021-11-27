@@ -42,8 +42,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="control-label">Slider Resmi</label>
-                                            <img src="{{Storage::url('app/public/blog/' . $slider[0]['image'])}}" width="200"/>
+                                            <label class="control-label">Yüklü Resim</label>
+                                            <img src="{{Storage::url($slider[0]['image'])}}" width="200"/>
                                             <input name="image" type="hidden" value="{{$slider[0]['image']}}" />
                                         </div>
                                     </div>
@@ -52,7 +52,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="control-label">Yüklü Resim</label>
+                                            <label class="control-label">Slider Resmi</label>
                                             <input class="form-control" type="file" name="photos">
                                         </div>
                                     </div>
@@ -74,20 +74,17 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Yazı 1 ({{$lang['code']}})</label>
-                                            <input name="text1[{{$lang['id']}}]" class="form-control" type="text" value="{{@$slider[0]['lang'][$key]['text1']}}" placeholder="Yazı 1" required="required">
+                                            <input name="text1[{{$lang['id']}}]" class="form-control" type="text" value="{{@$slider[0]['lang'][$key]['text1']}}" placeholder="Yazı 1">
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Yazı 2 ({{$lang['code']}})</label>
-                                            <input name="text2[{{$lang['id']}}]" class="form-control" type="text" value="{{@$slider[0]['lang'][$key]['text2']}}" placeholder="Yazı 2" required="required">
+                                            <input name="text2[{{$lang['id']}}]" class="form-control" type="text" value="{{@$slider[0]['lang'][$key]['text2']}}" placeholder="Yazı 2">
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Yazı 3 ({{$lang['code']}})</label>
-                                            <input name="text3[{{$lang['id']}}]" class="form-control" type="text" value="{{@$slider[0]['lang'][$key]['text3']}}" placeholder="Yazı 3" required="required">
+                                            <input name="text3[{{$lang['id']}}]" class="form-control" type="text" value="{{@$slider[0]['lang'][$key]['text3']}}" placeholder="Yazı 3">
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label">Seo ({{$lang['code']}})</label>
-                                            <input name="seo[{{$lang['id']}}]" class="form-control" type="text" value="{{@$slider[0]['lang'][$key]['seo']}}" placeholder="Yazı 3" required="required">
-                                        </div>
+
                                         <div class="form-group">
                                             <label class="control-label">Alt Başlık ({{$lang['code']}})</label>
                                             <textarea name="sub_title[{{$lang['id']}}]" class="form-control editor" id="desc_{{$lang['code']}}">{{@$slider[0]['lang'][$key]['sub_title']}}</textarea>
@@ -97,7 +94,7 @@
                                 @endforeach
                                 @csrf
                                 @if($update)
-                                    <input name="blog_id" type="hidden" value="{{$slider[0]['id']}}" />
+                                    <input name="slider_id" type="hidden" value="{{$slider[0]['id']}}" />
                                 @endif
                             </div>
                             <div class="row">

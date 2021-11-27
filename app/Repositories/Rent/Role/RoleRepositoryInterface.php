@@ -1,9 +1,8 @@
-<?php
+<?php namespace App\Repositories\Rent\Role;
 
-namespace App\Repositories\Rent\Module;
-
-interface ModuleRepositoryInterface
+interface RoleRepositoryInterface
 {
+
     public function get($id);
 
     public function all();

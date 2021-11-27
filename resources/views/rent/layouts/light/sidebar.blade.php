@@ -53,7 +53,7 @@
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Kullanıcılar & Mesajlar</li>
                   <li><a href="{{route('users')}}">Kullanıcılar</a></li>
-                  <li><a href="{{route('rols')}}">Roller</a></li>
+                  <li><a href="{{route('permission')}}">İzinler</a></li>
               </ul>
           </li>
           <li>

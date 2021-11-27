@@ -17,11 +17,11 @@ class BlogRepository implements BlogRepositoryInterface
     {
         $data = [];
         $results = Blog::where('id',$id)->get();
-        foreach ($results as $service) {
+        foreach ($results as $result) {
             $data[] = array(
-                'id' => $service->id,
-                'image' => $service->image,
-                'lang' => $service->get_data()
+                'id' => $result->id,
+                'image' => $result->image,
+                'lang' => $result->get_data()
             );
         }
         return $data;
@@ -55,7 +55,7 @@ class BlogRepository implements BlogRepositoryInterface
         $id = Str::uuid()->toString();
         $result = new Blog();
         $result->id = $id;
-        $result->image = $image;
+        $result->image = 'blog/'.$image;
         $result->tenant_id = $session['tenant_id'];
         $result->save();
 
@@ -75,7 +75,7 @@ class BlogRepository implements BlogRepositoryInterface
     {
         if(!empty($data->photos)){
             $filename = new Upload($data);
-            $image = $filename->upload('blog');
+            $image = 'blog/'.$filename->upload('blog');
         }else{
             $image = $data->image;
         }

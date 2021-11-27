@@ -32,24 +32,22 @@
                 </div>
                 <div class="card-body">
                     <form action="{{!$update ? route('blog/store'):route('blog/update')}}" method="POST" enctype="multipart/form-data">
-                        @if($update)
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">Blog Resmi</label>
-                                    <img src="{{Storage::url('app/public/blog/' . $blog[0]['image'])}}" width="200"/>
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <div class="col-md-12"><label class="control-label">Blog Resmi Seç</label></div>
+                                    <div class="col-md-12"><input class="form-control" type="file" name="photos"></div>
+                                </div>
+                            </div>
+                            @if($update)
+                            <div class="col-md-6">
+                                <div class="row form-group">
+                                    <div class="col-md-12"><label class="control-label">Mevcut Resim</label></div>
+                                    <div class="col-md-12"><img src="{{Storage::url($blog[0]['image'])}}" width="120"/></div>
                                     <input name="image" type="hidden" value="{{$blog[0]['image']}}" />
                                 </div>
                             </div>
-                        </div>
-                        @endif
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">Blog Resmi</label>
-                                    <input class="form-control" type="file" name="photos">
-                                </div>
-                            </div>
+                            @endif
                         </div>
                         <ul class="nav nav-tabs nav-material" id="icon-tab" role="tablist">
                             <?php $i=0?>

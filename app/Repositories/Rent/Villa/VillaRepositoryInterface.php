@@ -14,5 +14,11 @@ interface VillaRepositoryInterface
 
     public function update(object $data);
 
+    public function createImage(object $data);
+
     public function imagelist($id);
+    
+    public function imagedestroy($id);
+
+
 }

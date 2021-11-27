@@ -4,7 +4,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\Rent\VillaController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/clear-cache', function() {
+Route::get('/clear-cache', function () {
     Artisan::call('config:cache');
     Artisan::call('cache:clear');
     Artisan::call('config:clear');
@@ -67,6 +67,13 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::get('users/{id}', 'App\Http\Controllers\Rent\UserController@index')->name('userUpdate');
     Route::post('users/store', 'App\Http\Controllers\Rent\UserController@store')->name('users/store');
     Route::post('users/update', 'App\Http\Controllers\Rent\UserController@update')->name('users/update');
+    Route::get('users/roles/{id}', 'App\Http\Controllers\Rent\UserController@roles')->name('users/roles');
+    Route::post('users/rolesadd', 'App\Http\Controllers\Rent\UserController@rolesadd')->name('users/rolesadd');
+    /**CRM**/
+    Route::get('crm/module', 'App\Http\Controllers\Rent\ModuleController@index')->name('module');
+    Route::get('crm/module/edit/{id}', 'App\Http\Controllers\Rent\ModuleController@edit')->name('crm/module/edit');
+    Route::get('crm/module/store/{id}', 'App\Http\Controllers\Rent\ModuleController@store')->name('crm/module/store');
+    Route::post('crm/module/update', 'App\Http\Controllers\Rent\ModuleController@update')->name('crm/module/update');
     /**Şubeler**/
     Route::get('branches', 'App\Http\Controllers\Rent\BranchesController@index')->name('branches');
     Route::get('branches/{id}', 'App\Http\Controllers\Rent\BranchesController@index')->name('branchesUpdate');
@@ -77,11 +84,12 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::get('agents/{id}', 'App\Http\Controllers\Rent\AgentsController@index')->name('agentsUpdate');
     Route::post('agents/store', 'App\Http\Controllers\Rent\AgentsController@store')->name('agents/store');
     Route::post('agents/update', 'App\Http\Controllers\Rent\AgentsController@update')->name('agents/update');
-    /**Roller**/ 
-    Route::get('rols', 'App\Http\Controllers\Rent\RolsController@index')->name('rols');
-    Route::get('rols/{id}', 'App\Http\Controllers\Rent\RolsController@index')->name('rolsUpdate');
-    Route::post('rols/store', 'App\Http\Controllers\Rent\RolsController@store')->name('rols/store');
-    Route::post('rols/update', 'App\Http\Controllers\Rent\RolsController@update')->name('rols/update');
+    /**Roller**/
+    Route::get('permission', 'App\Http\Controllers\Rent\PermissionController@index')->name('permission');
+    Route::get('permission/edit/{id}', 'App\Http\Controllers\Rent\PermissionController@edit')->name('edit');
+    Route::get('permission/delete/{id}', 'App\Http\Controllers\Rent\PermissionController@delete')->name('delete');
+    Route::post('permission/store', 'App\Http\Controllers\Rent\PermissionController@store')->name('permission/store');
+    Route::post('permission/update', 'App\Http\Controllers\Rent\PermissionController@update')->name('permission/update');
     /**Mesajlar**/
     Route::get('messages', 'App\Http\Controllers\Rent\MessageController@index')->name('messages');
     Route::get('messages/read/{id}', 'App\Http\Controllers\Rent\MessageController@read')->name('messages/read');
@@ -117,33 +125,33 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
 //    return redirect()->route('layout-light');
 //})->name('/');
 
-Route::view('layout-light', 'starterkit.layout-light')->name('layout-light');
-Route::view('layout-dark', 'starterkit.layout-dark')->name('layout-dark');
-Route::view('sidebar-fixed', 'starterkit.sidebar-fixed')->name('sidebar-fixed');
-Route::view('boxed', 'starterkit.boxed')->name('boxed');
-Route::view('layout-rtl', 'starterkit.layout-rtl')->name('layout-rtl');
-Route::view('vertical', 'starterkit.vertical')->name('vertical');
-Route::view('mega-menu', 'starterkit.mega-menu')->name('mega-menu');
+    Route::view('layout-light', 'starterkit.layout-light')->name('layout-light');
+    Route::view('layout-dark', 'starterkit.layout-dark')->name('layout-dark');
+    Route::view('sidebar-fixed', 'starterkit.sidebar-fixed')->name('sidebar-fixed');
+    Route::view('boxed', 'starterkit.boxed')->name('boxed');
+    Route::view('layout-rtl', 'starterkit.layout-rtl')->name('layout-rtl');
+    Route::view('vertical', 'starterkit.vertical')->name('vertical');
+    Route::view('mega-menu', 'starterkit.mega-menu')->name('mega-menu');
 
 
-Route::prefix('dashboard')->group(function () {
-	Route::view('default', 'dashboard.index')->name('default');
-	Route::view('crypto', 'dashboard.crypto')->name('crypto');
-	Route::view('ecommerce', 'dashboard.ecommerce')->name('ecommerce');
-});
+    Route::prefix('dashboard')->group(function () {
+        Route::view('default', 'dashboard.index')->name('default');
+        Route::view('crypto', 'dashboard.crypto')->name('crypto');
+        Route::view('ecommerce', 'dashboard.ecommerce')->name('ecommerce');
+    });
 
 
-Route::get('/app',function(){
-    return view('login');
-});
+    Route::get('/app', function () {
+        return view('login');
+    });
 
 
-Route::get('/', [MainController::class, 'index']);
-Route::get('/contact', [MainController::class, 'contact']);
-Route::get('/blog', [MainController::class, 'blog']);
-Route::get('/about', [MainController::class, 'about']);
-Route::get('detail', [MainController::class, 'detail'])->name('detail');
-Route::get('listing', [MainController::class, 'listing'])->name('listing');
-Route::get('add_listing', [MainController::class, 'add_listing'])->name('add_listing');
+    Route::get('/', [MainController::class, 'index']);
+    Route::get('/contact', [MainController::class, 'contact']);
+    Route::get('/blog', [MainController::class, 'blog']);
+    Route::get('/about', [MainController::class, 'about']);
+    Route::get('detail', [MainController::class, 'detail'])->name('detail');
+    Route::get('listing', [MainController::class, 'listing'])->name('listing');
+    Route::get('add_listing', [MainController::class, 'add_listing'])->name('add_listing');
 
 });

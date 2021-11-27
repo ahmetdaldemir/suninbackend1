@@ -20,7 +20,7 @@
 <!-- Container-fluid starts-->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-sm-12 col-lg-5">
+        <div class="col-12 col-sm-12 col-lg-12">
             <div class="card">
                 <div class="card-header">
                     <h5>{{!$update ? 'Kullanıcı Ekle':'Kullanıcı Düzenle'}}</h5>
@@ -28,23 +28,21 @@
                 <div class="card-body">
                     <form action="{{!$update ? route('users/store'):route('users/update')}}" method="POST" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="control-label">Kullanıcı Adı</label>
                                     <input class="form-control" type="text" name="name" value="{{@$user['name']}}">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
+
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="control-label">Şifre</label>
                                     <input class="form-control" type="password" name="password">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
+
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="control-label">Eposta Adresi</label>
                                     <input class="form-control" type="text" name="email" value="{{@$user['email']}}">
@@ -57,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-12 col-lg-7">
+        <div class="col-12 col-sm-12 col-lg-12">
             <div class="card">
                 <div class="card-header">
                     <h5>Tüm Bloglar</h5>
@@ -78,6 +76,7 @@
                                 <td>{{@$result['name']}}</td>
                                 <td>{{@$result['email']}}</td>
                                 <td>
+                                    <a href="{{url('users/roles',['id' => $result['id']])}}" class="btn btn-shadow-primary">Role</a>
                                     <a href="{{'/users/'.$result['id']}}" class="btn btn-shadow-primary">Düzenle</a>
                                     <a href="{{'/user/delete/'.$result['id']}}" class="btn btn-shadow-warning delete" data-id="{{$result['id']}}">Sil</a>
                                 </td>

@@ -42,9 +42,6 @@
                             <div class="stepwizard-step"><a class="btn btn-light" href="#step-3">3</a>
                                 <p>Adım 3</p>
                             </div>
-                            <div class="stepwizard-step"><a class="btn btn-light" href="#step-4">4</a>
-                                <p>Adım 4</p>
-                            </div>
                         </div>
                     </div>
                     <form action="{{route('villa/store')}}" method="POST">
@@ -86,43 +83,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label">Oda Sayısı</label>
-                                                <input name="rooms" class="form-control" type="number" placeholder="Oda Sayısı" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label">Kapasite(kişi)</label>
-                                                <input name="capacity" class="form-control" type="number" placeholder="Kapasite(kişi)" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label">Yatak Odası Sayısı</label>
-                                                <input name="bedrooms" class="form-control" type="number" placeholder="Yatak Odası Sayısı" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label">Banyo Sayısı</label>
-                                                <input name="bathrooms" class="form-control" type="number" placeholder="Banyo Sayısı" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label">Havuz Tipi</label>
-                                                <select name="pool" class="form-control digits" id="">
-                                                    <option value="NO_POOL">NO_POOL</option>
-                                                    <option value="PRIVATE">PRIVATE</option>
-                                                    <option value="KIDS_POOL">KIDS_POOL</option>
-                                                    <option value="DETACHED_POOl">DETACHED_POOl</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <ul class="nav nav-tabs" id="icon-tab" role="tablist">
                                         <?php $i=0?>
                                         @foreach($languages as $lang)
@@ -140,7 +100,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label">Açıklama ({{$lang['code']}})</label>
-                                                <textarea name="description[{{$lang['id']}}]" class="form-control" id=""></textarea>
+                                                <textarea name="description[{{$lang['id']}}]" class="form-control editor" id="desc_{{$lang['id']}}"></textarea>
                                             </div>
                                         </div>
                                         <?php $i++?>
@@ -162,6 +122,32 @@
                                                     <option value="{{$destination['id']}}">{{$destination['title']}}</option>
                                                 @endforeach
                                             </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Oda Sayısı</label>
+                                            <input name="rooms" class="form-control" type="number" placeholder="Oda Sayısı" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Kapasite(kişi)</label>
+                                            <input name="capacity" class="form-control" type="number" placeholder="Kapasite(kişi)" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Yatak Odası Sayısı</label>
+                                            <input name="bedrooms" class="form-control" type="number" placeholder="Yatak Odası Sayısı" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Banyo Sayısı</label>
+                                            <input name="bathrooms" class="form-control" type="number" placeholder="Banyo Sayısı" required="required">
                                         </div>
                                     </div>
                                 </div>
@@ -223,15 +209,39 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Video Link</label>
+                                            <input name="videos" class="form-control" type="text" placeholder="Video Linki">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Havuz Tipi</label>
+                                            <select name="pool" class="form-control digits" id="">
+                                                <option value="NO_POOL">NO_POOL</option>
+                                                <option value="PRIVATE">PRIVATE</option>
+                                                <option value="KIDS_POOL">KIDS_POOL</option>
+                                                <option value="DETACHED_POOl">DETACHED_POOl</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary nextBtn pull-right" type="button">İleri</button>
+                        </div>
+                        <div class="setup-content" id="step-3">
+                            <div class="col-xs-12">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="control-label">Özellikler</label>
                                         <div class="row checkbox checkbox-solid-success">
                                             @foreach($properties as $property)
-                                            <div class="col-4 col-md-3 col-sm-6">
-                                                <input name="properties[]" id="atribute-{{$property['id']}}" type="checkbox" value="{{$property['id']}}">
-                                                <label for="atribute-{{$property['id']}}">{{$property['lang'][0]->title}}</label>
-                                            </div>
+                                                <div class="col-4 col-md-3 col-sm-6">
+                                                    <input name="properties[]" id="atribute-{{$property['id']}}" type="checkbox" value="{{$property['id']}}">
+                                                    <label for="atribute-{{$property['id']}}">{{$property['lang'][0]->title}}</label>
+                                                </div>
                                             @endforeach
                                         </div>
                                     </div>
@@ -255,35 +265,15 @@
                                         <div class="row checkbox checkbox-solid-success">
                                             @foreach($regulations as $regulation)
                                                 <?php //dd(json_decode($regulation['lang'],TRUE)[0]['title']);?>
-                                             <div class="col-4 col-md-3 col-sm-6">
-                                                <input name="regulation[]" id="rules-{{$regulation['id']}}" type="checkbox" value="{{$regulation['id']}}">
-                                                <label for="rules-{{$regulation['id']}}">{{@json_decode($regulation['lang'],TRUE)[0]['title']}}</label>
-                                            </div>
+                                                <div class="col-4 col-md-3 col-sm-6">
+                                                    <input name="regulation[]" id="rules-{{$regulation['id']}}" type="checkbox" value="{{$regulation['id']}}">
+                                                    <label for="rules-{{$regulation['id']}}">{{@json_decode($regulation['lang'],TRUE)[0]['title']}}</label>
+                                                </div>
                                             @endforeach
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary nextBtn pull-right" type="button">İleri</button>
-                            </div>
-                        </div>
-                        <div class="setup-content" id="step-3">
-                            <div class="col-xs-12">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Resimler</label>
-                                        <input name="photos" class="form-control" type="file" multiple>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Videolar</label>
-                                        <input name="video" class="form-control" type="text" >
-                                    </div>
-                                    <button class="btn btn-primary nextBtn pull-right" type="button">İleri</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="setup-content" id="step-4">
-                            @csrf
-                            <div class="col-xs-12">
+                                @csrf
                                 <div class="col-md-12">
                                     <button class="btn btn-success pull-right" type="submit">Kaydı Tamamla!</button>
                                 </div>
@@ -299,25 +289,65 @@
 @endsection
 
 @section('script')
-    <script src="{{asset('rent/js/typeahead/handlebars.js')}}"></script>
-    <script src="{{asset('rent/js/typeahead/typeahead.bundle.js')}}"></script>
-    <script src="{{asset('rent/js/typeahead/typeahead.custom.js')}}"></script>
-    <script src="{{asset('rent/js/typeahead-search/handlebars.js')}}"></script>
-    <script src="{{asset('rent/js/typeahead-search/typeahead-custom.js')}}"></script>
-    <script src="{{asset('rent/js/chart/apex-chart/apex-chart.js')}}"></script>
-    <script src="{{asset('rent/js/chart/apex-chart/stock-prices.js')}}"></script>
-    <script src="{{asset('rent/js/prism/prism.min.js')}}"></script>
-    <script src="{{asset('rent/js/clipboard/clipboard.min.js')}}"></script>
-    <script src="{{asset('rent/js/counter/jquery.waypoints.min.js')}}"></script>
-    <script src="{{asset('rent/js/counter/jquery.counterup.min.js')}}"></script>
-    <script src="{{asset('rent/js/counter/counter-custom.js')}}"></script>
-    <script src="{{asset('rent/js/custom-card/custom-card.js')}}"></script>
-    <script src="{{asset('rent/js/notify/bootstrap-notify.min.js')}}"></script>
-    <script src="{{asset('rent/js/notify/index.js')}}"></script>
-    <script src="{{asset('rent/js/datepicker/date-picker/datepicker.js')}}"></script>
-    <script src="{{asset('rent/js/datepicker/date-picker/datepicker.en.js')}}"></script>
-    <script src="{{asset('rent/js/datepicker/date-picker/datepicker.custom.js')}}"></script>
-    <script src="{{asset('rent/js/form-wizard/form-wizard-two.js')}}"></script>
-    <script src="{{asset('rent/js/select2/select2.full.min.js')}}"></script>
-    <script src="{{asset('rent/js/select2/select2-custom.js')}}"></script>
+<script src="{{asset('rent/js/typeahead/handlebars.js')}}"></script>
+<script src="{{asset('rent/js/typeahead/typeahead.bundle.js')}}"></script>
+<script src="{{asset('rent/js/typeahead/typeahead.custom.js')}}"></script>
+<script src="{{asset('rent/js/typeahead-search/handlebars.js')}}"></script>
+<script src="{{asset('rent/js/typeahead-search/typeahead-custom.js')}}"></script>
+<script src="{{asset('rent/js/chart/apex-chart/apex-chart.js')}}"></script>
+<script src="{{asset('rent/js/chart/apex-chart/stock-prices.js')}}"></script>
+<script src="{{asset('rent/js/prism/prism.min.js')}}"></script>
+<script src="{{asset('rent/js/clipboard/clipboard.min.js')}}"></script>
+<script src="{{asset('rent/js/counter/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('rent/js/counter/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('rent/js/counter/counter-custom.js')}}"></script>
+<script src="{{asset('rent/js/custom-card/custom-card.js')}}"></script>
+<script src="{{asset('rent/js/notify/bootstrap-notify.min.js')}}"></script>
+<script src="{{asset('rent/js/notify/index.js')}}"></script>
+<script src="{{asset('rent/js/datepicker/date-picker/datepicker.js')}}"></script>
+<script src="{{asset('rent/js/datepicker/date-picker/datepicker.en.js')}}"></script>
+<script src="{{asset('rent/js/datepicker/date-picker/datepicker.custom.js')}}"></script>
+<script src="{{asset('rent/js/form-wizard/form-wizard-two.js')}}"></script>
+<script src="{{asset('rent/js/select2/select2.full.min.js')}}"></script>
+<script src="{{asset('rent/js/select2/select2-custom.js')}}"></script>
+<script src="{{asset('rent/js/editor/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('rent/js/editor/ckeditor/styles.js')}}"></script>
+<script src="{{asset('rent/js/editor/ckeditor/adapters/jquery.js')}}"></script>
+<script src="{{asset('rent/js/editor/ckeditor/ckeditor.custom.js')}}"></script>
+<script>
+    $(".editor").each(function () {
+        let id = $(this).attr('id');
+        CKEDITOR.replace(id, {
+            toolbar: [{
+                name: 'clipboard',
+                items: ['Undo', 'Redo']
+            },
+                {
+                    name: 'styles',
+                    items: ['Styles', 'Format']
+                },
+                {
+                    name: 'basicstyles',
+                    items: ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat']
+                },
+                {
+                    name: 'paragraph',
+                    items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote']
+                },
+                {
+                    name: 'links',
+                    items: ['Link', 'Unlink']
+                },
+                {
+                    name: 'tools',
+                    items: ['Maximize']
+                },
+                {
+                    name: 'editing',
+                    items: ['Scayt']
+                }
+            ],
+        });
+    });
+</script>
 @endsection

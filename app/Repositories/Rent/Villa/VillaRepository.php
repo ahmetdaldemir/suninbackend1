@@ -122,7 +122,6 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->video = $data->videos;
         $villa->save();
 
-        //VillaLanguage::where('villa_id', $id)->delete();
         foreach ($data->title as $key => $value) {
             $record = new VillaLanguage();
             $record->id = Str::uuid()->toString();

@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Repositories\Rent\Villa;
+<?php namespace App\Repositories\Rent\Villa;
 
 class VillaImageRepositoryInterface
 {

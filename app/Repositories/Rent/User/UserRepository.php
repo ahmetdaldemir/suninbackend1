@@ -14,15 +14,14 @@ class UserRepository implements UserRepositoryInterface
     public function get($id)
     {
         $data = [];
-        $results = User::where('id',$id)->get();
-        foreach ($results as $result) {
-            $data = array(
-                'id' => $result->id,
-                'name' => $result->name,
-                'email' => $result->email,
+        $results = User::find($id);
+             $data = array(
+                'id' => $results->id,
+                'name' => $results->name,
+                'role_id' => $results->role_id,
+                'email' => $results->email,
             );
-        }
-        return $data;
+         return $data;
     }
 
     public function all()
@@ -34,6 +33,7 @@ class UserRepository implements UserRepositoryInterface
             $data[] = array(
                 'id' => $result->id,
                 'name' => $result->name,
+                'role_id' => $results->role_id,
                 'email' => $result->email
             );
         }
