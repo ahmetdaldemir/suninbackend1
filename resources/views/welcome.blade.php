@@ -124,6 +124,7 @@
                     <div class="ui grid">
 
                         @foreach($villas as $villa)
+
                             <div class="twelve wide mobile four wide tablet four wide computer column">
                                 <div class="property-item">
                                     <div class="property-item-inner">
@@ -134,7 +135,7 @@
                                         </a>
 
 
-                                        <a class="image-sq" href="{{route('detail')}}">
+                                        <a class="image-sq" href="{{url('villa-detail/'.$villa['lang']->where('lang_id',$lang_id)->first()->slug.'')}}">
 										<span class="image-wrapper">
 											<span class="image-inner">
 												<img src="{{Storage::url($villa['villa']->image)}}" alt="" class="">
@@ -167,9 +168,9 @@
 
                                         <div class="property-name">
                                             <div class="title-row">
-                                                <a href="{{route('detail')}}"
-                                                   class="title-sq">{{$villa['lang']->where('lang_id',$lang_id)->first()->title}}</a>
-                                                <a href="{{route('detail')}}" class="button-sq-top">
+                                                <a href="{{url('villa-detail/'.$villa['lang']->where('lang_id',$lang_id)->first()->slug.'')}}"
+                                                   class="title-sq" alt="{{$villa['lang']->where('lang_id',$lang_id)->first()->title}}">{{$villa['lang']->where('lang_id',$lang_id)->first()->title}}</a>
+                                                <a href="{{url('villa-detail/'.$villa['lang']->where('lang_id',$lang_id)->first()->slug.'')}}" alt="{{$villa['lang']->where('lang_id',$lang_id)->first()->title}}" class="button-sq-top">
                                                     Hemen İncele
                                                 </a>
                                             </div>

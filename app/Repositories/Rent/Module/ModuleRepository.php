@@ -58,7 +58,8 @@ class ModuleRepository implements ModuleRepositoryInterface
 
     public function delete($id)
     {
-        Villa::destroy($id);
+        Module::all();
+        RentModule::destroy($id);
     }
 
     public function create(object $data)
@@ -103,21 +104,4 @@ class ModuleRepository implements ModuleRepositoryInterface
         }
     }
 
-    public function imagelist($id){
-        return VillaImage::where('villa_id',$id)->orderBy('sort', 'ASC')->get();
-    }
-    public function createImage(object $data){
-        $filename = new Upload($data);
-        $image = $filename->uploads('villa','image');
-
-        $id = Str::uuid()->toString();
-        $result = new VillaImage();
-        $result->id = $id;
-        $result->image = 'villa/'.$image;
-        $result->villa_id = $data->villa_id;
-        $result->save();
-    }
-    public function imagedestroy($id){
-        VillaImage::destroy('id',$id);
-    }
 }

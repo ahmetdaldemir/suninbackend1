@@ -127,7 +127,7 @@ class VillaRepository implements VillaRepositoryInterface
             $record->id = Str::uuid()->toString();
             $record->villa_id = $id;
             $record->title = $value;
-            $record->seo = $value;
+            $record->slug =  Str::of($value)->snake();
             $record->lang_id = $key;
             $record->description = $data->description[$key];
             $record->save();
@@ -215,7 +215,7 @@ class VillaRepository implements VillaRepositoryInterface
             $record->id = Str::uuid()->toString();
             $record->villa_id = $id;
             $record->title = $value;
-            $record->seo = $value;
+            $record->slug =  Str::of($value)->snake();;
             $record->lang_id = $key;
             $record->description = $data->description[$key];
             $record->save();

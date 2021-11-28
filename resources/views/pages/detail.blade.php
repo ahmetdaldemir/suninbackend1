@@ -13,7 +13,7 @@
 
         <div class="image-wrapper">
             <div class="image-inner">
-                <img class="image-sq slick-img" src="{{asset('view/images/hero/hero_big_31.jpg')}}" alt="" data-gallery="gallery"
+                <img class="image-sq slick-img" src="{{Storage::url($villa['villa']->image)}}" alt="" data-gallery="gallery"
                      data-caption="Cover Photo">
             </div>
         </div>
@@ -22,8 +22,7 @@
             <div class="ui grid container stackable app layout right side">
                 <div class="row">
                     <div class="ui column main-column">
-
-                        <h1 class="title-sq">Gorgeous Spacious Bright Apartment</h1>
+                        <h1 class="title-sq">{{$villa['lang'][0]->title}}</h1>
 
                         <div class="rating-sq">
                             <span>9.4</span>
@@ -38,31 +37,36 @@
                         <div class="icons-row">
                             <div class="icons-column">
                                 <i class="icon icon-account-group-5"></i>
-                                4 Guests
+                                {{$villa['villa']->capacity}} Guests
                             </div>
                             <div class="icons-column">
                                 <i class="icon icon-door-simple"></i>
-                                3 Bedrooms
+                                {{$villa['villa']->bedrooms}}  Bedrooms
                             </div>
                             <div class="icons-column">
                                 <i class="icon icon-bed-double"></i>
-                                3 Beds
+                                {{$villa['villa']->rooms}}  Beds
                             </div>
                             <div class="icons-column">
                                 <i class="icon icon-bath-tub"></i>
-                                2 Baths
+                                {{$villa['villa']->bathrooms}}  Baths
                             </div>
-                        </div>
-
-                        <div class="host-sq">
-                            <a href="vendor_details.html" class="avatar-sq">
-                                <img src="{{asset('view/images/avatar/avatar_04.jpg')}}" alt="">
-                            </a>
-                            <span class="host-right-sq">
-                                <a class="host-name-sq" href="vendor_details.html">Dustin Porter</a>
-                                <a class="host-contact-link-sq modal-ui-trigger" href="" data-trigger-for="contact">Contact me</a>
-                            </span>
-
+                            <div class="icons-column">
+                                <i class="icon icon-bath-tub"></i>
+                                {{$villa['villa']->central_distance}}  Central
+                            </div>
+                            <div class="icons-column">
+                                <i class="icon icon-bath-tub"></i>
+                                {{$villa['villa']->plaj_distance}}  Plaj
+                            </div>
+                            <div class="icons-column">
+                                <i class="icon icon-bath-tub"></i>
+                                {{$villa['villa']->hospital_distance}}  Plaj
+                            </div>
+                            <div class="icons-column">
+                                <i class="icon icon-air-conditioner"></i>
+                                {{$villa['villa']->airport_distance}}  Plaj
+                            </div>
                         </div>
 
                     </div>
@@ -196,33 +200,14 @@
                         <h3>Photos</h3>
 
                         <div class="photo-grid grid-5">
+                            <?php foreach($villa['images'] as $image){ ?>
                             <div class="photo-item">
                                 <div class="image-wrapper">
-                                    <img class="image-sq slick-img" src="{{asset('view/images/property/property_big_01.jpg')}}" alt="" data-gallery="gallery" data-caption="Photo 01">
+                                    <img class="image-sq slick-img" src="{{Storage::url($image->image)}}" alt="" data-gallery="gallery" data-caption="Photo 01">
                                 </div>
                             </div>
-                            <div class="photo-item">
-                                <div class="image-wrapper">
-                                    <img class="image-sq slick-img" src="{{asset('view/images/property/property_big_02.jpg')}}" alt="" data-gallery="gallery" data-caption="Photo 02">
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="image-wrapper">
-                                    <img class="image-sq slick-img" src="{{asset('view/images/property/property_big_03.jpg')}}" alt="" data-gallery="gallery" data-caption="Photo 03">
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="image-wrapper">
-                                    <a data-items="+22
-Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/property_big_04.jpg')}}" alt="" data-gallery="gallery"
-             data-caption="Photo 04"></a>
-                                </div>
-                            </div>
-                            <div class="photo-item">
-                                <div class="image-wrapper">
-                                    <img class="image-sq slick-img" src="{{asset('view/images/property/property_big_05.jpg')}}" alt="" data-gallery="gallery" data-caption="Photo 05">
-                                </div>
-                            </div>
+                            <?php } ?>
+
                         </div>
 
                     </div>
@@ -233,23 +218,17 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
                 <div class="section-container" id="section-01">
 
                     <div class="typo-section-sq top-default bottom-default">
-                        <h3>About this listning</h3>
+                        <h3>Villa Hakkında</h3>
 
-                        <p>Our house is a wood and glass house, built in the 21th century's first years. A large living
-                            room widely glazed with a fireplace, two large sofas and the "chief's armchair" and a
-                            kitchen corner (washdishes).
-                            <br><br>
-                            Cras nec felis nibh. Etiam consequat ligula ac dolor aliquet vulputate. Quisque sagittis
-                            bibendum enim, et auctor mi faucibus at. Nunc nec nisi nulla. Donec eget sollicitudin diam.
-                            Nulla quis ligula eget mi euismod eleifend vitae eu lectus. Suspendisse potenti.</p>
-
+                        {{$villa['lang'][0]->description}}
+                        <hr/>
                         <div class="button-sq small-sq see-through-sq modal-ui-trigger" data-trigger-for="contact">
-                            message us
+                            Mesaj Gönder
                         </div>
 
                         <div class="button-sq link-sq small-sq float-right-sq">
                             <i class="icon icon-share"></i>
-                            share
+                            Paylaş
                         </div>
 
                     </div>
@@ -263,7 +242,7 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
                                         <i class="icon icon-account-group-5"></i>
                                         <div>
                                             <p>Number of guests:</p>
-                                            <strong>4</strong>
+                                            <strong>{{$villa['villa']->capacity}}</strong>
                                         </div>
                                     </li>
 
@@ -271,14 +250,14 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
                                         <i class="icon icon-bath-tub"></i>
                                         <div>
                                             <p>Bathrooms:</p>
-                                            <strong>2</strong>
+                                            <strong>{{$villa['villa']->bathrooms}}</strong>
                                         </div>
                                     </li>
 
                                     <li>
                                         <i class="icon icon-bed-double"></i>
                                         <div><p>Bed:</p>
-                                            <strong>3 - Real Bed</strong>
+                                            <strong>{{$villa['villa']->bedrooms}}</strong>
                                         </div>
                                     </li>
                                 </ul>
@@ -292,15 +271,15 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
                                         <i class="icon icon-building-7"></i>
                                         <div>
                                             <p>Property:</p>
-                                            <strong>Apartment</strong>
+                                            <strong>{{$villa['villa']->type}}</strong>
                                         </div>
                                     </li>
 
                                     <li>
                                         <i class="icon icon-door-simple"></i>
                                         <div>
-                                            <p>Room Type:</p>
-                                            <strong>Entire Apartment </strong>
+                                            <p>Oda Sayısı:</p>
+                                            <strong>{{$villa['villa']->rooms}}</strong>
 
                                         </div>
                                     </li>
@@ -308,7 +287,7 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
                                     <li>
                                         <i class="icon icon-house"></i>
                                         <div><p>Check In / Out:</p>
-                                            <strong>1:00 PM</strong> / <strong>11:00 AM</strong></div>
+                                            <strong>14:00</strong> / <strong>11:00</strong></div>
                                     </li>
 
                                 </ul>
@@ -429,7 +408,7 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
                     </div>
 
                     <div class="typo-section-sq bottom-default">
-                        <h5>The Space</h5>
+                        <h5>Kiralama Şartları</h5>
                         <div class="ui grid moved">
                             <div class="twelve wide column">
                                 <ul class="description-list">
@@ -469,101 +448,7 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
 
                     </div>
 
-                    <div class="typo-section-sq bottom-default">
-                        <h5>Description</h5>
 
-                        <div class="ui grid moved">
-                            <div class="twelve wide column">
-                                <p>
-                                    <strong>Sleeping Arrangements</strong>
-                                </p>
-
-                                <ul class="description-list desc-icon-style inline-2">
-                                    <li>
-                                        <i class="icon icon-bed-double"></i>
-                                        <span>2 Bedrooms</span>
-                                        <em>2 queen bed</em>
-                                    </li>
-
-                                    <li>
-                                        <i class="icon icon-couch"></i>
-                                        <span>Common spaces</span>
-                                        <em>1 couch</em>
-                                    </li>
-
-                                    <li>
-                                        <i class="icon icon-bed-single"></i>
-                                        <span>1 Bedroom</span>
-                                        <em>2 beds</em>
-                                    </li>
-
-                                    <li>
-                                        <i class="icon icon-couch"></i>
-                                        <span>Common spaces</span>
-                                        <em>1 couch</em>
-                                    </li>
-
-                                </ul>
-
-
-                                <strong>The Space</strong>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus magna vel
-                                    ex semper, in pharetra justo pulvinar. Donec non quam vitae justo mattis vestibulum
-                                    a nec nisi. Morbi mi felis, ultrices vitae risus consectetur, porta ultrices sapien.
-                                    <br><br>
-                                    Nunc sit amet velit nibh. Proin consectetur, ante quis tristique mattis, massa massa
-                                    condimentum enim, quis euismod arcu purus ac eros. Sed dictum elementum odio, id
-                                    viverra est auctor nec. Sed condimentum dolor justo, vitae mattis magna maximus
-                                    feugiat. Mauris malesuada leo libero, vitae tempor ante sagittis vitae. Suspendisse
-                                    consectetur facilisis enim. Donec sollicitudin sed nibh eget rutrum. Donec tincidunt
-                                    nibh non feugiat suscipit. Ut ultricies pretium erat non aliquet.
-                                    <br><br>
-                                    In hac habitasse platea dictumst. Integer quis tortor enim. Integer et elit nec
-                                    magna ultricies convallis. In venenatis eu erat et facilisis. Vestibulum congue enim
-                                    nisl. Fusce arcu enim, porta a auctor vel, hendrerit a libero. Vivamus vel dapibus
-                                    sem. Cras nec felis nibh. Etiam consequat ligula ac dolor aliquet vulputate. Quisque
-                                    sagittis bibendum enim, et auctor mi faucibus at. Nunc nec nisi nulla. Donec eget
-                                    sollicitudin diam. Nulla quis ligula eget mi euismod eleifend vitae eu lectus.
-                                    Suspendisse potenti.
-                                </p>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="typo-section-sq bottom-default">
-                        <h5>House Rules</h5>
-
-                        <div class="ui grid moved">
-                            <div class="twelve wide column">
-                                <strong><i class="icon icon-house"></i>The Rules</strong>
-
-                                <div class="ui accordion more-sq">
-                                    <div class="title">
-                                        <a class="accordion-trigger more-trigger" data-more="More" data-less="Less">
-                                            <i class="icon icon-arrow-down-122"></i>
-                                        </a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus
-                                            magna vel ex semper, in pharetra justo pulvinar. Donec non quam vitae justo
-                                            mattis vestibulum a nec nisi. Morbi mi felis, ultrices vitae risus
-                                            consectetur, porta ultrices sapien.
-                                        </p>
-
-                                    </div>
-
-                                    <div class="content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus
-                                            magna vel ex semper, in pharetra justo pulvinar. Donec non quam vitae justo
-                                            mattis vestibulum a nec nisi. Morbi mi felis, ultrices vitae risus
-                                            consectetur, porta ultrices sapien.
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
 
@@ -591,7 +476,7 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
             <div class="row">
                 <div class="ui twelve wide computer twelve wide tablet column">
                     <div class="map-wrapper">
-                        <div id="map"></div>
+                        {!! $villa['villa']->map !!}
                     </div>
                 </div>
             </div>
@@ -605,7 +490,7 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
                 <div class="section-container" id="section-04">
 
                     <div class="typo-section-sq top-default bottom-default">
-                        <h3>Reviews</h3>
+                        <h3>Yorum & Puanlama</h3>
                         <div class="reviews-header">
                             <div class="rating-big">
                                 <div class="rating-badge">
@@ -616,44 +501,12 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
                                     <p>More than <strong>95%</strong> of guests recommend this place</p>
                                 </div>
                             </div>
-                            <div class="rating-percentage">
-                                <div class="rating-column">
-                                    <p class="rating-label"><strong>Accuracy</strong></p>
-                                    <div class="basic-progressbar">
-                                        <div class="inner" style="width:75%"></div>
-                                    </div>
-                                </div>
-
-                                <div class="rating-column">
-                                    <p class="rating-label"><strong>Communication</strong></p>
-                                    <div class="basic-progressbar">
-                                        <div class="inner" style="width:55%"></div>
-                                    </div>
-                                </div>
-
-                                <div class="rating-column">
-                                    <p class="rating-label"><strong>Location</strong></p>
-                                    <div class="basic-progressbar">
-                                        <div class="inner" style="width:25%"></div>
-                                    </div>
-                                </div>
-
-                                <div class="rating-column">
-                                    <p class="rating-label"><strong>Cleanliness</strong></p>
-                                    <div class="basic-progressbar">
-                                        <div class="inner" style="width:80%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="reviews-search">
-                            <form action="#" class="">
-                                <input id="reviews-search" type="text" placeholder="Search reviews" value=""
-                                       required="">
-                                <label><i class="icon icon-search"></i></label>
+                            <form action="#" class="" style="width: 100%;">
+                                <input id="reviews-search" type="text" placeholder="Search reviews" value="" required="" style="width: 90%;float:left">
+                                <button  style="width: 9%;float:right;    height: 50px;"><label><i style="    color: #fff;font-weight: 900;" class="icon icon-search"></i></label></button>
                             </form>
                         </div>
+
 
                         <div class="reviews-feed">
                             <div class="reviews-row">
@@ -740,92 +593,6 @@ Photos"><img class="image-sq slick-img" src="{{asset('view/images/property/prope
         </div>
     </div>
 
-    <div class="section-container" id="section-05">
-        <div class="typo-section-sq bottom-default">
-            <div class="ui grid container stackable app layout right side">
-                <div class="stretched row">
-                    <div class="ui column main-column" role="main">
-                        <div class="typo-section-sq">
-                            <h3 class="host-heading">The Host</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="host-background">
-                <div class="ui grid container stackable app layout right side">
-                    <div class="stretched row">
-                        <div class="ui column main-column" role="main">
-                            <div class="host-row">
-                                <div class="host-avatar-column">
-                                    <a class="image-sq verified-sq" href="vendor_details.html">
-                                        <img src="{{asset('view/images/avatar/avatar_04.jpg')}}" alt="">
-                                    </a>
-
-                                    <div class="social-row">
-                                        <ul class="social-links-sq">
-                                            <li><a href="https://www.facebook.com/seventhqueen.themes" target="_blank"
-                                                   class="fb"><i class="icon icon-logo-facebook2"></i></a></li>
-
-                                            <li><a href="https://twitter.com/seventhqueen" target="_blank" class="tw"><i
-                                                            class="icon icon-logo-twitter-bird2"></i></a></li>
-
-                                            <li><a href="#" class="gp"><i
-                                                            class="icon icon-logo-circle-google-plus-22"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="host-meta-column">
-                                    <div class="host-above">
-                                        <a class="host-name" href="vendor_details.html">Dustin Porter</a>
-                                        <span class="host-location"><i class="icon icon-location-pin-2"></i>Bucharest, Romania</span>
-                                    </div>
-
-                                    <div class="host-icons-row">
-                                        <div class="icons-column rating">
-                                            <span><strong>9.2</strong></span><i class="icon icon-heart"></i>
-                                            <p>Reviews</p>
-
-                                        </div>
-
-                                        <div class="icons-column">
-                                            <span><strong>6</strong> x</span><i class="icon icon-house"></i>
-                                            <p>Listings</p>
-                                        </div>
-
-                                        <div class="icons-column">
-                                            <span><strong>145</strong> x</span><i class="icon icon-house"></i>
-                                            <p>Rentals</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="basic-progressbar">
-                                        <div class="inner" style="width:90%"></div>
-                                    </div>
-
-
-                                    <div class="about-host">
-                                        <!--<strong>Description</strong>-->
-                                        <p class="quote">Somos una familia multicultural lo cual nos enorgullece y nos
-                                            enriquece. Nos gusta mucho viajar, hemos estado en Alemania, España, Italia,
-                                            Francia, Luxemburgo, Bélgica, Perú, Bolivia, Argentina, México y de cada
-                                            lugar hemos traído bellas memorias y aprendizajes. </p>
-                                    </div>
-
-                                    <a class="button-sq small-sq modal-ui-trigger" data-trigger-for="contact">
-                                        Contact Host
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="ui modal small" data-for="contact">
         <i class="icon icon-close close-modal"></i>

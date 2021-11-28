@@ -3,6 +3,7 @@
 namespace Spatie\Multitenancy\Actions;
 
 use Illuminate\Queue\Events\JobProcessing;
+use Illuminate\Queue\Events\JobRetryRequested;
 use Illuminate\Support\Arr;
 use Spatie\Multitenancy\Exceptions\CurrentTenantCouldNotBeDeterminedInTenantAwareJob;
 use Spatie\Multitenancy\Jobs\NotTenantAware;
@@ -18,7 +19,8 @@ class MakeQueueTenantAwareAction
     {
         $this
             ->listenForJobsBeingQueued()
-            ->listenForJobsBeingProcessed();
+            ->listenForJobsBeingProcessed()
+            ->listenForJobsRetryRequested();
     }
 
     protected function listenForJobsBeingQueued(): self
@@ -49,6 +51,19 @@ class MakeQueueTenantAwareAction
         return $this;
     }
 
+    protected function listenForJobsRetryRequested(): self
+    {
+        app('events')->listen(JobRetryRequested::class, function (JobRetryRequested $event) {
+            if (! array_key_exists('tenantId', $event->payload())) {
+                return;
+            }
+
+            $this->findTenant($event)->makeCurrent();
+        });
+
+        return $this;
+    }
+
     protected function isTenantAware(object $queueable): bool
     {
         $reflection = new \ReflectionClass($this->getJobFromQueueable($queueable));
@@ -61,12 +76,29 @@ class MakeQueueTenantAwareAction
             return false;
         }
 
+        if (in_array($reflection->name, config('multitenancy.tenant_aware_jobs'))) {
+            return true;
+        }
+
+        if (in_array($reflection->name, config('multitenancy.not_tenant_aware_jobs'))) {
+            return false;
+        }
+
         return config('multitenancy.queues_are_tenant_aware_by_default') === true;
     }
 
-    protected function findTenant(JobProcessing $event): Tenant
+    protected function getEventPayload($event): ?array
     {
-        $tenantId = $event->job->payload()['tenantId'];
+        return match (true) {
+            $event instanceof JobProcessing => $event->job->payload(),
+            $event instanceof JobRetryRequested => $event->payload(),
+            default => null,
+        };
+    }
+
+    protected function findTenant(JobProcessing|JobRetryRequested $event): Tenant
+    {
+        $tenantId = $this->getEventPayload($event)['tenantId'] ?? null;
 
         if (! $tenantId) {
             $event->job->delete();

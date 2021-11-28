@@ -12,6 +12,7 @@ use App\Repositories\Rent\Contract\ContractRepositoryInterface;
 
 use App\Repositories\Rent\Currency\CurrencyRepository;
 use App\Repositories\Rent\Currency\CurrencyRepositoryInterface;
+
 use App\Repositories\Rent\Customer\CustomerRepository;
 use App\Repositories\Rent\Customer\CustomerRepositoryInterface;
 
@@ -20,18 +21,31 @@ use App\Repositories\Rent\Message\MessageRepository;
 
 use App\Repositories\Rent\Module\ModuleRepository;
 use App\Repositories\Rent\Module\ModuleRepositoryInterface;
+
+use App\Repositories\Rent\Page\PageRepository;
+use App\Repositories\Rent\Page\PageRepositoryInterface;
 use App\Repositories\Rent\Permission\PermissionRepository;
 use App\Repositories\Rent\Permission\PermissionRepositoryInterface;
+
+use App\Repositories\Rent\RentCategory\RentCategoryRepository;
+use App\Repositories\Rent\RentCategory\RentCategoryRepositoryInterface;
+use App\Repositories\Rent\RentDestination\RentDestinationRepository;
+use App\Repositories\Rent\RentDestination\RentDestinationRepositoryInterface;
+use App\Repositories\Rent\RentPage\RentPageRepository;
+use App\Repositories\Rent\RentPage\RentPageRepositoryInterface;
+
 use App\Repositories\Rent\Settings\SettingsRepository;
 use App\Repositories\Rent\Settings\SettingsRepositoryInterface;
 
 use App\Repositories\Rent\Slider\SliderRepository;
 use App\Repositories\Rent\Slider\SliderRepositoryInterface;
+
 use App\Repositories\Rent\User\UserRepository;
 use App\Repositories\Rent\User\UserRepositoryInterface;
 
 use App\Repositories\Rent\Villa\VillaImageRepositoryInterface;
 use App\Repositories\Rent\Villa\VillaImageRepostory;
+
 use App\Repositories\Rent\Villa\VillaRepository;
 use App\Repositories\Rent\Villa\VillaRepositoryInterface;
 
@@ -97,6 +111,22 @@ class RepositoryRentServiceProvider extends ServiceProvider
         $this->app->bind(
             PermissionRepositoryInterface::class,
             PermissionRepository::class
+        );
+        $this->app->bind(
+            RentPageRepositoryInterface::class,
+            RentPageRepository::class
+        );
+        $this->app->bind(
+            PageRepositoryInterface::class,
+            PageRepository::class
+        );
+        $this->app->bind(
+            RentCategoryRepositoryInterface::class,
+            RentCategoryRepository::class
+        );
+        $this->app->bind(
+            RentDestinationRepositoryInterface::class,
+            RentDestinationRepository::class
         );
     }
 }

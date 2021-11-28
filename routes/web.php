@@ -74,6 +74,25 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::get('crm/module/edit/{id}', 'App\Http\Controllers\Rent\ModuleController@edit')->name('crm/module/edit');
     Route::get('crm/module/store/{id}', 'App\Http\Controllers\Rent\ModuleController@store')->name('crm/module/store');
     Route::post('crm/module/update', 'App\Http\Controllers\Rent\ModuleController@update')->name('crm/module/update');
+    Route::get('crm/module/delete/{id}', 'App\Http\Controllers\Rent\ModuleController@destroy')->name('crm/module/delete');
+
+    Route::get('crm/page', 'App\Http\Controllers\Rent\RentPageController@index')->name('page');
+    Route::get('crm/page/edit/{id}', 'App\Http\Controllers\Rent\RentPageController@edit')->name('crm/page/edit');
+    Route::get('crm/page/store/{id}', 'App\Http\Controllers\Rent\RentPageController@store')->name('crm/page/store');
+    Route::post('crm/page/update', 'App\Http\Controllers\Rent\RentPageController@update')->name('crm/page/update');
+    Route::get('crm/page/delete/{id}', 'App\Http\Controllers\Rent\RentPageController@destroy')->name('crm/page/delete');
+
+    Route::get('crm/destination', 'App\Http\Controllers\Rent\RentDestinationController@index')->name('destination');
+    Route::get('crm/destination/edit/{id}', 'App\Http\Controllers\Rent\RentDestinationController@edit')->name('crm/destination/edit');
+    Route::get('crm/destination/store/{id}', 'App\Http\Controllers\Rent\RentDestinationController@store')->name('crm/destination/store');
+    Route::post('crm/destination/update', 'App\Http\Controllers\Rent\RentDestinationController@update')->name('crm/destination/update');
+    Route::get('crm/destination/delete/{id}', 'App\Http\Controllers\Rent\RentDestinationController@destroy')->name('crm/destination/delete');
+
+    Route::get('crm/category', 'App\Http\Controllers\Rent\RentCategoryController@index')->name('category');
+    Route::get('crm/category/edit/{id}', 'App\Http\Controllers\Rent\RentCategoryController@edit')->name('crm/category/edit');
+    Route::get('crm/category/store/{id}', 'App\Http\Controllers\Rent\RentCategoryController@store')->name('crm/category/store');
+    Route::post('crm/category/update', 'App\Http\Controllers\Rent\RentCategoryController@update')->name('crm/category/update');
+    Route::get('crm/category/delete/{id}', 'App\Http\Controllers\Rent\RentCategoryController@destroy')->name('crm/category/delete');
     /**Şubeler**/
     Route::get('branches', 'App\Http\Controllers\Rent\BranchesController@index')->name('branches');
     Route::get('branches/{id}', 'App\Http\Controllers\Rent\BranchesController@index')->name('branchesUpdate');

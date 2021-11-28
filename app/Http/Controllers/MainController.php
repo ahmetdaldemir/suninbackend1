@@ -58,9 +58,10 @@ class MainController extends Controller
         return view('pages/static');
     }
 
-    public function detail()
+    public function detail($seo)
     {
-        return view('pages/detail');
+         $data['villa'] = $this->villaRepository->getseo($seo);
+        return view('pages/detail',$data);
     }
 
     public function listing()
@@ -71,6 +72,19 @@ class MainController extends Controller
     public function add_listing()
     {
         return view('pages/add_listing');
+    }
+
+
+    public function destinations()
+    {
+        $data['destination'] = $this->destinationRepository->all();
+        return view('pages/destinations');
+    }
+
+    public function categories()
+    {
+        $data['categories'] = $this->categoryRepository->all();
+        return view('pages/categories');
     }
 
 }

@@ -11,7 +11,9 @@ use Spatie\Multitenancy\Models\Tenant;
 
 class TenantsArtisanCommand extends Command
 {
-    use UsesTenantModel, UsesMultitenancyConfig, TenantAware;
+    use UsesTenantModel;
+    use UsesMultitenancyConfig;
+    use TenantAware;
 
     protected $signature = 'tenants:artisan {artisanCommand} {--tenant=*}';
 
@@ -20,6 +22,8 @@ class TenantsArtisanCommand extends Command
         if (! $artisanCommand = $this->argument('artisanCommand')) {
             $artisanCommand = $this->ask('Which artisan command do you want to run for all tenants?');
         }
+
+        $artisanCommand = addslashes($artisanCommand);
 
         $tenant = Tenant::current();
 

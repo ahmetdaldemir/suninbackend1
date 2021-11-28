@@ -8,10 +8,18 @@ use App\Repositories\Destination\DestinationRepository;
 use App\Repositories\Destination\DestinationRepositoryInterface;
 use App\Repositories\Language\LanguageRepositoryInterface;
 use App\Repositories\Language\LanguageRepository;
+use App\Repositories\Page\PageRepository;
+use App\Repositories\Page\PageRepositoryInterface;
 use App\Repositories\Property\PropertyRepository;
 use App\Repositories\Property\PropertyRepositoryInterface;
 use App\Repositories\Regulation\RegulationRepository;
 use App\Repositories\Regulation\RegulationRepositoryInterface;
+use App\Repositories\Rent\Page\RentPageRepository;
+use App\Repositories\Rent\Page\RentPageRepositoryInterface;
+use App\Repositories\Rent\RentCategory\RentCategoryRepository;
+use App\Repositories\Rent\RentCategory\RentCategoryRepositoryInterface;
+use App\Repositories\Rent\RentDestination\RentDestinationRepository;
+use App\Repositories\Rent\RentDestination\RentDestinationRepositoryInterface;
 use App\Repositories\Rent\Slider\SliderRepository;
 use App\Repositories\Rent\Slider\SliderRepositoryInterface;
 use App\Repositories\Rent\User\UserRepositoryInterface;
@@ -67,6 +75,26 @@ class RepositoryBackendServiceProvider extends ServiceProvider
         $this->app->bind(
             SliderRepositoryInterface::class,
             SliderRepository::class
+        );
+
+        $this->app->bind(
+            PageRepositoryInterface::class,
+            PageRepository::class
+        );
+
+        $this->app->bind(
+            RentPageRepositoryInterface::class,
+            RentPageRepository::class
+        );
+
+        $this->app->bind(
+            RentDestinationRepositoryInterface::class,
+            RentDestinationRepository::class
+        );
+
+        $this->app->bind(
+            RentCategoryRepositoryInterface::class,
+            RentCategoryRepository::class
         );
     }
 }

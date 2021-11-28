@@ -15,8 +15,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
     public function get($id)
     {
         $data = [];
-        $results = Villa::where('id',$id)->get();
-        dd($results);
+        $results = Villa::where('id', $id)->get();
         foreach ($results as $result) {
             $data[] = array(
                 'id' => $result->id,
@@ -30,10 +29,32 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         return $data;
     }
 
+    public function getseo($slug)
+    {
+
+        $villa = new Villa();
+
+        $villa_language = VillaLanguage::where('slug', $slug)->where('lang_id', $this->lang_id)->first();
+
+        $data = [];
+        $result = $villa::where('id', $villa_language->villa_id)->first();
+            $data = array(
+                'id' => $result->id,
+                'lang' => $result->get_data(),
+                'category' => $result->get_category(),
+                'service' => $result->get_service(),
+                'regulation' => $result->get_regulation(),
+                'property' => $result->get_property(),
+                'images' => $result->get_images(),
+                'villa' => $result
+            );
+        return $data;
+    }
+
     public function all()
     {
         $data = [];
-        $villas = Villa::where('owner_id',$this->view_tenant_id)->get();
+        $villas = Villa::where('owner_id', $this->view_tenant_id)->get();
         foreach ($villas as $villa) {
             $data[] = array(
                 'id' => $villa->id,
@@ -52,9 +73,9 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
     public function create(object $data)
     {
         $filenames = [];
-         $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];
+        $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];
         $files = $data->file('photos');
-        if($files){
+        if ($files) {
             foreach ($files as $file) {
                 $filename = $file->getClientOriginalName();
                 $extension = $file->getClientOriginalExtension();
@@ -67,7 +88,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         $id = Str::uuid()->toString();
         $villa = new Villa();
         $villa->id = $id;
-        $villa->code = "CODE".rand(111,9999);
+        $villa->code = "CODE" . rand(111, 9999);
         $villa->type = $data->type; //varchar(255)
         $villa->capacity = $data->capacity; //varchar(255)
         $villa->rooms = $data->rooms; //varchar(255)
@@ -136,7 +157,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
             $record->save();
         }
 
-        if(count($filenames) > 0){
+        if (count($filenames) > 0) {
             foreach ($filenames as $item) {
                 $villa_images_id = Str::uuid()->toString();
                 $villa_image = new VillaImage();
@@ -234,7 +255,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
             $record->save();
         }
 
-        if(count($filenames) > 0){
+        if (count($filenames) > 0) {
             foreach ($filenames as $item) {
                 $villa_image = new VillaImage();
                 $villa_image->id = $villa_images_id;

@@ -33,7 +33,7 @@ class UserRepository implements UserRepositoryInterface
             $data[] = array(
                 'id' => $result->id,
                 'name' => $result->name,
-                'role_id' => $results->role_id,
+                'role_id' => $result->role_id,
                 'email' => $result->email
             );
         }

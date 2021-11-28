@@ -54,6 +54,14 @@
                                     <span>Kurumsal</span>
                                 </a>
                             </li>
+                            <li><a href="{{url('destination')}}" class="item">
+                                    <span>Bölgeler</span>
+                                </a>
+                            </li>
+                            <li><a href="{{url('categories')}}" class="item">
+                                    <span>Kategoriler</span>
+                                </a>
+                            </li>
                             <li><a href="{{url('contact')}}" class="item">
                                     <span>İletişim</span>
                                 </a>

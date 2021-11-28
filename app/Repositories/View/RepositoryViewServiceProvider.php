@@ -36,5 +36,10 @@ class RepositoryViewServiceProvider extends ServiceProvider
             SliderRepositoryInterface::class,
             SliderRepository::class
         );
+
+        $this->app->bind(
+            DestinationRepositoryInterface::class,
+            DestinationRepository::class
+        );
     }
 }

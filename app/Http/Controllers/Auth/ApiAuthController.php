@@ -1,8 +1,7 @@
-<?php
-
-namespace App\Http\Controllers\Auth;
+<?php namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;

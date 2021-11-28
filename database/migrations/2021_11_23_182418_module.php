@@ -38,7 +38,7 @@ class Module extends Migration
 
         });
 
-        Schema::create('module_languages', function (Blueprint $table) {
+        Schema::create('rent_languages', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');//
             $table->text('description');

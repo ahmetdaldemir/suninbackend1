@@ -12,7 +12,6 @@ class EnsureValidTenantSession
 
     public function handle($request, Closure $next)
     {
-        return "burada";
         $sessionKey = 'ensure_valid_tenant_session_tenant_id';
 
         if (! $request->session()->has($sessionKey)) {
