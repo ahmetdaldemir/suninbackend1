@@ -65,6 +65,7 @@ class BlogRepository implements BlogRepositoryInterface
             $servicelanguage->blog_id = $id;
             $servicelanguage->title = $value;
             $servicelanguage->language_id = $key;
+            $servicelanguage->slug=Str::slug($value);
             $servicelanguage->description = $data->description[$key];
             $servicelanguage->save();
         }
@@ -91,6 +92,7 @@ class BlogRepository implements BlogRepositoryInterface
             $servicelanguage->blog_id = $data->blog_id;
             $servicelanguage->title = $value;
             $servicelanguage->language_id = $key;
+            $servicelanguage->slug=Str::slug($value);
             $servicelanguage->description = $data->description[$key];
             $servicelanguage->save();
         }

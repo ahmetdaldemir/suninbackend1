@@ -1,12 +1,16 @@
 <?php namespace App\Repositories\View;
 
 
+use App\Repositories\View\RentCategory\RentCategoryRepository;
+use App\Repositories\View\RentCategory\RentCategoryRepositoryInterface;
 use App\Repositories\View\Blog\BlogRepository;
 use App\Repositories\View\Blog\BlogRepositoryInterface;
 
 use App\Repositories\View\Category\CategoryRepository;
 use App\Repositories\View\Category\CategoryRepositoryInterface;
 
+use App\Repositories\View\RentDestination\RentDestinationRepository;
+use App\Repositories\View\RentDestination\RentDestinationRepositoryInterface;
 use App\Repositories\View\Slider\SliderRepository;
 use App\Repositories\View\Slider\SliderRepositoryInterface;
 use App\Repositories\View\Villa\VillaRepository;
@@ -38,8 +42,14 @@ class RepositoryViewServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            DestinationRepositoryInterface::class,
-            DestinationRepository::class
+            RentDestinationRepositoryInterface::class,
+            RentDestinationRepository::class
+        );
+
+
+        $this->app->bind(
+            RentCategoryRepositoryInterface::class,
+            RentCategoryRepository::class
         );
     }
 }

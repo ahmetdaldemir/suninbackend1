@@ -8,6 +8,12 @@ class Villa extends BaseModel
         return VillaLanguage::where('villa_id',$this->id)->get();
     }
 
+    public function get_comment()
+    {
+        return VillaComment::where('villa_id',$this->id)->get();
+    }
+
+
     public function get_category()
     {
         return VillaCategory::where('villa_id',$this->id)->get();
@@ -25,7 +31,13 @@ class Villa extends BaseModel
 
     public function get_property()
     {
-        return VillaProperty::where('villa_id',$this->id)->get();
+        $property = [];
+        $x = VillaProperty::where('villa_id',$this->id)->get();
+        foreach($x as $item)
+        {
+           $property[] = Property::find($item->property_id);
+        }
+        return $property;
     }
 
     public function get_images()
@@ -80,6 +92,11 @@ class VillaService extends BaseModel
 }
 
 class VillaRegulation extends BaseModel
+{
+    public $timestamps = false;
+}
+
+class VillaComment extends BaseModel
 {
     public $timestamps = false;
 }

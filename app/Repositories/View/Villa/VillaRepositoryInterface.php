@@ -5,7 +5,7 @@ interface VillaRepositoryInterface
 
     public function get($id);
 
-    public function getseo($id);
+    public function getslug($id);
 
     public function all();
 

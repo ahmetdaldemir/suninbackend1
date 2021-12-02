@@ -96,7 +96,7 @@ class ModuleRepository implements ModuleRepositoryInterface
                 $record->id = Str::uuid()->toString();
                 $record->module_id = $data->id;
                 $record->name = $value;
-                $record->seo = $value;
+                $record->slug = $value;
                 $record->lang_id = $key;
                 $record->description = @$data->description[$key];
                 $record->save();

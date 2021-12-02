@@ -48,7 +48,7 @@ td.space {width: 70px;}
                             <tr>
                                 <th></th>
                                 <th scope="col">Resim</th>
-                                <th scope="col">Başlık(seo)</th>
+                                <th scope="col">Başlık(slug)</th>
                                 <th scope="col">Ücret</th>
                                 <th scope="col">Oda</th>
                                 <th scope="col">Deposit</th>
@@ -62,7 +62,7 @@ td.space {width: 70px;}
                                 <td class="avability" data-id="villa_{{$result['id']}}"> + </td>
                                 <td><img src="{{Storage::url($result['image'])}}"></td>
                                 <td>
-                                    <h6> {{$result['lang'][0]['title']}} ({{$result['lang'][0]['seo']}})</h6><span><b>Tipi: </b>{{$result['type']}}</span>
+                                    <h6> {{@$result['lang'][0]['title']}} ({{@$result['lang'][0]['slug']}})</h6><span><b>Tipi: </b>{{$result['type']}}</span>
                                 </td>
                                 <td>{{$result['clean_price']}}</td>
                                 <td class="font-success">{{$result['rooms']}}</td>

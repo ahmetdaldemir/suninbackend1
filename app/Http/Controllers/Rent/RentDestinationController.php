@@ -17,47 +17,37 @@ class RentDestinationController extends Controller
         $this->languageRepository = $languageRepository;
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        $data['destinations'] = $this->rentDestinationRepository->all();
+        $data = $this->rentDestinationRepository->all();
         $data['languages']  = $this->languageRepository->all();
         return view('rent/destination/list',$data);
-    }
-
-    public function create()
-    {
-        $data['languages']  = $this->languageRepository->all();
-        return view('rent/destination/create',$data);
-    }
-
-    public function edit(Request $request)
-    {
-        $data['destinations'] = $this->rentDestinationRepository->all();
-        $data['languages']  = $this->languageRepository->all();
-        return view('rent/destination/index',$data);
     }
 
     public function store(Request $request)
     {
         $this->rentDestinationRepository->create($request);
-        return redirect()->back();
+        return redirect()->to('crm/destination');
     }
 
-    public function show($id)
+    public function edit(Request $request)
     {
-        return response()->json($this->rentDestinationRepository->get($id), Response::HTTP_CONTINUE);
+        $data['destination'] = $this->rentDestinationRepository->get($request->id);
+        //$data['main_name'] = $this->rentDestinationRepository->get($data['destination']['destination_id']);
+        $data['main_name']['title'] = '';//
+        $data['languages']  = $this->languageRepository->all();
+        return view('rent/destination/edit',$data);
     }
 
     public function update(Request $request)
     {
         $this->rentDestinationRepository->update($request);
-        return redirect()->back();
+        return redirect()->to('crm/destination');
     }
 
     public function destroy($id)
     {
         $this->rentDestinationRepository->delete($id);
-        response()->json("Başarılı",  Response::HTTP_NO_CONTENT);
-        return redirect()->back();
+        return redirect()->to('crm/destination');
     }
 }

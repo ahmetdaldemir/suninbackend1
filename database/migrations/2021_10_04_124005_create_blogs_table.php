@@ -28,6 +28,7 @@ class CreateBlogsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('image');
+            $table->string('slug');
             $table->uuid('language_id');
             $table->foreign('language_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('blog_id');

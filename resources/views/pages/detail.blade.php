@@ -13,7 +13,8 @@
 
         <div class="image-wrapper">
             <div class="image-inner">
-                <img class="image-sq slick-img" src="{{Storage::url($villa['villa']->image)}}" alt="" data-gallery="gallery"
+                <img class="image-sq slick-img" src="{{Storage::url($villa['villa']->image)}}" alt=""
+                     data-gallery="gallery"
                      data-caption="Cover Photo">
             </div>
         </div>
@@ -41,31 +42,31 @@
                             </div>
                             <div class="icons-column">
                                 <i class="icon icon-door-simple"></i>
-                                {{$villa['villa']->bedrooms}}  Bedrooms
+                                {{$villa['villa']->bedrooms}} Bedrooms
                             </div>
                             <div class="icons-column">
                                 <i class="icon icon-bed-double"></i>
-                                {{$villa['villa']->rooms}}  Beds
+                                {{$villa['villa']->rooms}} Beds
                             </div>
                             <div class="icons-column">
                                 <i class="icon icon-bath-tub"></i>
-                                {{$villa['villa']->bathrooms}}  Baths
+                                {{$villa['villa']->bathrooms}} Baths
                             </div>
                             <div class="icons-column">
                                 <i class="icon icon-bath-tub"></i>
-                                {{$villa['villa']->central_distance}}  Central
+                                {{$villa['villa']->central_distance}} Central
                             </div>
                             <div class="icons-column">
                                 <i class="icon icon-bath-tub"></i>
-                                {{$villa['villa']->plaj_distance}}  Plaj
+                                {{$villa['villa']->plaj_distance}} Plaj
                             </div>
                             <div class="icons-column">
                                 <i class="icon icon-bath-tub"></i>
-                                {{$villa['villa']->hospital_distance}}  Plaj
+                                {{$villa['villa']->hospital_distance}} Plaj
                             </div>
                             <div class="icons-column">
                                 <i class="icon icon-air-conditioner"></i>
-                                {{$villa['villa']->airport_distance}}  Plaj
+                                {{$villa['villa']->airport_distance}} Plaj
                             </div>
                         </div>
 
@@ -203,7 +204,8 @@
                             <?php foreach($villa['images'] as $image){ ?>
                             <div class="photo-item">
                                 <div class="image-wrapper">
-                                    <img class="image-sq slick-img" src="{{Storage::url($image->image)}}" alt="" data-gallery="gallery" data-caption="Photo 01">
+                                    <img class="image-sq slick-img" src="{{Storage::url($image->image)}}" alt=""
+                                         data-gallery="gallery" data-caption="Photo 01">
                                 </div>
                             </div>
                             <?php } ?>
@@ -234,14 +236,14 @@
                     </div>
 
                     <div class="typo-section-sq bottom-default">
-                        <h5>The Space</h5>
+                        <h5>Bilinmesi Gerekenler</h5>
                         <div class="ui grid moved">
                             <div class="twelve wide mobile six wide tablet six wide computer column">
                                 <ul class="description-list">
                                     <li>
                                         <i class="icon icon-account-group-5"></i>
                                         <div>
-                                            <p>Number of guests:</p>
+                                            <p>Kişi Sayısı:</p>
                                             <strong>{{$villa['villa']->capacity}}</strong>
                                         </div>
                                     </li>
@@ -249,14 +251,14 @@
                                     <li>
                                         <i class="icon icon-bath-tub"></i>
                                         <div>
-                                            <p>Bathrooms:</p>
+                                            <p>Banyo Sayısı:</p>
                                             <strong>{{$villa['villa']->bathrooms}}</strong>
                                         </div>
                                     </li>
 
                                     <li>
                                         <i class="icon icon-bed-double"></i>
-                                        <div><p>Bed:</p>
+                                        <div><p>Yatak Sayısı:</p>
                                             <strong>{{$villa['villa']->bedrooms}}</strong>
                                         </div>
                                     </li>
@@ -270,7 +272,7 @@
                                     <li>
                                         <i class="icon icon-building-7"></i>
                                         <div>
-                                            <p>Property:</p>
+                                            <p>Villa Tipi:</p>
                                             <strong>{{$villa['villa']->type}}</strong>
                                         </div>
                                     </li>
@@ -286,7 +288,7 @@
 
                                     <li>
                                         <i class="icon icon-house"></i>
-                                        <div><p>Check In / Out:</p>
+                                        <div><p>Giriş Çıkış / Saati:</p>
                                             <strong>14:00</strong> / <strong>11:00</strong></div>
                                     </li>
 
@@ -297,8 +299,7 @@
                     </div>
 
                     <div class="typo-section-sq bottom-default">
-                        <h5>Amenities</h5>
-
+                        <h5>Özellikler</h5>
                         <div class="ui grid moved">
                             <div class="ui column">
                                 <div class="ui accordion more-sq">
@@ -308,48 +309,14 @@
                                                 <i class="icon icon-arrow-down-122"></i>
                                             </a>
 
-                                            <div class="twelve wide mobile six wide tablet four wide computer column">
+                                            <div class="twelve wide mobile six wide tablet twelve wide computer column">
                                                 <ul class="description-list">
+                                                <?php foreach($villa['propertys'] as $property){  ?>
                                                     <li>
-                                                        <i class="icon icon-wifi-modem-2"></i>
-                                                        <div><p>Wifi</p></div>
+                                                         <i class="icon icon-wifi-modem-2"></i>
+                                                         <div><p><pre>{{  print_r($property->get_data())}}</pre></div>
                                                     </li>
-
-                                                    <li>
-                                                        <i class="icon icon-television"></i>
-                                                        <div><p>TV</p></div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="twelve wide mobile six wide tablet four wide computer column">
-                                                <ul class="description-list">
-                                                    <li>
-                                                        <i class="icon icon-radio-2"></i>
-                                                        <div><p>Hifi System</p></div>
-                                                    </li>
-
-                                                    <li>
-                                                        <i class="icon icon-radio-1"></i>
-                                                        <div><p>Radio</p></div>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
-
-                                            <div class="twelve wide mobile six wide tablet four wide computer column">
-                                                <ul class="description-list">
-                                                    <li>
-                                                        <i class="icon icon-air-heater"></i>
-                                                        <div><p>Air Heater</p></div>
-                                                    </li>
-
-                                                    <li>
-                                                        <i class="icon icon-fitness-center"></i>
-                                                        <div><p>Gym</p></div>
-                                                    </li>
-
-
+                                                    <?php } ?>
                                                 </ul>
                                             </div>
 
@@ -404,9 +371,7 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                     <div class="typo-section-sq bottom-default">
                         <h5>Kiralama Şartları</h5>
                         <div class="ui grid moved">
@@ -447,17 +412,10 @@
                         </div>
 
                     </div>
-
-
                 </div>
-
-
             </div>
-
             <div class="ui column side-column"></div>
-
         </div>
-
     </div>
 
     <div class="section-container" id="section-03">
@@ -502,86 +460,32 @@
                                 </div>
                             </div>
                             <form action="#" class="" style="width: 100%;">
-                                <input id="reviews-search" type="text" placeholder="Search reviews" value="" required="" style="width: 90%;float:left">
-                                <button  style="width: 9%;float:right;    height: 50px;"><label><i style="    color: #fff;font-weight: 900;" class="icon icon-search"></i></label></button>
+                                <input id="reviews-search" type="text" placeholder="Search reviews" value="" required=""
+                                       style="width: 90%;float:left">
+                                <button style="width: 9%;float:right;    height: 50px;"><label><i
+                                                style="    color: #fff;font-weight: 900;" class="icon icon-search"></i></label>
+                                </button>
                             </form>
                         </div>
 
 
                         <div class="reviews-feed">
-                            <div class="reviews-row">
+                            @foreach($villa['comments'] as $comment)
+                                <div class="reviews-row">
 
-                                <div class="review-meta">
-                                    <a class="avatar-sq verified-sq" href="vendor_details.html">
-                                        <img src="{{asset('view/images/avatar/avatar_01.jpg')}}" alt="">
-                                    </a>
-                                    <a class="name-sq" href="vendor_details.html">Danny Martinez</a>
-                                </div>
-
-                                <div class="comment-sq">
-                                    <span class="date-sq">12 september 2017</span>
-
-                                    <p>As the saying goes: “Hospitality is making your guests feel at home, even though
-                                        you wish they were". So please treat the place and the building neighbours as
-                                        you would do your own.</p>
-                                </div>
-                            </div>
-
-                            <div class="reviews-row">
-                                <div class="review-meta">
-                                    <a class="avatar-sq verified-sq" href="vendor_details.html">
-                                        <img src="{{asset('view/images/avatar/avatar_03.jpg')}}" alt="">
-                                    </a>
-                                    <a class="name-sq" href="vendor_details.html">Nathaniel Brown</a>
-                                </div>
-                                <div class="comment-sq">
-                                    <span class="date-sq">24 august 2017</span>
-
-                                    <p>With your budget in mind, it is easy to plan a chartered yacht vacation.
-                                        Companies often have a fleet of sailing vessels that can accommodate parties of
-                                        various sizes. You may want to make it a more intimate trip with only close
-                                        family. There are charters that can be rented for as few as two people.</p>
-                                </div>
-                            </div>
-
-                            <div class="reviews-row">
-                                <div class="review-meta">
-                                    <a class="avatar-sq verified-sq" href="vendor_details.html">
-                                        <img src="{{asset('view/images/avatar/avatar_02.jpg')}}" alt="">
-                                    </a>
-                                    <a class="name-sq" href="vendor_details.html">Adele Burke</a>
-                                </div>
-
-                                <div class="comment-sq">
-                                    <span class="date-sq">06 May 2017</span>
-
-                                    <div class="ui accordion more-sq">
-                                        <div class="title">
-                                            <a class="accordion-trigger more-trigger right-sq" data-more="More"
-                                               data-less="Less">
-                                                <i class="icon icon-arrow-down-122"></i>
-                                            </a>
-                                            <p>It is important to choose a hotel that makes you feel comfortable –
-                                                contemporary or traditional furnishings, local decor or international,
-                                                formal or relaxed. The ideal hotel directory should let you know of the
-                                                options available.
-                                            </p>
-
-                                        </div>
-
-                                        <div class="content">
-                                            <p>If it matters that your hotel is, for example, on the beach, close to the
-                                                theme park, or convenient for the airport, then location is paramount.
-                                                Any decent directory should offer a location map of the hotel and its
-                                                surroundings. There should be distance charts to the airport offered as
-                                                well as some form of interactive map.
-                                            </p>
-                                        </div>
+                                    <div class="review-meta">
+                                        <a class="avatar-sq verified-sq" href="vendor_details.html">
+                                            <img src="{{asset('view/images/avatar/avatar_01.jpg')}}" alt="">
+                                        </a>
+                                        <a class="name-sq" href="#>{{$comment->fullname}}</a>
                                     </div>
 
+                                    <div class=" comment-sq">
+                                        <span class="date-sq"><?php $x = new DateTime($comment->created_at); $x->format('d-m-Y'); ?></span>
+                                        {{$comment->description}}
+                                    </div>
                                 </div>
-                            </div>
-
+                            @endforeach
 
                         </div>
                     </div>

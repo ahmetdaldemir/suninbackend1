@@ -29,7 +29,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         return $data;
     }
 
-    public function getseo($slug)
+    public function getslug($slug)
     {
 
         $villa = new Villa();
@@ -44,8 +44,9 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
                 'category' => $result->get_category(),
                 'service' => $result->get_service(),
                 'regulation' => $result->get_regulation(),
-                'property' => $result->get_property(),
+                'propertys' => $result->get_property(),
                 'images' => $result->get_images(),
+                'comments' => $result->get_comment(),
                 'villa' => $result
             );
         return $data;
@@ -119,7 +120,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
             $record->id = Str::uuid()->toString();
             $record->villa_id = $id;
             $record->title = $value;
-            $record->seo = $value;
+            $record->slug =  Str::slug($value);
             $record->lang_id = $key;
             $record->description = $data->description[$key];
             $record->save();
@@ -217,7 +218,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
             $record->id = Str::uuid()->toString();
             $record->villa_id = $id;
             $record->title = $value;
-            $record->seo = $value;
+            $record->slug =  Str::slug($value);
             $record->lang_id = $key;
             $record->description = $data->description[$key];
             $record->save();

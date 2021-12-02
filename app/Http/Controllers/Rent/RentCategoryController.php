@@ -17,47 +17,37 @@ class RentCategoryController extends Controller
         $this->languageRepository = $languageRepository;
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        $data['categories'] = $this->rentCategoryRepository->all();
+        $data = $this->rentCategoryRepository->all();
         $data['languages']  = $this->languageRepository->all();
         return view('rent/category/list',$data);
-    }
-
-    public function create()
-    {
-        $data['languages']  = $this->languageRepository->all();
-        return view('rent/category/create',$data);
-    }
-
-    public function edit(Request $request)
-    {
-        $data['categories'] = $this->rentCategoryRepository->all();
-        $data['languages']  = $this->languageRepository->all();
-        return view('rent/category/index',$data);
     }
 
     public function store(Request $request)
     {
         $this->rentCategoryRepository->create($request);
-        return redirect()->back();
+        return redirect()->to('crm/category');
     }
 
-    public function show($id)
+    public function edit(Request $request)
     {
-        return response()->json($this->rentCategoryRepository->get($id), Response::HTTP_CONTINUE);
+        $data['category'] = $this->rentCategoryRepository->get($request->id);
+        //$data['main_name'] = $this->rentCategoryRepository->get($data['category']['category_id']);
+        $data['main_name']['title'] = '';//
+        $data['languages']  = $this->languageRepository->all();
+        return view('rent/category/edit',$data);
     }
 
     public function update(Request $request)
     {
         $this->rentCategoryRepository->update($request);
-        return redirect()->back();
+        return redirect()->to('crm/category');
     }
 
     public function destroy($id)
     {
         $this->rentCategoryRepository->delete($id);
-        response()->json("Başarılı",  Response::HTTP_NO_CONTENT);
-        return redirect()->back();
+        return redirect()->to('crm/category');
     }
 }

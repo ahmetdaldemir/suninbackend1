@@ -2,6 +2,7 @@
 
 use App\Models\Villa;
 use App\Models\VillaCategory;
+use App\Models\VillaComment;
 use App\Models\VillaImage;
 use App\Models\VillaLanguage;
 use App\Models\VillaProperty;
@@ -127,7 +128,7 @@ class VillaRepository implements VillaRepositoryInterface
             $record->id = Str::uuid()->toString();
             $record->villa_id = $id;
             $record->title = $value;
-            $record->slug =  Str::of($value)->snake();
+            $record->slug = $value;
             $record->lang_id = $key;
             $record->description = $data->description[$key];
             $record->save();
@@ -215,7 +216,7 @@ class VillaRepository implements VillaRepositoryInterface
             $record->id = Str::uuid()->toString();
             $record->villa_id = $id;
             $record->title = $value;
-            $record->slug =  Str::of($value)->snake();;
+            $record->slug = $value;
             $record->lang_id = $key;
             $record->description = $data->description[$key];
             $record->save();
@@ -270,5 +271,9 @@ class VillaRepository implements VillaRepositoryInterface
     }
     public function imagedestroy($id){
         VillaImage::destroy('id',$id);
+    }
+
+    public function comment($id){
+        return VillaComment::where('villa_id',$id)->get();//->orderBy('id', 'ASC')
     }
 }

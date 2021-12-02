@@ -1,6 +1,8 @@
 <?php namespace App\Repositories\Rent\RentCategory;
 
+use App\Models\Category;
 use App\Models\RentCategory;
+use App\Models\RentCategoryLanguage;
 use App\Services\Upload;
 use Illuminate\Support\Str;
 
@@ -8,43 +10,43 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
 {
     public function get($id)
     {
-        Page::all();
+        Category::all();
         $data = [];
-        $results = RentPage::where('id',$id)->get();
+        $results = RentCategory::where('id',$id)->get();
         foreach ($results as $result) {
             $data[] = array(
                 'id' => $result->id,
-                'page_id' => $result->page_id,
+                'category_id' => $result->category_id,
                 'image' => $result->image,
                 'status' => $result->is_status,
                 'lang' => $result->get_data()
             );
         }
-        return $data[0];
+        return @$data[0];
     }
 
     public function all()
     {
-        $module_data = array();
+        $category_data = array();
         $session = session()->get('rent_session');
-        $pages = Page::all();
-        $rentpages = RentPage::where('tenant_id',$session['tenant_id'])->get();
-        //dd($pages);
-        foreach ($rentpages as $rentpage) {
-            $page_data[$rentpage['page_id']] = array(
-                'id' => $rentpage['id'],
-                'page_id' => $rentpage['page_id'],
-                'image' => $rentpage['image'],
-                'is_status' => $rentpage['is_status'],
-                'name' => $rentpage['name']
+        $categories = Category::all();
+        $rentcategories = RentCategory::where('tenant_id',$session['tenant_id'])->get();
+        foreach ($rentcategories as $rentcategory) {
+            $category_data[$rentcategory['category_id']] = array(
+                'id' => $rentcategory['id'],
+                'category_id' => $rentcategory['category_id'],
+                'image' => $rentcategory['image'],
+                'is_status' => $rentcategory['is_status'],
+                'name' => $rentcategory['name']
             );
         }
 
-        foreach ($pages as $page){
-            $data['pages'][] = array(
-                'id' => $page['id'],
-                'name' => $page['name'],
-                'page' => @$page_data[$page['id']]
+        foreach ($categories as $category){
+            $data['categories'][] = array(
+                'id' => $category['id'],
+                'image' => $category['image'],
+                'lang' => $category->get_data(),
+                'category' => @$category_data[$category['id']]
             );
         }
         //dd($data);
@@ -53,44 +55,58 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
 
     public function delete($id)
     {
-        RentPage::destroy($id);
+        RentCategory::destroy($id);
     }
 
     public function create(object $data)
     {
         $session = session()->get('rent_session');
-        $data = Page::where('id',$data->id)->get();
+        $data = Category::where('id',$data->id)->get();
+        $data['lang'] = $data[0]->get_data();
         $id = Str::uuid()->toString();
-        $save = new RentPage();
+        $save = new RentCategory();
         $save->id = $id;
-        $save->page_id = $data[0]->id; //text
-        $save->image = ''; //text
+        $save->category_id = $data[0]->id; //text
+        $save->image = $data[0]->image; //text
         $save->tenant_id = $session['tenant_id']; //char(36)
         $save->save();
+
+        foreach ($data['lang'] as $lang) {
+            $record = new RentCategoryLanguage();
+            $record->id = Str::uuid()->toString();
+            $record->rent_category_id = $id;
+            $record->name = $lang['title'];
+            $record->slug = $lang['slug'];
+            $record->lang_id = $lang['lang_id'];
+            $record->description = '';
+            $record->meta = '';
+            $record->tags = '';
+            $record->save();
+        }
     }
 
     public function update(object $data)
     {
-        Page::all();
+        Category::all();
         if(!empty($data->photos)){
             $filename = new Upload($data);
-            $image = 'page/'.$filename->upload('page');
+            $image = 'category/'.$filename->upload('category');
         }else{
             $image = $data->image;
         }
-        $save = RentPage::find($data->page_id);
+        $save = RentCategory::find($data->category_id);
         $save->image = $image; //text
         $save->is_status = $data->status; //text
         $save->save();
 
         if(!empty($data->title)){
-            RentPageLanguage::where('rent_page_id', $data->page_id)->delete();
+            RentCategoryLanguage::where('rent_category_id', $data->category_id)->delete();
             foreach ($data->title as $key => $value) {
-                $record = new RentPageLanguage();
+                $record = new RentCategoryLanguage();
                 $record->id = Str::uuid()->toString();
-                $record->rent_page_id = $data->page_id;
+                $record->rent_category_id = $data->category_id;
                 $record->name = $value;
-                $record->seo = $value;
+                $record->slug = $value;
                 $record->lang_id = $key;
                 $record->description = @$data->description[$key];
                 $record->meta = @$data->meta[$key];
@@ -99,5 +115,4 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
             }
         }
     }
-
 }

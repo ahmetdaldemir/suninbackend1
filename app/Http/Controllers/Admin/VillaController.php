@@ -88,7 +88,7 @@ class VillaController extends Controller
             $villa_language->title = $value;
             $villa_language->lang_id = $key;
             $villa_language->description = $request->description[$key];
-            $villa_language->seo = Str::slug($value, '-');
+            $villa_language->slug = Str::slug($value, '-');
             $villa_language->save();
             $i++;
         }
@@ -201,7 +201,7 @@ class VillaController extends Controller
             $villalanguage = VillaLanguage::where('property_id', $id)->where('lang_id', $language->id)->first();
             $villalanguage->property_id = $language->id;
             $villalanguage->lang_id = $id;
-            $villalanguage->slug = Str::of($request->title)->snake();
+            $villalanguage->slug = Str::slug($request->title);
             $villalanguage->title = $request->title;
             $villalanguage->save();
         }

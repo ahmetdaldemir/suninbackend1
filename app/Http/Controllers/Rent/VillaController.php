@@ -171,4 +171,11 @@ class VillaController extends Controller
         }
         return response()->json(['error' => 'Resim Silinemedi!'], 200);
     }
+
+    public function comment($id)
+    {
+        $data['villa'] = $this->villaRepository->get($id);
+        $data['comments'] = $this->villaRepository->comment($id);
+        return view('rent/villa/comment',$data);
+    }
 }

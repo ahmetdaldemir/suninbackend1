@@ -8,7 +8,6 @@ class Category extends BaseModel
     }
 }
 
-
 class CategoryLanguage extends BaseModel
 {
     public $timestamps = false;

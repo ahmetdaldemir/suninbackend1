@@ -34,7 +34,7 @@ class PropertyRepository implements PropertyRepositoryInterface
             $propertylanguage->id = Str::uuid()->toString();
             $propertylanguage->property_id = $id;
             $propertylanguage->lang_id = $key;
-            $propertylanguage->slug = Str::of($value)->snake();
+            $propertylanguage->slug = Str::slug($value);
             $propertylanguage->title = $value;
             $propertylanguage->save();
             $i++;
@@ -78,7 +78,7 @@ class PropertyRepository implements PropertyRepositoryInterface
             $propertylanguage->id = Str::uuid()->toString();
             $propertylanguage->property_id = $request->property_id;
             $propertylanguage->lang_id = $key;
-            $propertylanguage->slug = Str::of($value)->snake();
+            $propertylanguage->slug = Str::slug($value);
             $propertylanguage->title = $value;
             $propertylanguage->save();
             $i++;

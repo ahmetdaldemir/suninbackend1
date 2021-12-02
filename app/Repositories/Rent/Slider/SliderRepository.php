@@ -69,8 +69,8 @@ class SliderRepository implements SliderRepositoryInterface
             $dataLanguage->text1 = $data->text1[$key];
             $dataLanguage->text2 = $data->text2[$key];
             $dataLanguage->text3 = $data->text3[$key];
-            $dataLanguage->sub_title =  Str::of($value)->snake();
-            $dataLanguage->seo = $data->seo[$key];
+            $dataLanguage->sub_title =  Str::slug($value);
+            $dataLanguage->slug = $data->slug[$key];
             $dataLanguage->save();
         }
         return redirect()->back();
@@ -93,7 +93,7 @@ class SliderRepository implements SliderRepositoryInterface
             $dataLanguage = new SliderLanguage();
             $dataLanguage->id = Str::uuid()->toString();
             $dataLanguage->slider_id = $data->slider_id;
-            $dataLanguage->seo = $value;
+            $dataLanguage->slug = $value;
             $dataLanguage->title = $value;
             $dataLanguage->language_id = $key;
             $dataLanguage->sub_title = $data->sub_title[$key];

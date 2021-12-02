@@ -31,7 +31,6 @@ class RentPageRepository implements RentPageRepositoryInterface
         $session = session()->get('rent_session');
         $pages = Page::all();
         $rentpages = RentPage::where('tenant_id',$session['tenant_id'])->get();
-        //dd($pages);
         foreach ($rentpages as $rentpage) {
             $page_data[$rentpage['page_id']] = array(
                 'id' => $rentpage['id'],
@@ -92,7 +91,7 @@ class RentPageRepository implements RentPageRepositoryInterface
                 $record->id = Str::uuid()->toString();
                 $record->rent_page_id = $data->page_id;
                 $record->name = $value;
-                $record->seo = $value;
+                $record->slug = $value;
                 $record->lang_id = $key;
                 $record->description = @$data->description[$key];
                 $record->meta = @$data->meta[$key];

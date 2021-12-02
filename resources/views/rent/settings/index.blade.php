@@ -20,106 +20,152 @@
 <!-- Container-fluid starts-->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-sm-12 col-lg-12">
+        <div class="col-xl-12 xl-100 col-lg-12 box-col-12">
             <div class="card">
+                <form action="{{route('settings/update')}}" method="POST" enctype="multipart/form-data">
                 <div class="card-header">
-                    <h5>Ayarlar</h5>
+                    <h5 class="pull-left">Ayarlar</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('settings/update')}}" method="POST" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">Logo</label>
-                                    <input class="form-control" type="file" name="logo_file">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <img src="{{Storage::url('app/public/blog/' . @$settings['logo'])}}" width="100%"/>
-                                    <input name="logo_image" type="hidden" value="{{@$settings['logo']}}" />
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">Favicon</label>
-                                    <input class="form-control" type="file" name="favicon_file">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <img src="{{Storage::url('app/public/blog/' . @$settings['favicon'])}}" width="100%"/>
-                                    <input name="favicon_image" type="hidden" value="{{@$settings['favicon']}}" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">Telefon</label>
-                                    <input class="form-control" type="text" name="phone" value="{{@$settings['phone']}}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">whatsapp</label>
-                                    <input class="form-control" type="text" name="whatsapp" value="{{@$settings['whatsapp']}}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">email</label>
-                                    <input class="form-control" type="text" name="email" value="{{@$settings['email']}}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">chatscript</label>
-                                    <input class="form-control" type="text" name="chatscript" value="{{@$settings['chatscript']}}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">Google Etiket Yönetimi</label>
-                                    <input class="form-control" type="text" name="google_tag_manager" value="{{@$settings['google_tag_manager']}}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="control-label">Google Analytics</label>
-                                    <input class="form-control" type="text" name="google_analytics" value="{{@$settings['google_analytics']}}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label class="control-label">Aktif Diller</label>
-                                <div class="form-group m-checkbox-inline mb-0">
-                                    <?php $select = json_decode($settings['languages']);?>
-                                    @foreach($languages as $key => $lang)
-                                    <div class="checkbox checkbox-dark">
-                                        <input name="language[]" value="{{$lang['id']}}" id="inline-{{$key}}" type="checkbox"{{@$select[$key]==$lang['id'] ? ' checked':null}}>
-                                        <label for="inline-{{$key}}">{{$lang['code']}}</label>
+                    <div class="tabbed-card">
+                        <ul class="pull-right nav nav-tabs nav-material" id="top-tab" role="tablist">
+                            <li class="nav-item"><a class="nav-link active" id="top-home-tab" data-toggle="tab" href="#top-home" role="tab" aria-controls="top-home" aria-selected="false">Genel</a>
+                                <div class="material-border"></div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" id="profile-top-tab" data-toggle="tab" href="#top-profile" role="tab" aria-controls="top-profile" aria-selected="true">Firma</a>
+                                <div class="material-border"></div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" id="contact-top-tab" data-toggle="tab" href="#top-contact" role="tab" aria-controls="top-contact" aria-selected="false">Contact</a>
+                                <div class="material-border"></div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" id="emails-top-tab" data-toggle="tab" href="#top-emails" role="tab" aria-controls="top-emails" aria-selected="false">E-posta</a>
+                                <div class="material-border"></div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" id="sms-top-tab" data-toggle="tab" href="#top-sms" role="tab" aria-controls="top-sms" aria-selected="false">SMS</a>
+                                <div class="material-border"></div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" id="payment-top-tab" data-toggle="tab" href="#top-payment" role="tab" aria-controls="top-payment" aria-selected="false">Ödeme</a>
+                                <div class="material-border"></div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" id="site-top-tab" data-toggle="tab" href="#top-site" role="tab" aria-controls="top-site" aria-selected="false">Site</a>
+                                <div class="material-border"></div>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="top-tabContent">
+                            <div class="tab-pane fade active show" id="top-home" role="tabpanel" aria-labelledby="top-home-tab">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Logo</label>
+                                            <input class="form-control" type="file" name="logo_file">
+                                        </div>
                                     </div>
-                                    @endforeach
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><img class="img-thumbnail" src="{{!empty($settings['logo']) ? Storage::url($settings['logo']):Storage::url('noimage-small.jpg')}}" width="120"/></div>
+                                            <input name="logo_image" type="hidden" value="{{!empty($settings['logo']) ? $settings['logo']:'noimage-small.jpg'}}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Favicon</label>
+                                            <input class="form-control" type="file" name="favicon_file">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><img class="img-thumbnail" src="{{!empty($settings['favicon']) ? Storage::url($settings['favicon']):Storage::url('noimage-small.jpg')}}" width="120"/></div>
+                                            <input name="favicon_image" type="hidden" value="{{!empty($settings['favicon']) ? $settings['logo']:'noimage-small.jpg'}}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Telefon</label>
+                                            <input class="form-control" type="text" name="phone" value="{{@$settings['phone']}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">whatsapp</label>
+                                            <input class="form-control" type="text" name="whatsapp" value="{{@$settings['whatsapp']}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">email</label>
+                                            <input class="form-control" type="text" name="email" value="{{@$settings['email']}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">chatscript</label>
+                                            <input class="form-control" type="text" name="chatscript" value="{{@$settings['chatscript']}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Google Etiket Yönetimi</label>
+                                            <input class="form-control" type="text" name="google_tag_manager" value="{{@$settings['google_tag_manager']}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Google Analytics</label>
+                                            <input class="form-control" type="text" name="google_analytics" value="{{@$settings['google_analytics']}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="control-label">Aktif Diller</label>
+                                        <div class="form-group m-checkbox-inline mb-0">
+                                            <?php $select = json_decode($settings['languages']);?>
+                                            @foreach($languages as $key => $lang)
+                                                <div class="checkbox checkbox-dark">
+                                                    <input name="language[]" value="{{$lang['id']}}" id="inline-{{$key}}" type="checkbox"{{@$select[$key]==$lang['id'] ? ' checked':null}}>
+                                                    <label for="inline-{{$key}}">{{$lang['code']}}</label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{$settings->id}}">
                                 </div>
                             </div>
-                            @csrf
-                            <input type="hidden" name="id" value="{{$settings->id}}">
+                            <div class="tab-pane fade" id="top-profile" role="tabpanel" aria-labelledby="profile-top-tab">
+                                <p>firma bilgileri</p>
+                            </div>
+                            <div class="tab-pane fade" id="top-contact" role="tabpanel" aria-labelledby="contact-top-tab">
+                                <p>iletişim</p>
+                            </div>
+                            <div class="tab-pane fade" id="top-emails" role="tabpanel" aria-labelledby="emails-top-tab">
+                                <p>eposta ayarları</p>
+                            </div>
+                            <div class="tab-pane fade" id="top-sms" role="tabpanel" aria-labelledby="sms-top-tab">
+                                <p>Sms Ayarları</p>
+                            </div>
+                            <div class="tab-pane fade" id="top-payment" role="tabpanel" aria-labelledby="payment-top-tab">
+                                <p>Ödeme ayarları</p>
+                            </div>
                         </div>
-                        <button class="btn btn-primary nextBtn pull-right" type="submit">Güncelle</button>
-                    </form>
+                    </div>
                 </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary nextBtn pull-right" type="submit">Güncelle</button>
+                </div>
+                </form>
             </div>
         </div>
     </div>

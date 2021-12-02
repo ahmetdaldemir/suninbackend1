@@ -61,7 +61,7 @@ class CreateVillasTable extends Migration
             $table->uuid('id')->primary();
             $table->string('title');
             $table->text('description');
-            $table->string('seo');
+            $table->string('slug');
             $table->uuid('villa_id');
             $table->uuid('lang_id');
             $table->foreign('lang_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');
@@ -135,6 +135,18 @@ class CreateVillasTable extends Migration
             $table->uuid('regulation_id');
             $table->foreign('regulation_id')->references('id')->on('regulations')->onUpdate('cascade')->onDelete('cascade');
             $table->softDeletes();
+        });
+
+        Schema::create('villa_comments', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->string('fullname');
+            $table->text('description');
+            $table->uuid('villa_id');
+            $table->foreign('villa_id')->references('id')->on('villas')->onUpdate('cascade')->onDelete('cascade');
+            $table->uuid('tenant_id');
+            $table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
+            $table->timestamps();
         });
 
     }

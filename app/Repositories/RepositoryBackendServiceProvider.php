@@ -14,16 +14,22 @@ use App\Repositories\Property\PropertyRepository;
 use App\Repositories\Property\PropertyRepositoryInterface;
 use App\Repositories\Regulation\RegulationRepository;
 use App\Repositories\Regulation\RegulationRepositoryInterface;
+use App\Repositories\Rent\Comment\CommentRepository;
+use App\Repositories\Rent\Comment\CommentRepositoryInterface;
 use App\Repositories\Rent\Page\RentPageRepository;
 use App\Repositories\Rent\Page\RentPageRepositoryInterface;
 use App\Repositories\Rent\RentCategory\RentCategoryRepository;
 use App\Repositories\Rent\RentCategory\RentCategoryRepositoryInterface;
 use App\Repositories\Rent\RentDestination\RentDestinationRepository;
 use App\Repositories\Rent\RentDestination\RentDestinationRepositoryInterface;
+use App\Repositories\Rent\Reservation\ReservationRepository;
+use App\Repositories\Rent\Reservation\ReservationRepositoryInterface;
 use App\Repositories\Rent\Slider\SliderRepository;
 use App\Repositories\Rent\Slider\SliderRepositoryInterface;
 use App\Repositories\Rent\User\UserRepositoryInterface;
 use App\Repositories\Rent\User\UserRepository;
+use App\Repositories\ReservationStatus\ReservationStatusRepository;
+use App\Repositories\ReservationStatus\ReservationStatusRepositoryInterface;
 use App\Repositories\Service\ServiceRepository;
 use App\Repositories\Service\ServiceRepositoryInterface;
 use App\Repositories\Tenant\TenantRepository;
@@ -95,6 +101,20 @@ class RepositoryBackendServiceProvider extends ServiceProvider
         $this->app->bind(
             RentCategoryRepositoryInterface::class,
             RentCategoryRepository::class
+        );
+
+        $this->app->bind(
+            CommentRepositoryInterface::class,
+            CommentRepository::class
+        );
+
+        $this->app->bind(
+            ReservationRepositoryInterface::class,
+            ReservationRepository::class
+        );
+        $this->app->bind(
+            ReservationStatusRepository::class,
+            ReservationStatusRepositoryInterface::class
         );
     }
 }

@@ -2,20 +2,16 @@
 
 use App\Http\Controllers\Controller;
 use App\Repositories\Language\LanguageRepositoryInterface;
-use App\Repositories\Rent\Page\PageRepositoryInterface;
 use App\Repositories\Rent\Page\RentPageRepositoryInterface;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class RentPageController extends Controller
 {
     private RentPageRepositoryInterface $RentPageRepository;
-    private PageRepositoryInterface $pageRepository;
     private LanguageRepositoryInterface $languageRepository;
 
-    public function __construct(RentPageRepositoryInterface $RentPageRepository,PageRepositoryInterface $pageRepository,LanguageRepositoryInterface $languageRepository)
+    public function __construct(RentPageRepositoryInterface $RentPageRepository,LanguageRepositoryInterface $languageRepository)
     {
-        $this->pageRepository = $pageRepository;
         $this->RentPageRepository = $RentPageRepository;
         $this->languageRepository = $languageRepository;
     }
@@ -35,7 +31,7 @@ class RentPageController extends Controller
     public function edit(Request $request)
     {
         $data['page'] = $this->RentPageRepository->get($request->id);
-        $data['main_page'] = $this->pageRepository->get($data['page']['page_id']);
+        $data['main_page'] = $this->RentPageRepository->get($data['page']['page_id']);
         $data['languages']  = $this->languageRepository->all();
 
         return view('rent/pages/edit',$data);

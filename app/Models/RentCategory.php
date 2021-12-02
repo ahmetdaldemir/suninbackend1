@@ -3,7 +3,7 @@
 class RentCategory extends BaseModel {
     public function get_data()
     {
-        return RentCategoryLanguage::where('category_id',$this->id)->get();
+        return RentCategoryLanguage::where('rent_category_id',$this->id)->get();
     }
 }
 

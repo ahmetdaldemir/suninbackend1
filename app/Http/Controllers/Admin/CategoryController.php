@@ -57,7 +57,7 @@ class CategoryController extends Controller
             $categorylanguage->id = Str::uuid()->toString();
             $categorylanguage->category_id = $id;
             $categorylanguage->lang_id = $key;
-            $categorylanguage->slug = Str::of($value)->snake();;
+            $categorylanguage->slug = Str::slug($value);
             $categorylanguage->title = $value;
             $categorylanguage->save();
         }
@@ -114,7 +114,7 @@ class CategoryController extends Controller
             $categorylanguage->id = Str::uuid()->toString();
             $categorylanguage->category_id = $request->category_id;
             $categorylanguage->lang_id = $key;
-            $categorylanguage->slug = Str::of($value)->snake();
+            $categorylanguage->slug = Str::slug($value);
             $categorylanguage->title = $value;
             $categorylanguage->save();
             $i++;

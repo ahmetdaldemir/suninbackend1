@@ -68,7 +68,6 @@
               <ul class="iconbar-mainmenu custom-scrollbar">
                   <li class="iconbar-header">Bloglar</li>
                   <li><a href="{{route('blog')}}">Blog Listesi</a></li>
-                  <li><a href="{{route('slider')}}">Silder(SlideShow)</a></li>
               </ul>
           </li>
           <li>
@@ -78,15 +77,18 @@
                   <li><a href="{{route('crypto')}}">Kupon Kodları</a></li>
                   <li><a href="{{route('crypto')}}">İndirimler &amp; Kampanyalar</a></li>
                   <li><a href="{{route('customers')}}">Müşteriler</a></li>
-                  <li><a href="{{route('crypto')}}">Yorum Sistemi</a></li>
+                  <li><a href="{{route('comment')}}">Yorum Sistemi</a></li>
                   <li><a href="{{route('settings')}}">Ayarlar</a></li>
                   <li><a href="{{route('currency')}}">Döviz Kurları</a></li>
-                  <li><a href="/dsfsdf">Ödeme Sistemi</a></li>
+                  <li><a href="{{route('module')}}">Modüller</a></li>
+                  <li><a href="{{route('page')}}">Sayfalar</a></li>
+                  <li><a href="{{route('slider')}}">Silder(SlideShow)</a></li>
+                  <li><a href="{{route('crm/destination')}}">Bölgeler</a></li>
+                  <li><a href="{{route('crm/category')}}">Kategoriler</a></li>
                   <li><a href="/fsdfsd">Sistem Varsayılanları</a></li>
                   <li><a href="/System/Schedules">Sistem Araçları</a></li>
                   <li><a href="/System/Documents">Dokümanlar</a></li>
                   <li><a href="/Contracts/Villa/SupplementDefs?fd=1">Villa Tanımları</a></li>
-                  <li><a href="/System/Countries">Bölgeler</a></li>
                   <li><a href="/System/ParameterGroups">Parametre Grupları</a></li>
               </ul>
           </li>

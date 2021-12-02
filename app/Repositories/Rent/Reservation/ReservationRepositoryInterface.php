@@ -1,6 +1,6 @@
-<?php namespace App\Repositories\View\Destination;
+<?php namespace App\Repositories\Rent\Reservation;
 
-interface DestinationRepositoryInterface
+interface ReservationRepositoryInterface
 {
 
     public function get($id);

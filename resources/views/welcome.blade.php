@@ -110,13 +110,12 @@
                     <div class="ui grid ">
                         <div class="v-ic container-fluid">
                             @foreach($categories as $category)
-                                @if($category['category']->is_view == 1)
-                                    <div class="v-icon"><a href="">
+                                    <?php //dd($category)?>
+                                    <div class="v-icon"><a href="{{url('category-detail/'.$category['lang']->where('lang_id',$lang_id)->first()->slug)}}">
                                             <img src="{{Storage::url($category['category']->image)}}" class="img"
-                                                 alt="{{$category['lang']->where('lang_id',$lang_id)->first()->title}}">
-                                            <p>{{$category['lang']->where('lang_id',$lang_id)->first()->title}}</p></a>
+                                                 alt="{{$category['lang']->where('lang_id',$lang_id)->first()->name}}">
+                                            <p>{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</p></a>
                                     </div>
-                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -124,6 +123,12 @@
                     <div class="ui grid">
 
                         @foreach($villas as $villa)
+                            @if(isset($villa['lang']))
+                             <?php
+                                 $title = $villa['lang']->where('lang_id',$lang_id)->first()->title ?? "bulunamadı";
+                                 $slug  = $villa['lang']->where('lang_id',$lang_id)->first()->slug ?? "bulunamadı";
+                                ?>
+                            @endif
 
                             <div class="twelve wide mobile four wide tablet four wide computer column">
                                 <div class="property-item">
@@ -135,12 +140,13 @@
                                         </a>
 
 
-                                        <a class="image-sq" href="{{url('villa-detail/'.$villa['lang']->where('lang_id',$lang_id)->first()->slug.'')}}">
-										<span class="image-wrapper">
-											<span class="image-inner">
-												<img src="{{Storage::url($villa['villa']->image)}}" alt="" class="">
-											</span>
-										</span>
+                                        <a class="image-sq"
+                                           href="{{url('villa-detail/'.$slug.'')}}">
+                                            <span class="image-wrapper">
+                                                <span class="image-inner">
+                                                    <img src="{{Storage::url($villa['villa']->image)}}" alt="" class="">
+                                                </span>
+                                            </span>
                                         </a>
 
                                         <div class="main-details">
@@ -166,16 +172,18 @@
 
                                         </div>
 
-                                        <div class="property-name">
-                                            <div class="title-row">
-                                                <a href="{{url('villa-detail/'.$villa['lang']->where('lang_id',$lang_id)->first()->slug.'')}}"
-                                                   class="title-sq" alt="{{$villa['lang']->where('lang_id',$lang_id)->first()->title}}">{{$villa['lang']->where('lang_id',$lang_id)->first()->title}}</a>
-                                                <a href="{{url('villa-detail/'.$villa['lang']->where('lang_id',$lang_id)->first()->slug.'')}}" alt="{{$villa['lang']->where('lang_id',$lang_id)->first()->title}}" class="button-sq-top">
-                                                    Hemen İncele
-                                                </a>
+                                            <div class="property-name">
+                                                <div class="title-row">
+                                                    <a href="{{url('villa-detail/'.$slug.'')}}"
+                                                       class="title-sq"
+                                                       alt="{{$title}}">{{$title}}</a>
+                                                    <a href="{{url('villa-detail/'.$slug.'')}}"
+                                                       alt="{{$title}}"
+                                                       class="button-sq-top">
+                                                        Hemen İncele
+                                                    </a>
+                                                </div>
                                             </div>
-
-                                        </div>
                                         <div class="property-fl">
                                             <p><i class="icon icon-pin2"></i> {{$villa['villa']->destination->title}}
                                             </p>
@@ -236,106 +244,30 @@
 
                         <div class="magic-grid photo-sq hover-default hover-center">
 
-                            <!-- item-->
-                            <div class="item">
-                                <div class="item-inner">
-
-                                    <!-- image container -->
-                                    <div class="image-sq">
-                                        <div class="image-wrapper">
-                                            <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/fethiye.jpeg')}}" alt="">
+                            @foreach ($destinations as $destination)
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="image-sq">
+                                            <div class="image-wrapper">
+                                                <div class="image-inner">
+                                                    <img class="image-sq"
+                                                         src="{{Storage::url($destination['destination']->image)}}"
+                                                         alt="{{$destination['lang']->where('lang_id',$lang_id)->first()->title}}">
+                                                </div>
                                             </div>
                                         </div>
+                                        <a href="{{url('destination-detail/'.$destination['lang']->where('lang_id',$lang_id)->first()->slug.'')}}"
+                                           class="typo-sq">
+                                            <span class="typo-whitespace"></span>
+                                            <p class="typo-label-sq"
+                                               data-label-before="{{$destination['lang']->where('lang_id',$lang_id)->first()->title}}"
+                                               data-label-after="Tüm Villalar"></p>
+                                            <p class="typo-title-sq">{{$destination['lang']->where('lang_id',$lang_id)->first()->title}}</p>
+                                        </a>
+
                                     </div>
-
-                                    <!-- typography container-->
-                                    <a href="{{route('listing')}}" class="typo-sq">
-                                        <span class="typo-whitespace"></span>
-                                        <p class="typo-label-sq" data-label-before="Fethiye"
-                                           data-label-after="Tüm Villalar"></p>
-                                        <p class="typo-title-sq">Göcek</p>
-                                    </a>
-
                                 </div>
-                            </div>
-
-                            <!-- item-->
-                            <div class="item">
-                                <div class="item-inner">
-
-                                    <!-- image container -->
-                                    <div class="image-sq">
-                                        <div class="image-wrapper">
-                                            <div class="image-inner">
-                                                <img class="image-sq" src="{{asset('view/images/magic_grid/kas.jpeg')}}"
-                                                     alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- typography container-->
-                                    <a href="{{route('listing')}}" class="typo-sq">
-                                        <span class="typo-whitespace"></span>
-                                        <p class="typo-label-sq" data-label-before="Antalya"
-                                           data-label-after="Tüm Villalar"></p>
-                                        <p class="typo-title-sq">Kaş</p>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <!-- item-->
-                            <div class="item">
-                                <div class="item-inner">
-
-                                    <!-- image container -->
-                                    <div class="image-sq">
-                                        <div class="image-wrapper">
-                                            <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/marmaris.jpeg')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- typography container-->
-                                    <a href="{{route('listing')}}" class="typo-sq">
-                                        <span class="typo-whitespace"></span>
-                                        <p class="typo-label-sq" data-label-before="Muğla"
-                                           data-label-after="Tüm Villalar"></p>
-                                        <p class="typo-title-sq">Marmaris</p>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <!-- item-->
-                            <div class="item">
-                                <div class="item-inner">
-
-                                    <!-- image container -->
-                                    <div class="image-sq">
-                                        <div class="image-wrapper">
-                                            <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/kemer.jpeg')}}" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- typography container-->
-                                    <a href="{{route('listing')}}" class="typo-sq">
-                                        <span class="typo-whitespace"></span>
-                                        <p class="typo-label-sq" data-label-before="Antalya"
-                                           data-label-after="Tüm Villalar"></p>
-                                        <p class="typo-title-sq">Kemer</p>
-                                    </a>
-
-                                </div>
-                            </div>
-
+                            @endforeach
                         </div>
 
                         <a class="more-trigger" data-more="Hepsini Görüntüle" href="{{route('listing')}}">
@@ -581,12 +513,11 @@
                                         </a>
 
                                         <div class="typo-sq">
-                                            <p class="typo-label-sq" data-label-before="Beauty"
-                                               data-label-after="Book a home in"></p>
                                             <p class="typo-title-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
                                             <p class="typo-desc-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->description}}</p>
 
-                                            <a href="" class="read-more-sq">Devamını Oku... <i class="icon icon-arrow-right-122"></i></a>
+                                            <a href="" class="read-more-sq">Devamını Oku... <i
+                                                        class="icon icon-arrow-right-122"></i></a>
                                         </div>
 
                                     </div>

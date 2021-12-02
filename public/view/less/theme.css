@@ -15004,6 +15004,7 @@ select.ui.dropdown {
 .description-list li {
   padding: 6px 0;
   position: relative;
+  float:left;
 }
 .description-list li:before {
   display: none;

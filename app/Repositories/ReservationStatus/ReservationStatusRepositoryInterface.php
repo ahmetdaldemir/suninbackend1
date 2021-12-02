@@ -1,6 +1,6 @@
-<?php namespace App\Repositories\View\Blog;
+<?php namespace App\Repositories\ReservationStatus;
 
-interface BlogRepositoryInterface
+interface ReservationStatusRepositoryInterface
 {
 
     public function get($id);
