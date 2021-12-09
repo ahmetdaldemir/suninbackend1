@@ -34,7 +34,7 @@ class CreatePageTable extends Migration
 
         Schema::create('rent_page_languages', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('seo');
+            $table->string('slug');
             $table->string('name');//
             $table->text('description');
             $table->uuid('rent_page_id');

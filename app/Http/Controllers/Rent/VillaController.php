@@ -172,6 +172,12 @@ class VillaController extends Controller
         return response()->json(['error' => 'Resim Silinemedi!'], 200);
     }
 
+    public function parent($parent)
+    {
+        $data  = $this->destinationRepository->parent($parent);
+        return response()->json( $data, 200);
+    }
+
     public function comment($id)
     {
         $data['villa'] = $this->villaRepository->get($id);

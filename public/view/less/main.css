@@ -51,8 +51,8 @@ border-radius: 4px;
 .property-item .property-item-inner .property-name .title-sq { font-weight: bold !important; font-size: 24px !important;}
 .property-item .property-item-inner  .property-fl {display: flex; justify-content: space-between; padding: 15px 15px; color:#186A7E ; border-top: 1px solid #e8e8e8;}
 
-.property-item { height: 600px !important; padding: 10px; background: #fff;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; -webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;}
-.property-item .property-item-inner { height: 400px !important;}
+.property-item { height: 485px !important; padding: 10px; background: #fff;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; -webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;}
+.property-item .property-item-inner { height: 350px !important;}
 .property-item .property-item-inner .price-tag-sq { background-color: #38B3D0 !important;}
 .responsive {
     width: 100% !important;

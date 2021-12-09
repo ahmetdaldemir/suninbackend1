@@ -112,15 +112,32 @@
                         </div>
                         <div class="setup-content" id="step-2">
                             <div class="col-xs-12">
+                                <h4>Adres / Özellik Bilgileri</h4>
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <h4>Adres / Özellik Bilgileri</h4>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Şehir</label>
+                                            <select name="destination_parent" class="form-control digits" id="destination_parent">
+                                                <option>Şehir seçiniz</option>
+                                                @foreach($destinations as $destination)
+                                                <option value="{{$destination['id']}}">{{$destination['title']}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label">Bölge</label>
-                                            <select name="destination_id" class="form-control digits" id="exampleFormControlSelect9">
-                                                @foreach($destinations as $destination)
-                                                    <option value="{{$destination['id']}}">{{$destination['title']}}</option>
-                                                @endforeach
+                                            <select name="destination_select" class="form-control digits" id="destination_select" data-id="0" disabled>
+                                                    <option>Şehir Seçiniz</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Alt Bölge</label>
+                                            <select name="destination_id" class="form-control digits" id="destination_id" data-id="0" disabled>
+                                                    <option>Bölge Seçiniz</option>
                                             </select>
                                         </div>
                                     </div>
@@ -314,6 +331,7 @@
 <script src="{{asset('rent/js/editor/ckeditor/styles.js')}}"></script>
 <script src="{{asset('rent/js/editor/ckeditor/adapters/jquery.js')}}"></script>
 <script src="{{asset('rent/js/editor/ckeditor/ckeditor.custom.js')}}"></script>
+<script src="{{asset('rent/js/customCity.js')}}"></script>
 <script>
     $(".editor").each(function () {
         let id = $(this).attr('id');

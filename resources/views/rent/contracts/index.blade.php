@@ -104,14 +104,14 @@ td {width: 200px;}
                                     <td class="row-template">
                                         <select name="currency" class="form-control max-width-200" id="currency" aria-label="Default select example">
                                         @foreach($currencies as $currency)
-                                        <option value="{{$currency->id}}">{{$currency->name}}</option>
+                                        <option value="{{$currency['id']}}">{{$currency['name']}}</option>
                                         @endforeach
                                         </select>
                                     </td>
                                     <td class="row-new">
                                         <select name="currency" class="form-control max-width-200" id="currency" aria-label="Default select example">
                                         @foreach($currencies as $currency)
-                                        <option value="{{$currency->id}}">{{$currency->name}}</option>
+                                        <option value="{{$currency['id']}}">{{$currency['name']}}</option>
                                         @endforeach
                                         </select>
                                     </td>

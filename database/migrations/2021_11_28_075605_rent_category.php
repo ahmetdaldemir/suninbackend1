@@ -16,6 +16,7 @@ class RentCategory extends Migration
         Schema::create('rent_categories', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('image');
+            $table->tinyInteger('sort')->default(0);
             $table->uuid('tenant_id');
             $table->uuid('category_id');
             $table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');
@@ -27,9 +28,9 @@ class RentCategory extends Migration
 
         Schema::create('rent_categories_languages', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('seo');
+            $table->string('slug');
             $table->string('name');//
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->uuid('rent_category_id');
             $table->uuid('lang_id');
             $table->string('meta');

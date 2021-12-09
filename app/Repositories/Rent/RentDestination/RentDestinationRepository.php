@@ -37,7 +37,8 @@ class RentDestinationRepository implements RentDestinationRepositoryInterface
                 'destination_id' => $rentdestination['destination_id'],
                 'image' => $rentdestination['image'],
                 'is_status' => $rentdestination['is_status'],
-                'name' => $rentdestination['name']
+                'name' => $rentdestination['name'],
+                'lang' => $rentdestination->get_data()
             );
         }
 

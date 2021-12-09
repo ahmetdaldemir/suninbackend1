@@ -8,8 +8,7 @@
 @endsection
 
 @section('content')
-
-
+<?php //dd($blogs)?>
 
     <div class="ui layout">
     <div class="ui grid container">
@@ -29,32 +28,29 @@
                                         </div>
 
                                         <div class="magic-grid article-sq hover-scale">
-
-                                            <!-- item-->
-                                            <div class="item">
-                                                <div class="item-inner">
-
-                                                    <!-- image container -->
-                                                    <a class="image-sq" href="article.html">
+                                            @foreach($blogs as $blog)
+                                                <div class="item">
+                                                        <div class="item-inner">
+                                                            <a class="image-sq" href="{{url('blog-detail/'.$blog['lang']->where('language_id',$lang_id)->first()->slug)}}">
                                                         <span class="image-wrapper">
                                                             <span class="image-inner">
-                                                                <img class="image-sq" src="{{asset('view/images/magic_grid/magic_grid_article_01.jpg')}}" alt="">
+                                                                <img class="image-sq" src="{{Storage::url($blog['blog']->image)}}" alt="">
                                                             </span>
                                                         </span>
-                                                    </a>
+                                                            </a>
 
-                                                    <!-- typography container-->
-                                                    <div class="typo-sq">
-                                                        <p class="typo-label-sq" data-label-before="Travel" data-label-after="Book a home in"></p>
-                                                        <p class="typo-title-sq">Getting Cheap Airfare For Last Minute Travel</p>
-                                                        <p class="typo-desc-sq">Nunc sit amet velit nibh. Proin consectetur, ante quis tristique mattis, massa massa condimentum enim.</p>
+                                                            <!-- typography container-->
+                                                            <div class="typo-sq">
+                                                                <p class="typo-label-sq" data-label-before="Blog" data-label-after="Book a home in"></p>
+                                                                <p class="typo-title-sq">{{@$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
+                                                                <p class="typo-desc-sq">{{@$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
 
-                                                        <a href="article.html" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
+                                                                <a href="{{url('blog-detail/'.@$blog['lang']->where('language_id',$lang_id)->first()->slug)}}" class="read-more-sq">Devamı.. <i class="icon icon-arrow-right-122"></i></a>
+                                                            </div>
+
+                                                        </div>
                                                     </div>
-
-                                                </div>
-                                            </div>
-
+                                            @endforeach
                                             <!-- item-->
                                             <div class="item">
                                                 <div class="item-inner">

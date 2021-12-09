@@ -7,5 +7,7 @@ interface RentDestinationRepositoryInterface
 
     public function all();
 
+    public function search(object $data);
+
     public function getslug($slug);
 }

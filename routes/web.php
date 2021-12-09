@@ -25,6 +25,7 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::post('villa/store', 'App\Http\Controllers\Rent\VillaController@store')->name('villa/store');
     Route::get('villa/edit/{id}', 'App\Http\Controllers\Rent\VillaController@edit')->name('villa/edit');
     Route::post('villa/update', 'App\Http\Controllers\Rent\VillaController@update')->name('villa/update');
+    Route::get('villa/parent/{parent}', 'App\Http\Controllers\Rent\VillaController@parent')->name('villa/parent');
     Route::get('villa/images/{id}', 'App\Http\Controllers\Rent\VillaController@images')->name('villa/images');
     Route::post('villa/images/sortSave', 'App\Http\Controllers\Rent\VillaController@sortSave')->name('villa/sortSave');
     Route::post('villa/images/mainImage', 'App\Http\Controllers\Rent\VillaController@mainImage')->name('villa/mainImage');
@@ -175,10 +176,10 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     });
 
 
-    Route::get('/', [MainController::class, 'index']);
+    Route::get('/', [MainController::class, 'index'])->name('index');
     Route::get('/contact', [MainController::class, 'contact']);
     Route::get('/blog', [MainController::class, 'blog']);
-    Route::get('/about', [MainController::class, 'about']);
+    Route::get('page/{slug}', [MainController::class, 'about']);
     Route::get('villa-detail/{slug}',  [MainController::class, 'detail']);
     Route::get('listing', [MainController::class, 'listing'])->name('listing');
     Route::get('add_listing', [MainController::class, 'add_listing'])->name('add_listing');
@@ -186,5 +187,16 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::get('categories', [MainController::class, 'categories'])->name('categories');
     Route::get('destination-detail/{slug}',  [MainController::class, 'destination_detail']);
     Route::get('category-detail/{slug}',  [MainController::class, 'category_detail']);
+    Route::get('categories',  [MainController::class, 'category']);
+    Route::get('destination',  [MainController::class, 'destination']);
+    Route::get('destination/query',  [MainController::class, 'autoDestination']);
+    Route::get('login',  [MainController::class, 'login']);
+    Route::post('login/action',  [MainController::class, 'loginaction'])->name('loginaction');
+    Route::get('register',  [MainController::class, 'register']);
+    Route::post('register/action',  [MainController::class, 'registeraction'])->name('registeraction');
+    Route::get('logout',  [MainController::class, 'logout']);
+    Route::post('villaCheck',  [MainController::class, 'villaCheck']);
+    Route::get('reservation/detail/{villa_id}',  [MainController::class, 'reservationDetail']);
+    Route::get('blog-detail/{slug}',  [MainController::class, 'blog_detail']);
 
 });

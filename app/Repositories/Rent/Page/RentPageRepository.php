@@ -3,10 +3,11 @@
 use App\Models\Page;
 use App\Models\RentPageLanguage;
 use App\Models\RentPage;
+use App\Repositories\BaseRepository;
 use App\Services\Upload;
 use Illuminate\Support\Str;
 
-class RentPageRepository implements RentPageRepositoryInterface
+class RentPageRepository extends BaseRepository implements RentPageRepositoryInterface
 {
     public function get($id)
     {
@@ -22,7 +23,26 @@ class RentPageRepository implements RentPageRepositoryInterface
                 'lang' => $result->get_data()
             );
         }
+        //dd($data[0]);
         return $data[0];
+    }
+
+    public function getslug($slug)
+    {
+        $rentpage = RentPage::where('tenant_id', $this->getTenantId())->get();
+        foreach ($rentpage as $rp){
+           $detail[] = $rp->get_pages()->where('rent_page_id', $rp->id)->where('slug', $slug)->first();
+        }
+        $result = $detail[0];
+        //dd($detail);
+        $data = array(
+            'id' => $result->id,
+            'name' => $result->name,
+            'description' => $result->description,
+            'meta' => $result->meta,
+            'tags' => $result->tags
+        );
+        return $data;
     }
 
     public function all()

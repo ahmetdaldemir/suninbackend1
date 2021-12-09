@@ -30,6 +30,9 @@ class CreateVillasTable extends Migration
             $table->text('address')->nullable();
             $table->text('map')->nullable();
 
+            $table->float('service',10,2)->default(0);
+            $table->float('cleaning',10,2)->nullable(0);
+
             $table->string('central_distance')->nullable();
             $table->string('restaurant_distance')->nullable();
             $table->string('plaj_distance')->nullable();
@@ -43,8 +46,7 @@ class CreateVillasTable extends Migration
             $table->string('image')->nullable();
 
 
-            $table->uuid('destination_id');
-            $table->foreign('destination_id')->references('id')->on('destinations')->onUpdate('cascade')->onDelete('cascade');
+            $table->json('destination_id')->nullable();
 
             $table->uuid('tenant_id');
             $table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');

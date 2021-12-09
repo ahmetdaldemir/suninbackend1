@@ -37,7 +37,8 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
                 'category_id' => $rentcategory['category_id'],
                 'image' => $rentcategory['image'],
                 'is_status' => $rentcategory['is_status'],
-                'name' => $rentcategory['name']
+                'name' => $rentcategory['name'],
+                'lang' => $rentcategory->get_data()
             );
         }
 

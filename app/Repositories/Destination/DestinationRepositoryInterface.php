@@ -9,6 +9,8 @@ interface DestinationRepositoryInterface
 
     public function all();
 
+    public function parent($parent);
+
     public function delete($id);
 
     public function create(object $data);

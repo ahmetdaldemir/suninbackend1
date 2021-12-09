@@ -11,6 +11,8 @@ interface VillaRepositoryInterface
 
     public function delete($id);
 
+    public function search(object $data);
+
     public function create(object $data);
 
     public function update(object $data);

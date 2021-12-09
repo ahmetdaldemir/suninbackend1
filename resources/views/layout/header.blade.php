@@ -10,7 +10,9 @@
                     <img src="{{asset('view/images/twitter.svg')}}"></div>
                 <div class="top-2"><img src="{{asset('view/images/clock.svg')}}" style="margin-right: 20px;">
                     <img src="{{asset('view/images/phone.svg')}}"></div>
-                <div class="top-3"><a href="{{route('add_listing')}}" class="button-sq-top">Evini Kirala  <i class="icon icon-add-wishlist"></i></a></div>
+                <div class="top-3">
+                    <!--<a href="{{route('add_listing')}}" class="button-sq-top">Evini Kirala  <i class="icon icon-add-wishlist"></i></a>-->
+                </div>
             </div>
         </div>
         <div class="ui container-fluid grid header-bg">
@@ -50,7 +52,7 @@
                                     <span>Blog</span>
                                 </a>
                             </li>
-                            <li><a href="{{url('about')}}" class="item">
+                            <li><a href="{{url('page/about')}}" class="item">
                                     <span>Kurumsal</span>
                                 </a>
                             </li>
@@ -66,16 +68,22 @@
                                     <span>İletişim</span>
                                 </a>
                             </li>
-
-                            <li><a href="#" class="item modal-ui-trigger" data-trigger-for="modal01">
+                            @guest
+                            <li><a href="{{url('register')}}" class="item">
                                     <span>Üye Ol</span>
                                 </a>
                             </li>
 
-                            <li><a href="#" class="item modal-ui-trigger" data-trigger-for="modal02">
+                            <li><a href="{{url('login')}}" class="item">
                                     <span>Üye Girişi</span>
                                 </a>
                             </li>
+                            @else
+                            <li><a href="{{url('logout')}}" class="item">
+                                    <span>Çıkış</span>
+                                </a>
+                            </li>
+                            @endguest
                         </ul>
                     </div>
                 </div>

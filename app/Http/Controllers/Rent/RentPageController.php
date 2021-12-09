@@ -31,7 +31,7 @@ class RentPageController extends Controller
     public function edit(Request $request)
     {
         $data['page'] = $this->RentPageRepository->get($request->id);
-        $data['main_page'] = $this->RentPageRepository->get($data['page']['page_id']);
+        $data['main_page']['name'] = ' ';//@$this->RentPageRepository->get($data['page']['page_id']);
         $data['languages']  = $this->languageRepository->all();
 
         return view('rent/pages/edit',$data);

@@ -29,6 +29,22 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         return $data;
     }
 
+    public function search($search)
+    {
+        $villa = Villa::where('name', $search)->where('lang_id', $this->lang_id)->get();
+        $results = $villa::where('id', $villa->villa_id)->first();
+        foreach ($results as $result){
+            $lang = $result->get_data();
+            $data = array(
+                'id' => $result->id,
+                'lang' => $lang['name'],
+                'rentdestination' => $result
+            );
+        }/**/
+        $data = Villa::all();
+        return $data;
+    }
+
     public function getslug($slug)
     {
 
@@ -42,8 +58,8 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
                 'id' => $result->id,
                 'lang' => $result->get_data(),
                 'category' => $result->get_category(),
-                'service' => $result->get_service(),
-                'regulation' => $result->get_regulation(),
+                'services' => $result->get_service(),
+                'regulations' => $result->get_regulation(),
                 'propertys' => $result->get_property(),
                 'images' => $result->get_images(),
                 'comments' => $result->get_comment(),

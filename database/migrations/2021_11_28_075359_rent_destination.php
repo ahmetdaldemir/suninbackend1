@@ -27,9 +27,9 @@ class RentDestination extends Migration
 
         Schema::create('rent_destinations_languages', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('seo');
+            $table->string('slug');
             $table->string('name');//
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->uuid('rent_destination_id');
             $table->uuid('lang_id');
             $table->string('meta');

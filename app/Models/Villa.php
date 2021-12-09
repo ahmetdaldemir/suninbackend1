@@ -13,7 +13,6 @@ class Villa extends BaseModel
         return VillaComment::where('villa_id',$this->id)->get();
     }
 
-
     public function get_category()
     {
         return VillaCategory::where('villa_id',$this->id)->get();
@@ -31,13 +30,7 @@ class Villa extends BaseModel
 
     public function get_property()
     {
-        $property = [];
-        $x = VillaProperty::where('villa_id',$this->id)->get();
-        foreach($x as $item)
-        {
-           $property[] = Property::find($item->property_id);
-        }
-        return $property;
+        return VillaProperty::where('villa_id',$this->id)->get();
     }
 
     public function get_images()

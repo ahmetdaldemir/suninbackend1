@@ -30,7 +30,7 @@ class CreateSlidersTable extends Migration
             $table->string('text2')->nullable();
             $table->string('text3')->nullable();
             $table->string('sub_title')->nullable();
-            $table->string('seo');
+            $table->string('slug');
             $table->uuid('slider_id');
             $table->foreign('slider_id')->references('id')->on('sliders')->onUpdate('cascade')->onDelete('cascade');
             $table->uuid('language_id');

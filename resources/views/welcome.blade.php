@@ -10,22 +10,24 @@
 @section('content')
     <!-- login page start-->
     <div class="hero-search-full-page next-sq" style="margin-top: 10px;">
-
         <!-- Hero Search -->
         <!-- .thin .animate .shadow .colored -->
         <div class="h-search-h thin-sq  animate-sq colored-sq h-search-top">
             <form action="{{route('listing')}}" class="hero-search-form">
                 <div class="search-item">
                     <div class="fltp">
-                        <input type="text" value="" required>
-                        <label class="placeholder" data-big-placeholder="Bölge Seçiniz"
-                               data-little-placeholder="Bölge"></label>
+                        <select name="category" size="13" class="dropdown" required >
+                            <option value="0" selected>Kategoriler</option>
+                            @foreach($categories as $category)
+                            <option value="{{$category['id']}}">{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</option>
+                            @endforeach
+                        </select>
+                        <label class="placeholder">Kategori Seçiniz</label>
                     </div>
                 </div>
-
                 <div class="search-item">
                     <div class="fltp calendar-sq" id="rangestart">
-                        <input type="text" class="filter" value="" required placeholder="enter date">
+                        <input name="checkin" type="text" class="filter" autocomplete="off" value="" required placeholder="enter date">
                         <label class="placeholder" data-big-placeholder="Giriş Tarihi"
                                data-little-placeholder="Giriş"></label>
                     </div>
@@ -33,18 +35,17 @@
                     <i class="icon icon-little-arrow"></i>
 
                     <div class="fltp calendar-sq" id="rangeend">
-                        <input type="text" class="filter" value="" required placeholder="enter date">
+                        <input name="checkout" type="text" class="filter" autocomplete="off" value="" required placeholder="enter date">
                         <label class="placeholder" data-big-placeholder="Çıkış Tarihi"
                                data-little-placeholder="Çıkış"></label>
                     </div>
                 </div>
-
                 <div class="search-item">
                     <div class="fltp">
-                        <select name="dropdown" size="13" class="dropdown" required>
+                        <select name="adult" size="13" class="dropdown" required>
                             <option value="0" selected>Kişi Sayısı</option>
                             <option value="1">1</option>
-                            <option value="2">2</option>
+                            <option value="2" selected>2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
@@ -59,16 +60,13 @@
                         <label class="placeholder">Kişi Sayısı</label>
                     </div>
                 </div>
-
                 <div class="search-item">
                     <button class="button-sq hero-search-button">
                         <i class="icon icon-search"></i>
                     </button>
                 </div>
-
             </form>
         </div>
-
         <!-- Hero Big - Slick -->
         <div class="sq-slick hero-big slide-up-sq" data-mobile-arrows="false" data-tablet-arrows="false"
              data-mobile-dots="true" data-tablet-dots="true" data-fade="true" data-speed="500" data-ease="linear">
@@ -94,9 +92,7 @@
             @endforeach
 
         </div>
-
     </div>
-
     <div class="ui grid container-fluid mar-con">
         <div class="row">
             <div class="ui column">
@@ -150,8 +146,6 @@
                                         </a>
 
                                         <div class="main-details">
-
-
                                             <div class="icons-row">
                                                 <div class="icons-column">
                                                     <i class="icon icon-heart"></i> 7.8
@@ -203,7 +197,6 @@
             </div>
         </div>
     </div>
-
     <div class="promo-section">
 
         <!-- content -->
@@ -229,8 +222,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="ui layout" id="top">
         <div class="ui grid container-fluid" style="margin: 50px;">
             <div class="row">
@@ -537,9 +528,7 @@
         </div>
 
     </div>
-
     <!-- Modals -->
-
     <!-- Sign Up -->
     <div class="ui full modal" data-for="modal01">
         <div class="modal-full-background">
@@ -582,7 +571,6 @@
             </div>
         </div>
     </div>
-
     <!-- Log In -->
     <div class="ui full modal" data-for="modal02">
         <div class="modal-full-background">
@@ -621,7 +609,6 @@
             </div>
         </div>
     </div>
-
     <!-- Sign Up with mail -->
     <div class="ui full modal" data-for="modal03">
         <div class="modal-full-background">
@@ -705,7 +692,6 @@
             </div>
         </div>
     </div>
-
     <!-- Wishlist -->
     <div class="ui modal small" data-for="wishlist">
         <i class="icon icon-close close-modal"></i>
@@ -739,5 +725,30 @@
         </div>
 
     </div>
+@endsection
 
+@section('javascript')
+<script>
+    /*
+$(document).ready(function(){
+    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+    $("#destination").keyup(function(){
+        $.ajax({
+            type: "GET",
+            url: "destination/query",
+            data:'query='+$(this).val(),
+            beforeSend: function(){
+                //$("#destination_id").css("background","#FFF url(LoaderIcon.gif) no-repeat 165px");
+            },
+            success: function(data){
+                //console.log(data);
+                $("#destination_id").val();
+                $("#destination-box").show();
+                $("#destination-box").html(data);
+                $("#destination").css("background","#999");
+            }
+        });
+    });
+});*/
+</script>
 @endsection

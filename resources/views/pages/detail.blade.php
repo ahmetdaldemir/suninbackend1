@@ -99,14 +99,13 @@
 
                                     <div class="mobile-fixed-section">
                                         <div class="sticky-box-content">
-                                            <form action="checkout_page.html">
+                                            <form id="villaReservation">
                                                 <div class="main-infos inline-check-in">
                                                     <div class="check-in calendar-sq" id="sticky-box-rangestart">
                                                         <label class="placeholder" data-placeholder="Check In"></label>
 
                                                         <div class="relative">
-                                                            <input type="text" class="filter" value="" required
-                                                                   placeholder="date">
+                                                            <input name="checkin" type="text" class="filter" value="" required placeholder="date" autocomplete="off">
                                                             <i class="icon icon-little-arrow filters-arrow"></i>
                                                         </div>
 
@@ -116,15 +115,14 @@
 
                                                         <label class="placeholder" data-placeholder="Check Out"></label>
 
-                                                        <input type="text" class="filter" value="" required
-                                                               placeholder="date">
+                                                        <input name="checkout" type="text" class="filter" value="" required placeholder="date" autocomplete="off">
 
                                                     </div>
 
                                                     <div class="guests">
                                                         <label class="placeholder" data-placeholder="Guests"></label>
 
-                                                        <select name="dropdown" size="12" class="dropdown" required>
+                                                        <select name="guest" size="12" class="dropdown" required>
                                                             <option value="1" selected>1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -141,6 +139,7 @@
 
                                                     </div>
                                                 </div>
+                                                <input type="hidden" name="villa_id" value="{{$villa['villa']->id}}" />
 
                                                 <div class="calculations">
                                                     <div class="calc-row">
@@ -159,9 +158,7 @@
                                                     </div>
                                                 </div>
 
-                                                <button class="button-sq fullwidth-sq font-weight-extrabold-sq">Instant
-                                                    Booking
-                                                </button>
+                                                <button type="button" class="button-sq fullwidth-sq font-weight-extrabold-sq villacheck">Rezervasyon Yap</button>
 
                                             </form>
                                         </div>
@@ -240,31 +237,14 @@
                         <div class="ui grid moved">
                             <div class="twelve wide mobile six wide tablet six wide computer column">
                                 <ul class="description-list">
-                                    <li>
-                                        <i class="icon icon-account-group-5"></i>
-                                        <div>
-                                            <p>Kişi Sayısı:</p>
-                                            <strong>{{$villa['villa']->capacity}}</strong>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <i class="icon icon-bath-tub"></i>
-                                        <div>
-                                            <p>Banyo Sayısı:</p>
-                                            <strong>{{$villa['villa']->bathrooms}}</strong>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <i class="icon icon-bed-double"></i>
-                                        <div><p>Yatak Sayısı:</p>
-                                            <strong>{{$villa['villa']->bedrooms}}</strong>
-                                        </div>
-                                    </li>
+                                    @foreach($services as $service)
+                                        @if(in_array($service['id'],$villa_service))
+                                            <li>
+                                                <div><p>{{@$service['lang']->where('lang_id',$lang_id)->first()->title}}</p></div>
+                                            </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
-
-
                             </div>
 
                             <div class="twelve wide mobile six wide tablet six wide computer column">
@@ -301,74 +281,17 @@
                     <div class="typo-section-sq bottom-default">
                         <h5>Özellikler</h5>
                         <div class="ui grid moved">
-                            <div class="ui column">
-                                <div class="ui accordion more-sq">
-                                    <div class="title">
-                                        <div class="ui grid">
-                                            <a class="accordion-trigger more-trigger" data-more="More" data-less="Less">
-                                                <i class="icon icon-arrow-down-122"></i>
-                                            </a>
-
-                                            <div class="twelve wide mobile six wide tablet twelve wide computer column">
-                                                <ul class="description-list">
-                                                <?php foreach($villa['propertys'] as $property){  ?>
-                                                    <li>
-                                                         <i class="icon icon-wifi-modem-2"></i>
-                                                         <div><p><pre>{{  print_r($property->get_data())}}</pre></div>
-                                                    </li>
-                                                    <?php } ?>
-                                                </ul>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-                                    <div class="content">
-                                        <div class="ui grid">
-                                            <div class="twelve wide mobile six wide tablet four wide computer column">
-                                                <ul class="description-list">
-                                                    <li>
-                                                        <i class="icon icon-teddy-bear"></i>
-                                                        <div><p>Playground</p></div>
-                                                    </li>
-
-                                                    <li>
-                                                        <i class="icon icon-house"></i>
-                                                        <div><p>Iron</p></div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="twelve wide mobile six wide tablet four wide computer column">
-                                                <ul class="description-list">
-                                                    <li>
-                                                        <i class="icon icon-fire-extinguisher"></i>
-                                                        <div><p>Fire Extinguisher</p></div>
-                                                    </li>
-                                                    <li>
-                                                        <i class="icon icon-cc-camera-2"></i>
-                                                        <div><p>Camera</p></div>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
-
-                                            <div class="twelve wide mobile six wide tablet four wide computer column">
-                                                <ul class="description-list">
-                                                    <li>
-                                                        <i class="icon icon-air-conditioner"></i>
-                                                        <div><p>A.C.</p></div>
-                                                    </li>
-                                                    <li>
-                                                        <i class="icon icon-safe-1"></i>
-                                                        <div><p>Big Safe</p></div>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="twelve wide mobile six wide tablet six wide computer">
+                                <ul class="description-list">
+                                @foreach($properties as $property)
+                                    @if(in_array($property['id'],$villa_property))
+                                    <li style="width: 30%;">
+                                        <i class="icon icon-teddy-bear"></i>
+                                        <div><p>{{$property['lang']->where('lang_id',$lang_id)->first()->title}}</p></div>
+                                    </li>
+                                    @endif
+                                @endforeach
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -377,35 +300,13 @@
                         <div class="ui grid moved">
                             <div class="twelve wide column">
                                 <ul class="description-list">
-                                    <li>
-                                        <div>
-                                            <p>Extra people:</p>
-                                            <strong>$10 / night after 2 guests</strong>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div><p>Cleaning Fee:</p>
-                                            <strong>$29</strong></div>
-                                    </li>
-
-                                    <li>
-                                        <div><p>Security Deposit:</p>
-                                            <strong>$234</strong></div>
-                                    </li>
-
-                                    <li>
-                                        <div><p>Weekly discount:</p>
-                                            <strong>5%</strong></div>
-                                    </li>
-                                    <li>
-                                        <div><p>Monthly discount:</p>
-                                            <strong>5%</strong></div>
-                                    </li>
-                                    <li>
-                                        <div><p>Cancellation</p>
-                                            <strong class="accent-color">Moderate</strong></div>
-                                    </li>
+                                    @foreach($regulations as $regulation)
+                                    @if(in_array($regulation['id'],$villa_regulation))
+                                            <li style="width: 30%;">
+                                                <div><p>{{@$regulation['lang']->where('lang_id',$lang_id)->first()->title}}</p></div>
+                                            </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
                             </div>
 
@@ -539,4 +440,26 @@
         </div>
     </div>
 
+@endsection
+@section('javascript')
+    <script>
+        $(document).ready(function(){
+            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+            $('#villaReservation').on('click', '.villacheck', function () {
+                let data = $('#villaReservation').serialize()
+                $.ajax({
+                    url: '/villaCheck',
+                    type: 'POST',
+                    data: data,
+                    success: function (data) {
+                        if(data.url) {
+                            window.location.replace(data.url);
+                        } else {
+                            alert('Belitilen günlerde müsaitlik bulunmuyor');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

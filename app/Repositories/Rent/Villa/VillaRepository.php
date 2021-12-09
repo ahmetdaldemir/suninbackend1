@@ -17,7 +17,6 @@ class VillaRepository implements VillaRepositoryInterface
     {
         $data = [];
         $results = Villa::where('id',$id)->get();
-        //dd($results);
         foreach ($results as $result) {
             $data[] = array(
                 'id' => $result->id,
@@ -82,18 +81,6 @@ class VillaRepository implements VillaRepositoryInterface
 
     public function create(object $data)
     {
-         /* $filenames = [];
-         $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];
-        $files = $data->file('photos');
-        if($files){
-            foreach ($files as $file) {
-                $filename = $file->getClientOriginalName();
-                $extension = $file->getClientOriginalExtension();
-                $check = in_array($extension, $allowedfileExtension);
-                $filenames[] = $file->store('photos');
-            }
-        }*/
-        //        $upload = new Upload($request);
         $session = session()->get('rent_session');
         $id = Str::uuid()->toString();
         $villa = new Villa();
@@ -165,7 +152,7 @@ class VillaRepository implements VillaRepositoryInterface
             $record->villa_id = $id;
             $record->save();
         }
-
+        /*
         if(count($filenames) > 0){
             foreach ($filenames as $item) {
                 $villa_images_id = Str::uuid()->toString();
@@ -175,7 +162,7 @@ class VillaRepository implements VillaRepositoryInterface
                 $villa_image->image = $item;
                 $villa_image->save();
             }
-        }
+        }*/
     }
 
     public function update(object $data)

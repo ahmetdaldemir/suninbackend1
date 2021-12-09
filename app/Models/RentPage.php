@@ -5,5 +5,9 @@ class RentPage extends BaseModel {
     {
         return RentPageLanguage::where('rent_page_id',$this->id)->get();
     }
+    public function get_pages()
+    {
+        return $this->belongsTo(RentPageLanguage::class,'rent_page_id','deleted_at');
+    }
 }
 class RentPageLanguage extends BaseModel { }

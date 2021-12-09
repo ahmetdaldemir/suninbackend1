@@ -4,7 +4,7 @@ use App\Models\RentCategory;
 use App\Models\RentCategoryLanguage;
 use App\Repositories\BaseRepository;
 
-class RentCategoryRepository extends BaseRepository  implements RentCategoryRepositoryInterface
+class RentCategoryRepository extends BaseRepository implements RentCategoryRepositoryInterface
 {
 
     public function get($id)

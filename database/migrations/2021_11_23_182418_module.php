@@ -42,7 +42,7 @@ class Module extends Migration
             $table->uuid('id')->primary();
             $table->string('name');//
             $table->text('description');
-            $table->string('seo');
+            $table->string('slug');
             $table->uuid('module_id');
             $table->uuid('lang_id');
             $table->foreign('lang_id')->references('id')->on('languages')->onUpdate('cascade')->onDelete('cascade');

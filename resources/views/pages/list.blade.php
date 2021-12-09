@@ -8,11 +8,6 @@
 @endsection
 
 @section('content')
-
-
-
-
-
     <header class="header-section mhs header-sticky header-fullwidth header-isnt-tablet header-isnt-mobile">
         <div class="header-content">
             <div class="ui container grid">
@@ -384,7 +379,7 @@
         </div>
     </header>
 
-    <div class="ui layout">
+    <div class="ui layout" style="margin-top:100px">
 
         <!-- grid -->
         <div class="ui grid container fluid">
@@ -412,7 +407,6 @@
                         </a>
                     </div>
 
-
                     <div class="ui column map">
                         <div id="map"></div>
                     </div>
@@ -422,42 +416,41 @@
 
                         <div class="ui grid narrow-sq">
                             <div class="row">
-
+                                @foreach($villas as $villa)
+                                    @if(isset($villa['lang']))
+                                        <?php
+                                        $title = $villa['lang']->where('lang_id',$lang_id)->first()->title ?? "bulunamadı";
+                                        $slug  = $villa['lang']->where('lang_id',$lang_id)->first()->slug ?? "bulunamadı";
+                                        ?>
+                                    @endif
                                 <!-- property item -->
                                 <div class="twelve wide mobile four wide tablet four wide computer column">
                                     <div class="property-item">
                                         <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
+                                            <div class="price-tag-sq">{{$villa['villa']->type}}</div>
+                                            <a class="add-wishlist modal-ui-trigger" href="{{url('villa-detail/'.$slug.'')}}" data-trigger-for="wishlist">
                                                 <i class="icon icon-add-wishlist"></i>
                                             </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
+                                            <a class="image-sq" href="{{url('villa-detail/'.$slug.'')}}">
                                                     <span class="image-wrapper">
                                                         <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
+                                                            <img src="{{Storage::url($villa['villa']->image)}}" alt="" class="">
                                                         </span>
                                                     </span>
                                             </a>
-
                                             <div class="main-details">
-
-
-
                                                 <div class="icons-row">
                                                     <div class="icons-column">
                                                         <i class="icon icon-heart"></i> 7.8
                                                     </div>
                                                     <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
+                                                        <i class="icon icon-account-group-5"></i> x {{$villa['villa']->capacity}} Kişi
                                                     </div>
                                                     <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
+                                                        <i class="icon icon-door-simple"></i> x {{$villa['villa']->rooms}}
                                                     </div>
                                                     <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
+                                                        <i class="icon icon-bed-double"></i> x {{$villa['villa']->capacity}} Yatak
                                                     </div>
                                                 </div>
 
@@ -465,659 +458,21 @@
 
                                             <div class="property-name">
                                                 <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
+                                                    <a href="{{url('villa-detail/'.$slug.'')}}" class="title-sq">{{@$villa['lang']->where('lang_id',$lang_id)->first()->title}}</a>
+                                                    <a href="{{url('villa-detail/'.$slug.'')}}" class="button-sq-top">
                                                         Hemen İncele
                                                     </a>
                                                 </div>
 
                                             </div>
                                             <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
+                                                <p><i class="icon icon-pin2"></i> {{$villa['villa']->destination->title}}</p>
+                                                <p><span> {{$villa['villa']->destination->price}}</span></p>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- property item -->
-                                <div class="twelve wide mobile four wide tablet four wide computer column">
-                                    <div class="property-item">
-                                        <div class="property-item-inner">
-
-                                            <div class="price-tag-sq">Jakuzi</div>
-                                            <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                                <i class="icon icon-add-wishlist"></i>
-                                            </a>
-
-
-                                            <a class="image-sq" href="property_page.html">
-                                                    <span class="image-wrapper">
-                                                        <span class="image-inner">
-                                                            <img src="assets/images/property/2.jpg" alt="" class="">
-                                                        </span>
-                                                    </span>
-                                            </a>
-
-                                            <div class="main-details">
-
-
-
-                                                <div class="icons-row">
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-heart"></i> 7.8
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-account-group-5"></i> x 2 Kişi
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-door-simple"></i> x 3
-                                                    </div>
-                                                    <div class="icons-column">
-                                                        <i class="icon icon-bed-double"></i> x 2 Yatak
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="property-name">
-                                                <div class="title-row">
-                                                    <a href="property_page.html" class="title-sq">Taş Ev</a>
-                                                    <a href="vendor_details.html" class="button-sq-top">
-                                                        Hemen İncele
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> Fethiye</p>
-                                                <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
+                                @endforeach
                             </div>
                         </div>
                     </div>

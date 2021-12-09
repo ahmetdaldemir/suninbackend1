@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('rent/css/prism.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('rent/css/chartist.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('rent/css/date-picker.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('rent/css/datatables.css')}}">
 @endsection
 
 @section('style')
@@ -43,7 +44,7 @@ td.space {width: 70px;}
                     <h5>Villa Listesi</h5><span>Tüm <code>Villalar</code> </span>
                 </div>
                 <div class="table-responsive product-table">
-                    <table id="villa" class="table table-border-horizontal">
+                    <table id="villa" class="table table-border-horizontal ">
                         <thead>
                             <tr>
                                 <th></th>
@@ -174,6 +175,9 @@ td.space {width: 70px;}
 <!-- Container-fluid Ends-->
 @endsection
 @section('script')
+    <!-- Plugins JS start-->
+    <script src="{{asset('rent/js/datatable/datatables/jquery.dataTables.min.js')}}"></script>
+    <!-- Plugins JS Ends-->
 <script src="{{asset('rent/js/typeahead/handlebars.js')}}"></script>
 <script src="{{asset('rent/js/typeahead/typeahead.bundle.js')}}"></script>
 <script src="{{asset('rent/js/typeahead/typeahead.custom.js')}}"></script>
@@ -183,4 +187,20 @@ td.space {width: 70px;}
 <script src="{{asset('rent/js/counter/counter-custom.js')}}"></script>
 <script src="{{asset('rent/js/notify/bootstrap-notify.min.js')}}"></script>
 <script src="{{asset('rent/js/villaApp.js')}}"></script>
+<script>/*
+$(document).ready(function() {
+$('#villa').DataTable({
+columnDefs: [ {
+targets: [ 0 ],
+orderData: [ 0, 1 ]
+}, {
+targets: [ 1 ],
+orderData: [ 1, 0 ]
+}, {
+targets: [ 4 ],
+orderData: [ 4, 0 ]
+} ]
+});
+});*/
+</script>
 @endsection

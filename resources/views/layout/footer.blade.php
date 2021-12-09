@@ -1,7 +1,5 @@
 <div id="footer">
-
     <div class="footer-top">
-
         <div class="ui grid container">
             <div class="row">
                 <div class="ui six wide tablet four wide computer column">
@@ -67,24 +65,22 @@
             </div>
         </div>
     </div>
+<div class="footer-bottom">
+    <div class="ui grid container">
+        <div class="row">
+            <div class="ui twelve wide mobile eight wide computer column">
+                <a href="" class="footer-logo"><img src="{{asset('view/images/logo.svg')}}" srcset="{{asset('view/images/logo.svg')}} 1x, {{asset('view/images/logo.svg')}} 2x" alt="mybnb logo" >
+                    © My Villa <?php echo date('Y');  ?></a>
+            </div>
+            <div class="ui twelve wide mobile four wide computer column">
+                <ul class="social-links-sq list-style-inline-sq list-default-sq">
+                    <li><a href="" class="fb"><i class="icon icon-logo-facebook2"></i></a></li>
 
-    <div class="footer-bottom">
-        <div class="ui grid container">
-            <div class="row">
-                <div class="ui twelve wide mobile eight wide computer column">
-                    <a href="" class="footer-logo">
-                        <img src="{{asset('view/images/logo.svg')}}" srcset="{{asset('view/images/logo.svg')}} 1x, {{asset('view/images/logo.svg')}} 2x" alt="mybnb logo" >
-                        © My Villa <?php echo date('Y');  ?>                </a>
-                </div>
-                <div class="ui twelve wide mobile four wide computer column">
-                    <ul class="social-links-sq list-style-inline-sq list-default-sq">
-                        <li><a href="" class="fb"><i class="icon icon-logo-facebook2"></i></a></li>
+                    <li><a href="" class="tw"><i class="icon icon-logo-twitter-bird2"></i></a></li>
 
-                        <li><a href="" class="tw"><i class="icon icon-logo-twitter-bird2"></i></a></li>
-
-                        <li><a href="" class="gp"><i class="icon icon-logo-circle-google-plus-22"></i></a></li>
-                    </ul>
-                </div>
+                    <li><a href="" class="gp"><i class="icon icon-logo-circle-google-plus-22"></i></a></li>
+                </ul>
             </div>
         </div>
     </div>
+</div></div>

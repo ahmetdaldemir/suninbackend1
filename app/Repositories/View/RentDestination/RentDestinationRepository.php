@@ -3,6 +3,7 @@
 use App\Models\RentDestination;
 use App\Models\RentDestinationLanguage;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\DB;
 
 class RentDestinationRepository extends BaseRepository  implements RentDestinationRepositoryInterface
 {
@@ -35,6 +36,26 @@ class RentDestinationRepository extends BaseRepository  implements RentDestinati
         return $data;
     }
 
+    public function search(object $data)
+    {
+        //dd($data->query);
+        //$rentdestination_language = RentDestinationLanguage::where('name', $data->query)->where('lang_id', $this->lang_id)->get();
+        $data = DB::table('rent_destinations')
+            ->join('rent_destination_languages', 'rent_destinations.id', '=', 'rent_destination_languages.rent_destination_id')
+            ->select('rent_destinations.*', 'rent_destination_languages.*')
+            ->get();
+/*
+                 $results = $rentdestination::where('id', $rentdestination_language->rent_destination_id)->first();
+                 foreach ($results as $result){
+                     $lang = $result->get_data();
+                     $data = array(
+                         'id' => $result->id,
+                         'lang' => $lang['name'],
+                         'rentdestination' => $result
+                     );
+                 }*/
+        return $data;
+    }
 
     public function getslug($slug)
     {
