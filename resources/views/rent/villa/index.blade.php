@@ -42,9 +42,16 @@ td.space {width: 70px;}
             <div class="card">
                 <div class="card-header">
                     <h5>Villa Listesi</h5><span>Tüm <code>Villalar</code> </span>
+
                 </div>
                 <div class="table-responsive product-table">
                     <table id="villa" class="table table-border-horizontal ">
+                        <thead>
+                            <tr>
+                                <th colspan="6"></th>
+                                <th colspan="2"><input type="text" id="search" class="form-control" placeholder="Aranacak Kelime"></th>
+                            </tr>
+                        </thead>
                         <thead>
                             <tr>
                                 <th></th>
@@ -168,6 +175,9 @@ td.space {width: 70px;}
                         </tbody>
                     </table>
                 </div>
+                <div class="card-footer">
+                    <div id="sayfalama"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -187,7 +197,75 @@ td.space {width: 70px;}
 <script src="{{asset('rent/js/counter/counter-custom.js')}}"></script>
 <script src="{{asset('rent/js/notify/bootstrap-notify.min.js')}}"></script>
 <script src="{{asset('rent/js/villaApp.js')}}"></script>
-<script>/*
+<script>
+var $rows = $('#villa tbody tr');
+$('#search').keyup(debounce(function() {
+    var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+        reg = RegExp(val, 'i'),
+        text;
+
+    $rows.show().filter(function() {
+        text = $(this).text().replace(/\s+/g, ' ');
+        return !reg.test(text);
+    }).hide();
+}, 300));
+
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this,
+            args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+/*
+// toplam li sayısı
+var rows = 24;//$("#villa tr:odd").size();
+
+// sayfa veri sayısı
+var items = 7;
+
+// Sayfalamayı uygula
+$("#villa tbody tr:gt(" + (items - 1) + ")").hide();
+
+// sayfa sayısı bulalım
+var sayfaSayisi = Math.round(rows / items);
+
+// sayıyı yuvarlayalım
+// Sayfa linklerini ekleyelim
+for (var i = 1; i <= sayfaSayisi; i++)
+{
+   $("#sayfalama").append('<a href="javascript:void(0)">' + i + '< /a>');
+}
+
+// İlk sayfaya aktif classı ekle
+$("#sayfalama a:first").addClass("aktif");
+
+// Sayfalama içindeki a'lardan birine tıklandığında
+$(document.body).on("click", "#sayfalama a", function(){
+   // indis değerini al (1 fazlası şeklinde)
+   var indis = $(this).index() + 1;
+   // toplam gözüken veri sayısını bul
+   var gt = items * indis;
+   // aktif class işlemleri
+   $("#sayfalama a").removeClass("aktif");
+   $(this).addClass("aktif");
+   // listedeki tüm lileri gizle
+   $("#villa tbody tr").hide();
+   // for ile toplam gözüken veri sayısı - veriSayisi işlemi yap ve veriSayisi kadarını göster
+   for (i = gt - items; i < gt; i++)
+   {
+       $("#villa tbody tr:eq(" + i + ")").show();
+   }
+});
+
 $(document).ready(function() {
 $('#villa').DataTable({
 columnDefs: [ {

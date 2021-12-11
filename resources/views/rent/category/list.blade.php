@@ -35,6 +35,7 @@
                             <thead>
                             <tr>
                                 <th scope="col">Kategori Adı</th>
+                                <th scope="col">Sıralama</th>
                                 <th scope="col">Durum</th>
                                 <th scope="col"></th>
                             </tr>
@@ -45,8 +46,9 @@
                                     <?php //dd($result);?>
                                     <tr>
                                         <td>{{@$result['lang'][0]['title']}}</td>
+                                        <td>{{@$result['category']['sort']}}</td>
                                         <td>
-                                            @if(@$result['category']['is_status']==1)
+                                            @if(@$result['category']['status']==1)
                                                 <span class='badge badge-success'>Aktif</span>
                                             @else
                                                 <span class="badge badge-danger">Pasif</span>

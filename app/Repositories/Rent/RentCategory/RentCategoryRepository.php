@@ -18,7 +18,8 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
                 'id' => $result->id,
                 'category_id' => $result->category_id,
                 'image' => $result->image,
-                'status' => $result->is_status,
+                'sort' => $result->sort,
+                'status' => $result->status,
                 'lang' => $result->get_data()
             );
         }
@@ -36,7 +37,8 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
                 'id' => $rentcategory['id'],
                 'category_id' => $rentcategory['category_id'],
                 'image' => $rentcategory['image'],
-                'is_status' => $rentcategory['is_status'],
+                'sort' => $rentcategory['sort'],
+                'status' => $rentcategory['status'],
                 'name' => $rentcategory['name'],
                 'lang' => $rentcategory->get_data()
             );
@@ -50,7 +52,6 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
                 'category' => @$category_data[$category['id']]
             );
         }
-        //dd($data);
         return $data;
     }
 
@@ -97,7 +98,8 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
         }
         $save = RentCategory::find($data->category_id);
         $save->image = $image; //text
-        $save->is_status = $data->status; //text
+        $save->sort = $data->sort; //text
+        $save->status = $data->status; //text
         $save->save();
 
         if(!empty($data->title)){

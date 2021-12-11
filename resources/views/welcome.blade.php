@@ -179,11 +179,10 @@
                                                 </div>
                                             </div>
                                         <div class="property-fl">
-                                            <p><i class="icon icon-pin2"></i> {{$villa['villa']->destination->title}}
+                                            <p><i class="icon icon-pin2"></i> {{@$villa['villa']->destination->title}}
                                             </p>
                                             <p><span> Haftalık Fiyat Aralığı : 1000 - 1500 TL</span></p>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

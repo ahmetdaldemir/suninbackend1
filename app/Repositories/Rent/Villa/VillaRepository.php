@@ -39,14 +39,17 @@ class VillaRepository implements VillaRepositoryInterface
                 'bus_station_distance' => $result->bus_station_distance,
                 'airport_distance' => $result->airport_distance,
                 'i_cal' => $result->i_cal,
-                'destination_id' => $result->destination_id,
+                'destination_id' => json_decode($result->destination_id),
+                'tenant_id' => $result->tenant_id,
                 'owner_id' => $result->owner_id,
+                'service' => $result->service,
+                'cleaning' => $result->cleaning,
                 'image' => $result->image,
                 'videos' => $result->videos,
                 'lang' => $result->get_data(),
                 'category' => $result->get_category(),
                 'images' => $result->get_images(),
-                'service' => $result->get_service(),
+                'services' => $result->get_service(),
                 'regulation' => $result->get_regulation(),
                 'property' => $result->get_property()
             );
@@ -93,9 +96,11 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->bathrooms = $data->bathrooms; //varchar(255)
         $villa->bedrooms = $data->bedrooms; //varchar(255)
         $villa->clean_price = 500; //double(10, 2
-        $villa->deposit = 15; //double(10, 2
+        $villa->deposit = $data->deposit; //double(10, 2
         $villa->address = $data->address; //text
         $villa->map = $data->map; //text
+        $villa->service = $data->service; //text
+        $villa->cleaning = $data->cleaning; //text
         $villa->central_distance = $data->central_distance; //varchar(255)
         $villa->restaurant_distance = $data->restaurant_distance; //varchar(255)
         $villa->plaj_distance = $data->plaj_distance; //varchar(255)
@@ -104,7 +109,7 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->bus_station_distance = $data->bus_station_distance; //varchar(255)
         $villa->airport_distance = $data->airport_distance; //varchar(255)
         $villa->i_cal = $data->type; //varchar(255)
-        $villa->destination_id = $data->destination_id; //char(36)
+        $villa->destination_id = json_encode($data->destination_id); //char(36)
         $villa->tenant_id = $data->tenant_id; //char(36)
         $villa->owner_id = $session['tenant_id']; //char(36)
         $villa->video = $data->videos;
@@ -177,9 +182,11 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->bathrooms = $data->bathrooms; //varchar(255)
         $villa->bedrooms = $data->bedrooms; //varchar(255)
         $villa->clean_price = 500; //double(10, 2
-        $villa->deposit = 15; //double(10, 2
+        $villa->deposit = $data->deposit; //double(10, 2
         $villa->address = $data->address; //text
         $villa->map = $data->map; //text
+        $villa->service = $data->service; //text
+        $villa->cleaning = $data->cleaning; //text
         $villa->central_distance = $data->central_distance; //varchar(255)
         $villa->restaurant_distance = $data->restaurant_distance; //varchar(255)
         $villa->plaj_distance = $data->plaj_distance; //varchar(255)
@@ -189,7 +196,7 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->airport_distance = $data->airport_distance; //varchar(255)
         $villa->i_cal = $data->type; //varchar(255)
         $villa->destination_id = $data->destination_id; //char(36)
-        //$villa->owner_id = $data->owner_id; //char(36)
+        $villa->tenant_id = $data->tenant_id; //char(36)
         $villa->save();
 
         VillaLanguage::where('villa_id', $data->villa_id)->delete();

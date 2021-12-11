@@ -1,6 +1,7 @@
 <?php namespace App\Repositories\Rent\Tenant;
 
 use App\Models\Tenant;
+use App\Models\User;
 
 class TenantRepository implements TenantRepositoryInterface
 {

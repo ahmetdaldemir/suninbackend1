@@ -112,12 +112,12 @@
                         </div>
                         <div class="setup-content" id="step-2">
                             <div class="col-xs-12">
-                                <h4>Adres / Özellik Bilgileri</h4>
+                                <h4>Adres Bilgileri</h4>
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label">Şehir</label>
-                                            <select name="destination_parent" class="form-control digits" id="destination_parent">
+                                            <select name="destination_id[city]" class="form-control digits" id="destination_parent">
                                                 <option>Şehir seçiniz</option>
                                                 @foreach($destinations as $destination)
                                                 <option value="{{$destination['id']}}">{{$destination['title']}}</option>
@@ -128,7 +128,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label">Bölge</label>
-                                            <select name="destination_select" class="form-control digits" id="destination_select" data-id="0" disabled>
+                                            <select name="destination_id[region]" class="form-control digits" id="destination_select" data-id="0" disabled>
                                                     <option>Şehir Seçiniz</option>
                                             </select>
                                         </div>
@@ -136,12 +136,48 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="control-label">Alt Bölge</label>
-                                            <select name="destination_id" class="form-control digits" id="destination_id" data-id="0" disabled>
+                                            <select name="destination_id[state]" class="form-control digits" id="destination_id" data-id="0" disabled>
                                                     <option>Bölge Seçiniz</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Adres</label>
+                                            <input name="address" class="form-control" type="text" placeholder="Adres" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Harita Linki</label>
+                                            <input name="map" class="form-control" type="text" placeholder="Harita Linki" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>Ücretler</h4>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Depozito</label>
+                                            <input name="deposit" class="form-control" type="text" placeholder="Depozito">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Hizmet Ücreti</label>
+                                            <input name="service" class="form-control" type="text" placeholder="Hizmet Ücreti">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Temizlik Ücreti</label>
+                                            <input name="cleaning" class="form-control" type="text" placeholder="Temizlik Ücreti">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>Villa Bilgileri</h4>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
@@ -165,20 +201,6 @@
                                         <div class="form-group">
                                             <label class="control-label">Banyo Sayısı</label>
                                             <input name="bathrooms" class="form-control" type="number" placeholder="Banyo Sayısı" required="required">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Adres</label>
-                                            <input name="address" class="form-control" type="text" placeholder="Adres" required="required">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label">Harita Linki</label>
-                                            <input name="map" class="form-control" type="text" placeholder="Harita Linki" required="required">
                                         </div>
                                     </div>
                                 </div>

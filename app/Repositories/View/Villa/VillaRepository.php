@@ -60,7 +60,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
                 'category' => $result->get_category(),
                 'services' => $result->get_service(),
                 'regulations' => $result->get_regulation(),
-                'propertys' => $result->get_property(),
+                'properties' => $result->get_property(),
                 'images' => $result->get_images(),
                 'comments' => $result->get_comment(),
                 'villa' => $result

@@ -130,6 +130,13 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::post('customers/store', 'App\Http\Controllers\Rent\CustomerController@store')->name('customers/store');
     Route::post('customers/update', 'App\Http\Controllers\Rent\CustomerController@update')->name('customers/update');
     Route::get('customers/delete/{id}', 'App\Http\Controllers\Rent\CustomerController@destroy')->name('customers/delete');
+    /**Tenants**/
+    Route::get('tenants', 'App\Http\Controllers\Rent\TenantsController@index')->name('tenants');
+    Route::get('tenants/create', 'App\Http\Controllers\Rent\TenantsController@create')->name('tenants/create');
+    Route::get('tenants/edit/{id}', 'App\Http\Controllers\Rent\TenantsController@edit')->name('tenants/edit');
+    Route::post('tenants/store', 'App\Http\Controllers\Rent\TenantsController@store')->name('tenants/store');
+    Route::post('tenants/update', 'App\Http\Controllers\Rent\TenantsController@update')->name('tenants/update');
+    Route::get('tenants/delete/{id}', 'App\Http\Controllers\Rent\TenantsController@destroy')->name('tenants/delete');
     /**Kontratlar**/
     Route::get('contracts', 'App\Http\Controllers\Rent\ContractsController@index')->name('contracts');
     Route::get('contracts/{id}', 'App\Http\Controllers\Rent\ContractsController@index')->name('contractsUpdate');

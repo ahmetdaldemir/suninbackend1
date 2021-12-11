@@ -93,6 +93,7 @@ class VillaController extends Controller
         $data['regulations']  = $this->regulationRepository->all();
         $data['services']  = $this->serviceRepository->all();
         $data['properties']  = $this->propertyRepository->all();
+        $data['tenants']  = $this->tenantRepository->type('landlord');
 
         foreach ($data['villa'][0]['category'] as $category){
             $data['villa_category'][] = $category['category_id'];
@@ -100,7 +101,7 @@ class VillaController extends Controller
         foreach ($data['villa'][0]['property'] as $property){
             $data['villa_property'][] = $property['property_id'];
         }
-        foreach ($data['villa'][0]['service'] as $service){
+        foreach ($data['villa'][0]['services'] as $service){
             $data['villa_service'][] = $service['service_id'];
         }
         foreach ($data['villa'][0]['regulation'] as $regulation){
@@ -109,7 +110,7 @@ class VillaController extends Controller
         return view('rent/villa/edit',$data);
     }
 
-    public function update(Request $request, Villa $villa)
+    public function update(Request $request)
     {
         $this->villaRepository->update($request);
         return redirect()->to('villa');

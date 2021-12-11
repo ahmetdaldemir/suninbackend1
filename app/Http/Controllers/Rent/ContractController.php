@@ -34,6 +34,7 @@ class ContractController extends Controller
     public function create(Request $request)
     {
         $data = $this->contractRepository->create($request);
+        dd($data);
         return response()->json(['success' => true,'data' => $data], 200);
     }
 

@@ -10,7 +10,7 @@ class RentCategoryRepository extends BaseRepository implements RentCategoryRepos
     public function get($id)
     {
         $data = [];
-        $results = RentCategory::where('id',$id)->get();
+        $results = RentCategory::where('id',$id)->orderBy('sort', 'ASC')->get();
         foreach ($results as $service) {
             $data[] = array(
                 'id' => $service->id,
@@ -24,7 +24,7 @@ class RentCategoryRepository extends BaseRepository implements RentCategoryRepos
     public function all()
     {
         $data = [];
-        $results = RentCategory::where('tenant_id', $this->getTenantId())->get();
+        $results = RentCategory::where('tenant_id', $this->getTenantId())->orderBy('sort', 'ASC')->get();
         foreach ($results as $result) {
             $data[] = array(
                 'id' => $result->id,

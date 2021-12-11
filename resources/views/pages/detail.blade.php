@@ -143,13 +143,13 @@
 
                                                 <div class="calculations">
                                                     <div class="calc-row">
-                                                        <div class="calc-column"><p class="desc">Service fee</p></div>
-                                                        <div class="calc-column"><p class="price-sq">&euro;24</p></div>
+                                                        <div class="calc-column"><p class="desc">Hasar Depozitosu</p></div>
+                                                        <div class="calc-column"><p class="price-sq">{{$villa['villa']->service}}</p></div>
                                                     </div>
 
                                                     <div class="calc-row">
-                                                        <div class="calc-column"><p class="desc">Cleaning fee</p></div>
-                                                        <div class="calc-column"><p class="price-sq">&euro;16</p></div>
+                                                        <div class="calc-column"><p class="desc">Temizlik Ücreti</p></div>
+                                                        <div class="calc-column"><p class="price-sq">{{$villa['villa']->cleaning}}</p></div>
                                                     </div>
 
                                                     <div class="calc-row">
@@ -286,7 +286,7 @@
                                 @foreach($properties as $property)
                                     @if(in_array($property['id'],$villa_property))
                                     <li style="width: 30%;">
-                                        <i class="icon icon-teddy-bear"></i>
+                                        <i class="icon icon-pin2"></i>
                                         <div><p>{{$property['lang']->where('lang_id',$lang_id)->first()->title}}</p></div>
                                     </li>
                                     @endif

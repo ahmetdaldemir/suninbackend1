@@ -26,7 +26,7 @@
                         <h5>{{$main_name['title']}} <span>(Kategori Düzenle)</span></h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('crm/page/update')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{route('crm/category/update')}}" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="row form-group">
@@ -73,7 +73,7 @@
                                     <?php $i++?>
                                 @endforeach
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label">Durum</label>
                                             <select class="form-control" name="status" id="status">
@@ -82,9 +82,15 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Sıralama</label>
+                                            <input name="sort" class="form-control" type="text" value="{{@$category['sort']}}" placeholder="Sıralama" required="required">
+                                        </div>
+                                    </div>
                                 </div>
                                 @csrf
-                                <input name="page_id" type="hidden" value="{{$category['id']}}" />
+                                <input name="category_id" type="hidden" value="{{$category['id']}}" />
                             </div>
                             <button class="btn btn-primary nextBtn pull-right" type="submit">Güncelle</button>
                         </form>

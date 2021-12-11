@@ -93,3 +93,8 @@ class VillaComment extends BaseModel
 {
     public $timestamps = false;
 }
+
+class VillaContract extends BaseModel
+{
+    public $timestamps = false;
+}

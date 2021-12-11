@@ -65,8 +65,11 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Villa Sahibi</label>
-                                                    <select name="owner_id" class="form-control digits" id="exampleFormControlSelect9">
-                                                        <option>5</option>
+                                                    <select name="tenant_id" class="form-control digits" id="exampleFormControlSelect9" required>
+                                                        <option>Seçiniz</option>
+                                                        @foreach($tenants as $tenant)
+                                                            <option value="{{$tenant['id']}}"{{$villa[0]['tenant_id'] == $tenant['id'] ? ' selected':null}}><?=$tenant['title']?></option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -110,14 +113,14 @@
                             </div>
                             <div class="setup-content" id="step-2">
                                 <div class="col-xs-12">
-                                    <h4>Adres / Özellik Bilgileri</h4>
+                                    <h4>Adres Bilgileri</h4>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">Şehir</label>
-                                                <select name="destination_parent" class="form-control digits" id="destination_parent">
+                                                <select name="destination_id[city]" class="form-control digits" id="destination_parent" data-id="{{@$villa[0]['destination_id']->city}}">
                                                     @foreach($destinations as $destination)
-                                                        <option value="{{$destination['id']}}"{{$villa[0]['destination_id'] == $destination['id'] ? ' selected':null}}>{{$destination['title']}}</option>
+                                                        <option value="{{$destination['id']}}"{{@$villa[0]['destination_id']->city == $destination['id'] ? ' selected':null}}>{{$destination['title']}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -125,7 +128,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">Bölge</label>
-                                                <select name="destination_select" class="form-control digits" id="destination_select" data-id="0" disabled>
+                                                <select name="destination_id[region]" class="form-control digits" id="destination_select" data-id="{{@$villa[0]['destination_id']->region}}" disabled>
                                                     <option>Şehir Seçiniz</option>
                                                 </select>
                                             </div>
@@ -133,12 +136,48 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">Alt Bölge</label>
-                                                <select name="destination_id" class="form-control digits" id="destination_id" data-id="0" disabled>
+                                                <select name="destination_id[state]" class="form-control digits" id="destination_id" data-id="{{@$villa[0]['destination_id']->state}}" disabled>
                                                     <option>Bölge Seçiniz</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Adres</label>
+                                                <input name="address" class="form-control" type="text" value="{{$villa[0]['address']}}" placeholder="Adres" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Harita Linki</label>
+                                                <input name="map" class="form-control" type="text" value="{{$villa[0]['map']}}" placeholder="Harita Linki" required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4>Ücretler</h4>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Depozito</label>
+                                                <input name="deposit" class="form-control" type="text" value="{{$villa[0]['deposit']}}" placeholder="Depozito">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Hizmet Ücreti</label>
+                                                <input name="service" class="form-control" type="text" value="{{$villa[0]['service']}}" placeholder="Depozito">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Temizlik Ücreti</label>
+                                                <input name="cleaning" class="form-control" type="text" value="{{$villa[0]['cleaning']}}" placeholder="Depozito">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4>Villa Bilgileri</h4>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
@@ -162,20 +201,6 @@
                                             <div class="form-group">
                                                 <label class="control-label">Banyo Sayısı</label>
                                                 <input name="bathrooms" class="form-control" type="number" value="{{$villa[0]['bathrooms']}}" placeholder="Banyo Sayısı" required="required">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Adres</label>
-                                                <input name="address" class="form-control" type="text" value="{{$villa[0]['address']}}" placeholder="Adres" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Harita Linki</label>
-                                                <input name="map" class="form-control" type="text" value="{{$villa[0]['map']}}" placeholder="Harita Linki" required="required">
                                             </div>
                                         </div>
                                     </div>
@@ -305,32 +330,36 @@
 @endsection
 
 @section('script')
-    <script src="{{asset('rent/js/typeahead/handlebars.js')}}"></script>
-    <script src="{{asset('rent/js/typeahead/typeahead.bundle.js')}}"></script>
-    <script src="{{asset('rent/js/typeahead/typeahead.custom.js')}}"></script>
-    <script src="{{asset('rent/js/typeahead-search/handlebars.js')}}"></script>
-    <script src="{{asset('rent/js/typeahead-search/typeahead-custom.js')}}"></script>
-    <script src="{{asset('rent/js/chart/apex-chart/apex-chart.js')}}"></script>
-    <script src="{{asset('rent/js/chart/apex-chart/stock-prices.js')}}"></script>
-    <script src="{{asset('rent/js/prism/prism.min.js')}}"></script>
-    <script src="{{asset('rent/js/clipboard/clipboard.min.js')}}"></script>
-    <script src="{{asset('rent/js/counter/jquery.waypoints.min.js')}}"></script>
-    <script src="{{asset('rent/js/counter/jquery.counterup.min.js')}}"></script>
-    <script src="{{asset('rent/js/counter/counter-custom.js')}}"></script>
-    <script src="{{asset('rent/js/custom-card/custom-card.js')}}"></script>
-    <script src="{{asset('rent/js/notify/bootstrap-notify.min.js')}}"></script>
-    <script src="{{asset('rent/js/notify/index.js')}}"></script>
-    <script src="{{asset('rent/js/datepicker/date-picker/datepicker.js')}}"></script>
-    <script src="{{asset('rent/js/datepicker/date-picker/datepicker.en.js')}}"></script>
-    <script src="{{asset('rent/js/datepicker/date-picker/datepicker.custom.js')}}"></script>
-    <script src="{{asset('rent/js/form-wizard/form-wizard-two.js')}}"></script>
-    <script src="{{asset('rent/js/select2/select2.full.min.js')}}"></script>
-    <script src="{{asset('rent/js/select2/select2-custom.js')}}"></script>
-    <script src="{{asset('rent/js/editor/ckeditor/ckeditor.js')}}"></script>
-    <script src="{{asset('rent/js/editor/ckeditor/styles.js')}}"></script>
-    <script src="{{asset('rent/js/editor/ckeditor/adapters/jquery.js')}}"></script>
-    <script src="{{asset('rent/js/editor/ckeditor/ckeditor.custom.js')}}"></script>
+<script src="{{asset('rent/js/typeahead/handlebars.js')}}"></script>
+<script src="{{asset('rent/js/typeahead/typeahead.bundle.js')}}"></script>
+<script src="{{asset('rent/js/typeahead/typeahead.custom.js')}}"></script>
+<script src="{{asset('rent/js/typeahead-search/handlebars.js')}}"></script>
+<script src="{{asset('rent/js/typeahead-search/typeahead-custom.js')}}"></script>
+<script src="{{asset('rent/js/chart/apex-chart/apex-chart.js')}}"></script>
+<script src="{{asset('rent/js/chart/apex-chart/stock-prices.js')}}"></script>
+<script src="{{asset('rent/js/prism/prism.min.js')}}"></script>
+<script src="{{asset('rent/js/clipboard/clipboard.min.js')}}"></script>
+<script src="{{asset('rent/js/counter/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('rent/js/counter/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('rent/js/counter/counter-custom.js')}}"></script>
+<script src="{{asset('rent/js/custom-card/custom-card.js')}}"></script>
+<script src="{{asset('rent/js/notify/bootstrap-notify.min.js')}}"></script>
+<script src="{{asset('rent/js/notify/index.js')}}"></script>
+<script src="{{asset('rent/js/datepicker/date-picker/datepicker.js')}}"></script>
+<script src="{{asset('rent/js/datepicker/date-picker/datepicker.en.js')}}"></script>
+<script src="{{asset('rent/js/datepicker/date-picker/datepicker.custom.js')}}"></script>
+<script src="{{asset('rent/js/form-wizard/form-wizard-two.js')}}"></script>
+<script src="{{asset('rent/js/select2/select2.full.min.js')}}"></script>
+<script src="{{asset('rent/js/select2/select2-custom.js')}}"></script>
+<script src="{{asset('rent/js/editor/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('rent/js/editor/ckeditor/styles.js')}}"></script>
+<script src="{{asset('rent/js/editor/ckeditor/adapters/jquery.js')}}"></script>
+<script src="{{asset('rent/js/customCity.js')}}"></script>
     <script>
+        country.trigger("change");
+        city.trigger("change");
+        state.trigger("change");
+
         $(".editor").each(function () {
             let id = $(this).attr('id');
             CKEDITOR.replace(id, {

@@ -40,16 +40,18 @@
                                 <tbody>
                                 @if($tenants)
                                     @foreach($tenants as $tenant)
+                                        @if($tenant['type']=='landlord')
                                         <tr>
-                                            <td>{{$tenant->fullName}}</td>
-                                            <td>{{$tenant->email}}</td>
-                                            <td>{{$tenant->phone}}</td>
-                                            <td>{{$tenant->is_status}}</td>
+                                            <td>{{$tenant['title']}}</td>
+                                            <td>{{$tenant['email']}}</td>
+                                            <td>{{$tenant['phone']}}</td>
+                                            <td>{{$tenant['company']}}</td>
                                             <td>
                                                 <a href="{{'/tenants/edit/'.$tenant['id']}}" class="btn btn-shadow-primary">Düzenle</a>
                                                 <a href="{{'/tenants/delete/'.$tenant['id']}}" class="btn btn-shadow-warning delete" data-id="{{$tenant['id']}}">Sil</a>
                                             </td>
                                         </tr>
+                                        @endif
                                     @endforeach
                                 @else
                                     <tr>

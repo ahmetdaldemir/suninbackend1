@@ -10,6 +10,8 @@
                   <li class="iconbar-header">Villalar</li>
                   <li><a href="{{route('villa/create')}}">Villa Ekle</a></li>
                   <li><a href="{{route('villa')}}">Villa Listesi</a></li>
+                  <li><a href="{{route('tenants/create')}}">Villa Sahibi Ekle</a></li>
+                  <li><a href="{{route('tenants')}}">Villa Sahipleri</a></li>
               </ul>
           </li>
           <li>

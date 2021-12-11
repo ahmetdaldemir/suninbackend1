@@ -2,73 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/3/2349fa74d8dca7459f6bcca14e9b101a821d3913" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/e/6e1631c4e86b1ea05bbabe1adc58eccdef56c847" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Price.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/css/color-2.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/css/color-2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/css/color-3.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/css/color-3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/css/color-4.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/css/color-4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/css/color-5.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/css/color-5.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/assets/css/color-6.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/css/color-6.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/static/css/main.efd52157.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/css/main.efd52157.chunk.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/static/media/Pe-icon-7-stroke.792cc624.svg" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/media/Pe-icon-7-stroke.792cc624.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/static/media/fontawesome-webfont.6878d55e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/media/fontawesome-webfont.6878d55e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/static/media/icofont.9999a483.svg" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/media/icofont.9999a483.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/static/media/ionicons.ee5b17df.svg" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/media/ionicons.ee5b17df.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/static/media/themify.c4292f34.svg" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/media/themify.c4292f34.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/ContractController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/RentPageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/RentPageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/RentPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RentPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Villa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Villa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Destination/DestinationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Destination/DestinationRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Destination/DestinationRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Destination/DestinationRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Page/RentPageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Page/RentPageRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Page/RentPageRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Page/RentPageRepositoryInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RentCategory/RentCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RentCategory/RentCategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RentDestination/RentDestinationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RentDestination/RentDestinationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Tenant/TenantRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Tenant/TenantRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Blog/BlogRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Blog/BlogRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/View/RentCategory/RentCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/RentCategory/RentCategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/View/RentDestination/RentDestinationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/RentDestination/RentDestinationRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/View/RentDestination/RentDestinationRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/RentDestination/RentDestinationRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/View/RepositoryViewServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/RepositoryViewServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_124055_create_villas_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_124055_create_villas_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_04_124224_create_sliders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_04_124224_create_sliders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_23_182418_module.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_23_182418_module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_27_080653_create_page_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_27_080653_create_page_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_28_075359_rent_destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_28_075359_rent_destination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_28_075605_rent_category.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_28_075605_rent_category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/bootstrap/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/rent/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/header.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/header.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/script.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/script.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/blog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/destinations.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/destinations.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/contracts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/contracts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/layouts/light/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/layouts/light/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/view_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/view_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/tenant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/tenant.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -279,7 +231,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mycar" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -391,7 +343,8 @@
       <workItem from="1638631947136" duration="10000" />
       <workItem from="1638631967404" duration="786000" />
       <workItem from="1638637398159" duration="260000" />
-      <workItem from="1639036770378" duration="2263000" />
+      <workItem from="1639036770378" duration="3164000" />
+      <workItem from="1639230200557" duration="2382000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>
@@ -458,10 +411,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
     <MESSAGE value="test" />
     <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="583" y="220" width="424" height="491" key="FileChooserDialogImpl" timestamp="1639230307627">
+      <screen x="0" y="24" width="1600" height="876" />
+    </state>
+    <state x="583" y="220" width="424" height="491" key="FileChooserDialogImpl/0.24.1600.876@0.24.1600.876" timestamp="1639230307627" />
+    <state x="446" y="181" width="697" height="568" key="NewPhpClassDialog" timestamp="1639230600965">
+      <screen x="0" y="24" width="1600" height="876" />
+    </state>
+    <state x="446" y="181" width="697" height="568" key="NewPhpClassDialog/0.24.1600.876@0.24.1600.876" timestamp="1639230600965" />
+    <state x="491" y="201" width="618" height="522" key="find.popup" timestamp="1639231014784">
+      <screen x="0" y="24" width="1600" height="876" />
+    </state>
+    <state x="491" y="201" width="618" height="522" key="find.popup/0.24.1600.876@0.24.1600.876" timestamp="1639231014784" />
   </component>
 </project>
