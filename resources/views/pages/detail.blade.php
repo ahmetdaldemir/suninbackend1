@@ -89,7 +89,7 @@
 
                                 <div class="property-sticky-box">
                                     <div class="price-tag-sq">
-                                        <span class="price-sq">214&euro;</span>
+                                        <span class="price-sq">{{$villa['price']}}<!--&euro;--></span>
                                         <span class="per-sq" data-text-mobile="/ " data-text="per ">night</span>
                                     </div>
 

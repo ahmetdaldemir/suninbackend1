@@ -42,12 +42,10 @@ class VillaRepository implements VillaRepositoryInterface
 
     public function create(object $data)
     {
-        //        $upload = new Upload($request);
         $id = Str::uuid()->toString();
         $service = new Villa();
         $service->id = $id;
         $service->save();
-
 
         foreach ($data->service as $key => $value) {
             $servicelanguage = new VillaLanguage();

@@ -1,6 +1,7 @@
 <?php namespace App\Repositories\Rent\Contract;
 
-use App\Models\Contract;
+use App\Models\VillaContract;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 
 
@@ -9,27 +10,27 @@ class ContractRepository implements ContractRepositoryInterface
 
     public function get($id)
     {
-        return Contract::find($id);
+        return VillaContract::find($id);
     }
 
     public function all($id)
     {
-        return Contract::where('villa_id',$id)->get();
+        return VillaContract::where('villa_id',$id)->get();
     }
 
     public function delete($id)
     {
-        Contract::destroy($id);
+        VillaContract::destroy($id);
     }
 
     public function create(object $data)
     {
         $session = session()->get('rent_session');
         $id = Str::uuid()->toString();
-        $result = new Contract();
+        $result = new VillaContract();
         $result->id = $id;
-        $result->startDate = $data->startDate;
-        $result->finishDate = $data->finishDate;
+        $result->startDate = Carbon::parse($data->startDate)->format('Y-m-d');
+        $result->finishDate = Carbon::parse($data->finishDate)->format('Y-m-d');
         $result->currency = $data->currency;
         $result->price = $data->price;
         $result->commission = $data->commission;
@@ -43,9 +44,9 @@ class ContractRepository implements ContractRepositoryInterface
 
     public function update(object $data)
     {
-        $result = Contract::find($data->id);
-        $result->startDate = $data->startDate;
-        $result->finishDate = $data->finishDate;
+        $result = VillaContract::find($data->id);
+        $result->startDate = Carbon::parse($data->startDate)->format('Y-m-d');
+        $result->finishDate = Carbon::parse($data->finishDate)->format('Y-m-d');
         $result->currency = $data->currency;
         $result->price = $data->price;
         $result->commission = $data->commission;
@@ -56,9 +57,9 @@ class ContractRepository implements ContractRepositoryInterface
 
     public function copy(object $data)
     {
-        $post = Contract::find($data->id);
+        $post = VillaContract::find($data->id);
         $id = Str::uuid()->toString();
-        Contract::insertGetId([
+        VillaContract::insertGetId([
             "id" => $id,
             "startDate" => $post->startDate,
             "finishDate" => $post->finishDate,

@@ -2,6 +2,7 @@
 
 use App\Models\Villa;
 use App\Models\VillaCategory;
+use App\Models\VillaContract;
 use App\Models\VillaImage;
 use App\Models\VillaLanguage;
 use App\Models\VillaProperty;
@@ -15,15 +16,23 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
     public function get($id)
     {
         $data = [];
+        $date = date("Y-m-d");
         $results = Villa::where('id', $id)->get();
+
         foreach ($results as $result) {
+            $contrat = VillaContract::where('villa_id', $result->id)->where('startDate','<=', $date)->where('finishDate','>=', $date)
+                ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
+                ->get();
             $data[] = array(
                 'id' => $result->id,
                 'lang' => $result->get_data(),
                 'category' => $result->get_category(),
                 'service' => $result->get_service(),
                 'regulation' => $result->get_regulation(),
-                'property' => $result->get_property()
+                'property' => $result->get_property(),
+                'price' => $contrat[0]->price. ' '.$contrat[0]->symbol,
+                'discount' => $contrat[0]->discount,
+                'currency' => $contrat[0]->name,
             );
         }
         return $data;
@@ -31,51 +40,71 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
 
     public function search($search)
     {
-        $villa = Villa::where('name', $search)->where('lang_id', $this->lang_id)->get();
+        $villas = Villa::whereIn('id', $search)->where('lang_id', $this->lang_id)->where('owner_id', $this->view_tenant_id)->get();
         $results = $villa::where('id', $villa->villa_id)->first();
-        foreach ($results as $result){
-            $lang = $result->get_data();
-            $data = array(
-                'id' => $result->id,
-                'lang' => $lang['name'],
-                'rentdestination' => $result
+        foreach ($villas as $villa) {
+            $contrat = VillaContract::where('villa_id', $villa->id)->where('startDate','<=', $date)->where('finishDate','>=', $date)
+                ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
+                ->get();
+            //dd($contrat[0]->price);
+            $data[] = array(
+                'id' => $villa->id,
+                'villa' => $villa,
+                'price' => @$contrat[0]->price. ' '.@$contrat[0]->symbol,
+                'discount' => @$contrat[0]->discount,
+                'currency' => @$contrat[0]->name,
+                'property' => $villa->get_property(),
+                'lang' => $villa->get_data()
             );
-        }/**/
-        $data = Villa::all();
+        }
         return $data;
     }
 
     public function getslug($slug)
     {
-
         $villa = new Villa();
-
         $villa_language = VillaLanguage::where('slug', $slug)->where('lang_id', $this->lang_id)->first();
-
         $data = [];
         $result = $villa::where('id', $villa_language->villa_id)->first();
-            $data = array(
-                'id' => $result->id,
-                'lang' => $result->get_data(),
-                'category' => $result->get_category(),
-                'services' => $result->get_service(),
-                'regulations' => $result->get_regulation(),
-                'properties' => $result->get_property(),
-                'images' => $result->get_images(),
-                'comments' => $result->get_comment(),
-                'villa' => $result
-            );
+        $date = date("Y-m-d");
+        $contrat = VillaContract::where('villa_id', $result->id)->where('startDate','<=', $date)->where('finishDate','>=', $date)
+            ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
+            ->get();
+        //dd($contrat);
+        $data = array(
+            'id' => $result->id,
+            'lang' => $result->get_data(),
+            'category' => $result->get_category(),
+            'services' => $result->get_service(),
+            'regulations' => $result->get_regulation(),
+            'propertys' => $result->get_property(),
+            'images' => $result->get_images(),
+            'comments' => $result->get_comment(),
+            'price' => $contrat[0]->price. ' '.$contrat[0]->symbol,
+            'discount' => $contrat[0]->discount,
+            'currency' => $contrat[0]->name,
+            'villa' => $result
+        );
         return $data;
     }
 
     public function all()
     {
         $data = [];
+        $date = date("Y-m-d");
         $villas = Villa::where('owner_id', $this->view_tenant_id)->get();
         foreach ($villas as $villa) {
+            $contrat = VillaContract::where('villa_id', $villa->id)->where('startDate','<=', $date)->where('finishDate','>=', $date)
+                ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
+                ->get();
+            //dd($contrat[0]->price);
             $data[] = array(
                 'id' => $villa->id,
                 'villa' => $villa,
+                'price' => @$contrat[0]->price. ' '.@$contrat[0]->symbol,
+                'discount' => @$contrat[0]->discount,
+                'currency' => @$contrat[0]->name,
+                'property' => $villa->get_property(),
                 'lang' => $villa->get_data()
             );
         }

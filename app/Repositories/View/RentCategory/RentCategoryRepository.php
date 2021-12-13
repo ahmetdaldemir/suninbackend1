@@ -21,6 +21,20 @@ class RentCategoryRepository extends BaseRepository implements RentCategoryRepos
         return $data;
     }
 
+    public function getVilla($id)
+    {
+        $data = [];
+        $results = RentCategory::where('category_id',$id)->get();
+        foreach ($results as $result) {
+            $data[] = array(
+                'id' => $result->id,
+                'image' => $result->image,
+                'lang' => $result->get_data()
+            );
+        }
+        return $data;
+    }
+
     public function all()
     {
         $data = [];

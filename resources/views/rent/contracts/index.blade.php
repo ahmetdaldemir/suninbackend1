@@ -6,7 +6,7 @@
 
 @section('style')
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/sweetalert.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('rent/css/date-picker.css')}}">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <style>
 td {width: 200px;}
 .row-template{display:none;}
@@ -176,15 +176,13 @@ td {width: 200px;}
     <!-- Container-fluid Ends-->
 @endsection
 @section('script')
-<script src="/rent/js/datepicker/date-picker/datepicker.js"></script>
-<script src="/rent/js/datepicker/date-picker/datepicker.en.js"></script>
 <script src="/rent/js/datepicker/date-time-picker/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script src="{{url('/rent/js/sweet-alert/sweetalert.min.js')}}"></script>
 <script src="{{asset('rent/js/contractApp.js')}}"></script>
 <script>
 $(document).ready(function () {
     contract.general();
-    contract.periodActions();
     contract.periodView('{{$villa[0]['id']}}');
 });
 </script>

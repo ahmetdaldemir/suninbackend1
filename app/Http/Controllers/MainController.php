@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\RentCategory;
+use App\Models\Reservation;
+use App\Models\Villa;
+use App\Models\VillaCategory;
 use App\Repositories\Property\PropertyRepositoryInterface;
 use App\Repositories\Regulation\RegulationRepositoryInterface;
 use App\Repositories\Rent\Page\RentPageRepositoryInterface;
@@ -73,7 +78,7 @@ class MainController extends Controller
         $data['lang_id'] = $this->lang_id;
         $data['sliders'] = $this->sliderRepository->all();
         $data['destinations'] = $this->rentDestinationRepository->all();
-        //dd($data['destinations']);
+        //dd($data['villas']);
         return view('welcome', $data);
     }
 
@@ -104,6 +109,7 @@ class MainController extends Controller
         $data['regulations'] = $this->regulationRepository->all();
         $data['services'] = $this->serviceRepository->all();
         $data['villa'] = $this->villaRepository->getslug($slug);
+        //dd($data['villa']);
         //dd($data['villa']['propertys']);
         foreach ($data['villa']['propertys'] as $property) {
             $data['villa_property'][] = $property['property_id'];
@@ -114,7 +120,6 @@ class MainController extends Controller
         foreach ($data['villa']['services'] as $service) {
             $data['villa_service'][] = $service['service_id'];
         }
-        //dd($data);
         return view('pages/detail', $data);
     }
 
@@ -162,9 +167,32 @@ class MainController extends Controller
 
     public function listing(Request $request)
     {
+
+        $this->search($request);
+        $data['category_id'] = $request->category;
         $data['lang_id'] = $this->lang_id;
-        $data['villas'] = $this->villaRepository->all();
+        $data['categories'] = $this->rentCategoryRepository->getVilla($request->category);
+        //dd($data['categories']);
+
+        $data['villas'] = $this->villaRepository->search($data['categories']);
+        //dd($data);
         return view('pages/list',$data);
+    }
+
+    public function search(Request $request)
+    {
+        Villa::all();
+        dd($request->category);
+         $villa1 = VillaCategory::select('villa_id')->where('category_id',$request->category)->get();
+        dd($villa1);
+
+        $villa2 = Villa::select('id')->where('capacity','>=',$request->adult)->get()->toArray();
+         $villa3 = Reservation::select('villa_id')->where('checkin','<=',$request->checkout)->where('checkout','>=',$request->checkin)->get()->toArray();
+
+        $new_villa = array_intersect($villa1,$villa2);
+         $new_villa_diff = array_diff($new_villa,$villa3);
+
+        return Villa::whereIn('id',$new_villa_diff)->get();
     }
 
     public function add_listing()

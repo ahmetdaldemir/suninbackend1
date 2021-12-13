@@ -4,7 +4,7 @@
 namespace App\Services;
 
 
-use App\Models\Contract;
+use App\Models\VillaContract;
 use phpseclib3\Math\PrimeField\Integer;
 
 class Price
@@ -24,7 +24,7 @@ class Price
 
     public function handle()
     {
-        $contract = Contract::whereNull('deleted_at')
+        $contract = VillaContract::whereNull('deleted_at')
             ->where('villa_id', $this->id)
             ->where('startDate', '<', $this->startdate)
             ->where('finishDate', '>', $this->finishdate)->first();

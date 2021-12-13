@@ -67,12 +67,12 @@
                             <li>
                                 <div class="fltp item modal-icons three-columns flat-sq">
                                     <select name="dropdown" size="4" class="dropdown" required>
-                                        <option value="0" selected>Entire Room</option>
-                                        <option value="1" data-icon="icon-home-3">Entire Room</option>
-                                        <option value="2" data-icon="icon-door-simple">Private Room</option>
-                                        <option value="3" data-icon="icon-bed-single">Shared Room</option>
+                                        <option value="0" selected>Kategoriler</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{$category['id']}}"{{$category['id']==$category_id ? ' selected':null}}>{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</option>
+                                        @endforeach
                                     </select>
-                                    <label class="placeholder">Room Type</label>
+                                    <label class="placeholder">Kategori</label>
                                 </div>
                             </li>
 
@@ -317,25 +317,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <hr>
-
-                                            <div class="div-c inline-3 one-label">
-                                                <label>House Rules</label>
-                                                <div class="divided-column">
-                                                    <input type="checkbox" id="rules01">
-                                                    <label for="rules01">Pets allowed</label>
-                                                </div>
-                                                <div class="divided-column">
-                                                    <input type="checkbox" id="rules02">
-                                                    <label for="rules02">Smoking allowed</label>
-                                                </div>
-                                                <div class="divided-column">
-                                                    <input type="checkbox" id="rules03">
-                                                    <label for="rules03">Suitable for events</label>
-                                                </div>
-                                            </div>
-
                                         </div>
 
                                         <div class="footer">
@@ -466,8 +447,8 @@
 
                                             </div>
                                             <div class="property-fl">
-                                                <p><i class="icon icon-pin2"></i> {{$villa['villa']->destination->title}}</p>
-                                                <p><span> {{$villa['villa']->destination->price}}</span></p>
+                                                <p><i class="icon icon-pin2"></i> detination</p>
+                                                <p><span> {{$villa['price']}}</span></p>
                                             </div>
                                         </div>
                                     </div>

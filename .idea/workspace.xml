@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/Price.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/ContractController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Villa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Villa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RentCategory/RentCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RentCategory/RentCategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Tenant/TenantRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Tenant/TenantRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/View/RentCategory/RentCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/RentCategory/RentCategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/layouts/light/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/layouts/light/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/tenant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/tenant.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Price.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Price.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +212,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mycar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -344,7 +325,8 @@
       <workItem from="1638631967404" duration="786000" />
       <workItem from="1638637398159" duration="260000" />
       <workItem from="1639036770378" duration="3164000" />
-      <workItem from="1639230200557" duration="2382000" />
+      <workItem from="1639230200557" duration="4972000" />
+      <workItem from="1639299368188" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>
@@ -419,10 +401,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="583" y="220" width="424" height="491" key="FileChooserDialogImpl" timestamp="1639230307627">
+    <state x="583" y="220" width="424" height="491" key="FileChooserDialogImpl" timestamp="1639291710189">
       <screen x="0" y="24" width="1600" height="876" />
     </state>
-    <state x="583" y="220" width="424" height="491" key="FileChooserDialogImpl/0.24.1600.876@0.24.1600.876" timestamp="1639230307627" />
+    <state x="583" y="220" width="424" height="491" key="FileChooserDialogImpl/0.24.1600.876@0.24.1600.876" timestamp="1639291710189" />
     <state x="446" y="181" width="697" height="568" key="NewPhpClassDialog" timestamp="1639230600965">
       <screen x="0" y="24" width="1600" height="876" />
     </state>
