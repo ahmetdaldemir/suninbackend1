@@ -908,6 +908,15 @@ private static $installed = array (
       ),
       'reference' => 'c814a05837f2edb0d1471d6e3f4ab3501ca3899a',
     ),
+    'predis/predis' => 
+    array (
+      'pretty_version' => 'v1.1.9',
+      'version' => '1.1.9.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c50c3393bb9f47fa012d0cdfb727a266b0818259',
+    ),
     'psr/container' => 
     array (
       'pretty_version' => '1.1.2',

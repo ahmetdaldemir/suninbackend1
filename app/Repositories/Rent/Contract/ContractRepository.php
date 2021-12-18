@@ -34,7 +34,10 @@ class ContractRepository implements ContractRepositoryInterface
         $result->currency = $data->currency;
         $result->price = $data->price;
         $result->commission = $data->commission;
+        $result->deposit = $data->deposit;
+        $result->discount_type = $data->discount_type;
         $result->discount = $data->discount;
+        $result->minday = $data->minday;
         $result->is_active = $data->is_active;
         $result->villa_id = $data->villa_id;
         $result->tenant_id = $session['tenant_id'];
@@ -50,7 +53,10 @@ class ContractRepository implements ContractRepositoryInterface
         $result->currency = $data->currency;
         $result->price = $data->price;
         $result->commission = $data->commission;
+        $result->deposit = $data->deposit;
+        $result->discount_type = $data->discount_type;
         $result->discount = $data->discount;
+        $result->minday = $data->minday;
         $result->is_active = $data->is_active;
         $result->save();
     }
@@ -66,7 +72,10 @@ class ContractRepository implements ContractRepositoryInterface
             "currency" => $post->currency,
             "price" => $post->price,
             "commission" => $post->commission,
+            "deposit" => $post->deposit,
+            "discount_type" => $post->discount_type,
             "discount" => $post->discount,
+            "minday" => $post->minday,
             "is_active" => $post->is_active,
             "villa_id" => $post->villa_id,
             "tenant_id" => $post->tenant_id

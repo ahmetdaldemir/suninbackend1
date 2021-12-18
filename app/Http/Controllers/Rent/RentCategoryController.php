@@ -19,7 +19,7 @@ class RentCategoryController extends Controller
 
     public function index()
     {
-        $data = $this->rentCategoryRepository->all();
+        $data['categories'] = $this->rentCategoryRepository->all();
         $data['languages']  = $this->languageRepository->all();
         return view('rent/category/list',$data);
     }

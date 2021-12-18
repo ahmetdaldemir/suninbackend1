@@ -99,7 +99,7 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->deposit = $data->deposit; //double(10, 2
         $villa->address = $data->address; //text
         $villa->map = $data->map; //text
-        $villa->service = $data->service; //text
+        $villa->service = ''; //text
         $villa->cleaning = $data->cleaning; //text
         $villa->central_distance = $data->central_distance; //varchar(255)
         $villa->restaurant_distance = $data->restaurant_distance; //varchar(255)
@@ -122,6 +122,7 @@ class VillaRepository implements VillaRepositoryInterface
             $record->title = $value;
             $record->slug = $value;
             $record->lang_id = $key;
+            $record->sub = $data->sub[$key];
             $record->description = $data->description[$key];
             $record->save();
         }
@@ -185,7 +186,6 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->deposit = $data->deposit; //double(10, 2
         $villa->address = $data->address; //text
         $villa->map = $data->map; //text
-        $villa->service = $data->service; //text
         $villa->cleaning = $data->cleaning; //text
         $villa->central_distance = $data->central_distance; //varchar(255)
         $villa->restaurant_distance = $data->restaurant_distance; //varchar(255)
@@ -195,7 +195,7 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->bus_station_distance = $data->bus_station_distance; //varchar(255)
         $villa->airport_distance = $data->airport_distance; //varchar(255)
         $villa->i_cal = $data->type; //varchar(255)
-        $villa->destination_id = $data->destination_id; //char(36)
+        $villa->destination_id = json_encode($data->destination_id); //char(36)
         $villa->tenant_id = $data->tenant_id; //char(36)
         $villa->save();
 
@@ -212,6 +212,7 @@ class VillaRepository implements VillaRepositoryInterface
             $record->title = $value;
             $record->slug = $value;
             $record->lang_id = $key;
+            $record->sub = $data->sub[$key];
             $record->description = $data->description[$key];
             $record->save();
         }

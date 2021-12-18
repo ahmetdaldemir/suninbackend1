@@ -194,6 +194,7 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::get('categories', [MainController::class, 'categories'])->name('categories');
     Route::get('destination-detail/{slug}',  [MainController::class, 'destination_detail']);
     Route::get('category-detail/{slug}',  [MainController::class, 'category_detail']);
+    Route::get('category/{slug}',  [MainController::class, 'category']);
     Route::get('categories',  [MainController::class, 'category']);
     Route::get('destination',  [MainController::class, 'destination']);
     Route::get('destination/query',  [MainController::class, 'autoDestination']);
@@ -204,6 +205,9 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::get('logout',  [MainController::class, 'logout']);
     Route::post('villaCheck',  [MainController::class, 'villaCheck']);
     Route::get('reservation/detail/{villa_id}',  [MainController::class, 'reservationDetail']);
+    Route::post('reservation/action',  [MainController::class, 'reservationAction']);
+    Route::get('reservation/payment/{reservation_id}',  [MainController::class, 'reservationPayment']);
     Route::get('blog-detail/{slug}',  [MainController::class, 'blog_detail']);
+    Route::get('customer/account',  [MainController::class, 'account']);
 
 });

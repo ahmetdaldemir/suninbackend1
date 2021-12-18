@@ -7,7 +7,7 @@ use App\Repositories\BaseRepository;
 use App\Services\Upload;
 use Illuminate\Support\Str;
 
-class RentPageRepository extends BaseRepository implements RentPageRepositoryInterface
+class RentPageRepository implements RentPageRepositoryInterface
 {
     public function get($id)
     {

@@ -90,7 +90,7 @@
                                 <div class="property-sticky-box">
                                     <div class="price-tag-sq">
                                         <span class="price-sq">{{$villa['price']}}<!--&euro;--></span>
-                                        <span class="per-sq" data-text-mobile="/ " data-text="per ">night</span>
+                                        <span class="per-sq" data-text-mobile="/ " data-text=" ">Gecelik Fiyat</span>
                                     </div>
 
                                     <div class="button-sq font-weight-extrabold-sq mobile-fixed-trigger hidden-desktop hidden-large-desktop hidden-tablet modal-trigger"
@@ -101,8 +101,8 @@
                                         <div class="sticky-box-content">
                                             <form id="villaReservation">
                                                 <div class="main-infos inline-check-in">
-                                                    <div class="check-in calendar-sq" id="sticky-box-rangestart">
-                                                        <label class="placeholder" data-placeholder="Check In"></label>
+                                                    <div class="check-in calendar-sq" id="rangestart">
+                                                        <label class="placeholder" data-placeholder="Giriş"></label>
 
                                                         <div class="relative">
                                                             <input name="checkin" type="text" class="filter" value="" required placeholder="date" autocomplete="off">
@@ -111,16 +111,16 @@
 
                                                     </div>
 
-                                                    <div class="check-out calendar-sq" id="sticky-box-rangeend">
+                                                    <div class="check-out calendar-sq" id="rangeend">
 
-                                                        <label class="placeholder" data-placeholder="Check Out"></label>
+                                                        <label class="placeholder" data-placeholder="Çıkış"></label>
 
                                                         <input name="checkout" type="text" class="filter" value="" required placeholder="date" autocomplete="off">
 
                                                     </div>
 
                                                     <div class="guests">
-                                                        <label class="placeholder" data-placeholder="Guests"></label>
+                                                        <label class="placeholder" data-placeholder="Kişi"></label>
 
                                                         <select name="guest" size="12" class="dropdown" required>
                                                             <option value="1" selected>1</option>

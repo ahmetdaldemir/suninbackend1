@@ -123,14 +123,16 @@
                              <?php
                                  $title = $villa['lang']->where('lang_id',$lang_id)->first()->title ?? "bulunamadı";
                                  $slug  = $villa['lang']->where('lang_id',$lang_id)->first()->slug ?? "bulunamadı";
+                                 $sub  = $villa['lang']->where('lang_id',$lang_id)->first()->sub ?? 0;
                                 ?>
                             @endif
 
                             <div class="twelve wide mobile four wide tablet four wide computer column">
                                 <div class="property-item">
                                     <div class="property-item-inner">
-
-                                        <div class="price-tag-sq">Jakuzi</div>
+                                        @if($sub!=0)
+                                        <div class="price-tag-sq">{{$sub}}</div>
+                                        @endif
                                         <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
                                             <i class="icon icon-add-wishlist"></i>
                                         </a>
@@ -179,7 +181,7 @@
                                                 </div>
                                             </div>
                                         <div class="property-fl">
-                                            <p><i class="icon icon-pin2"></i> {{@$villa['villa']->destination->title}}
+                                            <p><i class="icon icon-pin2"></i> {{@$villa['destination']}}
                                             </p>
                                             <p><span>Fiyat: {{@$villa['price']}} <i> indirim {{@$villa['discount']}}</i></span></p>
                                         </div>

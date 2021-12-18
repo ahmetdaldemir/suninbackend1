@@ -32,8 +32,16 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
         $session = session()->get('rent_session');
         $categories = Category::all();
         $rentcategories = RentCategory::where('tenant_id',$session['tenant_id'])->get();
-        foreach ($rentcategories as $rentcategory) {
-            $category_data[$rentcategory['category_id']] = array(
+        foreach ($rentcategories as $result) {
+            $data[] = array(
+                'id' => $result->id,
+                'category_id' => $result->category_id,
+                'image' => $result->image,
+                'sort' => $result->sort,
+                'status' => $result->status,
+                'lang' => $result->get_data()
+            );
+/*            $category_data[$rentcategory['category_id']] = array(
                 'id' => $rentcategory['id'],
                 'category_id' => $rentcategory['category_id'],
                 'image' => $rentcategory['image'],
@@ -41,17 +49,17 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
                 'status' => $rentcategory['status'],
                 'name' => $rentcategory['name'],
                 'lang' => $rentcategory->get_data()
-            );
+            );*/
         }
 
-        foreach ($categories as $category){
+        /*foreach ($categories as $category){
             $data['categories'][] = array(
                 'id' => $category['id'],
                 'image' => $category['image'],
                 'lang' => $category->get_data(),
                 'category' => @$category_data[$category['id']]
             );
-        }
+        }*/
         return $data;
     }
 

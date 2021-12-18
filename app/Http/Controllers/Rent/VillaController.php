@@ -9,6 +9,7 @@ use App\Repositories\Destination\DestinationRepositoryInterface;
 use App\Repositories\Language\LanguageRepositoryInterface;
 use App\Repositories\Property\PropertyRepositoryInterface;
 use App\Repositories\Regulation\RegulationRepositoryInterface;
+use App\Repositories\Rent\RentCategory\RentCategoryRepositoryInterface;
 use App\Repositories\Rent\Tenant\TenantRepositoryInterface;
 use App\Repositories\Rent\Villa\VillaRepositoryInterface;
 use App\Repositories\Service\ServiceRepositoryInterface;
@@ -29,6 +30,7 @@ class VillaController extends Controller
     private RegulationRepositoryInterface $regulationRepository;
     private ServiceRepositoryInterface $serviceRepository;
     private TenantRepositoryInterface $tenantRepository;
+    private RentCategoryRepositoryInterface $rentCategoryRepository;
 
     public function __construct(VillaRepositoryInterface $villaRepository,
                                 CategoryRepositoryInterface $categoryRepository,
@@ -37,6 +39,7 @@ class VillaController extends Controller
                                 PropertyRepositoryInterface $propertyRepository,
                                 LanguageRepositoryInterface $languageRepository,
                                 DestinationRepositoryInterface $destinationRepository,
+                                RentCategoryRepositoryInterface $rentCategoryRepository,
                                 TenantRepositoryInterface $tenantRepository)
     {
         $this->villaRepository = $villaRepository;
@@ -47,6 +50,7 @@ class VillaController extends Controller
         $this->serviceRepository = $serviceRepository;
         $this->propertyRepository = $propertyRepository;
         $this->tenantRepository = $tenantRepository;
+        $this->rentCategoryRepository = $rentCategoryRepository;
     }
 
     public function index()
@@ -73,8 +77,9 @@ class VillaController extends Controller
         $data['properties']  = $this->propertyRepository->all();
         $data['regulations']  = $this->regulationRepository->all();
         $data['services']  = $this->serviceRepository->all();
-        $data['categories']  = $this->categoryRepository->all();
+        $data['categories']  = $this->rentCategoryRepository->all();
         $data['tenants']  = $this->tenantRepository->type('landlord');
+        //dd($data['categories']);
         return view('rent/villa/create',$data);
     }
 
@@ -87,7 +92,7 @@ class VillaController extends Controller
     public function edit(Request $request)
     {
         $data['villa'] = $this->villaRepository->get($request->id);
-        $data['categories']  = $this->categoryRepository->all();
+        $data['categories']  = $this->rentCategoryRepository->all();
         $data['languages']  = $this->languageRepository->all();
         $data['destinations']  = $this->destinationRepository->all();
         $data['regulations']  = $this->regulationRepository->all();

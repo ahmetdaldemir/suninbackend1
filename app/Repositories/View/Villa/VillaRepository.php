@@ -9,6 +9,7 @@ use App\Models\VillaProperty;
 use App\Models\VillaRegulation;
 use App\Models\VillaService;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class VillaRepository extends BaseRepository implements VillaRepositoryInterface
@@ -17,40 +18,49 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
     {
         $data = [];
         $date = date("Y-m-d");
-        $results = Villa::where('id', $id)->get();
-
-        foreach ($results as $result) {
-            $contrat = VillaContract::where('villa_id', $result->id)->where('startDate','<=', $date)->where('finishDate','>=', $date)
-                ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
-                ->get();
-            $data[] = array(
-                'id' => $result->id,
-                'lang' => $result->get_data(),
-                'category' => $result->get_category(),
-                'service' => $result->get_service(),
-                'regulation' => $result->get_regulation(),
-                'property' => $result->get_property(),
-                'price' => $contrat[0]->price. ' '.$contrat[0]->symbol,
-                'discount' => $contrat[0]->discount,
-                'currency' => $contrat[0]->name,
-            );
-        }
+        $result = Villa::where('id', $id)->get();
+        $result = $result[0];
+        $date = date("Y-m-d");
+        $contrat = VillaContract::where('villa_id', $result->id)->where('startDate', '<=', $date)->where('finishDate', '>=', $date)
+            ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
+            ->get();
+        $data = array(
+            'id' => $result->id,
+            'image' => $result->image,
+            'lang' => $result->get_data(),
+            'category' => $result->get_category(),
+            'services' => $result->get_service(),
+            'regulations' => $result->get_regulation(),
+            'propertys' => $result->get_property(),
+            'images' => $result->get_images(),
+            'comments' => $result->get_comment(),
+            'price' => $contrat[0]->price,
+            'discount_type' => $contrat[0]->discount_type,
+            'discount' => $contrat[0]->discount,
+            'minday' => $contrat[0]->minday,
+            'deposit' => $contrat[0]->deposit,
+            'currency' => $contrat[0]->name,
+            'currency_id' => $contrat[0]->currency_id,
+            'symbol' => $contrat[0]->symbol,
+            'villa' => $result
+        );
         return $data;
     }
 
     public function search($search)
     {
-        $villas = Villa::whereIn('id', $search)->where('lang_id', $this->lang_id)->where('owner_id', $this->view_tenant_id)->get();
-        $results = $villa::where('id', $villa->villa_id)->first();
+        $category = $search['categories'] ? $search['categories'] : array(0);
+        $villas = Villa::whereIn('id', $category)->where('owner_id', $this->view_tenant_id)->get();
+        //$results = Villa::where('id', $villa->villa_id)->first();
         foreach ($villas as $villa) {
-            $contrat = VillaContract::where('villa_id', $villa->id)->where('startDate','<=', $date)->where('finishDate','>=', $date)
+            $contrat = VillaContract::where('villa_id', $villa->id)->where('startDate', '<=', $search['checkin'])->where('finishDate', '>=', $search['checkout'])
                 ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
                 ->get();
             //dd($contrat[0]->price);
             $data[] = array(
                 'id' => $villa->id,
                 'villa' => $villa,
-                'price' => @$contrat[0]->price. ' '.@$contrat[0]->symbol,
+                'price' => @$contrat[0]->price . ' ' . @$contrat[0]->symbol,
                 'discount' => @$contrat[0]->discount,
                 'currency' => @$contrat[0]->name,
                 'property' => $villa->get_property(),
@@ -67,7 +77,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         $data = [];
         $result = $villa::where('id', $villa_language->villa_id)->first();
         $date = date("Y-m-d");
-        $contrat = VillaContract::where('villa_id', $result->id)->where('startDate','<=', $date)->where('finishDate','>=', $date)
+        $contrat = VillaContract::where('villa_id', $result->id)->where('startDate', '<=', $date)->where('finishDate', '>=', $date)
             ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
             ->get();
         //dd($contrat);
@@ -80,7 +90,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
             'propertys' => $result->get_property(),
             'images' => $result->get_images(),
             'comments' => $result->get_comment(),
-            'price' => $contrat[0]->price. ' '.$contrat[0]->symbol,
+            'price' => $contrat[0]->price . ' ' . $contrat[0]->symbol,
             'discount' => $contrat[0]->discount,
             'currency' => $contrat[0]->name,
             'villa' => $result
@@ -94,20 +104,33 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         $date = date("Y-m-d");
         $villas = Villa::where('owner_id', $this->view_tenant_id)->get();
         foreach ($villas as $villa) {
-            $contrat = VillaContract::where('villa_id', $villa->id)->where('startDate','<=', $date)->where('finishDate','>=', $date)
+            $contrat = VillaContract::where('villa_id', $villa->id)->where('startDate', '<=', $date)->where('finishDate', '>=', $date)
                 ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
                 ->get();
+            $destina = json_decode($villa->destination_id);
+            $dest = DB::select("SELECT d.title as city,
+	               (SELECT title FROM destinations WHERE id='".@$destina->state."') as state,
+                   (SELECT title FROM destinations WHERE id='".@$destina->region."') as region  
+                   FROM destinations as d WHERE d.id='".@$destina->city."'
+                  ");
+            //dd($dest);
+
+
             //dd($contrat[0]->price);
+            //$dest = DB::table('')->
             $data[] = array(
                 'id' => $villa->id,
                 'villa' => $villa,
-                'price' => @$contrat[0]->price. ' '.@$contrat[0]->symbol,
+                'destination' => @$dest[0]->state . '/' . @$dest[0]->region,
+                'price' => @$contrat[0]->price . ' ' . @$contrat[0]->symbol,
+                'destination_id' => json_decode($villa->destination_id),
                 'discount' => @$contrat[0]->discount,
                 'currency' => @$contrat[0]->name,
                 'property' => $villa->get_property(),
                 'lang' => $villa->get_data()
             );
         }
+        //dd($data);
         return $data;
     }
 
@@ -165,7 +188,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
             $record->id = Str::uuid()->toString();
             $record->villa_id = $id;
             $record->title = $value;
-            $record->slug =  Str::slug($value);
+            $record->slug = Str::slug($value);
             $record->lang_id = $key;
             $record->description = $data->description[$key];
             $record->save();
@@ -263,7 +286,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
             $record->id = Str::uuid()->toString();
             $record->villa_id = $id;
             $record->title = $value;
-            $record->slug =  Str::slug($value);
+            $record->slug = Str::slug($value);
             $record->lang_id = $key;
             $record->description = $data->description[$key];
             $record->save();

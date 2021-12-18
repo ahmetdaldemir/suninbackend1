@@ -13,13 +13,78 @@
     <div class="ui grid container">
         <div class="row">
             <div class="ui twelve wide tablet three wide computer three wide widescreen three wide large screen column">
-                <div class="sticky-element sticky-desktop sticky-large-desktop under-ths">
-                    <div class="dashboard-sticky">
-                        <div class="dashboard-sticky-inner">
-                            <div class="dashboard-menu has-submenu">
-                                villa detay
+                <div class="row">
+                    <div class="ui twelve wide computer column">
+                        <h5>{{$villa['lang'][0]->title}}</h5>
+                        <div class="product-payment-item">
+
+                            <div class="product-details">
+                                <img class="product-image" src="{{Storage::url($villa['image'])}}" alt="{{$villa['image']}}">
+
+                                <p class="product-title">
+                                    {{$villa['lang'][0]->title}}
+                                </p>
                             </div>
+
+                            <div class="product-dates">
+                                <p class="product-from">
+                                    <span>{{$guest}} Kişi</span>
+                                </p>
+                                <p class="product-from">
+                                    <span>Giriş Tarihi : </span>{{$checkin}}
+                                </p>
+                                <p class="product-to">
+                                    <span>Çıkış Tarihi : </span>{{$checkout}}
+                                </p>
+                            </div>
+
+                            <div class="product-extra">
+                                <div class="extra-row">
+                                    <p class="extra-title">Konaklama Ücreti x {{$day}} Gün</p>
+                                    <p class="extra-price">
+                                        {{$price}} {{$villa['symbol']}}
+                                    </p>
+                                </div>
+                                <!--
+                                <div class="extra-row">
+                                    <p class="extra-title">Hasar Depozitosu</p>
+                                    <p class="extra-price">
+                                        {{$villa['villa']->service}} {{$villa['symbol']}}
+                                    </p>
+                                </div>-->
+                                <div class="extra-row">
+                                    <p class="extra-title">Temizlik Ücreti</p>
+                                    <p class="extra-price">
+                                        {{$villa['villa']->cleaning}} {{$villa['symbol']}}
+                                    </p>
+                                </div>
+                                @if($villa['discount']>0)
+                                    <div class="extra-row link-sq">
+                                        @if($villa['discount_type']=='static')
+                                            <p class="extra-title ">İndirim</p>
+                                            <p class="extra-price">-{{@$discount}} {{$villa['symbol']}}</p>
+                                        @else
+                                            <p class="extra-title ">İndirim - {{$percent}}%</p>
+                                            <p class="extra-price">-{{@$discount}} {{$villa['symbol']}}</p>
+                                        @endif
+                                    </div>
+                                @endif
+                                <div class="extra-row total-sq">
+                                    <p class="extra-title">Ön Ödeme</p>
+                                    <p class="extra-price">
+                                        {{$prepaid}} {{$villa['symbol']}}
+                                    </p>
+                                </div>
+                                <div class="extra-row total-sq">
+                                    <p class="extra-title">Toplam Bedel</p>
+                                    <p class="extra-price">
+                                        {{$total_price}} {{$villa['symbol']}}
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -33,146 +98,85 @@
                         </div>
                     </div>
                 </div>
-                <form action="{{url('register/action')}}" method="POST">
-                <div class="ui grid">
-                    <div class="row">
-                        <div class="ui twelve wide tablet six wide computer six wide widescreen six wide large screen column">
-                            <div class="div-c">
+                <form action="{{url('reservation/action')}}" method="POST">
+                    <div class="ui">
+                        <div class="white-section">
+                            <h5>Kişisel Bilgiler</h5>
+                            <div class="div-c inline-2">
                                 <div class="divided-column">
-                                    <label>Ad Soyad</label>
-                                    <input type="text" name="fullname" placeholder="Ad Soyad" value="">
+                                    <label>Adınız Soyadınız</label>
+                                    <input name="fullname" type="text" placeholder="">
                                 </div>
+
                                 <div class="divided-column">
-                                    <label>Telefon Numarası</label>
-                                    <input type="text" name="phone" placeholder="Phone Number" value="">
-                                    <input type="text" placeholder="" value="Cruz">
-                                </div>
-                                <div class="divided-column">
-                                    <label>E-posta Adres</label>
-                                    <input type="text" name="username" placeholder="Kullanıcı Adı/e-posta" value="">
+                                    <label>TC Kimlik / Pasaport no</label>
+                                    <input name="tc" type="text" placeholder=" ">
                                 </div>
                             </div>
-
-                            <br>
-                        </div>
-
-                        <div class="ui twelve wide tablet twelve wide computer twelve wide widescreen twelve wide large screen column">
-                            <hr class="margin-null-sq">
-                            <br>
-                        </div>
-
-                        <div class="ui twelve wide tablet twelve wide computer six wide widescreen six wide large screen column">
-                            <div class="div-c">
+                            <div class="div-c inline-2">
                                 <div class="divided-column">
-                                    <label>Location</label>
-                                    <input type="text" placeholder="" value="Bucharest, Romania">
+                                    <label>E-mail</label>
+                                    <input name="email" type="text" placeholder=" ">
+                                </div>
+
+                                <div class="divided-column">
+                                    <label>Telefon</label>
+                                    <input name="phone" type="text" placeholder=" ">
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="ui twelve wide tablet twelve wide computer six wide widescreen six wide large screen column">
                             <div class="div-c">
-                                <div class="divided-column">
-                                    <label>Phone</label>
-                                    <input type="text" placeholder="" value="07*****721">
-                                </div>
+                                <label>Adres</label>
+                                <input name="address" type="text" placeholder=" ">
                             </div>
-                        </div>
 
-                        <div class="ui twelve wide tablet twelve wide computer six wide widescreen six wide large screen column">
-                            <div class="div-c inline-3 one-label">
-                                <label>Birthday</label>
+                            <div class="div-c inline-2">
                                 <div class="divided-column">
-                                    <select class="dropdown">
-                                        <option value="0">01</option>
+                                    <label>Ülke</label>
+                                    <select name="country" class="country" required>
+                                        @foreach($country as $result)
+                                        <option value="{{$result['country_code']}}"{{$result['country_code']=='TR' ? ' selected':null}}>{{$result['country_name']}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 
                                 <div class="divided-column">
-                                    <select class="dropdown">
-                                        <option value="0">Jan</option>
-                                    </select>
-                                </div>
-
-                                <div class="divided-column">
-                                    <select class="dropdown">
-                                        <option value="0">2001</option>
-                                    </select>
+                                    <label>Şehir</label>
+                                    <input name="city" type="text" placeholder=" ">
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="ui twelve wide tablet twelve wide computer six wide widescreen six wide large screen column">
+                            @for($i=1;$i<$day;$i++)
                             <div class="div-c">
-                                <div class="divided-column">
-                                    <label>Gender</label>
-                                    <select name="dropdown" class="dropdown">
-                                        <option value="0">Male</option>
-                                        <option value="1">Female</option>
-                                    </select>
-                                </div>
-
+                                <label>{{$i}}. Misafir Adı Soyadı</label>
+                                <input name="guests[]" type="text" placeholder=" ">
                             </div>
-                        </div>
-
-                        <div class="ui twelve wide tablet twelve wide computer six wide widescreen six wide large screen column">
+                            @endfor
                             <div class="div-c">
-                                <div class="divided-column">
-                                    <label>Main Language</label>
-                                    <select data-placeholder="Choose a Language..." class="dropdown">
-                                        <option value="AF">Afrikanns</option>
-                                        <option value="SQ">Albanian</option>
-                                        <option value="AR">Arabic</option>
-                                    </select>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="ui twelve wide tablet twelve wide computer six wide widescreen six wide large screen column">
+                                <label>Notunuz</label>
+                                <textarea name="note" cols="30" rows="10" placeholder=" "></textarea>
+                            </div><br>
                             <div class="div-c">
-                                <div class="divided-column">
-                                    <label>Preferred Currency</label>
-                                    <select class="dropdown">
-                                        <option value="0">USD</option>
-                                        <option value="1">EUR</option>
-                                        <option value="2">GBP</option>
-                                        <option value="2">RON</option>
-                                    </select>
-                                </div>
-
+                                <input name="newuser" type="checkbox" id="checkbox1" value="1">
+                                <label for="checkbox1">Yeni Üyelik Oluştur</label>
                             </div>
-                        </div>
-
-                        <div class="ui twelve wide tablet twelve wide computer twelve wide widescreen twelve wide large screen column">
                             <br>
-                            <hr>
-                            <br>
-                        </div>
-
-                        <div class="ui twelve wide tablet twelve wide computer twelve wide widescreen twelve wide large screen column">
-                            <strong>Optional</strong>
-                            <br>
-                            <br>
-
                             <div class="div-c">
-                                <div class="divided-column">
-                                    <label>Studies</label>
-                                    <input type="text" placeholder="" value="Enter your studies">
-                                </div>
+                                <label style="margin-right:15px;"><a href="">Kiralama şartları ve sözleşmesi</a> ve <a href="">Gizlilik Politikasını</a> okudum, kabul ediyorum.</label>
+                                <input name="confirm" type="checkbox" id="checkbox2" value="1">
+                                <label for="checkbox2">Kabul Ediyorum</label>
                             </div>
-
-                            <div class="div-c">
-                                <div class="divided-column">
-                                    <label>Work</label>
-                                    <input type="text" placeholder="" value="Where do you work?">
-                                </div>
-                            </div>
-                            <br>
-                            <br>
+                            @csrf
+                            <input type="hidden" name="villa_id" value="{{$villa['id']}}">
+                            <input type="hidden" name="checkin" value="{{$checkin}}">
+                            <input type="hidden" name="checkout" value="{{$checkout}}">
+                            <input type="hidden" name="days" value="{{$day}}">
+                            <input type="hidden" name="guest" value="{{$guest}}">
                         </div>
                     </div>
-                </div>
+                    <div style="overflow:auto;">
+                        <div style="float:right;">
+                            <button type="submit" id="nextBtn">Rezervasyonu Tamamla</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

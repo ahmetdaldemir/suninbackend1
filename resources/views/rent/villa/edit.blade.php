@@ -55,7 +55,7 @@
                                                     <label for="categories" class="control-label">Kategori</label>
                                                     <select name="categories[]" class="form-control digits category-multiple col-sm-12" multiple="multiple" id="categories">
                                                         @foreach($categories as $category)
-                                                            <option value="{{$category['id']}}"{{in_array($category['id'],$villa_category) ? ' selected':null}}>{{$category['lang'][0]->title}}</option>
+                                                            <option value="{{$category['id']}}"{{in_array($category['id'],$villa_category) ? ' selected':null}}>{{$category['lang'][0]->name}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -98,6 +98,10 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Villa Adı ({{$lang['code']}})</label>
                                                         <input name="title[{{$lang['id']}}]" class="form-control" type="text" value="{{$villa[0]['lang'][$key]['title']}}" placeholder="Villa Adı" required="required">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">Villa Ek Yazı ({{$lang['code']}})</label>
+                                                        <input name="sub[{{$lang['id']}}]" class="form-control" type="text" value="{{$villa[0]['lang'][$key]['sub']}}" placeholder="Villa Ek Yazı" required="required">
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label">Açıklama ({{$lang['code']}})</label>
@@ -160,14 +164,8 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="control-label">Depozito</label>
+                                                <label class="control-label">Depozito Ücreti</label>
                                                 <input name="deposit" class="form-control" type="text" value="{{$villa[0]['deposit']}}" placeholder="Depozito">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label">Hizmet Ücreti</label>
-                                                <input name="service" class="form-control" type="text" value="{{$villa[0]['service']}}" placeholder="Depozito">
                                             </div>
                                         </div>
                                         <div class="col-md-3">

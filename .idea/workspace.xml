@@ -2,8 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/account/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/7109d4428917b0c8380a66a44091799586104726" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sunin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sunin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Price.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Price.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/RentCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/RentCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Contract/ContractRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Contract/ContractRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Page/RentPageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Page/RentPageRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RentCategory/RentCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RentCategory/RentCategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Customer/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Customer/CustomerRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Reservation/ReservationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Reservation/ReservationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/reservationdetail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reservationdetail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/contracts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/contracts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/view_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/view_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +231,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/icalendar-generator" />
       <path value="$PROJECT_DIR$/vendor/spatie/enum" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectId" id="1z0b82GK8oHmD546mMiusC7WFqK" />
@@ -327,6 +365,10 @@
       <workItem from="1639036770378" duration="3164000" />
       <workItem from="1639230200557" duration="4972000" />
       <workItem from="1639299368188" duration="32000" />
+      <workItem from="1639379702541" duration="2634000" />
+      <workItem from="1639392600816" duration="2983000" />
+      <workItem from="1639656772926" duration="3208000" />
+      <workItem from="1639814676727" duration="3833000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>
@@ -393,25 +435,10 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
     <MESSAGE value="test" />
     <option name="LAST_COMMIT_MESSAGE" value="test" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="583" y="220" width="424" height="491" key="FileChooserDialogImpl" timestamp="1639291710189">
-      <screen x="0" y="24" width="1600" height="876" />
-    </state>
-    <state x="583" y="220" width="424" height="491" key="FileChooserDialogImpl/0.24.1600.876@0.24.1600.876" timestamp="1639291710189" />
-    <state x="446" y="181" width="697" height="568" key="NewPhpClassDialog" timestamp="1639230600965">
-      <screen x="0" y="24" width="1600" height="876" />
-    </state>
-    <state x="446" y="181" width="697" height="568" key="NewPhpClassDialog/0.24.1600.876@0.24.1600.876" timestamp="1639230600965" />
-    <state x="491" y="201" width="618" height="522" key="find.popup" timestamp="1639231014784">
-      <screen x="0" y="24" width="1600" height="876" />
-    </state>
-    <state x="491" y="201" width="618" height="522" key="find.popup/0.24.1600.876@0.24.1600.876" timestamp="1639231014784" />
   </component>
 </project>

@@ -141,12 +141,51 @@ td {width: 200px;}
                                 </tr>
                                 <tr>
                                     <td class="row-actions"></td>
+                                    <td scope="row">Depozito Oranı</td>
+                                    <td class="row-template">
+                                        <input name="deposit" type="text" class="form-control max-width-200 deposit" id="deposit">
+                                    </td>
+                                    <td class="row-new">
+                                        <input name="deposit" type="text" class="form-control max-width-200 deposit" id="deposit">
+                                    </td>
+                                    <td class="space-column"></td>
+                                </tr>
+                                <tr>
+                                    <td class="row-actions"></td>
+                                    <td scope="row">İndirim Türü</td>
+                                    <td class="row-template">
+                                        <select name="discount_type" class="form-control max-width-200" id="discount_type" aria-label="Default select example">
+                                            <option value="static">Sabit Fiyat</option>
+                                            <option value="percent">Yüzde</option>
+                                        </select>
+                                    </td>
+                                    <td class="row-new">
+                                        <select name="discount_type" class="form-control max-width-200" id="discount_type" aria-label="Default select example">
+                                            <option value="static">Sabit Fiyat</option>
+                                            <option value="percent">Yüzde</option>
+                                        </select>
+                                    </td>
+                                    <td class="space-column"></td>
+                                </tr>
+                                <tr>
+                                    <td class="row-actions"></td>
                                     <td scope="row">İndirim</td>
                                     <td class="row-template">
                                         <input name="discount" type="text" class="form-control max-width-200" id="discount">
                                     </td>
                                     <td class="row-new">
                                         <input name="discount" type="text" class="form-control max-width-200" id="discount">
+                                    </td>
+                                    <td class="space-column"></td>
+                                </tr>
+                                <tr>
+                                    <td class="row-actions"></td>
+                                    <td scope="row">Min. Gece</td>
+                                    <td class="row-template">
+                                        <input name="minday" type="text" class="form-control max-width-200" id="minday">
+                                    </td>
+                                    <td class="row-new">
+                                        <input name="minday" type="text" class="form-control max-width-200" id="minday">
                                     </td>
                                     <td class="space-column"></td>
                                 </tr>

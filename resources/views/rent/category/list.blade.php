@@ -45,10 +45,10 @@
                                 @foreach($categories as $result)
                                     <?php //dd($result);?>
                                     <tr>
-                                        <td>{{@$result['lang'][0]['title']}}</td>
-                                        <td>{{@$result['category']['sort']}}</td>
+                                        <td>{{@$result['lang'][0]['name']}}</td>
+                                        <td>{{@$result['sort']}}</td>
                                         <td>
-                                            @if(@$result['category']['status']==1)
+                                            @if(@$result['status']==1)
                                                 <span class='badge badge-success'>Aktif</span>
                                             @else
                                                 <span class="badge badge-danger">Pasif</span>
@@ -56,11 +56,11 @@
                                         </td>
                                         <td>
                                             <?php //dd($result['module'])?>
-                                            @if(empty($result['category']['category_id']))
+                                            @if(empty($result['category_id']))
                                                 <a href="{{'/crm/category/store/'.@$result['id']}}" class="btn btn-shadow-primary">Aktifleştir</a>
                                             @else
-                                                <a href="{{'/crm/category/edit/'.@$result['category']['id']}}" class="btn btn-shadow-success">Düzenle</a>
-                                                <a href="{{'/crm/category/delete/'.@$result['category']['id']}}" class="btn btn-shadow-danger delete" data-id="{{@$result['category']['id']}}">Kaldır</a>
+                                                <a href="{{'/crm/category/edit/'.@$result['id']}}" class="btn btn-shadow-success">Düzenle</a>
+                                                <a href="{{'/crm/category/delete/'.@$result['id']}}" class="btn btn-shadow-danger delete" data-id="{{@$result['id']}}">Kaldır</a>
                                             @endif
                                         </td>
                                     </tr>

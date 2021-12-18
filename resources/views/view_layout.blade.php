@@ -26,7 +26,7 @@
 </head>
 <body class="no-transition">
 <div id="page-wrapper">
-@include('layout.header')
+@include('layout.header',$categories)
 @yield('content')
 @include('layout.footer')
 @include('layout.script')
