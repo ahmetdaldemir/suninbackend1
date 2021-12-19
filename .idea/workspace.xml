@@ -2,45 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/account/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/7109d4428917b0c8380a66a44091799586104726" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sunin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sunin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/RentCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/RentCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Contract/ContractRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Contract/ContractRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Page/RentPageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Page/RentPageRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RentCategory/RentCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RentCategory/RentCategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Customer/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Customer/CustomerRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Reservation/ReservationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Reservation/ReservationRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/SliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/SliderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/View/RepositoryViewServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/RepositoryViewServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/reservationdetail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reservationdetail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/contracts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/contracts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/view_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/view_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/account/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/account/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +227,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../barracuda" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -265,11 +242,11 @@
       <recent name="$PROJECT_DIR$/storage/app/public/slider" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Repositories/View/VillaFavorite" />
       <recent name="$PROJECT_DIR$/app/Repositories" />
       <recent name="$PROJECT_DIR$/app/Repositories/Admin/ReservationStatus" />
       <recent name="$PROJECT_DIR$/app/Repositories/Rent/RentPage" />
       <recent name="$PROJECT_DIR$/app/Repositories/Page" />
-      <recent name="$PROJECT_DIR$/app/Repositories/Rent/Role" />
     </key>
   </component>
   <component name="RunManager">
@@ -368,7 +345,7 @@
       <workItem from="1639379702541" duration="2634000" />
       <workItem from="1639392600816" duration="2983000" />
       <workItem from="1639656772926" duration="3208000" />
-      <workItem from="1639814676727" duration="3833000" />
+      <workItem from="1639814676727" duration="9892000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>

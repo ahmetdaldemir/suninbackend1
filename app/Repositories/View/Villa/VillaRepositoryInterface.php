@@ -7,6 +7,8 @@ interface VillaRepositoryInterface
 
     public function getslug($id);
 
+    public function select($id);
+
     public function all();
 
     public function delete($id);

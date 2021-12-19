@@ -8,60 +8,83 @@
 @endsection
 
 @section('content')
-    <div class="ui layout">
-    <div class="ui grid container">
-        <div class="row">
-            <div class="ui twelve wide tablet twelve wide computer twelve wide widescreen twelve wide large screen column">
-                <div class="ui grid">
-                    <div class="row">
-                        <div class="ui twelve wide computer column">
-                            <div class="ui grid">
-                                <div class="row">
-                                    <div class="ui twelve wide computer column">
-                                        <div class="typo-header-sq">
-                                            <h2>Bloglar</h2>
+<div class="ui grid container-fluid mar-con">
+    <div class="row">
+        <div class="ui column">
+            <div class="typo-header-sq">
+                <h2>{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</h2>
+            </div>
+            <div class="ui grid">
+                @foreach($villas as $villa)
+                        <?php //dd($villa['lang']['title']);
+                        $title = $villa['lang']['title'] ?? "bulunamadı";
+                        $slug  = $villa['lang']['slug'] ?? "bulunamadı";
+                        $sub  = $villa['lang']['sub'] ?? 0;
+                        ?>
+                    <div class="twelve wide mobile four wide tablet four wide computer column">
+                        <div class="property-item">
+                            <div class="property-item-inner">
+                                @if($sub!=0)
+                                    <div class="price-tag-sq">{{$sub}}</div>
+                                @endif
+                                <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
+                                    <i class="icon icon-add-wishlist"></i>
+                                </a>
+
+
+                                <a class="image-sq"
+                                   href="{{url('villa-detail/'.$slug.'')}}">
+                                            <span class="image-wrapper">
+                                                <span class="image-inner">
+                                                    <img src="{{Storage::url($villa['villa']->image)}}" alt="" class="">
+                                                </span>
+                                            </span>
+                                </a>
+
+                                <div class="main-details">
+                                    <div class="icons-row">
+                                        <div class="icons-column">
+                                            <i class="icon icon-heart"></i> 7.8
                                         </div>
-                                        <div class="magic-grid article-sq hover-scale">
-                                            <!-- item-->
-                                            @foreach($categories as $result)
-                                                <div class="item">
-                                                    <div class="item-inner">
-                                                        <a class="image-sq" href="{{url('category-detail/'.@$result['lang']->where('lang_id',$lang_id)->first()->slug)}}">
-                                                        <span class="image-wrapper">
-                                                            <span class="image-inner">
-                                                                <img class="image-sq" src="{{Storage::url(@$result['category']->image)}}" alt="">
-                                                            </span>
-                                                        </span>
-                                                        </a>
-
-                                                        <!-- typography container-->
-                                                        <div class="typo-sq">
-                                                            <p class="typo-label-sq" data-label-before="Blog" data-label-after="Book a home in"></p>
-                                                            <p class="typo-title-sq">{{@$result['lang']->where('lang_id',$lang_id)->first()->name}}</p>
-                                                            <p class="typo-desc-sq">{{@$result['lang']->where('lang_id',$lang_id)->first()->name}}</p>
-
-                                                            <a href="{{url('category-detail/'.@$result['lang']->where('lang_id',$lang_id)->first()->slug)}}" class="read-more-sq">Devamı.. <i class="icon icon-arrow-right-122"></i></a>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            @endforeach
+                                        <div class="icons-column">
+                                            <i class="icon icon-account-group-5"></i>
+                                            x {{$villa['villa']->capacity}} Kişi
+                                        </div>
+                                        <div class="icons-column">
+                                            <i class="icon icon-door-simple"></i> x {{$villa['villa']->rooms}}
+                                            Oda
+                                        </div>
+                                        <div class="icons-column">
+                                            <i class="icon icon-bed-double"></i> x
+                                            2 {{$villa['villa']->capacity}}
                                         </div>
                                     </div>
-                                    <div class="ui twelve wide tablet twelve wide computer twelve wide widescreen twelve wide large screen column">
-                                        <ul class="list-default-sq pagination-simple-sq right-sq">
-                                            <li class="active"><a href="">1</a></li>
-                                            <li><a href="">2</a></li>
-                                            <li><a href="">3</a></li>
-                                        </ul>
+
+                                </div>
+
+                                <div class="property-name">
+                                    <div class="title-row">
+                                        <a href="{{url('villa-detail/'.$slug.'')}}"
+                                           class="title-sq"
+                                           alt="{{$title}}">{{$title}}</a>
+                                        <a href="{{url('villa-detail/'.$slug.'')}}"
+                                           alt="{{$title}}"
+                                           class="button-sq-top">
+                                            Hemen İncele
+                                        </a>
                                     </div>
+                                </div>
+                                <div class="property-fl">
+                                    <p><i class="icon icon-pin2"></i> {{@$villa['destination']}}
+                                    </p>
+                                    <p><span>Fiyat: {{@$villa['price']}} <i> indirim {{@$villa['discount']}}</i></span></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
-
+        </div>
         </div>
     </div>
 </div>

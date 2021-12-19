@@ -1,6 +1,7 @@
 <?php namespace App\Repositories\View;
 
 
+use App\Models\VillaFavorite;
 use App\Repositories\View\Customer\CustomerRepository;
 use App\Repositories\View\Customer\CustomerRepositoryInterface;
 use App\Repositories\View\RentCategory\RentCategoryRepository;
@@ -22,6 +23,8 @@ use App\Repositories\View\Slider\SliderRepositoryInterface;
 use App\Repositories\View\Villa\VillaRepository;
 use App\Repositories\View\Villa\VillaRepositoryInterface;
 
+use App\Repositories\View\VillaFavorite\VillaFavoriteRepository;
+use App\Repositories\View\VillaFavorite\VillaFavoriteRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryViewServiceProvider extends ServiceProvider
@@ -70,6 +73,10 @@ class RepositoryViewServiceProvider extends ServiceProvider
         $this->app->bind(
             ReservationRepositoryInterface::class,
             ReservationRepository::class
+        );
+        $this->app->bind(
+            VillaFavoriteRepositoryInterface::class,
+            VillaFavoriteRepository::class
         );
     }
 }

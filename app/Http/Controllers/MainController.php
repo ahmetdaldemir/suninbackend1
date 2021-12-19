@@ -17,9 +17,8 @@ use App\Repositories\View\Setting\SettingRepositoryInterface;
 use App\Repositories\View\Villa\VillaRepositoryInterface;
 use App\Repositories\View\Slider\SliderRepositoryInterface;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Redis;
 
 class MainController extends Controller
 {
@@ -139,14 +138,16 @@ class MainController extends Controller
     {
         $data['categories'] = $this->rentCategoryRepository->all();
         $data['lang_id'] = $this->lang_id;
-        $data['category'] = $this->rentCategoryRepository->getslug($slug);
         return view('pages/category_detail', $data);
     }
 
-    public function category()
+    public function category($slug)
     {
         $data['lang_id'] = $this->lang_id;
         $data['categories'] = $this->rentCategoryRepository->all();
+        $data['category'] = $this->rentCategoryRepository->getslug($slug);
+        $data['villas'] = $this->villaRepository->select($data['category']['rentcategory']['id']);
+        //dd($data['villas']);
         return view('pages/categories', $data);
     }
 
@@ -231,23 +232,20 @@ class MainController extends Controller
     public function login()
     {
         $data['categories'] = $this->rentCategoryRepository->all();
-        $data['lang_id'] = $this->lang_id;
-
-        return view('pages/login',$data);
+        return view('pages/login');
     }
 
     public function register()
     {
         $data['categories'] = $this->rentCategoryRepository->all();
-        $data['lang_id'] = $this->lang_id;
-
-        return view('pages/register',$data);
+        return view('pages/register');
     }
 
     public function loginaction(Request $request)
     {
         $data = $this->customerRepository->login($request);
-        return redirect()->to('/');
+        dd($data);
+        return redirect()->to('index');
     }
 
     public function registeraction(Request $request)
@@ -309,7 +307,7 @@ class MainController extends Controller
         $json = Storage::disk('local')->get('country.json');
         $data['country'] = json_decode($json, true);
         //dd($data['country']);
-        Redis::set('card', json_encode([
+        Cache::add('card', json_encode([
             'first_name' => 'tesst',
             'last_name' => 'test1'
         ]));
@@ -343,11 +341,5 @@ class MainController extends Controller
         $data['currency_id'] = '13f5bcab-99b4-4582-9dcc-42e14c634a97';
         $payment_id = $this->reservationRepository->create($data);
         return redirect()->to('reservation/payment/'.$payment_id);
-    }
-
-    public function account()
-    {
-        $data["account"] = Auth::user();
-        return view("pages/account/index",$data);
     }
 }

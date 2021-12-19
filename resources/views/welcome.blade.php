@@ -133,7 +133,7 @@
                                         @if($sub!=0)
                                         <div class="price-tag-sq">{{$sub}}</div>
                                         @endif
-                                        <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
+                                        <a class="add-wishlist modal-ui-trigger" href="" data-id="{{$villa['id']}}" data-trigger-for="wishlist">
                                             <i class="icon icon-add-wishlist"></i>
                                         </a>
 
@@ -244,17 +244,17 @@
                                                 <div class="image-inner">
                                                     <img class="image-sq"
                                                          src="{{Storage::url($destination['destination']->image)}}"
-                                                         alt="{{$destination['lang']->where('lang_id',$lang_id)->first()->title}}">
+                                                         alt="{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}">
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href="{{url('destination-detail/'.$destination['lang']->where('lang_id',$lang_id)->first()->slug.'')}}"
+                                        <a href="{{url('destination-detail/'.@$destination['lang']->where('lang_id',$lang_id)->first()->slug.'')}}"
                                            class="typo-sq">
                                             <span class="typo-whitespace"></span>
                                             <p class="typo-label-sq"
-                                               data-label-before="{{$destination['lang']->where('lang_id',$lang_id)->first()->title}}"
+                                               data-label-before="{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}"
                                                data-label-after="Tüm Villalar"></p>
-                                            <p class="typo-title-sq">{{$destination['lang']->where('lang_id',$lang_id)->first()->title}}</p>
+                                            <p class="typo-title-sq">{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}</p>
                                         </a>
 
                                     </div>
@@ -693,7 +693,7 @@
             </div>
         </div>
     </div>
-    <!-- Wishlist -->
+    <!-- Wishlist --/>
     <div class="ui modal small" data-for="wishlist">
         <i class="icon icon-close close-modal"></i>
 
@@ -725,15 +725,15 @@
             </div>
         </div>
 
-    </div>
+    </div>-->
 @endsection
 
-@section('javascript')
+@section('script')
 <script>
-    /*
+    /**/
 $(document).ready(function(){
     $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-    $("#destination").keyup(function(){
+    $("#add-wishlist").keyup(function(){
         $.ajax({
             type: "GET",
             url: "destination/query",
@@ -750,6 +750,6 @@ $(document).ready(function(){
             }
         });
     });
-});*/
+});
 </script>
 @endsection

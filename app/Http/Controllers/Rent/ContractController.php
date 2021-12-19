@@ -25,7 +25,7 @@ class ContractController extends Controller
     public function index(Request $request)
     {
         $data['villa'] = $this->villaRepository->get($request->id);
-        $data['contracts'] = $this->contractRepository->get($request->id);
+        //$data['contracts'] = $this->contractRepository->get($request->id);
         $data['currencies'] = $this->currencyRepository->all();
         //dd($data['currencies']);
         return view('rent/contracts/index',$data);

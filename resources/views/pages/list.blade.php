@@ -11,42 +11,31 @@
     <header class="header-section mhs header-sticky header-fullwidth header-isnt-tablet header-isnt-mobile">
         <div class="header-content">
             <div class="ui container grid">
-                <div class="header-item header-left">
-                </div>
-
-                <div class="header-item header-center ">
-                </div>
-
+                <div class="header-item header-left"></div>
+                <div class="header-item header-center "></div>
                 <div class="header-item header-right flex-align-left flex-grow-true">
-
                     <div class="item menu-default burger-mobile-modal burger-tablet-modal search-visible flex-grow-true" data-burger="menu02">
-
                         <a href="" class="modal-trigger hamburger hamburger-spin item" data-trigger-for="menu02">
                             <span class="hamburger-box">
                               <span class="hamburger-inner"></span>
                             </span>
                         </a>
-
                         <ul>
-
                             <li class="inline-flat-sq">
                                 <div class="fltp item" id="rangestart">
                                     <input type="text" class="filter" value="" required placeholder="Enter Date">
-                                    <label class="placeholder"  data-big-placeholder="Check In Date" data-little-placeholder="Check In"></label>
+                                    <label class="placeholder"  data-big-placeholder="Check In Date" data-little-placeholder="{{__('Giriş')}}"></label>
                                 </div>
-
                                 <i class="icon icon-little-arrow item hidden-mobile hidden-tablet"></i>
-
                                 <div class="fltp item" id="rangeend">
                                     <input type="text" class="filter" value="" required placeholder="Enter Date">
-                                    <label class="placeholder"  data-big-placeholder="Check Out Date" data-little-placeholder="Check Out"></label>
+                                    <label class="placeholder"  data-big-placeholder="Check Out Date" data-little-placeholder="{{__('Çıkış')}}"></label>
                                 </div>
                             </li>
-
                             <li>
                                 <div class="fltp item flat-sq">
                                     <select name="dropdown" size="13" class="dropdown" tabindex="0" required>
-                                        <option value="0" selected>Guests</option>
+                                        <option value="0" selected>{{__('Kişi')}}</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -60,26 +49,26 @@
                                         <option value="11">11</option>
                                         <option value="12">12</option>
                                     </select>
-                                    <label class="placeholder">Guests</label>
+                                    <label class="placeholder">{{__('Kişiler')}}</label>
                                 </div>
                             </li>
 
                             <li>
                                 <div class="fltp item modal-icons three-columns flat-sq">
                                     <select name="dropdown" size="4" class="dropdown" required>
-                                        <option value="0" selected>Kategoriler</option>
+                                        <option value="0" selected>{{__('Kategoriler')}}</option>
                                         @foreach($categories as $category)
                                             <option value="{{$category['id']}}"{{$category['id']==$category_id ? ' selected':null}}>{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</option>
                                         @endforeach
                                     </select>
-                                    <label class="placeholder">Kategori</label>
+                                    <label class="placeholder">{{__('Kategori')}}</label>
                                 </div>
                             </li>
 
                             <li class="flex-grow-desktop-true flex-grow-large-desktop-true">
                                 <div class="price-range-slider mobile-big item flex-grow-desktop-true flex-grow-large-desktop-true">
 
-                                    <label class="placeholder hidden-desktop hidden-large-desktop">Price Range</label>
+                                    <label class="placeholder hidden-desktop hidden-large-desktop">{{__('Fiyat Aralığı')}}</label>
 
                                     <div id="price-range-slider" class="price-range-slider-base"></div>
                                 </div>
@@ -89,7 +78,7 @@
 
                                 <a href="#" class="item hidden-tablet hidden-mobile">
                                     <i class="icon icon-filter"></i>
-                                    <span class="">Filters</span>
+                                    <span class="">{{__('Filtreler')}}</span>
                                 </a>
 
                                 <ul class="submenu megamenu special-sq">

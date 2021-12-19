@@ -134,6 +134,49 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         return $data;
     }
 
+    public function select($category)
+    {
+        $data = [];
+        Villa::all();
+        $date = date("Y-m-d");
+        $villas = DB::select("SELECT * FROM `villa_categories` as c 
+                    LEFT JOIN villas as v ON v.id=c.villa_id 
+                    /*LEFT JOIN villa_properties as p ON p.villa_id=c.villa_id*/ 
+                    /*LEFT JOIN villa_languages as l ON l.villa_id=v.id l.lang_id='".$this->lang_id."' AND*/ 
+                    WHERE  c.category_id='".@$category."'");
+
+        //dd($villas);
+        foreach ($villas as $villa) {
+            $lang = VillaLanguage::where('villa_id', $villa->id)->where('lang_id', $this->lang_id)->get();
+            $contrat = VillaContract::where('villa_id', $villa->id)->where('startDate', '<=', $date)->where('finishDate', '>=', $date)
+                ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
+                ->get();
+            $destina = json_decode($villa->destination_id);
+            $dest = DB::select("SELECT d.title as city,
+	               (SELECT title FROM destinations WHERE id='".@$destina->state."') as state,
+                   (SELECT title FROM destinations WHERE id='".@$destina->region."') as region  
+                   FROM destinations as d WHERE d.id='".@$destina->city."'
+                  ");
+
+
+            //dd($contrat[0]->price);
+            //$dest = DB::table('')->
+            $data[] = array(
+                'id' => $villa->id,
+                'villa' => $villa,
+                'lang' => $lang[0],
+                'destination' => @$dest[0]->state . '/' . @$dest[0]->region,
+                'price' => @$contrat[0]->price . ' ' . @$contrat[0]->symbol,
+                'discount' => @$contrat[0]->discount,
+                'currency' => @$contrat[0]->name,
+                //'property' => $villa->get_property(),
+                //'lang' => $villa->get_data()
+            );
+        }
+        //dd($data);
+        return $data;
+    }
+
     public function delete($id)
     {
         Villa::destroy($id);
