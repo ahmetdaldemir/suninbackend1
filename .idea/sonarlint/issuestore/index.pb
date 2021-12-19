@@ -254,8 +254,6 @@ e
 5app/Repositories/View/Customer/CustomerRepository.php,6/6/66c73392ad33411bb21a7d9e1e57ec6ec21ceb6a
 U
 %resources/views/view_layout.blade.php,7/1/7109d4428917b0c8380a66a44091799586104726
-Q
-!resources/views/welcome.blade.php,0/c/0c96dd63e07fb2e889aeaea5cbabd89d0d09f1fb
 W
 'resources/views/layout/header.blade.php,5/0/50ca5729e5c11c8159e868df07e91720cfc2ca8b
 ]
@@ -264,8 +262,6 @@ W
 +resources/views/rent/slider/index.blade.php,2/b/2bd605481e5c457feadeea14e4f187a791663602
 ^
 .app/Http/Controllers/Rent/SliderController.php,a/a/aa40ce97459145ccb49b66fe04dd5dc00c270603
->
-routes/web.php,6/b/6b9a783d9b43fee50fd28f56dbd1856d2608f305
 4
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 >
@@ -276,8 +272,6 @@ C
 config/database.php,6/9/69e3bd8ddf957a32ec5a3b80a87f8cc4bfe36a27
 q
 Avendor/laravel/framework/src/Illuminate/Support/Facades/Cache.php,7/a/7a7fc9712ea2a9c66f63fc6983ae0fb4d5c17f5f
-W
-'app/Http/Controllers/MainController.php,a/5/a5420b97240ca9c243d6e7b58844c283608e41c3
 F
 app/Services/Price.php,1/1/11d26e6cf08b8278c8c99977735528e5c9276f28
 x

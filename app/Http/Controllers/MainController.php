@@ -17,6 +17,7 @@ use App\Repositories\View\Setting\SettingRepositoryInterface;
 use App\Repositories\View\Villa\VillaRepositoryInterface;
 use App\Repositories\View\Slider\SliderRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 
@@ -192,6 +193,16 @@ class MainController extends Controller
         return view('pages/list', $data);
     }
 
+    public function all_villa(Request $request)
+    {
+        $data['categories'] = $this->rentCategoryRepository->all();
+        $data['category_id'] = $request->category;
+        $data['lang_id'] = $this->lang_id;
+        $data['categories'] = $this->rentCategoryRepository->getVilla($data);
+        $data['villas'] = $this->villaRepository->all();
+        return view('pages/list', $data);
+    }
+
     public function search(Request $request)
     {
         $id1 = [];
@@ -232,20 +243,23 @@ class MainController extends Controller
     public function login()
     {
         $data['categories'] = $this->rentCategoryRepository->all();
-        return view('pages/login');
+        $data['lang_id'] = $this->lang_id;
+
+        return view('pages/login',$data);
     }
 
     public function register()
     {
         $data['categories'] = $this->rentCategoryRepository->all();
-        return view('pages/register');
+        $data['lang_id'] = $this->lang_id;
+
+        return view('pages/register',$data);
     }
 
     public function loginaction(Request $request)
     {
         $data = $this->customerRepository->login($request);
-        dd($data);
-        return redirect()->to('index');
+        return redirect()->to('/');
     }
 
     public function registeraction(Request $request)
@@ -341,5 +355,11 @@ class MainController extends Controller
         $data['currency_id'] = '13f5bcab-99b4-4582-9dcc-42e14c634a97';
         $payment_id = $this->reservationRepository->create($data);
         return redirect()->to('reservation/payment/'.$payment_id);
+    }
+
+    public function account()
+    {
+        $data["account"] = Auth::user();
+        return view("pages/account/index",$data);
     }
 }

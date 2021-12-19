@@ -191,7 +191,7 @@
                         @endforeach
                     </div>
 
-                    <a href="{{route('listing')}}" class="more-trigger" data-more="Tümünü Görüntüle">
+                    <a href="{{route('all_villa')}}" class="more-trigger" data-more="Tümünü Görüntüle">
                         <i class="icon icon-arrow-down-122"></i>
                     </a>
                 </div>
@@ -262,7 +262,7 @@
                             @endforeach
                         </div>
 
-                        <a class="more-trigger" data-more="Hepsini Görüntüle" href="{{route('listing')}}">
+                        <a class="more-trigger" data-more="Hepsini Görüntüle" href="{{route('destinations')}}">
                             <i class="icon icon-arrow-down-122"></i>
                         </a>
                     </div>
@@ -733,20 +733,18 @@
     /**/
 $(document).ready(function(){
     $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-    $("#add-wishlist").keyup(function(){
+    $("body").on('click','.add-wishlist',function(){
+        let w = $(this).attr('data-id');
         $.ajax({
-            type: "GET",
-            url: "destination/query",
-            data:'query='+$(this).val(),
-            beforeSend: function(){
-                //$("#destination_id").css("background","#FFF url(LoaderIcon.gif) no-repeat 165px");
-            },
+            type: "POST",
+            url: "account/wishlist",
+            data:'w='+w,
             success: function(data){
-                //console.log(data);
-                $("#destination_id").val();
-                $("#destination-box").show();
-                $("#destination-box").html(data);
-                $("#destination").css("background","#999");
+                if(data.confirm==1){
+                    $(this).html('<i class="icon icon-check-22"></i>');
+                }else{
+                    $(this).html('<i class="icon icon-add-wishlist"></i>');
+                }
             }
         });
     });

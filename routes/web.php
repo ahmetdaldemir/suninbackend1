@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Rent\VillaController;
 use Illuminate\Support\Facades\Route;
@@ -189,6 +190,7 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::get('page/{slug}', [MainController::class, 'about']);
     Route::get('villa-detail/{slug}',  [MainController::class, 'detail']);
     Route::get('listing', [MainController::class, 'listing'])->name('listing');
+    Route::get('all_villa', [MainController::class, 'all_villa'])->name('all_villa');
     Route::get('add_listing', [MainController::class, 'add_listing'])->name('add_listing');
     Route::get('destinations', [MainController::class, 'destinations'])->name('destinations');
     Route::get('categories', [MainController::class, 'categories'])->name('categories');
@@ -209,5 +211,6 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::get('reservation/payment/{reservation_id}',  [MainController::class, 'reservationPayment']);
     Route::get('blog-detail/{slug}',  [MainController::class, 'blog_detail']);
     Route::get('customer/account',  [MainController::class, 'account']);
+    Route::get('account/wishlist',  [AccountController::class, 'wishlist']);
 
 });
