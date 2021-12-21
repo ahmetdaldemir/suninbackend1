@@ -17,11 +17,11 @@
             <div class="ui container grid ">
                 <div class="header-item header-left flex-order-tablet-second flex-order-mobile-second flex-grow-tablet-true flex-grow-mobile-true">
                     <a href="/" class="logo item">
-                        <img src="{{asset('view/images/logo.svg')}}"
-                             srcset="{{asset('view/images/logo.svg')}} 1x, {{asset('view/images/logo.svg')}} 2x"
+                        <img src="{{asset('view/images/suninlogo1.png')}}"
+                             srcset="{{asset('view/images/suninlogo1.png')}} 1x, {{asset('view/images/suninlogo1.png')}} 2x"
                              alt="mybnb logo" class="logo-transparent">
-                        <img src="{{asset('view/images/logo.svg')}}"
-                             srcset="{{asset('view/images/logo.svg')}} 1x, {{asset('view/images/logo.svg')}} 2x"
+                        <img src="{{asset('view/images/suninlogo1.png')}}"
+                             srcset="{{asset('view/images/suninlogo1.png')}} 1x, {{asset('view/images/suninlogo1.png')}} 2x"
                              alt="mybnb logo">
                     </a>
                 </div>
@@ -81,6 +81,7 @@
                                     <span>İletişim</span>
                                 </a>
                             </li>
+                            <li>{{Auth::user()}}</li>
                             @guest
                                 <li><a href="{{url('register')}}" class="item">
                                         <span>Üye Ol</span>

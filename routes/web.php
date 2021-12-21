@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Rent\VillaController;
 use Illuminate\Support\Facades\Route;
@@ -201,7 +202,7 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::get('destination',  [MainController::class, 'destination']);
     Route::get('destination/query',  [MainController::class, 'autoDestination']);
     Route::get('login',  [MainController::class, 'login']);
-    Route::post('login/action',  [MainController::class, 'loginaction'])->name('loginaction');
+    Route::post('login/action',  [LoginController::class, 'login'])->name('login');
     Route::get('register',  [MainController::class, 'register']);
     Route::post('register/action',  [MainController::class, 'registeraction'])->name('registeraction');
     Route::get('logout',  [MainController::class, 'logout']);

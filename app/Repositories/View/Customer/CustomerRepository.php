@@ -21,17 +21,13 @@ class CustomerRepository extends BaseRepository implements CustomerRepositoryInt
 
     public function login(object $data)
     {
-        /*$user = new Customer;
-        $user->email = $data->email;
-        $user->password = Hash::make($data->password);*/
         $data->validate([
             'email' => 'required',
             'password' => 'required',
         ]);
         $credentials = $data->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
-            Auth::guard('webweb');
+        if (Auth::guard('webweb')->attempt(['email' => $data->email, 'password' => $data->password], false)) {
             return redirect()->intended('/')->withSuccess('Signed in');
         }
         else
@@ -77,7 +73,6 @@ class CustomerRepository extends BaseRepository implements CustomerRepositoryInt
     public function logout() {
         Session::flush();
         Auth::logout();
-
         return Redirect('login');
     }
 }

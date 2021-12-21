@@ -44,18 +44,19 @@ trait HasPermissions
      */
     public function permissions(): BelongsToMany
     {
-        return $this->morphToMany(
+        $relation = $this->morphToMany(
             config('permission.models.permission'),
             'model',
             config('permission.table_names.model_has_permissions'),
             config('permission.column_names.model_morph_key'),
             PermissionRegistrar::$pivotPermission
-        )
-        ->where(function ($q) {
-            $q->when(PermissionRegistrar::$teams, function ($q) {
-                $q->where(PermissionRegistrar::$teamsKey, app(PermissionRegistrar::class)->getPermissionsTeamId());
-            });
-        });
+        );
+
+        if (! PermissionRegistrar::$teams) {
+            return $relation;
+        }
+
+        return $relation->wherePivot(PermissionRegistrar::$teamsKey, getPermissionsTeamId());
     }
 
     /**
@@ -76,11 +77,15 @@ trait HasPermissions
 
         return $query->where(function (Builder $query) use ($permissions, $rolesWithPermissions) {
             $query->whereHas('permissions', function (Builder $subQuery) use ($permissions) {
-                $subQuery->whereIn(config('permission.table_names.permissions').'.id', \array_column($permissions, 'id'));
+                $permissionClass = $this->getPermissionClass();
+                $key = (new $permissionClass())->getKeyName();
+                $subQuery->whereIn(config('permission.table_names.permissions').".$key", \array_column($permissions, $key));
             });
             if (count($rolesWithPermissions) > 0) {
                 $query->orWhereHas('roles', function (Builder $subQuery) use ($rolesWithPermissions) {
-                    $subQuery->whereIn(config('permission.table_names.roles').'.id', \array_column($rolesWithPermissions, 'id'));
+                    $roleClass = $this->getRoleClass();
+                    $key = (new $roleClass())->getKeyName();
+                    $subQuery->whereIn(config('permission.table_names.roles').".$key", \array_column($rolesWithPermissions, $key));
                 });
             }
         });
@@ -281,7 +286,7 @@ trait HasPermissions
             throw new PermissionDoesNotExist();
         }
 
-        return $this->permissions->contains('id', $permission->id);
+        return $this->permissions->contains($permission->getKeyName(), $permission->getKey());
     }
 
     /**
@@ -311,21 +316,6 @@ trait HasPermissions
     }
 
     /**
-     * Add teams pivot if teams are enabled
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    protected function getPermissionsRelation()
-    {
-        $relation = $this->permissions();
-        if (PermissionRegistrar::$teams && ! is_a($this, Role::class)) {
-            $relation->wherePivot(PermissionRegistrar::$teamsKey, app(PermissionRegistrar::class)->getPermissionsTeamId());
-        }
-
-        return $relation;
-    }
-
-    /**
      * Grant the given permission(s) to a role.
      *
      * @param string|int|array|\Spatie\Permission\Contracts\Permission|\Illuminate\Support\Collection $permissions
@@ -336,30 +326,28 @@ trait HasPermissions
     {
         $permissions = collect($permissions)
             ->flatten()
-            ->map(function ($permission) {
+            ->reduce(function ($array, $permission) {
                 if (empty($permission)) {
-                    return false;
+                    return $array;
                 }
 
-                return $this->getStoredPermission($permission);
-            })
-            ->filter(function ($permission) {
-                return $permission instanceof Permission;
-            })
-            ->each(function ($permission) {
+                $permission = $this->getStoredPermission($permission);
+                if (! $permission instanceof Permission) {
+                    return $array;
+                }
+
                 $this->ensureModelSharesGuard($permission);
-            })
-            ->map(function ($permission) {
-                return ['id' => $permission->id, 'values' => PermissionRegistrar::$teams && ! is_a($this, Role::class) ?
-                    [PermissionRegistrar::$teamsKey => app(PermissionRegistrar::class)->getPermissionsTeamId()] : [],
-                ];
-            })
-            ->pluck('values', 'id')->toArray();
+
+                $array[$permission->getKey()] = PermissionRegistrar::$teams && ! is_a($this, Role::class) ?
+                    [PermissionRegistrar::$teamsKey => getPermissionsTeamId()] : [];
+
+                return $array;
+            }, []);
 
         $model = $this->getModel();
 
         if ($model->exists) {
-            $this->getPermissionsRelation()->sync($permissions, false);
+            $this->permissions()->sync($permissions, false);
             $model->load('permissions');
         } else {
             $class = \get_class($model);
@@ -391,7 +379,7 @@ trait HasPermissions
      */
     public function syncPermissions(...$permissions)
     {
-        $this->getPermissionsRelation()->detach();
+        $this->permissions()->detach();
 
         return $this->givePermissionTo($permissions);
     }
@@ -405,7 +393,7 @@ trait HasPermissions
      */
     public function revokePermissionTo($permission)
     {
-        $this->getPermissionsRelation()->detach($this->getStoredPermission($permission));
+        $this->permissions()->detach($this->getStoredPermission($permission));
 
         if (is_a($this, get_class(app(PermissionRegistrar::class)->getRoleClass()))) {
             $this->forgetCachedPermissions();

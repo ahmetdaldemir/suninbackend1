@@ -73,9 +73,11 @@
             <!-- .slide-up .fade .top .bottom -->
             @foreach($sliders as $slider)
                 <div class="">
+                    @if($slider['lang'] != NULL)
                     <div class="caption-content" style="margin-top: 150px;">
-                        <h1 class="font-weight-extrabold-sq">{{$slider['lang']->where('language_id',$lang_id)->first()->title}}</h1>
+                        <h1 class="font-weight-extrabold-sq">{{$slider['lang']->where('language_id',$lang_id)->first()->title ?? NULL}}</h1>
                     </div>
+                    @endif
                     <div class="caption-outside">
                         <a class="button anchor-sq" href="#top">
                             <i class="icon big icon-compass"></i>

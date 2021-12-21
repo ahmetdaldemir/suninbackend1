@@ -16,7 +16,7 @@ jobs:
           - "8.0"
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v2"
+        uses: "actions/checkout@v2.4.0"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@v2"
@@ -28,7 +28,7 @@ jobs:
         run: 'echo "::set-output name=directory::$(composer config cache-dir)"'
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v2.1.6"
+        uses: "actions/cache@v2.1.7"
         with:
           path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
           key: "php-${{ matrix.php-version }}-composer-cache"
@@ -37,4 +37,4 @@ jobs:
         run: "make -j -O test"
 
       - name: "Send code coverage"
-        uses: codecov/codecov-action@v2.0.2
+        uses: codecov/codecov-action@v2.1.0
