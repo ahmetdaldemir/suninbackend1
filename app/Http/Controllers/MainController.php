@@ -87,6 +87,7 @@ class MainController extends Controller
     {
         $data['categories'] = $this->rentCategoryRepository->all();
         $data['setting'] = $this->settingRepository->all();
+        $data['lang_id'] = $this->lang_id;
         return view('pages/contact', $data);
     }
 
@@ -359,7 +360,7 @@ class MainController extends Controller
 
     public function account()
     {
-        $data["account"] = Auth::user();
+        $data["account"] = Auth::guard("web-user")->user();
         return view("pages/account/index",$data);
     }
 }

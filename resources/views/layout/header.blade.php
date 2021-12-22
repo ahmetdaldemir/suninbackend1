@@ -1,5 +1,5 @@
 <header class="header-section ths header-shadow header-sticky header-slide-up equal-tablet-header-items equal-mobile-header-items ">
-
+    <?php use Illuminate\Support\Facades\Auth;  ?>
     <div class="header-content">
         <div class="ui container-fluid header-top">
             <div class="ui container header-box">
@@ -81,8 +81,7 @@
                                     <span>İletişim</span>
                                 </a>
                             </li>
-                            <li>{{Auth::user()}}</li>
-                            @guest
+                            @if(!\Illuminate\Support\Facades\Auth::guard('web-user')->check())
                                 <li><a href="{{url('register')}}" class="item">
                                         <span>Üye Ol</span>
                                     </a>

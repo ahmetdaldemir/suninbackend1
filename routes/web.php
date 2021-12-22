@@ -205,7 +205,7 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::post('login/action',  [LoginController::class, 'login'])->name('login');
     Route::get('register',  [MainController::class, 'register']);
     Route::post('register/action',  [MainController::class, 'registeraction'])->name('registeraction');
-    Route::get('logout',  [MainController::class, 'logout']);
+    Route::get('logout',  [LoginController::class, 'logout']);
     Route::post('villaCheck',  [MainController::class, 'villaCheck']);
     Route::get('reservation/detail/{villa_id}',  [MainController::class, 'reservationDetail']);
     Route::post('reservation/action',  [MainController::class, 'reservationAction']);

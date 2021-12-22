@@ -10,7 +10,6 @@ class AccountController extends Controller
 
     public function __construct(VillaRepositoryInterface $villaRepository)
     {
-        $this->userRepository = $userRepository;
         $this->villaRepository = $villaRepository;
     }
 

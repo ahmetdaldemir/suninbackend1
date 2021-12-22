@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Customer;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -15,7 +17,7 @@ class LoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest:user')->except('logout');
+        $this->middleware('guest:web-user')->except('logout');
     }
 
     public function login(Request $request)
@@ -26,10 +28,18 @@ class LoginController extends Controller
         ]);
         $credentials = $request->only('email', 'password');
 
-        if (Auth::guard('user')->attempt($credentials)) {
-                return redirect()->to('/');
+        if (Auth::guard('web-user')->attempt($credentials,true)) {
+            $customer = Customer::where('email',$request->email)->first();
+            Auth::login($customer, true);
+            return redirect()->to('/');
         } else {
             return redirect()->to('login')->with('error', 'Email & Password are incorrect.');
         }
+    }
+
+    public function logout()
+    {
+        Auth::guard('web-user')->logout();
+        return redirect()->to('login');
     }
 }

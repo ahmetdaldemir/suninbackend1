@@ -15,7 +15,7 @@ class DestinationRepository implements DestinationRepositoryInterface
 
     public function all()
     {
-        return Destination::where('parent_id','0')->get();
+        return Destination::all();
     }
 
     public function parent($parent)
