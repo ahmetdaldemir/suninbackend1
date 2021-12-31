@@ -17,6 +17,7 @@ use App\Repositories\View\Setting\SettingRepositoryInterface;
 use App\Repositories\View\Villa\VillaRepositoryInterface;
 use App\Repositories\View\Slider\SliderRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
@@ -74,6 +75,7 @@ class MainController extends Controller
     public function index()
     {
         $data['villas'] = $this->villaRepository->all();
+        //dd($data['villas']);
         $data['blogs'] = $this->blogRepository->all();
         $data['categories'] = $this->rentCategoryRepository->all();
         $data['lang_id'] = $this->lang_id;
@@ -278,24 +280,33 @@ class MainController extends Controller
     public function villaCheck(Request $request)
     {
         //dd($request);
+        Cache::flush();
+        Cache::add('data.checkin', $request->checkin);
+        Cache::add('data.checkout', $request->checkout);
+        Cache::add('data.guest', $request->guest);
+        Cache::add('data.villa_id', $request->villa_id);
 
         $data = $this->reservationRepository->check($request);
         if (Count($data) == 0) {
-            return response()->json(['url' => url('reservation/detail/' . $request->villa_id)], 200);
+            return response()->json(['url' => url('reservation/detail')], 200);
         } else {
             return response()->json(['warning' => true], 200);
         }
     }
 
-    public function reservationDetail($villa_id)
+    public function reservationDetail(Request $request)
     {
+        //dd($request);
+        //dd(Cache::get('data.guest'));
         $data['categories'] = $this->rentCategoryRepository->all();
         $data['percent'] = null;
         $data['lang_id'] = $this->lang_id;
-        $data['checkin'] = '12/12/2021';
-        $data['checkout'] = '22/12/2021';
-        $data['guest'] = 2;
-        $data['day'] = 5;
+        $data['checkin'] = Cache::get('data.checkin');
+        $data['checkout'] = Cache::get('data.checkout');
+        $data['guest'] = Cache::get('data.guest');
+        $villa_id = Cache::get('data.villa_id');
+        $fark = Carbon::parse(implode('-',array_reverse(explode('/',$data['checkin']))));
+        $data['day'] = $fark->diffInDays(implode('-',array_reverse(explode('/',$data['checkout']))));
         $data['villa'] = $this->villaRepository->get($villa_id);
 
         $data['price_day'] = $data['villa']['price'];
@@ -313,7 +324,7 @@ class MainController extends Controller
 
         /*Total & PrePaid*/
         if ($data['villa']['discount']==0) {
-            $data['prepaid'] =      ($data['villa']['price'] * $data['day'] + $data['villa']['villa']->cleaning) / 100 * $data['villa']['deposit'];
+            $data['prepaid']     =  ($data['villa']['price'] * $data['day'] + $data['villa']['villa']->cleaning) / 100 * $data['villa']['deposit'];
             $data['total_price'] =  ($data['villa']['price'] * $data['day'] + $data['villa']['villa']->cleaning);
         }else{
             $data['prepaid'] =      ($data['villa']['price'] * $data['day'] + $data['villa']['villa']->cleaning - $data['discount']) / 100 * $data['villa']['deposit'];
@@ -321,41 +332,41 @@ class MainController extends Controller
         }
         $json = Storage::disk('local')->get('country.json');
         $data['country'] = json_decode($json, true);
-        //dd($data['country']);
-        Cache::add('card', json_encode([
-            'first_name' => 'tesst',
-            'last_name' => 'test1'
-        ]));
+
+        Cache::add('data.day', $data['day']);
+        Cache::add('data.price_day', $data['price_day']);
+        Cache::add('data.discount', $data['discount']);
+        Cache::add('data.deposit', $data['deposit']);
+        Cache::add('data.cleaning', $data['cleaning']);
+        Cache::add('data.total_price', $data['total_price']);
 
         return view('pages/reservationdetail',$data);
     }
 
-    public function reservationPayment($reservation_id)
-    {
-        $data['categories'] = $this->rentCategoryRepository->all();
-        //$cache = Redis::get('card');
-        //dd($cache);
-        $data = $this->reservationRepository->get($reservation_id);
-        //dd($data->villa_id);
-        $data['villa'] = $this->villaRepository->get($data->villa_id);
-        return view('pages/reservationpayment',$data);
-    }
-
     public function reservationAction(Request $data)
     {
-        $data['price_day'] = 1000;
-        $data['total_price'] = 5000;
-        $data['checkin'] = '12/12/2021';
-        $data['checkout'] = '17/12/2021';
-        $data['guest'] = 2;
-        $data['day'] = 5;
-        $data['deposit'] = 1895;
-        $data['cleaning'] = 300;
-        $data['discount'] = 100;
+        $data['price_day'] = Cache::get('data.price_day');
+        $data['total_price'] = Cache::get('data.total_price');
+        $data['checkin'] = Cache::get('data.checkin');
+        $data['checkout'] = Cache::get('data.checkout');
+        $data['guest'] = Cache::get('data.guest');
+        $data['day'] = Cache::get('data.day');
+        $data['deposit'] = Cache::get('data.deposit');
+        $data['cleaning'] = Cache::get('data.cleaning');
+        $data['discount'] = Cache::get('data.discount');
         $data['status_id'] = '4464d45e-52a2-11ec-bf63-0242ac130002';
         $data['currency_id'] = '13f5bcab-99b4-4582-9dcc-42e14c634a97';
         $payment_id = $this->reservationRepository->create($data);
         return redirect()->to('reservation/payment/'.$payment_id);
+    }
+
+    public function reservationPayment($reservation_id)
+    {
+        $data = $this->reservationRepository->get($reservation_id);
+        $data['villa'] = $this->villaRepository->get($data->villa_id);
+        $data['lang_id'] = $this->lang_id;
+        $data['categories'] = $this->rentCategoryRepository->all();
+        return view('pages/reservationpayment',$data);
     }
 
     public function account()

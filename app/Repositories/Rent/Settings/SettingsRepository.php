@@ -23,6 +23,9 @@ class SettingsRepository implements SettingsRepositoryInterface
             $setting->favicon = '';
             $setting->phone = '';
             $setting->whatsapp = '';
+            $setting->facebook = '';
+            $setting->twitter = '';
+            $setting->instagram = '';
             $setting->email = '';
             $setting->chatscript = '';
             $setting->google_tag_manager = '';
@@ -84,7 +87,7 @@ class SettingsRepository implements SettingsRepositoryInterface
         $session = session()->get('rent_session');
         if(!empty($data->logo_file)){
             $filename = new Upload($data);
-            $logo_image = $filename->uploads('global','logo_file');
+            $logo_image = 'global/'.$filename->uploads('global','logo_file');
         }else{
             $logo_image = $data->logo_image;
         }
@@ -93,13 +96,16 @@ class SettingsRepository implements SettingsRepositoryInterface
             $filename = new Upload($data);
             $favicon = $filename->uploads('global','favicon_file');
         }else{
-            $favicon = $data->favicon_image;
+            $favicon = 'global/'. $data->favicon_image;
         }
         $setting = Setting::where('tenant_id', $session['tenant_id'])->first();
         $setting->logo = $logo_image;
         $setting->favicon = @$favicon;
         $setting->phone = @$data->phone;
         $setting->whatsapp = @$data->whatsapp;
+        $setting->instagram = @$data->instagram;
+        $setting->facebook = @$data->facebook;
+        $setting->twitter = @$data->twitter;
         $setting->email = @$data->email;
         $setting->chatscript = @$data->chatscript;
         $setting->google_tag_manager = @$data->google_tag_manager;

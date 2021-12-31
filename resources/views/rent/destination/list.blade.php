@@ -40,7 +40,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if($destinations)
+                            @if(@$destinations)
                                 @foreach($destinations as $result)
                                     <tr>
                                         <td>{{@$result['name']}}</td>

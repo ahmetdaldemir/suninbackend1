@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AccountController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Rent\VillaController;
 use Illuminate\Support\Facades\Route;
@@ -88,11 +87,25 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::post('crm/page/update', 'App\Http\Controllers\Rent\RentPageController@update')->name('crm/page/update');
     Route::get('crm/page/delete/{id}', 'App\Http\Controllers\Rent\RentPageController@destroy')->name('crm/page/delete');
 
+    Route::get('destination', 'App\Http\Controllers\Rent\DestinationController@index')->name('destination');
+    Route::get('destination/edit/{id}', 'App\Http\Controllers\Rent\DestinationController@edit')->name('destination/edit');
+    Route::post('destination/store', 'App\Http\Controllers\Rent\DestinationController@store')->name('destination/store');
+    Route::post('destination/update', 'App\Http\Controllers\Rent\DestinationController@update')->name('destination/update');
+    Route::get('destination/create', 'App\Http\Controllers\Rent\DestinationController@create')->name('destination/create');
+    Route::get('destination/delete/{id}', 'App\Http\Controllers\Rent\DestinationController@destroy')->name('destination/delete');
+
     Route::get('crm/destination', 'App\Http\Controllers\Rent\RentDestinationController@index')->name('crm/destination');
     Route::get('crm/destination/edit/{id}', 'App\Http\Controllers\Rent\RentDestinationController@edit')->name('crm/destination/edit');
     Route::get('crm/destination/store/{id}', 'App\Http\Controllers\Rent\RentDestinationController@store')->name('crm/destination/store');
     Route::post('crm/destination/update', 'App\Http\Controllers\Rent\RentDestinationController@update')->name('crm/destination/update');
     Route::get('crm/destination/delete/{id}', 'App\Http\Controllers\Rent\RentDestinationController@destroy')->name('crm/destination/delete');
+
+    Route::get('category', 'App\Http\Controllers\Rent\CategoryController@index')->name('category');
+    Route::get('category/edit/{id}', 'App\Http\Controllers\Rent\CategoryController@edit')->name('category/edit');
+    Route::post('category/store', 'App\Http\Controllers\Rent\CategoryController@store')->name('category/store');
+    Route::post('category/update', 'App\Http\Controllers\Rent\CategoryController@update')->name('category/update');
+    Route::get('category/create', 'App\Http\Controllers\Rent\CategoryController@create')->name('category/create');
+    Route::get('category/delete/{id}', 'App\Http\Controllers\Rent\CategoryController@destroy')->name('category/delete');
 
     Route::get('crm/category', 'App\Http\Controllers\Rent\RentCategoryController@index')->name('crm/category');
     Route::get('crm/category/edit/{id}', 'App\Http\Controllers\Rent\RentCategoryController@edit')->name('crm/category/edit');
@@ -202,12 +215,12 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::get('destination',  [MainController::class, 'destination']);
     Route::get('destination/query',  [MainController::class, 'autoDestination']);
     Route::get('login',  [MainController::class, 'login']);
-    Route::post('login/action',  [LoginController::class, 'login'])->name('login');
+    Route::post('login/action',  [MainController::class, 'loginaction'])->name('loginaction');
     Route::get('register',  [MainController::class, 'register']);
     Route::post('register/action',  [MainController::class, 'registeraction'])->name('registeraction');
-    Route::get('logout',  [LoginController::class, 'logout']);
+    Route::get('logout',  [MainController::class, 'logout']);
     Route::post('villaCheck',  [MainController::class, 'villaCheck']);
-    Route::get('reservation/detail/{villa_id}',  [MainController::class, 'reservationDetail']);
+    Route::get('reservation/detail',  [MainController::class, 'reservationDetail']);
     Route::post('reservation/action',  [MainController::class, 'reservationAction']);
     Route::get('reservation/payment/{reservation_id}',  [MainController::class, 'reservationPayment']);
     Route::get('blog-detail/{slug}',  [MainController::class, 'blog_detail']);

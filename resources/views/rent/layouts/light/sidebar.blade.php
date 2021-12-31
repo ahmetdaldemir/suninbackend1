@@ -85,8 +85,10 @@
                   <li><a href="{{route('module')}}">Modüller</a></li>
                   <li><a href="{{route('page')}}">Sayfalar</a></li>
                   <li><a href="{{route('slider')}}">Silder(SlideShow)</a></li>
-                  <li><a href="{{route('crm/destination')}}">Bölgeler</a></li>
-                  <li><a href="{{route('crm/category')}}">Kategoriler</a></li>
+                  <li><a href="{{route('crm/destination')}}">Bölgeler (modül)</a></li>
+                  <li><a href="{{route('destination')}}">Bölgeler (yönetim)</a></li>
+                  <li><a href="{{route('crm/category')}}">Kategoriler (modül)</a></li>
+                  <li><a href="{{route('category')}}">Kategoriler (yönetim)</a></li>
                   <li><a href="/fsdfsd">Sistem Varsayılanları</a></li>
                   <li><a href="/System/Schedules">Sistem Araçları</a></li>
                   <li><a href="/System/Documents">Dokümanlar</a></li>

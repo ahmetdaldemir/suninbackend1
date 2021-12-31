@@ -24,7 +24,7 @@ class VillaRepository implements VillaRepositoryInterface
                 'type' => $result->type,
                 'capacity' => $result->capacity,
                 'rooms' => $result->rooms,
-                'pool' => $result->pool,
+                'pool' => json_decode($result->pool),
                 'bathrooms' => $result->bathrooms,
                 'bedrooms' => $result->bedrooms,
                 'clean_price' => $result->clean_price,
@@ -68,7 +68,7 @@ class VillaRepository implements VillaRepositoryInterface
                 'type' => $villa->type,
                 'image' => $villa->image,
                 'rooms' => $villa->rooms,
-                'pool' => $villa->pool,
+                'pool' => json_decode($villa->pool),
                 'deposit' => $villa->deposit,
                 'clean_price' => $villa->clean_price,
                 'lang' => $villa->get_data()
@@ -92,14 +92,14 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->type = $data->type; //varchar(255)
         $villa->capacity = $data->capacity; //varchar(255)
         $villa->rooms = $data->rooms; //varchar(255)
-        $villa->pool = $data->pool; //varchar(255)
+        $villa->pool = json_encode($data->pool);
         $villa->bathrooms = $data->bathrooms; //varchar(255)
         $villa->bedrooms = $data->bedrooms; //varchar(255)
         $villa->clean_price = 500; //double(10, 2
         $villa->deposit = $data->deposit; //double(10, 2
         $villa->address = $data->address; //text
         $villa->map = $data->map; //text
-        $villa->service = ''; //text
+        //$villa->service = ''; //text
         $villa->cleaning = $data->cleaning; //text
         $villa->central_distance = $data->central_distance; //varchar(255)
         $villa->restaurant_distance = $data->restaurant_distance; //varchar(255)
@@ -179,7 +179,7 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->type = $data->type; //varchar(255)
         $villa->capacity = $data->capacity; //varchar(255)
         $villa->rooms = $data->rooms; //varchar(255)
-        $villa->pool = $data->pool; //varchar(255)
+        $villa->pool = json_encode($data->pool);
         $villa->bathrooms = $data->bathrooms; //varchar(255)
         $villa->bedrooms = $data->bedrooms; //varchar(255)
         $villa->clean_price = 500; //double(10, 2

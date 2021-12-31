@@ -183,9 +183,21 @@
                                                 </div>
                                             </div>
                                         <div class="property-fl">
-                                            <p><i class="icon icon-pin2"></i> {{@$villa['destination']}}
-                                            </p>
-                                            <p><span>Fiyat: {{@$villa['price']}} <i> indirim {{@$villa['discount']}}</i></span></p>
+                                            <p><i class="icon icon-pin2"></i> {{@$villa['destination']}}</p>
+                                            @if(@$villa['price'])
+                                                @if(@$villa['discount']>0)
+                                                    @if(@$villa['discount_type']=='static')
+                                                    <p><i style="text-decoration:line-through;color:red;">{{$villa['price']}} {{@$villa['symbol']}}</i><span style="font-size: 21px;">{{$villa['price']-$villa['discount']}} {{@$villa['symbol']}}</span></p>
+                                                    @else
+                                                        <?php
+                                                        $price = $villa['price']-($villa['price']*$villa['discount']/100);
+                                                        ?>
+                                                    <p><i style="text-decoration:line-through;color:red;">{{$villa['price']}} {{@$villa['symbol']}}</i><span style="font-size: 21px;">{{@$price}} {{@$villa['symbol']}}</span></p>
+                                                    @endif
+                                                @else
+                                                <p><span style="font-size: 21px;">{{@$villa['price']}}</span></p>
+                                                @endif
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -495,8 +507,7 @@
                             @foreach($blogs as $blog)
                                 <div class="item">
                                     <div class="item-inner">
-
-                                        <a class="image-sq" href="article.html">
+                                        <a class="image-sq" href="{{url('blog-detail/'.@$blog['lang']->where('language_id',$lang_id)->first()->slug.'')}}">
                     	                <span class="image-wrapper">
                     	                    <span class="image-inner">
                     	                        <img class="image-sq"
@@ -508,7 +519,7 @@
 
                                         <div class="typo-sq">
                                             <p class="typo-title-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
-                                            <p class="typo-desc-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->description}}</p>
+                                            <p class="typo-desc-sq">{!! $blog['lang']->where('language_id',$lang_id)->first()->description !!}</p>
 
                                             <a href="" class="read-more-sq">Devamını Oku... <i
                                                         class="icon icon-arrow-right-122"></i></a>

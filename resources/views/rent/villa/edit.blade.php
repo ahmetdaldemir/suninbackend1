@@ -9,6 +9,9 @@
 @endsection
 
 @section('style')
+    <style>
+        .select2 {width: 100%!important;}
+    </style>
 @endsection
 
 @section('breadcrumb-title')
@@ -119,29 +122,37 @@
                                 <div class="col-xs-12">
                                     <h4>Adres Bilgileri</h4>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="control-label">Şehir</label>
-                                                <select name="destination_id[city]" class="form-control digits" id="destination_parent" data-id="{{@$villa[0]['destination_id']->city}}">
+                                                <select name="destination_id[city]" class="form-control digits" id="country_select" data-id="{{@$villa[0]['destination_id']->city}}">
                                                     @foreach($destinations as $destination)
                                                         <option value="{{$destination['id']}}"{{@$villa[0]['destination_id']->city == $destination['id'] ? ' selected':null}}>{{$destination['title']}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="control-label">Bölge</label>
-                                                <select name="destination_id[region]" class="form-control digits" id="destination_select" data-id="{{@$villa[0]['destination_id']->region}}" disabled>
+                                                <label class="control-label">İlçe</label>
+                                                <select name="destination_id[state]" class="form-control digits" id="city_select" data-id="{{@$villa[0]['destination_id']->state}}" disabled>
                                                     <option>Şehir Seçiniz</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="control-label">Alt Bölge</label>
-                                                <select name="destination_id[state]" class="form-control digits" id="destination_id" data-id="{{@$villa[0]['destination_id']->state}}" disabled>
-                                                    <option>Bölge Seçiniz</option>
+                                                <label class="control-label">Semt</label>
+                                                <select name="destination_id[semt]" class="form-control digits" id="state_select" data-id="{{@$villa[0]['destination_id']->semt}}" disabled>
+                                                    <option>İlçe Seçiniz</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="control-label">Bölge</label>
+                                                <select name="destination_id[region]" class="form-control digits" id="semt_select" data-id="{{@$villa[0]['destination_id']->region}}" disabled>
+                                                    <option>Semt Seçiniz</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -256,11 +267,11 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Havuz Tipi</label>
-                                                <select name="pool" class="form-control digits" id="">
-                                                    <option value="NO_POOL"{{$villa[0]['pool'] == 'NO_POOL' ? ' selected':null}}>NO_POOL</option>
-                                                    <option value="PRIVATE"{{$villa[0]['pool'] == 'PRIVATE' ? ' selected':null}}>PRIVATE</option>
-                                                    <option value="KIDS_POOL"{{$villa[0]['pool'] == 'KIDS_POOL' ? ' selected':null}}>KIDS_POOL</option>
-                                                    <option value="DETACHED_POOl"{{$villa[0]['pool'] == 'DETACHED_POOl' ? ' selected':null}}>DETACHED_POOl</option>
+                                                <select name="pool[]" class="form-control digits category-multiple col-sm-12" multiple="multiple" id="pool">
+                                                    <option value="NO_POOL"{{in_array('NO_POOL',@$villa[0]['pool']) ? ' selected':null}}>NO_POOL</option>
+                                                    <option value="PRIVATE"{{in_array('PRIVATE',@$villa[0]['pool']) ? ' selected':null}}>PRIVATE</option>
+                                                    <option value="KIDS_POOL"{{in_array('KIDS_POOL',@$villa[0]['pool']) ? ' selected':null}}>KIDS_POOL</option>
+                                                    <option value="DETACHED_POOl"{{in_array('DETACHED_POOl',@$villa[0]['pool']) ? ' selected':null}}>DETACHED_POOl</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -276,7 +287,7 @@
                                             <div class="row checkbox checkbox-solid-success">
                                                 @foreach($properties as $property)
                                                     <div class="col-4 col-md-3 col-sm-6">
-                                                        <input name="properties[]" id="atribute-{{$property['id']}}" type="checkbox" value="{{$property['id']}}"{{in_array($property['id'],$villa_property) ? ' checked':null}}>
+                                                        <input name="properties[]" id="atribute-{{$property['id']}}" type="checkbox" value="{{$property['id']}}"{{in_array($property['id'],@$villa_property) ? ' checked':null}}>
                                                         <label for="atribute-{{$property['id']}}">{{$property['lang'][0]->title}}</label>
                                                     </div>
                                                 @endforeach
@@ -289,7 +300,7 @@
                                             <div class="row checkbox checkbox-solid-success">
                                                 @foreach($services as $service)
                                                     <div class="col-4 col-md-3 col-sm-6">
-                                                        <input name="services[]" id="service-{{$service['id']}}" type="checkbox" value="{{$service['id']}}"{{in_array($service['id'],$villa_service) ? ' checked':null}}>
+                                                        <input name="services[]" id="service-{{$service['id']}}" type="checkbox" value="{{$service['id']}}"{{in_array($service['id'],@$villa_service) ? ' checked':null}}>
                                                         <label for="service-{{$service['id']}}">{{@json_decode($service['lang'],TRUE)[0]['title']}}</label>
                                                     </div>
                                                 @endforeach
@@ -303,7 +314,7 @@
                                                 @foreach($regulations as $regulation)
                                                     <?php //dd(json_decode($regulation['lang'],TRUE)[0]['title']);?>
                                                     <div class="col-4 col-md-3 col-sm-6">
-                                                        <input name="regulation[]" id="rules-{{$regulation['id']}}" type="checkbox" value="{{$regulation['id']}}"{{in_array($regulation['id'],$villa_regulation) ? ' checked':null}}>
+                                                        <input name="regulation[]" id="rules-{{$regulation['id']}}" type="checkbox" value="{{$regulation['id']}}"{{in_array($regulation['id'],@$villa_regulation) ? ' checked':null}}>
                                                         <label for="rules-{{$regulation['id']}}">{{@json_decode($regulation['lang'],TRUE)[0]['title']}}</label>
                                                     </div>
                                                 @endforeach
@@ -353,7 +364,7 @@
 <script src="{{asset('rent/js/editor/ckeditor/styles.js')}}"></script>
 <script src="{{asset('rent/js/editor/ckeditor/adapters/jquery.js')}}"></script>
 <script src="{{asset('rent/js/customCity.js')}}"></script>
-    <script>
+<script>
         country.trigger("change");
         city.trigger("change");
         state.trigger("change");

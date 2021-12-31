@@ -50,7 +50,7 @@ class RentDestinationRepository implements RentDestinationRepositoryInterface
             );
         }
         //dd($data);
-        return $data;
+        return @$data;
     }
 
     public function delete($id)

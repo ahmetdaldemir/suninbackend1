@@ -9,10 +9,16 @@ contract = {
         currency: 1,
     },
     general: function () {
-        $('.date-picker').datepicker({
-            language: 'en',
-            minDate: new Date()
-        })
+        $('.date-picker').daterangepicker({
+            singleDatePicker: true,
+            orientation: "left",
+            autoclose: true,
+            showDropdowns: true,
+            autoUpdateInput: true,
+            locale: {
+                format: 'DD-MM-YYYY'
+            }
+        });
     },
     periodTabIndex: function () {
         let tabindex = 1;
@@ -80,6 +86,8 @@ contract = {
         });
         // Save Period
         periodsTable.on('click', '.save-period', function () {
+            //alert("test");
+            console.log(this)
             let id = $(this).data('id'),data = 'id=' + id
             let tdi = $(this).closest('td').index();
             $('.periods-table tr').each(function (i, item) {
@@ -189,27 +197,35 @@ contract = {
 
                     $('.periods-table .dynamic').remove();
                     $(data.data).each(function (i, item) {
-                        let tdi = 0;
+                        let tdi = 0,startDate = moment(item.startDate).format('YYYY-MM-DD');
                         $('.periods-table .row-template').each(function (i2, template) {
                             let tri = $(this).closest('tr').index();
                             tdi = $(template).clone().insertBefore('.periods-table tr:eq(' + tri + ') .row-template').removeClass('row-template').addClass('dynamic period-' + item.id).data('id', item.id).index();
                         });
                         $('.periods-table tr').each(function (i3, tr) {
                             $(Object.keys(item)).each(function (i3, prop) {
+
                                 if (prop != 'startDate' && prop != 'finishDate') {
                                     $(tr).find('td:eq(' + tdi + ') [name="' + prop + '"]').val(item[prop]);
+                                }else{
+                                    $(tr).find('td:eq(' + tdi + ') [name="startDate"]').val(moment(item.startDate).format('DD-MM-YYYY'));
+                                    $(tr).find('td:eq(' + tdi + ') [name="finishDate"]').val(moment(item.finishDate).format('DD-MM-YYYY'));
                                 }
                                 $(tr).find('td:eq(' + tdi + ') .save-period').attr('data-id', item.id);
                                 $(tr).find('td:eq(' + tdi + ') .copy-period').attr('data-id', item.id);
                                 $(tr).find('td:eq(' + tdi + ') .delete-period').attr('data-id', item.id);
+                                $('.date-picker').daterangepicker({
+                                    singleDatePicker: true,
+                                    orientation: "left",
+                                    autoclose: true,
+                                    showDropdowns: true,
+                                    autoUpdateInput: true,
+                                    locale: {
+                                        format: 'DD-MM-YYYY'
+                                    }
+                                });
                             });
-                            $(tr).find('td:eq(' + tdi + ') [name="startDate"]').val(moment(item.startDate).format('DD-MM-YYYY'));
-                            $(tr).find('td:eq(' + tdi + ') [name="finishDate"]').val(moment(item.finishDate).format('DD-MM-YYYY'));
                         });
-                        $('.date-picker').datepicker({
-                            language: 'en',
-                            minDate: new Date()
-                        })
                     });
 
                     contract.periodActions();

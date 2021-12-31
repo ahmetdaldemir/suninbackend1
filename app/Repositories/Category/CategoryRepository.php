@@ -45,13 +45,13 @@ class CategoryRepository implements CategoryRepositoryInterface
         $service->save();
 
 
-        foreach ($data->category as $key => $value) {
+        foreach ($data->title as $key => $value) {
             $resultLanguage = new CategoryLanguage();
             $resultLanguage->id = Str::uuid()->toString();
             $resultLanguage->category_id = $id;
             $resultLanguage->title = $value;
+            $resultLanguage->slug = $value;
             $resultLanguage->lang_id = $key;
-            $resultLanguage->description = $data->category_description[$key];
             $resultLanguage->save();
         }
     }
@@ -64,9 +64,9 @@ class CategoryRepository implements CategoryRepositoryInterface
             $resultLanguage = new CategoryLanguage();
             $resultLanguage->id = Str::uuid()->toString();
             $resultLanguage->title = $value;
-            $resultLanguage->category_id = $data->category_id;
+            $resultLanguage->slug = $value;
+              $resultLanguage->category_id = $data->category_id;
             $resultLanguage->lang_id = $key;
-            $resultLanguage->description = $data->category_description[$key];
             $resultLanguage->save();
         }
     }

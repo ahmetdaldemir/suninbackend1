@@ -15,7 +15,7 @@
 <li class="breadcrumb-item">Yönetim</li>
 <li class="breadcrumb-item active">Ayarlar</li>
 @endsection
-  
+
 @section('content')
 <!-- Container-fluid starts-->
 <div class="container-fluid">
@@ -92,6 +92,30 @@
                                         <div class="form-group">
                                             <label class="control-label">whatsapp</label>
                                             <input class="form-control" type="text" name="whatsapp" value="{{@$settings['whatsapp']}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">facebook</label>
+                                            <input class="form-control" type="text" name="facebook" value="{{@$settings['facebook']}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">twitter</label>
+                                            <input class="form-control" type="text" name="twitter" value="{{@$settings['twitter']}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="control-label">instagram</label>
+                                            <input class="form-control" type="text" name="instagram" value="{{@$settings['instagram']}}">
                                         </div>
                                     </div>
                                 </div>

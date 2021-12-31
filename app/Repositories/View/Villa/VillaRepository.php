@@ -107,9 +107,11 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
             $contrat = VillaContract::where('villa_id', $villa->id)->where('startDate', '<=', $date)->where('finishDate', '>=', $date)
                 ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
                 ->get();
+            //dd($contrat);
             $destina = json_decode($villa->destination_id);
             $dest = DB::select("SELECT d.title as city,
 	               (SELECT title FROM destinations WHERE id='".@$destina->state."') as state,
+	               (SELECT title FROM destinations WHERE id='".@$destina->semt."') as semt,
                    (SELECT title FROM destinations WHERE id='".@$destina->region."') as region  
                    FROM destinations as d WHERE d.id='".@$destina->city."'
                   ");
@@ -122,13 +124,16 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
                 'id' => $villa->id,
                 'villa' => $villa,
                 'destination' => @$dest[0]->state . '/' . @$dest[0]->region,
-                'price' => @$contrat[0]->price . ' ' . @$contrat[0]->symbol,
+                'price' => @$contrat[0]->price,
                 'destination_id' => json_decode($villa->destination_id),
                 'discount' => @$contrat[0]->discount,
+                'discount_type' => @$contrat[0]->discount_type,
+                'symbol' => @$contrat[0]->symbol,
                 'currency' => @$contrat[0]->name,
                 'property' => $villa->get_property(),
                 'lang' => $villa->get_data()
             );
+            //dd(@$contrat[0]->price);
         }
         //dd($data);
         return $data;

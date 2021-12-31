@@ -304,8 +304,6 @@ C
 app/Models/User.php,a/9/a90f2e50cb06863b54effced365aa5f1fe7d9c88
 G
 app/Models/Customer.php,3/0/3086a885c00e864abbdce474a19fc482fcfd9b1d
-Q
-!resources/views/welcome.blade.php,0/c/0c96dd63e07fb2e889aeaea5cbabd89d0d09f1fb
 E
 resources/css/app.css,f/b/fb832949a8835b7bba860cb482ee63cd29bba09b
 I

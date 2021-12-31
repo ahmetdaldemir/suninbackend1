@@ -73,13 +73,13 @@ class VillaController extends Controller
     public function create()
     {
         $data['languages']  = $this->languageRepository->all();
-        $data['destinations']  = $this->destinationRepository->all();
+        $data['destinations']  = $this->destinationRepository->parent(0);
         $data['properties']  = $this->propertyRepository->all();
         $data['regulations']  = $this->regulationRepository->all();
         $data['services']  = $this->serviceRepository->all();
         $data['categories']  = $this->rentCategoryRepository->all();
         $data['tenants']  = $this->tenantRepository->type('landlord');
-        //dd($data['categories']);
+        //dd($data['destinations']);
         return view('rent/villa/create',$data);
     }
 
@@ -91,10 +91,14 @@ class VillaController extends Controller
 
     public function edit(Request $request)
     {
+        $data['villa_category'] = array();
+        $data['villa_property'] = array();
+        $data['villa_service'] = array();
+        $data['villa_regulation'] = array();
         $data['villa'] = $this->villaRepository->get($request->id);
         $data['categories']  = $this->rentCategoryRepository->all();
         $data['languages']  = $this->languageRepository->all();
-        $data['destinations']  = $this->destinationRepository->all();
+        $data['destinations']  = $this->destinationRepository->parent(0);
         $data['regulations']  = $this->regulationRepository->all();
         $data['services']  = $this->serviceRepository->all();
         $data['properties']  = $this->propertyRepository->all();
@@ -120,7 +124,7 @@ class VillaController extends Controller
         $this->villaRepository->update($request);
         return redirect()->to('villa');
     }
-    
+
     public function destroy(Villa $villa)
     {
         $this->villaRepository->delete($villa->id);

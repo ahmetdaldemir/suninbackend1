@@ -17,11 +17,11 @@
             <div class="ui container grid ">
                 <div class="header-item header-left flex-order-tablet-second flex-order-mobile-second flex-grow-tablet-true flex-grow-mobile-true">
                     <a href="/" class="logo item">
-                        <img src="{{asset('view/images/suninlogo1.png')}}"
-                             srcset="{{asset('view/images/suninlogo1.png')}} 1x, {{asset('view/images/suninlogo1.png')}} 2x"
+                        <img src="{{Storage::url('global/1640775312_sahil-logo2-3png.png')}}"
+                             srcset="{{Storage::url('global/1640775312_sahil-logo2-3png.png')}} 1x, {{Storage::url('global/1640775312_sahil-logo2-3png.png')}} 2x"
                              alt="mybnb logo" class="logo-transparent">
-                        <img src="{{asset('view/images/suninlogo1.png')}}"
-                             srcset="{{asset('view/images/suninlogo1.png')}} 1x, {{asset('view/images/suninlogo1.png')}} 2x"
+                        <img src="{{Storage::url('global/1640775312_sahil-logo2-3png.png')}}"
+                             srcset="{{Storage::url('global/1640775312_sahil-logo2-3png.png')}} 1x, {{Storage::url('global/1640775312_sahil-logo2-3png.png')}} 2x"
                              alt="mybnb logo">
                     </a>
                 </div>

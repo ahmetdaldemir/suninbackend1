@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('view/icon/style.css')}}">
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.0-rc.3/themes/smoothness/jquery-ui.css">
     <link rel="icon" href="{{asset('view/images/ico/favicon.ico')}}">
+    @yield('style')
 
     <script src="{{asset('view/library/modernizr-custom.js')}}"></script>
     <title>@yield('title')</title>

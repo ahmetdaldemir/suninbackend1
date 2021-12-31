@@ -9,6 +9,9 @@
 @endsection
 
 @section('style')
+<style>
+.select2 {width: 100%!important;}
+</style>
 @endsection
 
 @section('breadcrumb-title')
@@ -118,10 +121,10 @@
                             <div class="col-xs-12">
                                 <h4>Adres Bilgileri</h4>
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="control-label">Şehir</label>
-                                            <select name="destination_id[city]" class="form-control digits" id="destination_parent">
+                                            <select name="destination_id[city]" class="form-control digits" id="country_select">
                                                 <option>Şehir seçiniz</option>
                                                 @foreach($destinations as $destination)
                                                 <option value="{{$destination['id']}}">{{$destination['title']}}</option>
@@ -129,19 +132,27 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="control-label">Bölge</label>
-                                            <select name="destination_id[region]" class="form-control digits" id="destination_select" data-id="0" disabled>
+                                            <label class="control-label">İlçe</label>
+                                            <select name="destination_id[state]" class="form-control digits" id="city_select" data-id="0" disabled>
                                                     <option>Şehir Seçiniz</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="control-label">Alt Bölge</label>
-                                            <select name="destination_id[state]" class="form-control digits" id="destination_id" data-id="0" disabled>
-                                                    <option>Bölge Seçiniz</option>
+                                            <label class="control-label">Semt</label>
+                                            <select name="destination_id[semt]" class="form-control digits" id="state_select" data-id="0" disabled>
+                                                    <option>İlçe Seçiniz</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Bölge</label>
+                                            <select name="destination_id[region]" class="form-control digits" id="semt_select" data-id="0" disabled>
+                                                    <option>Semt Seçiniz</option>
                                             </select>
                                         </div>
                                     </div>
@@ -255,8 +266,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Havuz Tipi</label>
-                                            <select name="pool" class="form-control digits" id="">
+                                            <label class="col-12 row control-label">Havuz Tipi</label>
+                                            <select name="pool[]" class="form-control digits category-multiple col-sm-12" multiple="multiple" id="categories">
                                                 <option value="NO_POOL">NO_POOL</option>
                                                 <option value="PRIVATE">PRIVATE</option>
                                                 <option value="KIDS_POOL">KIDS_POOL</option>

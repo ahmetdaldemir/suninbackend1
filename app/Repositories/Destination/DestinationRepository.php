@@ -2,6 +2,7 @@
 
 use App\Models\Destination;
 use App\Models\Language;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 
@@ -15,12 +16,16 @@ class DestinationRepository implements DestinationRepositoryInterface
 
     public function all()
     {
-        return Destination::all();
+        return DB::table('destinations as d1')->leftJoin('destinations as d2', 'd1.parent_id', '=', 'd2.id')
+            ->where('d1.deleted_at','=',null)
+            ->select('d1.*', 'd2.title as parent')
+            ->get();
+        //return Destination::all();
     }
 
     public function parent($parent)
     {
-        return Destination::where('parent_id',$parent)->get();
+        return Destination::where('parent_id',"$parent")->get();
     }
 
     public function delete($id)

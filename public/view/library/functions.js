@@ -126,13 +126,13 @@ var SQ = SQ || {};
 		        SQ.main.modalUItrigger(this);
 		        return false;
 	        });
-				
+
 			/* Slick next / prev */
-			
+
 			$('.sq-next-button').click(function() {
                 $('.sq-slick').slick("slickNext");
              });
-			
+
 			$('.sq-prev-button').click(function() {
                 $('.sq-slick').slick("slickPrev");
              });
@@ -259,7 +259,13 @@ var SQ = SQ || {};
                     date: function (date, settings) {
                         if (!date) return '';
                         var day = date.getDate();
+                        if (day.length < 2) {
+                            day = '0' + day;
+                        }
                         var month = date.getMonth() + 1;
+                        if (month.length < 2) {
+                            month = '0' + month;
+                        }
                         var year = date.getFullYear();
                         return day + '/' + month + '/' + year;
                     }
@@ -277,7 +283,13 @@ var SQ = SQ || {};
                     date: function (date, settings) {
                         if (!date) return '';
                         var day = date.getDate();
+                        if (day.length < 2) {
+                            day = '0' + day;
+                        }
                         var month = date.getMonth() + 1;
+                        if (month.length < 2) {
+                            month = '0' + month;
+                        }
                         var year = date.getFullYear();
                         return day + '/' + month + '/' + year;
                     }
@@ -381,7 +393,7 @@ var SQ = SQ || {};
 
             /* Slick Carousel  */
             SQ.main.slickCarousel();
-            setTimeout(function(){ 
+            setTimeout(function(){
                     $(".sq-slick").css("opacity", "1");
 			}, 400);
 
@@ -761,8 +773,8 @@ var SQ = SQ || {};
                    centerPadding: $centerPadding,
                    variableWidth: $variableWidth
                });
-                
-                
+
+
             });
         },
 

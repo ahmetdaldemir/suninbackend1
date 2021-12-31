@@ -124,29 +124,29 @@ td {width: 200px;}
                                         <input name="price" type="text" class="form-control max-width-200 price" id="price">
                                     </td>
                                     <td class="row-new">
-                                        <input name="price" type="text" class="form-control max-width-200 price" id="price">
+                                        <input name="price" type="text" class="form-control max-width-200 price" id="price" value="0">
                                     </td>
                                     <td class="space-column"></td>
                                 </tr>
                                 <tr>
                                     <td class="row-actions"></td>
-                                    <td scope="row">Komisyon</td>
+                                    <td scope="row">Komisyon (Sabit Fiyat)</td>
                                     <td class="row-template">
-                                        <input name="commission" type="text" class="form-control max-width-200 komisyon" id="commission">
+                                        <input name="commission" type="text" class="form-control max-width-200 komisyon" id="commission" value="0">
                                     </td>
                                     <td class="row-new">
-                                        <input name="commission" type="text" class="form-control max-width-200 komisyon" id="commission">
+                                        <input name="commission" type="text" class="form-control max-width-200 komisyon" id="commission" value="0">
                                     </td>
                                     <td class="space-column"></td>
                                 </tr>
                                 <tr>
                                     <td class="row-actions"></td>
-                                    <td scope="row">Depozito Oranı</td>
+                                    <td scope="row">Depozito Oranı (%)</td>
                                     <td class="row-template">
-                                        <input name="deposit" type="text" class="form-control max-width-200 deposit" id="deposit">
+                                        <input name="deposit" type="text" class="form-control max-width-200 deposit" id="deposit" value="0">
                                     </td>
                                     <td class="row-new">
-                                        <input name="deposit" type="text" class="form-control max-width-200 deposit" id="deposit">
+                                        <input name="deposit" type="text" class="form-control max-width-200 deposit" id="deposit" value="0">
                                     </td>
                                     <td class="space-column"></td>
                                 </tr>
@@ -171,10 +171,10 @@ td {width: 200px;}
                                     <td class="row-actions"></td>
                                     <td scope="row">İndirim</td>
                                     <td class="row-template">
-                                        <input name="discount" type="text" class="form-control max-width-200" id="discount">
+                                        <input name="discount" type="text" class="form-control max-width-200" id="discount" value="0">
                                     </td>
                                     <td class="row-new">
-                                        <input name="discount" type="text" class="form-control max-width-200" id="discount">
+                                        <input name="discount" type="text" class="form-control max-width-200" id="discount" value="0">
                                     </td>
                                     <td class="space-column"></td>
                                 </tr>
@@ -182,10 +182,10 @@ td {width: 200px;}
                                     <td class="row-actions"></td>
                                     <td scope="row">Min. Gece</td>
                                     <td class="row-template">
-                                        <input name="minday" type="text" class="form-control max-width-200" id="minday">
+                                        <input name="minday" type="text" class="form-control max-width-200" id="minday" value="1">
                                     </td>
                                     <td class="row-new">
-                                        <input name="minday" type="text" class="form-control max-width-200" id="minday">
+                                        <input name="minday" type="text" class="form-control max-width-200" id="minday" value="1">
                                     </td>
                                     <td class="space-column"></td>
                                 </tr>
