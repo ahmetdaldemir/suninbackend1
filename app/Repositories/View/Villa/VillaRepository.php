@@ -81,8 +81,20 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         $date = date("Y-m-d");
         $contrat = VillaContract::where('villa_id', $result->id)->where('startDate', '<=', $date)->where('finishDate', '>=', $date)
             ->leftJoin('currencies', 'villa_contracts.currency', '=', 'currencies.id')
-            ->get();
+            ->first();
         //dd($contrat);
+        if($contrat)
+        {
+            $price = $contrat->price;
+            $symbol = $contrat->symbol;
+            $discount = $contrat->discount;
+            $currency = $contrat->name;
+        }else{
+            $price = 0;
+            $symbol = 0;
+            $discount =0;
+            $currency = 0;
+        }
         $data = array(
             'id' => $result->id,
             'lang' => $result->get_data(),
@@ -92,9 +104,9 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
             'propertys' => $result->get_property(),
             'images' => $result->get_images(),
             'comments' => $result->get_comment(),
-            'price' => $contrat[0]->price . ' ' . $contrat[0]->symbol,
-            'discount' => $contrat[0]->discount,
-            'currency' => $contrat[0]->name,
+            'price' => $price . ' ' . $symbol,
+            'discount' => $discount,
+            'currency' => $currency,
             'villa' => $result
         );
         return $data;

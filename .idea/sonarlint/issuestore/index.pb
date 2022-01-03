@@ -206,8 +206,6 @@ _
 /resources/views/pages/category_detail.blade.php,0/5/05d754fd05bc56808ec4296e406318df2024e9b4
 ]
 -app/Repositories/View/Blog/BlogRepository.php,1/f/1f96caecc58dcc04015a3623a613e468f0c687fc
-T
-$resources/views/pages/blog.blade.php,3/6/3681e027eeca0b54974abe77d888984620dd2976
 W
 'app/Http/Controllers/BlogController.php,8/0/807a90bb9314881d30e48e902c8cc2d4b342dc3e
 F
@@ -228,8 +226,6 @@ D
 app/Models/Villa.php,2/7/27252a82c9554dca31456b2a9fe6f5c0043ec7c1
 n
 >vendor/laravel/framework/src/Illuminate/Support/Facades/DB.php,8/f/8f021f90d408fb30d54ab6ac048dff059e2463d7
-_
-/app/Repositories/View/Villa/VillaRepository.php,0/7/07e76bf7ddb87654266d8de8844bb110353f39eb
 [
 +resources/views/rent/slider/index.blade.php,2/b/2bd605481e5c457feadeea14e4f187a791663602
 ^
@@ -312,8 +308,6 @@ N
 public/view/less/theme.min.css,1/5/151efa3edeeb7bc377dfa57d336ad7b5cf533958
 K
 public/view/less/theme.less,c/c/ccf0226d3d11ed86af54d0728781d2bf943a84fa
-Q
-!resources/views/welcome.blade.php,0/c/0c96dd63e07fb2e889aeaea5cbabd89d0d09f1fb
 s
 Capp/Repositories/View/RentDestination/RentDestinationRepository.php,f/1/f1e285747f6429af580fec276b4bd2930f82b192
 g
@@ -324,19 +318,13 @@ J
 app/Models/Destination.php,1/0/106663b1753e15f3f32014797818c6b858509a7f
 s
 Capp/Repositories/Rent/RentDestination/RentDestinationRepository.php,7/9/792e10c95f3abb7c26c43e58d250b999703ba194
->
-routes/web.php,6/b/6b9a783d9b43fee50fd28f56dbd1856d2608f305
 ?
 config/auth.php,c/d/cddba0f39ef2cbe4d8189e8f5621a3bb533d6bc2
-W
-'app/Http/Controllers/MainController.php,a/5/a5420b97240ca9c243d6e7b58844c283608e41c3
 W
 'resources/views/layout/header.blade.php,5/0/50ca5729e5c11c8159e868df07e91720cfc2ca8b
 U
 %resources/views/pages/about.blade.php,8/2/82af24600fffba52f770d5bcc8393b9a9b11227c
 \
 ,resources/views/pages/account/menu.blade.php,a/8/a8cfa325d37460b3d2478caf7533ac2986fa706b
-U
-%resources/views/view_layout.blade.php,7/1/7109d4428917b0c8380a66a44091799586104726
 ]
 -resources/views/pages/account/index.blade.php,3/5/3540286f6fad4a99045fdd7de836f5e9f9a38104

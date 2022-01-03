@@ -205,6 +205,7 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::get('villa-detail/{slug}',  [MainController::class, 'detail']);
     Route::get('listing', [MainController::class, 'listing'])->name('listing');
     Route::get('all_villa', [MainController::class, 'all_villa'])->name('all_villa');
+    Route::get('all_blogs', [MainController::class, 'all_blogs'])->name('all_blogs');
     Route::get('add_listing', [MainController::class, 'add_listing'])->name('add_listing');
     Route::get('destinations', [MainController::class, 'destinations'])->name('destinations');
     Route::get('categories', [MainController::class, 'categories'])->name('categories');

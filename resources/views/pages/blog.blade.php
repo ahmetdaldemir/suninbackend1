@@ -38,148 +38,15 @@
                                                             </span>
                                                         </span>
                                                             </a>
-
-                                                            <!-- typography container-->
                                                             <div class="typo-sq">
-                                                                <p class="typo-label-sq" data-label-before="Blog" data-label-after="Book a home in"></p>
                                                                 <p class="typo-title-sq">{{@$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
-                                                                <p class="typo-desc-sq">{{@$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
-
                                                                 <a href="{{url('blog-detail/'.@$blog['lang']->where('language_id',$lang_id)->first()->slug)}}" class="read-more-sq">Devamı.. <i class="icon icon-arrow-right-122"></i></a>
                                                             </div>
 
                                                         </div>
                                                     </div>
                                             @endforeach
-                                            <!-- item-->
-                                            <div class="item">
-                                                <div class="item-inner">
-
-                                                    <!-- image container -->
-                                                    <a class="image-sq" href="article.html">
-                                                        <span class="image-wrapper">
-                                                            <span class="image-inner">
-                                                                <img class="image-sq" src="{{asset('view/images/magic_grid/magic_grid_article_02.jpg')}}" alt="">
-                                                            </span>
-                                                        </span>
-                                                    </a>
-
-                                                    <!-- typography container-->
-                                                    <div class="typo-sq">
-                                                        <p class="typo-label-sq" data-label-before="Beauty" data-label-after="Book a home in"></p>
-                                                        <p class="typo-title-sq">10 Steps To Look Younger</p>
-                                                        <p class="typo-desc-sq">Nunc sit amet velit nibh. Proin consectetur, ante quis tristique mattis, massa massa condimentum enim.</p>
-
-                                                        <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <!-- item-->
-                                            <div class="item">
-                                                <div class="item-inner">
-
-                                                    <!-- image container -->
-                                                    <a class="image-sq" href="article.html">
-                                                        <span class="image-wrapper">
-                                                            <span class="image-inner">
-                                                                <img class="image-sq" src="{{asset('view/images/magic_grid/magic_grid_article_03.jpg')}}" alt="">
-                                                            </span>
-                                                        </span>
-                                                    </a>
-
-                                                    <!-- typography container-->
-                                                    <div class="typo-sq">
-                                                        <p class="typo-label-sq" data-label-before="Cooking" data-label-after="Book a home in"></p>
-                                                        <p class="typo-title-sq">The Benefits And Drawbacks Of Buying Designer Kitchenware Products</p>
-                                                        <p class="typo-desc-sq">Nunc sit amet velit nibh. Proin consectetur, ante quis tristique mattis, massa massa condimentum enim.</p>
-
-
-                                                        <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <!-- item-->
-                                            <div class="item">
-                                                <div class="item-inner">
-
-                                                    <!-- image container -->
-                                                    <a class="image-sq" href="article.html">
-                                                        <span class="image-wrapper">
-                                                            <span class="image-inner">
-                                                                <img class="image-sq" src="{{asset('view/images/magic_grid/magic_grid_article_04.jpg')}}" alt="">
-                                                            </span>
-                                                        </span>
-                                                    </a>
-
-                                                    <!-- typography container-->
-                                                    <div class="typo-sq">
-
-                                                        <p class="typo-label-sq" data-label-before="Advertising" data-label-after="Book a home in"></p>
-                                                        <p class="typo-title-sq">Enhance Your Brand Potential With Giant Advertising Blimps</p>
-                                                        <p class="typo-desc-sq">Nunc sit amet velit nibh. Proin consectetur, ante quis tristique mattis, massa massa condimentum enim.</p>
-
-                                                        <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <!-- item-->
-                                            <div class="item">
-                                                <div class="item-inner">
-
-                                                    <!-- image container -->
-                                                    <a class="image-sq" href="article.html">
-                                                        <span class="image-wrapper">
-                                                            <span class="image-inner">
-                                                                <img class="image-sq" src="{{asset('view/images/magic_grid/magic_grid_article_05.jpg')}}" alt="">
-                                                            </span>
-                                                        </span>
-                                                    </a>
-
-                                                    <!-- typography container-->
-                                                    <div class="typo-sq">
-                                                        <p class="typo-label-sq" data-label-before="Motivation" data-label-after="Book a home in"></p>
-                                                        <p class="typo-title-sq">Counting Your Chicken Before They Hatch</p>
-                                                        <p class="typo-desc-sq">Nunc sit amet velit nibh. Proin consectetur, ante quis tristique mattis, massa massa condimentum enim.</p>
-
-                                                        <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <!-- item-->
-                                            <div class="item">
-                                                <div class="item-inner">
-
-                                                    <!-- image container -->
-                                                    <a class="image-sq" href="article.html">
-                                                        <span class="image-wrapper">
-                                                            <span class="image-inner">
-                                                                <img class="image-sq" src="{{asset('view/images/magic_grid/magic_grid_article_06.jpg')}}" alt="">
-                                                            </span>
-                                                        </span>
-                                                    </a>
-
-                                                    <!-- typography container-->
-                                                    <div class="typo-sq">
-                                                        <p class="typo-label-sq" data-label-before="Architecture" data-label-after="Book a home in"></p>
-                                                        <p class="typo-title-sq">Tesla to Build Three More Gigafactories</p>
-                                                        <p class="typo-desc-sq">Nunc sit amet velit nibh. Proin consectetur, ante quis tristique mattis, massa massa condimentum enim.</p>
-
-                                                        <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
                                         </div>
-
                                     </div>
 
                                     <div class="ui twelve wide tablet twelve wide computer twelve wide widescreen twelve wide large screen column">

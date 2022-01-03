@@ -213,6 +213,15 @@ class MainController extends Controller
         return view('pages/list', $data);
     }
 
+    public function all_blogs(Request $request)
+    {
+        $data['categories'] = $this->rentCategoryRepository->all();
+        $data['lang_id'] = $this->lang_id;
+        $data['blogs'] = $this->blogRepository->all();
+        return view('pages/blog', $data);
+    }
+
+
     public function search(Request $request)
     {
         $id1 = [];
