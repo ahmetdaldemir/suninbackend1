@@ -225,6 +225,7 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::get('reservation/payment/{reservation_id}',  [MainController::class, 'reservationPayment']);
     Route::get('blog-detail/{slug}',  [MainController::class, 'blog_detail']);
     Route::get('customer/account',  [MainController::class, 'account']);
-    Route::get('account/wishlist',  [AccountController::class, 'wishlist']);
+    Route::post('account/fav',  [MainController::class, 'favorite']);
+    Route::post('account/like',  [MainController::class, 'like']);
 
 });

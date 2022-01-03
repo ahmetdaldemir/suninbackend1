@@ -3,8 +3,9 @@
 
 
 @section('style')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.16.1/daterangepicker.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.16.1/daterangepicker.min.css"/>
 @endsection
 
 @section('content')
@@ -105,7 +106,9 @@
                                                         <label class="placeholder" data-placeholder="Giriş"></label>
 
                                                         <div class="relative">
-                                                            <input name="checkin" type="text" class="filter" value="" required placeholder="{{__('Giriş')}}" autocomplete="off">
+                                                            <input name="checkin" type="text" class="filter" value=""
+                                                                   required placeholder="{{__('Giriş')}}"
+                                                                   autocomplete="off">
                                                             <i class="icon icon-little-arrow filters-arrow"></i>
                                                         </div>
 
@@ -115,7 +118,9 @@
 
                                                         <label class="placeholder" data-placeholder="Çıkış"></label>
 
-                                                        <input name="checkout" type="text" class="filter" value="" required placeholder="{{__('Çıkış')}}" autocomplete="off">
+                                                        <input name="checkout" type="text" class="filter" value=""
+                                                               required placeholder="{{__('Çıkış')}}"
+                                                               autocomplete="off">
 
                                                     </div>
 
@@ -141,24 +146,31 @@
                                                 </div>
 
                                                 <div class="calculations">
-                                                    <!--<div class="calc-row">
+                                                <!--<div class="calc-row">
                                                         <div class="calc-column"><p class="desc">Hasar Depozitosu</p></div>
                                                         <div class="calc-column"><p class="price-sq">{{$villa['villa']->service}}</p></div>
                                                     </div>-->
 
                                                     <div class="calc-row">
-                                                        <div class="calc-column"><p class="desc">Temizlik Ücreti</p></div>
-                                                        <div class="calc-column"><p class="price-sq">{{$villa['villa']->cleaning}}</p></div>
+                                                        <div class="calc-column"><p class="desc">Temizlik Ücreti</p>
+                                                        </div>
+                                                        <div class="calc-column"><p
+                                                                    class="price-sq">{{$villa['villa']->cleaning}}</p>
+                                                        </div>
                                                     </div>
 
                                                     <div class="calc-row">
-                                                        <div class="calc-column"><p class="desc">{{__('Toplam')}}</p></div>
+                                                        <div class="calc-column"><p class="desc">{{__('Toplam')}}</p>
+                                                        </div>
                                                         <div class="calc-column"><p class="price-sq">&euro;657</p></div>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="villa_id" value="{{$villa['villa']->id}}" />
+                                                <input type="hidden" name="villa_id" value="{{$villa['villa']->id}}"/>
 
-                                                <button type="button" class="button-sq fullwidth-sq font-weight-extrabold-sq villacheck">Rezervasyon Yap</button>
+                                                <button type="button"
+                                                        class="button-sq fullwidth-sq font-weight-extrabold-sq villacheck">
+                                                    Rezervasyon Yap
+                                                </button>
 
                                             </form>
                                         </div>
@@ -235,18 +247,21 @@
                     <div class="typo-section-sq bottom-default">
                         <h5>Bilinmesi Gerekenler</h5>
                         <div class="ui grid moved">
-                            <div class="twelve wide mobile six wide tablet six wide computer column">
-                                <ul class="description-list">
-                                    @foreach($services as $service)
-                                        @if(in_array($service['id'],$villa_service))
-                                            <li>
-                                                <div><p>{{@$service['lang']->where('lang_id',$lang_id)->first()->title}}</p></div>
-                                            </li>
-                                        @endif
-                                    @endforeach
-                                </ul>
-                            </div>
-
+                            @if(!empty($villa_service))
+                                <div class="twelve wide mobile six wide tablet six wide computer column">
+                                    <ul class="description-list">
+                                        @foreach($services as $service)
+                                            @if(in_array($service['id'],$villa_service))
+                                                <li>
+                                                    <div>
+                                                        <p>{{@$service['lang']->where('lang_id',$lang_id)->first()->title}}</p>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="twelve wide mobile six wide tablet six wide computer column">
                                 <ul class="description-list">
                                     <li>
@@ -281,35 +296,42 @@
                     <div class="typo-section-sq bottom-default">
                         <h5>Özellikler</h5>
                         <div class="ui grid moved">
-                            <div class="twelve wide mobile six wide tablet six wide computer">
-                                <ul class="description-list">
-                                @foreach($properties as $property)
-                                    @if(in_array($property['id'],$villa_property))
-                                    <li style="width: 30%;">
-                                        <i class="icon icon-pin2"></i>
-                                        <div><p>{{$property['lang']->where('lang_id',$lang_id)->first()->title}}</p></div>
-                                    </li>
-                                    @endif
-                                @endforeach
-                                </ul>
-                            </div>
+                            @if(!empty($villa_property))
+                                <div class="twelve wide mobile six wide tablet six wide computer">
+                                    <ul class="description-list">
+                                        @foreach($properties as $property)
+                                            @if(in_array($property['id'],$villa_property))
+                                                <li style="width: 30%;">
+                                                    <i class="icon icon-pin2"></i>
+                                                    <div>
+                                                        <p>{{$property['lang']->where('lang_id',$lang_id)->first()->title}}</p>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
                     </div>
                     <div class="typo-section-sq bottom-default">
                         <h5>Kiralama Şartları</h5>
                         <div class="ui grid moved">
-                            <div class="twelve wide column">
-                                <ul class="description-list">
-                                    @foreach($regulations as $regulation)
-                                    @if(in_array($regulation['id'],$villa_regulation))
-                                            <li style="width: 30%;">
-                                                <div><p>{{@$regulation['lang']->where('lang_id',$lang_id)->first()->title}}</p></div>
-                                            </li>
-                                        @endif
-                                    @endforeach
-                                </ul>
-                            </div>
-
+                            @if(!empty($villa_regulation))
+                                <div class="twelve wide column">
+                                    <ul class="description-list">
+                                        @foreach($regulations as $regulation)
+                                            @if(in_array($regulation['id'],$villa_regulation))
+                                                <li style="width: 30%;">
+                                                    <div>
+                                                        <p>{{@$regulation['lang']->where('lang_id',$lang_id)->first()->title}}</p>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
 
                     </div>
@@ -335,8 +357,10 @@
                 <div class="ui twelve wide computer twelve wide tablet column">
                     <input type="hidden" id="date-range12" size="40" value="">
                     <div id="date-range12-container" style="width:100%;"></div>
-                    <input type="hidden" name="villa_id" value="{{$villa['villa']->id}}" />
-                    <button type="button" class="button-sq fullwidth-sq font-weight-extrabold-sq villacheck">Rezervasyon Yap</button>
+                    <input type="hidden" name="villa_id" value="{{$villa['villa']->id}}"/>
+                    <button type="button" class="button-sq fullwidth-sq font-weight-extrabold-sq villacheck">Rezervasyon
+                        Yap
+                    </button>
                 </div>
             </div>
         </div>
@@ -462,63 +486,63 @@
 
 @endsection
 @section('javascript')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.16.1/jquery.daterangepicker.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-        $('#villaReservation').on('click', '.villacheck', function () {
-            let data = $('#villaReservation').serialize()
-            $.ajax({
-                url: '/villaCheck',
-                type: 'POST',
-                data: data,
-                success: function (data) {
-                    if(data.url) {
-                        window.location.replace(data.url);
-                    } else {
-                        alert('Belitilen günlerde müsaitlik bulunmuyor');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.16.1/jquery.daterangepicker.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+            $('#villaReservation').on('click', '.villacheck', function () {
+                let data = $('#villaReservation').serialize()
+                $.ajax({
+                    url: '/villaCheck',
+                    type: 'POST',
+                    data: data,
+                    success: function (data) {
+                        if (data.url) {
+                            window.location.replace(data.url);
+                        } else {
+                            alert('Belitilen günlerde müsaitlik bulunmuyor');
+                        }
                     }
-                }
+                });
             });
         });
-    });
-    var highlightdates = [moment('22.12.2017', 'DD.MM.YYYY'), moment('24.01.2018', 'DD.MM.YYYY')]
+        var highlightdates = [moment('22.12.2017', 'DD.MM.YYYY'), moment('24.01.2018', 'DD.MM.YYYY')]
 
-    $(document).ready(function () {
+        $(document).ready(function () {
 
-        $('#date-range12').dateRangePicker(
-            {
-                inline: true,
-                container: '#date-range12-container',
-                alwaysOpen: true,
-                format: 'DD.MM.YYYY',
-                separator: ' to ',
-                language: 'tr',
-                showTopbar: false,
-                showWeekNumbers: false,
-                extraClass: 'date-range-picker19',
-                monthSelect: true,
-                yearSelect: true,
-                customArrowPrevSymbol: '<a href="#" class="fa-blok fa fa-arrow-circle-left"></a>',
-                customArrowNextSymbol: '<a href="#" class="fa-blok fa fa-arrow-circle-right"></a>',
-                //maxDays: 7,
-                minDays: 3,
-                startDate: moment(),
-                startOfWeek: 'monday',
-                customTopBar: 'Tarih Aralığı Seçiniz',
-                showDateFilter: function (time, date) {
-                    var doHighlight = highlightdates.some(function(item) {
-                        //alert(item.isSame(moment(time), 'day'))
-                        return (item.isSame(moment(time), 'day') && item.isSame(moment(time), 'month') && item.isSame(moment(time), 'year'))
-                    })
-                    return '<div ' + (doHighlight ? 'class="highlight"' : '') + ' style="padding:0 5px;">'+
-                					'<span style="font-weight:bold">'+ date + '</span>'+
-                					'<div style="opacity:0.3;">$'+ Math.round(Math.random() * 999) + '</div>'+
-                				'</div>';
-                }
+            $('#date-range12').dateRangePicker(
+                {
+                    inline: true,
+                    container: '#date-range12-container',
+                    alwaysOpen: true,
+                    format: 'DD.MM.YYYY',
+                    separator: ' to ',
+                    language: 'tr',
+                    showTopbar: false,
+                    showWeekNumbers: false,
+                    extraClass: 'date-range-picker19',
+                    monthSelect: true,
+                    yearSelect: true,
+                    customArrowPrevSymbol: '<a href="#" class="fa-blok fa fa-arrow-circle-left"></a>',
+                    customArrowNextSymbol: '<a href="#" class="fa-blok fa fa-arrow-circle-right"></a>',
+                    //maxDays: 7,
+                    minDays: 3,
+                    startDate: moment(),
+                    startOfWeek: 'monday',
+                    customTopBar: 'Tarih Aralığı Seçiniz',
+                    showDateFilter: function (time, date) {
+                        var doHighlight = highlightdates.some(function (item) {
+                            //alert(item.isSame(moment(time), 'day'))
+                            return (item.isSame(moment(time), 'day') && item.isSame(moment(time), 'month') && item.isSame(moment(time), 'year'))
+                        })
+                        return '<div ' + (doHighlight ? 'class="highlight"' : '') + ' style="padding:0 5px;">' +
+                            '<span style="font-weight:bold">' + date + '</span>' +
+                            '<div style="opacity:0.3;">$' + Math.round(Math.random() * 999) + '</div>' +
+                            '</div>';
+                    }
 
-            })
-    });
-</script>
+                })
+        });
+    </script>
 @endsection

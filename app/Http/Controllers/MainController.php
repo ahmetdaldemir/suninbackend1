@@ -37,7 +37,7 @@ class MainController extends Controller
     private SettingRepositoryInterface $settingRepository;
     private CustomerRepositoryInterface $customerRepository;
     private ReservationRepositoryInterface $reservationRepository;
-
+    public $auth_id = null;
     protected $lang_id;
 
     public function __construct(
@@ -70,10 +70,17 @@ class MainController extends Controller
         $this->settingRepository = $settingRepository;
         $this->customerRepository = $customerRepository;
         $this->reservationRepository = $reservationRepository;
+
     }
 
     public function index()
     {
+        if(!empty(Auth::guard('web-user')->id())){
+            //dd(Auth::guard('web-user')->id());
+            $data['auth_id'] = Auth::guard('web-user')->id();
+        }else{
+            $data['auth_id'] = null;
+        }
         $data['villas'] = $this->villaRepository->all();
         //dd($data['villas']);
         $data['blogs'] = $this->blogRepository->all();
@@ -293,6 +300,17 @@ class MainController extends Controller
             return response()->json(['warning' => true], 200);
         }
     }
+    public function favorite(Request $request)
+    {
+        $result = $this->villaRepository->fav($request);
+        return response()->json(['confirm' => $result], 200);
+    }
+
+    public function like(Request $request)
+    {
+        $result = $this->villaRepository->like($request);
+        return response()->json(['confirm' => true,'count' => $result], 200);
+    }
 
     public function reservationDetail(Request $request)
     {
@@ -372,6 +390,8 @@ class MainController extends Controller
     public function account()
     {
         $data["account"] = Auth::guard("web-user")->user();
+        $data['categories'] = $this->rentCategoryRepository->all();
+        $data['lang_id'] = $this->lang_id;
         return view("pages/account/index",$data);
     }
 }

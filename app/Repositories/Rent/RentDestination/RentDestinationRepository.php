@@ -1,6 +1,7 @@
 <?php namespace App\Repositories\Rent\RentDestination;
 
 use App\Models\Destination;
+use App\Models\Language;
 use App\Models\RentDestination;
 use App\Models\RentDestinationLanguage;
 use App\Services\Upload;
@@ -8,11 +9,21 @@ use Illuminate\Support\Str;
 
 class RentDestinationRepository implements RentDestinationRepositoryInterface
 {
+
+
+    protected $language_data;
+    protected $liste;
+
+    public function __construct()
+    {
+        $this->language_data = Language::all();
+    }
+
     public function get($id)
     {
         Destination::all();
         $data = [];
-        $results = RentDestination::where('id',$id)->get();
+        $results = RentDestination::where('id', $id)->get();
         foreach ($results as $result) {
             $data[] = array(
                 'id' => $result->id,
@@ -30,7 +41,7 @@ class RentDestinationRepository implements RentDestinationRepositoryInterface
         $module_data = array();
         $session = session()->get('rent_session');
         $destinations = Destination::all();
-        $rentdestinations = RentDestination::where('tenant_id',$session['tenant_id'])->get();
+        $rentdestinations = RentDestination::where('tenant_id', $session['tenant_id'])->get();
         foreach ($rentdestinations as $rentdestination) {
             $module_data[$rentdestination['destination_id']] = array(
                 'id' => $rentdestination['id'],
@@ -42,7 +53,7 @@ class RentDestinationRepository implements RentDestinationRepositoryInterface
             );
         }
 
-        foreach ($destinations as $destination){
+        foreach ($destinations as $destination) {
             $data['destinations'][] = array(
                 'id' => $destination['id'],
                 'name' => $destination['title'],
@@ -61,37 +72,56 @@ class RentDestinationRepository implements RentDestinationRepositoryInterface
     public function create(object $data)
     {
         $session = session()->get('rent_session');
-        $data = Destination::where('id',$data->id)->get();
-        $data['lang'] = $data[0]->get_data();
-        $id = Str::uuid()->toString();
-        $save = new RentDestination();
-        $save->id = $id;
-        $save->destination_id = $data[0]->id;
-        $save->image = '';
-        $save->tenant_id = $session['tenant_id'];
-        $save->save();
+        $destinations = Destination::find($data->id);
+        $destinationList = $this->addParentMenu($destinations);
 
-        foreach ($data['lang'] as $lang) {
-            $record = new RentDestinationLanguage();
-            $record->id = Str::uuid()->toString();
-            $record->rent_destination_id = $id;
-            $record->name = $lang['title'];
-            $record->slug = Str::slug($lang['slug']);
-            $record->lang_id = $lang['lang_id'];
-            $record->description = '';
-            $record->meta = '';
-            $record->tags = '';
-            $record->save();
+        foreach ($this->liste as $item) {
+
+
+            $save = new RentDestination();
+            $id = Str::uuid()->toString();
+            $save->id = $id;
+            $save->destination_id = $item->id;
+            $save->image = '';
+            $save->tenant_id = $session['tenant_id'];
+            $save->save();
+
+            $newid= $save->id;
+
+            foreach ($this->language_data as $language)
+            {
+                $record = new RentDestinationLanguage();
+                $record->id = Str::uuid()->toString();
+                $record->rent_destination_id = $newid;
+                $record->name = $item->title;
+                $record->slug = Str::slug($item->title);
+                $record->lang_id = $language->id;
+                $record->description = $item->title;
+                $record->meta = $item->title;
+                $record->tags = $item->title;
+                $record->save();
+            }
+        }
+    }
+
+
+    public function addParentMenu($destination)
+    {
+        $this->liste[] = $destination;
+        if($destination->parent_id != 0)
+        {
+            $parent = Destination::find($destination->parent_id);
+            $this->addParentMenu($parent);
         }
     }
 
     public function update(object $data)
     {
         Destination::all();
-        if(!empty($data->photos)){
+        if (!empty($data->photos)) {
             $filename = new Upload($data);
-            $image = 'destination/'.$filename->upload('destination');
-        }else{
+            $image = 'destination/' . $filename->upload('destination');
+        } else {
             $image = $data->image;
         }
 
@@ -99,7 +129,7 @@ class RentDestinationRepository implements RentDestinationRepositoryInterface
         $rentdestination->image = $image;
         $rentdestination->save();
 
-        if(!empty($data->title)){
+        if (!empty($data->title)) {
             RentDestinationLanguage::where('rent_destination_id', $data->destination_id)->delete();
             foreach ($data->title as $key => $value) {
                 $record = new RentDestinationLanguage();

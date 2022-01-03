@@ -21,9 +21,12 @@ country.on("change", function(){
 city.on("change", function(){
     let select = $(this).val(),id = $(this).attr('data-id'),html='<option>Seçiniz</option>'
     state.attr("disabled", false);
-    if(id != 0){url = '/villa/parent/' + id}else{url = '/villa/parent/' + select}
+    if(select.length=='36'){
+        url = '/villa/parent/' + select
+    }else{
+        url = '/villa/parent/' + id
+    }
     $.getJSON(url, function(result){
-        console.log(result)
         $.each(result, function(index, value){
             if (value.id==state.attr('data-id')){
                 html +='<option value="'+value.id+'" selected>'+value.title+'</option>';
@@ -38,7 +41,11 @@ city.on("change", function(){
 state.on("change", function(){
     let select = $(this).val(),id = $(this).attr('data-id'),html='<option>Seçiniz</option>'
     semt.attr("disabled", false);
-    if(id>0){url = '/villa/parent/' + id}else{url = '/villa/parent/' + select}
+    if(select.length=='36'){
+        url = '/villa/parent/' + select
+    }else{
+        url = '/villa/parent/' + id
+    }
     $.getJSON(url, function(result){
         $.each(result, function(index, value){
             if (value.id==semt.attr('data-id')){

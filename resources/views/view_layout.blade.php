@@ -32,6 +32,28 @@
 @include('layout.footer')
 @include('layout.script')
 @yield('javascript')
+<script>
+/**/
+$(document).ready(function(){
+    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+    $(".twelve").on('click','.add-wishlist',function(){
+        alert("teset");
+        let w = $(this).attr('data-id');
+        $.ajax({
+            type: "POST",
+            url: "account/wishlist",
+            data:'w='+w,
+            success: function(data){
+                if(data.confirm==1){
+                    $(this).html('<i class="icon icon-check-22"></i>');
+                }else{
+                    $(this).html('<i class="icon icon-add-wishlist"></i>');
+                }
+            }
+        });
+    });
+});
+</script>
 </div>
 </body>
 </html>

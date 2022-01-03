@@ -119,7 +119,7 @@
                     </div>
 
                     <div class="ui grid">
-
+                        <?php $i=0?>
                         @foreach($villas as $villa)
                             @if(isset($villa['lang']))
                              <?php
@@ -132,10 +132,10 @@
                             <div class="twelve wide mobile four wide tablet four wide computer column">
                                 <div class="property-item">
                                     <div class="property-item-inner">
-                                        @if($sub!=0)
+                                        @if($sub!=null)
                                         <div class="price-tag-sq">{{$sub}}</div>
                                         @endif
-                                        <a class="add-wishlist modal-ui-trigger" href="" data-id="{{$villa['id']}}" data-trigger-for="wishlist">
+                                        <a class="add-wishlist wishlist_{{$i}} modal-ui-trigger" onclick="favorite('{{$villa['id']}}','{{$auth_id}}','.wishlist_{{$i}}')" data-trigger-for="wishlist">
                                             <i class="icon icon-add-wishlist"></i>
                                         </a>
 
@@ -151,8 +151,8 @@
 
                                         <div class="main-details">
                                             <div class="icons-row">
-                                                <div class="icons-column">
-                                                    <i class="icon icon-heart"></i> 7.8
+                                                <div class="icons-column" onclick="like('{{$villa['id']}}','{{$auth_id}}','.like_{{$i}}')">
+                                                    <i class="icon icon-heart"></i> 0
                                                 </div>
                                                 <div class="icons-column">
                                                     <i class="icon icon-account-group-5"></i>
@@ -202,6 +202,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php $i++?>
                         @endforeach
                     </div>
 
@@ -245,11 +246,10 @@
 
                         <div class="typo-section-header-sq">
                             <h2 class="text-align-center-sq">Populer Villa Kiralama Bölgeleri</h2>
-                            <p class="text-align-center-sq">Discover awesome experiences around the world.</p>
+                            <p class="text-align-center-sq">Sizler için bölgelerin en güzel villalarını bir araya getirdilk</p>
                         </div>
 
                         <div class="magic-grid photo-sq hover-default hover-center">
-
                             @foreach ($destinations as $destination)
                                 <div class="item">
                                     <div class="item-inner">
@@ -267,7 +267,7 @@
                                             <span class="typo-whitespace"></span>
                                             <p class="typo-label-sq"
                                                data-label-before="{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}"
-                                               data-label-after="Tüm Villalar"></p>
+                                               data-label-after="{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}"></p>
                                             <p class="typo-title-sq">{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}</p>
                                         </a>
 
@@ -321,171 +321,22 @@
 
                         <div class="typo-section-header-sq">
                             <h2 class="text-align-center-sq">Villa Tipleri</h2>
-                            <p class="text-align-center-sq">In hac habitasse platea dictumst. Integer quis tortor enim.
-                                Integer et elit nec magna ultricies convallis. <br> In venenatis eu erat et facilisis.
-                                Vestibulum congue enim nisl.</p>
+                            <p class="text-align-center-sq">Villalarımızı sizler için tipine göre özenle ayırdık. İstediğiniz villayı tip seçimi yaparak bulabilirsiniz.</p>
                         </div>
 
                         <div class="magic-grid category-sq special-sq hover-scale">
-                            <!-- item-->
                             <div class="item">
                                 <div class="item-inner">
-
-                                    <!-- image container -->
                                     <div class="image-sq">
                                         <div class="image-wrapper">
                                             <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/magic_grid_category_special_01.png')}}"
-                                                     alt="">
-
+                                                <img class="image-sq" src="{{asset('view/images/magic_grid/magic_grid_category_special_01.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- typography container-->
                                     <a href="article_listing.html" class="typo-sq">
                                         <p class="typo-title-sq">Deniz Manzaralı</p>
                                     </a>
-
-                                </div>
-                            </div>
-
-                            <!-- item-->
-                            <div class="item">
-                                <div class="item-inner">
-
-                                    <!-- image container -->
-                                    <div class="image-sq">
-                                        <div class="image-wrapper">
-                                            <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/magic_grid_category_special_02.jpg')}}"
-                                                     alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- typography container-->
-                                    <a href="article_listing.html" class="typo-sq">
-                                        <p class="typo-title-sq">Orman Manzaralı</p>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <!-- item-->
-                            <div class="item">
-                                <div class="item-inner">
-
-                                    <!-- image container -->
-                                    <div class="image-sq">
-                                        <div class="image-wrapper">
-                                            <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/magic_grid_category_special_03.jpg')}}"
-                                                     alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- typography container-->
-                                    <a href="article_listing.html" class="typo-sq">
-                                        <p class="typo-title-sq">Sahil</p>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <!-- item-->
-                            <div class="item">
-                                <div class="item-inner">
-
-                                    <!-- image container -->
-                                    <div class="image-sq">
-                                        <div class="image-wrapper">
-                                            <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/magic_grid_category_special_04.jpg')}}"
-                                                     alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- typography container-->
-                                    <a href="article_listing.html" class="typo-sq">
-                                        <p class="typo-title-sq">Çocuklar için Uygun</p>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <!-- item-->
-                            <div class="item">
-                                <div class="item-inner">
-
-                                    <!-- image container -->
-                                    <div class="image-sq">
-                                        <div class="image-wrapper">
-                                            <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/magic_grid_category_special_05.jpg')}}"
-                                                     alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- typography container-->
-                                    <a href="article_listing.html" class="typo-sq">
-                                        <p class="typo-title-sq">Evcil Hayvan Kabul</p>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <!-- item-->
-                            <div class="item">
-                                <div class="item-inner">
-
-                                    <!-- image container -->
-                                    <div class="image-sq">
-                                        <div class="image-wrapper">
-                                            <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/magic_grid_category_special_06.jpg')}}"
-                                                     alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- typography container-->
-                                    <a href="article_listing.html" class="typo-sq">
-                                        <p class="typo-title-sq">Güvenlikli</p>
-                                    </a>
-
-                                </div>
-                            </div>
-
-                            <!-- item-->
-                            <div class="item">
-                                <div class="item-inner">
-
-                                    <!-- image container -->
-                                    <div class="image-sq">
-                                        <div class="image-wrapper">
-                                            <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/magic_grid_category_special_07.jpg')}}"
-                                                     alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- typography container-->
-                                    <a href="article_listing.html" class="typo-sq">
-                                        <p class="typo-title-sq">Tarihi Villa</p>
-                                    </a>
-
                                 </div>
                             </div>
                         </div>
@@ -519,10 +370,7 @@
 
                                         <div class="typo-sq">
                                             <p class="typo-title-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
-                                            <p class="typo-desc-sq">{!! $blog['lang']->where('language_id',$lang_id)->first()->description !!}</p>
-
-                                            <a href="" class="read-more-sq">Devamını Oku... <i
-                                                        class="icon icon-arrow-right-122"></i></a>
+                                            <a href="{{url('blog-detail/'.@$blog['lang']->where('language_id',$lang_id)->first()->slug.'')}}" class="read-more-sq">Devamını Oku... <i  class="icon icon-arrow-right-122"></i></a>
                                         </div>
 
                                     </div>
@@ -741,26 +589,44 @@
     </div>-->
 @endsection
 
-@section('script')
+@section('javascript')
 <script>
-    /**/
-$(document).ready(function(){
-    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-    $("body").on('click','.add-wishlist',function(){
-        let w = $(this).attr('data-id');
+function favorite(w,c,i){
+    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}})
+    if(w == null || c == ''){
+        alert("Beğeni ve Favorilere Ekleme yapmak için Lütfen Kullanıcı Girişi yapınız!")
+    }else{
         $.ajax({
             type: "POST",
-            url: "account/wishlist",
-            data:'w='+w,
+            url: "account/fav",
+            data:'w='+w+'&c='+c,
             success: function(data){
                 if(data.confirm==1){
-                    $(this).html('<i class="icon icon-check-22"></i>');
+                    $(i).html('<i class="icon icon-check-22"></i>');
                 }else{
-                    $(this).html('<i class="icon icon-add-wishlist"></i>');
+                    $(i).html('<i class="icon icon-add-wishlist"></i>');
                 }
             }
         });
-    });
-});
+    }
+}
+function like(w,c,i){
+    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}})
+    if(w == null || c == ''){
+        alert("Beğeni ve Favorilere Ekleme yapmak için Lütfen Kullanıcı Girişi yapınız!")
+    }else{
+        $.ajax({
+            type: "POST",
+            url: "account/like",
+            data:'w='+w+'&c='+c,
+            success: function(data){
+                if(data.confirm==1){
+                    $(i).html('<i class="icon icon-heart"></i> '+ data.count);
+                }
+            }
+        });
+    }
+}
+/**/
 </script>
 @endsection

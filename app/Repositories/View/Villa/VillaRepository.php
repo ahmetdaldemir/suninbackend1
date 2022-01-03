@@ -3,8 +3,10 @@
 use App\Models\Villa;
 use App\Models\VillaCategory;
 use App\Models\VillaContract;
+use App\Models\VillaFavorite;
 use App\Models\VillaImage;
 use App\Models\VillaLanguage;
+use App\Models\VillaLike;
 use App\Models\VillaProperty;
 use App\Models\VillaRegulation;
 use App\Models\VillaService;
@@ -137,6 +139,38 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         }
         //dd($data);
         return $data;
+    }
+
+    public function like(object $data){
+        $count = VillaLike::where('villa_id', $data->w)->where('customer_id', $data->c)->count();
+        if($count>0){
+            VillaLike::where('villa_id', $data->w)->where('customer_id', $data->c)->delete();
+            return $count-1;
+        }else{
+            $id = Str::uuid()->toString();
+            $result = new VillaLike();
+            $result->id = $id;
+            $result->villa_id = $data->w;
+            $result->customer_id = $data->c;
+            $result->save();
+            return $count+1;
+        }
+    }
+
+    public function fav(object $data){
+        $count = VillaFavorite::where('villa_id', $data->w)->where('customer_id', $data->c)->count();
+        if($count>0){
+            VillaFavorite::where('villa_id', $data->w)->where('customer_id', $data->c)->delete();
+            return 0;
+        }else{
+            $id = Str::uuid()->toString();
+            $result = new VillaFavorite();
+            $result->id = $id;
+            $result->villa_id = $data->w;
+            $result->customer_id = $data->c;
+            $result->save();
+            return 1;
+        }
     }
 
     public function select($category)

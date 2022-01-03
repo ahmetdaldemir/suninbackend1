@@ -10,6 +10,8 @@ interface VillaRepositoryInterface
     public function select($id);
 
     public function all();
+    public function like(object $data);
+    public function fav(object $data);
 
     public function delete($id);
 

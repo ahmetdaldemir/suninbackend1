@@ -27,7 +27,7 @@ class CustomerRepository extends BaseRepository implements CustomerRepositoryInt
         ]);
         $credentials = $data->only('email', 'password');
 
-        if (Auth::guard('webweb')->attempt(['email' => $data->email, 'password' => $data->password], false)) {
+        if (Auth::guard('web-user')->attempt(['email' => $data->email, 'password' => $data->password], false)) {
             return redirect()->intended('/')->withSuccess('Signed in');
         }
         else

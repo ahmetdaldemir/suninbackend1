@@ -81,8 +81,6 @@ s
 Cdatabase/migrations/2021_10_20_105047_create_my_calenders_table.php,d/c/dcf1137aff56a47938a990df837b8111e73a6603
 s
 Cdatabase/migrations/2021_10_04_123959_create_destinations_table.php,0/6/06bec67a44a028fe0775a3154d0d6eb57d1eca6e
-J
-app/Models/Destination.php,1/0/106663b1753e15f3f32014797818c6b858509a7f
 G
 app/Models/Property.php,9/e/9e61a2291c7112048774cc696aa71c48c2ae7fe2
 >
@@ -172,8 +170,6 @@ _
 /resources/views/rent/destination/edit.blade.php,9/f/9f897fbb639a6318547f012b61f037af13925fbf
 N
 app/Models/RentDestination.php,1/6/1650c1d4c3894b214d6c1a2feea55a46c9738e7d
-s
-Capp/Repositories/Rent/RentDestination/RentDestinationRepository.php,7/9/792e10c95f3abb7c26c43e58d250b999703ba194
 b
 2resources/views/pages/destination_detail.blade.php,c/0/c00318deb93b339df68751d2efc90d897b385f4e
 ^
@@ -200,8 +196,6 @@ p
 @database/migrations/2021_10_04_123910_create_landlords_table.php,6/1/61b3024ae516ece0d6497de55d918da342aded1c
 v
 Fapp/Repositories/View/RentCategory/RentCategoryRepositoryInterface.php,e/5/e5359830266f6fb5b5faa064e8a7e692b26199ea
-s
-Capp/Repositories/View/RentDestination/RentDestinationRepository.php,f/1/f1e285747f6429af580fec276b4bd2930f82b192
 |
 Lapp/Repositories/View/RentDestination/RentDestinationRepositoryInterface.php,6/f/6f5f1a0fcb5570864a3927ddc213082e2ce7fdab
 v
@@ -312,3 +306,37 @@ L
 public/view/less/header.less,4/b/4b3ff77162e17da44cdf22bd546aa4188833e0f2
 Z
 *public/view/less/components/accordion.less,4/5/45d404e61b811d9046ae98c33ae48c690a16436a
+[
++resources/views/pages/blog_detail.blade.php,8/2/82dc914a3cbebcede1c8300de1d0831f04bf2f66
+N
+public/view/less/theme.min.css,1/5/151efa3edeeb7bc377dfa57d336ad7b5cf533958
+K
+public/view/less/theme.less,c/c/ccf0226d3d11ed86af54d0728781d2bf943a84fa
+Q
+!resources/views/welcome.blade.php,0/c/0c96dd63e07fb2e889aeaea5cbabd89d0d09f1fb
+s
+Capp/Repositories/View/RentDestination/RentDestinationRepository.php,f/1/f1e285747f6429af580fec276b4bd2930f82b192
+g
+7app/Http/Controllers/Rent/RentDestinationController.php,e/9/e91e6185450cf29aa61cb5f85ad3906558f50f26
+|
+Lapp/Repositories/Rent/RentDestination/RentDestinationRepositoryInterface.php,4/3/43b9c96cb6bf2811743502ed36fa2ca32e704a1d
+J
+app/Models/Destination.php,1/0/106663b1753e15f3f32014797818c6b858509a7f
+s
+Capp/Repositories/Rent/RentDestination/RentDestinationRepository.php,7/9/792e10c95f3abb7c26c43e58d250b999703ba194
+>
+routes/web.php,6/b/6b9a783d9b43fee50fd28f56dbd1856d2608f305
+?
+config/auth.php,c/d/cddba0f39ef2cbe4d8189e8f5621a3bb533d6bc2
+W
+'app/Http/Controllers/MainController.php,a/5/a5420b97240ca9c243d6e7b58844c283608e41c3
+W
+'resources/views/layout/header.blade.php,5/0/50ca5729e5c11c8159e868df07e91720cfc2ca8b
+U
+%resources/views/pages/about.blade.php,8/2/82af24600fffba52f770d5bcc8393b9a9b11227c
+\
+,resources/views/pages/account/menu.blade.php,a/8/a8cfa325d37460b3d2478caf7533ac2986fa706b
+U
+%resources/views/view_layout.blade.php,7/1/7109d4428917b0c8380a66a44091799586104726
+]
+-resources/views/pages/account/index.blade.php,3/5/3540286f6fad4a99045fdd7de836f5e9f9a38104
