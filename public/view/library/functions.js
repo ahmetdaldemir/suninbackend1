@@ -260,11 +260,11 @@ var SQ = SQ || {};
                         if (!date) return '';
                         var day = date.getDate();
                         if (day.length < 2) {
-                            day = '0' + day;
+                            day = 'x' + day;
                         }
                         var month = date.getMonth() + 1;
                         if (month.length < 2) {
-                            month = '0' + month;
+                            month = 'x' + month;
                         }
                         var year = date.getFullYear();
                         return day + '/' + month + '/' + year;
@@ -279,6 +279,7 @@ var SQ = SQ || {};
             $('#rangeend').calendar({
                 type: 'date',
                 startCalendar: $('#rangestart'),
+               // endCalendar: alert('test'),//$('#calculate'),
                 formatter: {
                     date: function (date, settings) {
                         if (!date) return '';

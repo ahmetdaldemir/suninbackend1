@@ -160,6 +160,7 @@
                                                     </div>
 
                                                     <div class="calc-row">
+                                                        <div id="calculate">hesap</div>
                                                         <div class="calc-column"><p class="desc">{{__('Toplam')}}</p>
                                                         </div>
                                                         <div class="calc-column"><p class="price-sq">&euro;657</p></div>
@@ -358,9 +359,7 @@
                     <input type="hidden" id="date-range12" size="40" value="">
                     <div id="date-range12-container" style="width:100%;"></div>
                     <input type="hidden" name="villa_id" value="{{$villa['villa']->id}}"/>
-                    <button type="button" class="button-sq fullwidth-sq font-weight-extrabold-sq villacheck">Rezervasyon
-                        Yap
-                    </button>
+                    <!--<button type="button" class="button-sq fullwidth-sq font-weight-extrabold-sq villacheck">Rezervasyon Yap</button>-->
                 </div>
             </div>
         </div>
@@ -491,6 +490,10 @@
     <script>
         $(document).ready(function () {
             $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+            $('#villaReservation').on('click', '#calculate', function () {
+                let c = $('input[name=checkin]').val()
+                alert(c)
+            });
             $('#villaReservation').on('click', '.villacheck', function () {
                 let data = $('#villaReservation').serialize()
                 $.ajax({

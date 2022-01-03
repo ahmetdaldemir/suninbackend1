@@ -63,7 +63,12 @@
                             <li class="has-submenu">
                                 <a href="#" class="item"><span>Bölgeler</span></a>
                                 <ul class="submenu transition hidden">
-                                    <li><a href="#" class="item"><span>Table</span></a></li>
+                                    @foreach($categories as $category)
+                                        <li>
+                                            <a href="{{url('category/'.$category['lang']->where('lang_id',$lang_id)->first()->slug)}}"
+                                               class="item"><span>{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</span></a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="has-submenu">
