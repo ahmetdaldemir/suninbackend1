@@ -51,6 +51,7 @@ class ContractController extends Controller
 
     public function update(Request $request)
     {
+
         $this->contractRepository->update($request);
         return response()->json(['success' => true], 200);
     }

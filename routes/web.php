@@ -221,6 +221,7 @@ Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
     Route::post('register/action',  [MainController::class, 'registeraction'])->name('registeraction');
     Route::get('logout',  [MainController::class, 'logout']);
     Route::post('villaCheck',  [MainController::class, 'villaCheck']);
+    Route::post('villaCalculate',  [MainController::class, 'villaCalculate']);
     Route::get('reservation/detail',  [MainController::class, 'reservationDetail']);
     Route::post('reservation/action',  [MainController::class, 'reservationAction']);
     Route::get('reservation/payment/{reservation_id}',  [MainController::class, 'reservationPayment']);

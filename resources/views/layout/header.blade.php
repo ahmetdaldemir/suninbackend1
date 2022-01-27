@@ -62,13 +62,61 @@
                             </li>
                             <li class="has-submenu">
                                 <a href="#" class="item"><span>Bölgeler</span></a>
-                                <ul class="submenu transition hidden">
-                                    @foreach($categories as $category)
-                                        <li>
-                                            <a href="{{url('category/'.$category['lang']->where('lang_id',$lang_id)->first()->slug)}}"
-                                               class="item"><span>{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</span></a>
-                                        </li>
-                                    @endforeach
+                                <ul class="submenu transition" style="display:block;width:600px;max-width: 600px;min-width:600px">
+                                    <li class="submenutop ui six wide tablet four wide computer column">
+                                        <ul>
+                                            <li class="dropdown-header">Software</li>
+                                            <li><a href="#">Desktop</a></li>
+                                            <li class="disabled"><a href="#">Mobile</a></li>
+                                            <li><a href="#">Tablet</a></li>
+                                            <li class="divider"></li>
+                                            <li class="dropdown-header">Hardware</li>
+                                            <li><a href="#">Arduino</a></li>
+                                            <li><a href="#">Raspberry PI</a></li>
+                                            <li><a href="#">VoCore</a></li>
+                                            <li><a href="#">Banana PI</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenutop ui six wide tablet four wide computer column">
+                                        <ul>
+                                            <li class="dropdown-header">Nano-Tech</li>
+                                            <li><a href="#">AFM</a></li>
+                                            <li><a href="#">STM</a></li>
+                                            <li><a href="#">Nano-Tubes</a></li>
+                                            <li><a href="#">Nano-Wires</a></li>
+                                            <li><a href="#">Materials</a></li>
+                                            <li class="divider"></li>
+                                            <li class="dropdown-header">A.I.</li>
+                                            <li><a href="#">Artificial Intelligence</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenutop ui six wide tablet four wide computer column">
+                                        <ul>
+                                            <li class="dropdown-header">SaaS</li>
+                                            <li><a href="#">On-Demand</a></li>
+                                            <li><a href="#">No Software</a></li>
+                                            <li><a href="#">Cloud Computing</a></li>
+                                            <li class="divider"></li>
+                                            <li class="dropdown-header">On-Premise</li>
+                                            <li><a href="#">Data Center</a></li>
+                                            <li><a href="#">Hosting Environment</a></li>
+                                            <li><a href="#">Internal IT</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenutop ui six wide tablet four wide computer column">
+                                        <ul>
+                                            <li class="dropdown-header">Server-Side</li>
+                                            <li><a href="#">PHP</a></li>
+                                            <li><a href="#">Java</a></li>
+                                            <li><a href="#">Python</a></li>
+                                            <li><a href="#">Ruby</a></li>
+                                            <li><a href="#">ColdFusion</a></li>
+                                            <li><a href="#">ASP.NET</a></li>
+                                            <li><a href="#">GO</a></li>
+                                            <li><a href="#">Perl</a></li>
+                                            <li><a href="#">Lasso</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="has-submenu">
@@ -113,3 +161,10 @@
         </div>
     </div>
 </header>
+
+<style>
+    .menu-default>ul li.submenutop{
+        float:left;
+    }
+
+</style>

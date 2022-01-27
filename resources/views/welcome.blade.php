@@ -16,10 +16,10 @@
             <form action="{{route('listing')}}" class="hero-search-form">
                 <div class="search-item">
                     <div class="fltp">
-                        <select name="category" size="13" class="dropdown" required>
+                        <select name="category" size="13" class="dropdown" required >
                             <option value="0" selected>Kategoriler</option>
                             @foreach($categories as $category)
-                                <option value="{{$category['id']}}">{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</option>
+                            <option value="{{$category['id']}}">{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</option>
                             @endforeach
                         </select>
                         <label class="placeholder">Kategori Seçiniz</label>
@@ -27,8 +27,7 @@
                 </div>
                 <div class="search-item">
                     <div class="fltp calendar-sq" id="rangestart">
-                        <input name="checkin" type="text" class="filter" autocomplete="off" value="" required
-                               placeholder="enter date">
+                        <input name="checkin" type="text" class="filter" autocomplete="off" value="" required placeholder="enter date">
                         <label class="placeholder" data-big-placeholder="Giriş Tarihi"
                                data-little-placeholder="Giriş"></label>
                     </div>
@@ -36,8 +35,7 @@
                     <i class="icon icon-little-arrow"></i>
 
                     <div class="fltp calendar-sq" id="rangeend">
-                        <input name="checkout" type="text" class="filter" autocomplete="off" value="" required
-                               placeholder="enter date">
+                        <input name="checkout" type="text" class="filter" autocomplete="off" value="" required placeholder="enter date">
                         <label class="placeholder" data-big-placeholder="Çıkış Tarihi"
                                data-little-placeholder="Çıkış"></label>
                     </div>
@@ -76,9 +74,9 @@
             @foreach($sliders as $slider)
                 <div class="">
                     @if($slider['lang'] != NULL)
-                        <div class="caption-content" style="margin-top: 150px;">
-                            <h1 class="font-weight-extrabold-sq">{{$slider['lang']->where('language_id',$lang_id)->first()->title ?? NULL}}</h1>
-                        </div>
+                    <div class="caption-content" style="margin-top: 150px;">
+                        <h1 class="font-weight-extrabold-sq">{{$slider['lang']->where('language_id',$lang_id)->first()->title ?? NULL}}</h1>
+                    </div>
                     @endif
                     <div class="caption-outside">
                         <a class="button anchor-sq" href="#top">
@@ -110,25 +108,24 @@
                     <div class="ui grid ">
                         <div class="v-ic container-fluid">
                             @foreach($categories as $category)
-                                <?php //dd($category)?>
-                                <div class="v-icon"><a
-                                            href="{{url('category-detail/'.$category['lang']->where('lang_id',$lang_id)->first()->slug)}}">
-                                        <img src="{{Storage::url($category['category']->image)}}" class="img"
-                                             alt="{{$category['lang']->where('lang_id',$lang_id)->first()->name}}">
-                                        <p>{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</p></a>
-                                </div>
+                                    <?php //dd($category)?>
+                                    <div class="v-icon"><a href="{{url('category/'.$category['lang']->where('lang_id',$lang_id)->first()->slug)}}">
+                                            <img src="{{Storage::url($category['category']->image)}}" class="img"
+                                                 alt="{{$category['lang']->where('lang_id',$lang_id)->first()->name}}">
+                                            <p>{{$category['lang']->where('lang_id',$lang_id)->first()->name}}</p></a>
+                                    </div>
                             @endforeach
                         </div>
                     </div>
 
                     <div class="ui grid">
-                        <?php $i = 0?>
+                        <?php $i=0?>
                         @foreach($villas as $villa)
                             @if(isset($villa['lang']))
-                                <?php
-                                $title = $villa['lang']->where('lang_id', $lang_id)->first()->title ?? "bulunamadı";
-                                $slug = $villa['lang']->where('lang_id', $lang_id)->first()->slug ?? "bulunamadı";
-                                $sub = $villa['lang']->where('lang_id', $lang_id)->first()->sub ?? 0;
+                             <?php
+                                 $title = $villa['lang']->where('lang_id',$lang_id)->first()->title ?? "bulunamadı";
+                                 $slug  = $villa['lang']->where('lang_id',$lang_id)->first()->slug ?? "bulunamadı";
+                                 $sub  = $villa['lang']->where('lang_id',$lang_id)->first()->sub ?? 0;
                                 ?>
                             @endif
 
@@ -136,11 +133,9 @@
                                 <div class="property-item">
                                     <div class="property-item-inner">
                                         @if($sub!=null)
-                                            <div class="price-tag-sq">{{$sub}}</div>
+                                        <div class="price-tag-sq">{{$sub}}</div>
                                         @endif
-                                        <a class="add-wishlist wishlist_{{$i}} modal-ui-trigger"
-                                           onclick="favorite('{{$villa['id']}}','{{$auth_id}}','.wishlist_{{$i}}')"
-                                           data-trigger-for="wishlist">
+                                        <a class="add-wishlist wishlist_{{$i}} modal-ui-trigger" onclick="favorite('{{$villa['id']}}','{{$auth_id}}','.wishlist_{{$i}}')" data-trigger-for="wishlist">
                                             <i class="icon icon-add-wishlist"></i>
                                         </a>
 
@@ -156,8 +151,7 @@
 
                                         <div class="main-details">
                                             <div class="icons-row">
-                                                <div class="icons-column"
-                                                     onclick="like('{{$villa['id']}}','{{$auth_id}}','.like_{{$i}}')">
+                                                <div class="icons-column" onclick="like('{{$villa['id']}}','{{$auth_id}}','.like_{{$i}}')">
                                                     <i class="icon icon-heart"></i> 0
                                                 </div>
                                                 <div class="icons-column">
@@ -176,38 +170,32 @@
 
                                         </div>
 
-                                        <div class="property-name">
-                                            <div class="title-row">
-                                                <a href="{{url('villa-detail/'.$slug.'')}}"
-                                                   class="title-sq"
-                                                   alt="{{$title}}">{{$title}}</a>
-                                                <a href="{{url('villa-detail/'.$slug.'')}}"
-                                                   alt="{{$title}}"
-                                                   class="button-sq-top">
-                                                    Hemen İncele
-                                                </a>
+                                            <div class="property-name">
+                                                <div class="title-row">
+                                                    <a href="{{url('villa-detail/'.$slug.'')}}"
+                                                       class="title-sq"
+                                                       alt="{{$title}}">{{$title}}</a>
+                                                    <a href="{{url('villa-detail/'.$slug.'')}}"
+                                                       alt="{{$title}}"
+                                                       class="button-sq-top">
+                                                        Hemen İncele
+                                                    </a>
+                                                </div>
                                             </div>
-                                        </div>
                                         <div class="property-fl">
                                             <p><i class="icon icon-pin2"></i> {{@$villa['destination']}}</p>
                                             @if(@$villa['price'])
                                                 @if(@$villa['discount']>0)
                                                     @if(@$villa['discount_type']=='static')
-                                                        <p>
-                                                            <i style="text-decoration:line-through;color:red;">{{$villa['price']}} {{@$villa['symbol']}}</i><span
-                                                                    style="font-size: 21px;">{{$villa['price']-$villa['discount']}} {{@$villa['symbol']}}</span>
-                                                        </p>
+                                                    <p><i style="text-decoration:line-through;color:red;">{{$villa['price']}} {{@$villa['symbol']}}</i><span style="font-size: 21px;">{{$villa['price']-$villa['discount']}} {{@$villa['symbol']}}</span></p>
                                                     @else
                                                         <?php
-                                                        $price = $villa['price'] - ($villa['price'] * $villa['discount'] / 100);
+                                                        $price = $villa['price']-($villa['price']*$villa['discount']/100);
                                                         ?>
-                                                        <p>
-                                                            <i style="text-decoration:line-through;color:red;">{{$villa['price']}} {{@$villa['symbol']}}</i><span
-                                                                    style="font-size: 21px;">{{@$price}} {{@$villa['symbol']}}</span>
-                                                        </p>
+                                                    <p><i style="text-decoration:line-through;color:red;">{{$villa['price']}} {{@$villa['symbol']}}</i><span style="font-size: 21px;">{{@$price}} {{@$villa['symbol']}}</span></p>
                                                     @endif
                                                 @else
-                                                    <p><span style="font-size: 21px;">{{@$villa['price']}}</span></p>
+                                                <p><span style="font-size: 21px;">{{@$villa['price']}}</span></p>
                                                 @endif
                                             @endif
                                         </div>
@@ -251,52 +239,80 @@
         </div>
     </div>
     <div class="ui layout" id="top">
-        @if($destinations)
-            <div class="ui grid container-fluid" style="margin: 50px;">
-                <div class="row">
-                    <div class="ui twelve wide computer column">
-                        <div class="typo-section-sq bottom-big">
+        <div class="ui grid container-fluid" style="margin: 50px;">
+            <div class="row">
+                <div class="ui twelve wide computer column">
+                    <div class="typo-section-sq bottom-big">
 
-                            <div class="typo-section-header-sq">
-                                <h2 class="text-align-center-sq">Populer Villa Kiralama Bölgeleri</h2>
-                                <p class="text-align-center-sq">Sizler için bölgelerin en güzel villalarını bir araya
-                                    getirdilk</p>
-                            </div>
+                        <div class="typo-section-header-sq">
+                            <h2 class="text-align-center-sq">Populer Villa Kiralama Bölgeleri</h2>
+                            <p class="text-align-center-sq">Sizler için bölgelerin en güzel villalarını bir araya getirdilk</p>
+                        </div>
 
-                            <div class="magic-grid photo-sq hover-default hover-center">
-                                @foreach ($destinations as $destination)
-                                    <div class="item">
-                                        <div class="item-inner">
-                                            <div class="image-sq">
-                                                <div class="image-wrapper">
-                                                    <div class="image-inner">
-                                                        <img class="image-sq"
-                                                             src="{{Storage::url($destination['destination']->image)}}"
-                                                             alt="{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}">
-                                                    </div>
+                        <div class="magic-grid photo-sq hover-default hover-center">
+                            @foreach ($destinations as $destination)
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <div class="image-sq">
+                                            <div class="image-wrapper">
+                                                <div class="image-inner">
+                                                    <img class="image-sq"
+                                                         src="{{Storage::url($destination['destination']->image)}}"
+                                                         alt="{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}">
                                                 </div>
                                             </div>
-                                            <a href="{{url('destination-detail/'.@$destination['lang']->where('lang_id',$lang_id)->first()->slug.'')}}"
-                                               class="typo-sq">
-                                                <span class="typo-whitespace"></span>
-                                                <p class="typo-label-sq"
-                                                   data-label-before="{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}"
-                                                   data-label-after="{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}"></p>
-                                                <p class="typo-title-sq">{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}</p>
-                                            </a>
-
                                         </div>
+                                        <a href="{{url('destination-detail/'.@$destination['lang']->where('lang_id',$lang_id)->first()->slug.'')}}"
+                                           class="typo-sq">
+                                            <span class="typo-whitespace"></span>
+                                            <p class="typo-label-sq"
+                                               data-label-before="{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}"
+                                               data-label-after="{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}"></p>
+                                            <p class="typo-title-sq">{{@$destination['lang']->where('lang_id',$lang_id)->first()->title}}</p>
+                                        </a>
+
                                     </div>
-                                @endforeach
-                            </div>
-                            <a class="more-trigger" data-more="Hepsini Görüntüle" href="{{route('destinations')}}">
-                                <i class="icon icon-arrow-down-122"></i>
-                            </a>
+                                </div>
+                            @endforeach
                         </div>
+
+                        <a class="more-trigger" data-more="Hepsini Görüntüle" href="{{route('destinations')}}">
+                            <i class="icon icon-arrow-down-122"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="promo-section">
+
+            <!-- content -->
+            <div class="ui container grid centered">
+                <div class="row">
+                    <div class="ui twelve wide mobile ten wide tablet eight wide computer six wide large screen six wide widescreen column">
+                        <div class="promo-content style-02">
+                            <h2>Villanızı Kiraya Verin</h2>
+                            <p>Villanızın bilgilerini bizimle paylaşın, Villanızı portföyümüze ekleyelim ve
+                                kiralayalım. </p>
+
+                            <a href="{{route('listing')}}" class="button-sq see-through-sq"> Detaylı Bilgi </a>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        @endif
+
+            <!-- picture -->
+            <div class="image-wrapper">
+                <div class="image-inner">
+                    <img class="image-sq" src="{{asset('view/images/promo_section/22.jpg')}}" alt="">
+                </div>
+            </div>
+        </div>
 
         <div class="ui grid container">
             <div class="row">
@@ -305,8 +321,7 @@
 
                         <div class="typo-section-header-sq">
                             <h2 class="text-align-center-sq">Villa Tipleri</h2>
-                            <p class="text-align-center-sq">Villalarımızı sizler için tipine göre özenle ayırdık.
-                                İstediğiniz villayı tip seçimi yaparak bulabilirsiniz.</p>
+                            <p class="text-align-center-sq">Villalarımızı sizler için tipine göre özenle ayırdık. İstediğiniz villayı tip seçimi yaparak bulabilirsiniz.</p>
                         </div>
 
                         <div class="magic-grid category-sq special-sq hover-scale">
@@ -315,9 +330,7 @@
                                     <div class="image-sq">
                                         <div class="image-wrapper">
                                             <div class="image-inner">
-                                                <img class="image-sq"
-                                                     src="{{asset('view/images/magic_grid/magic_grid_category_special_01.png')}}"
-                                                     alt="">
+                                                <img class="image-sq" src="{{asset('view/images/magic_grid/magic_grid_category_special_01.png')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -330,17 +343,22 @@
                     </div>
 
                     <hr>
-                    @if($blogs)
-                        <div class="typo-section-sq bottom-big">
-                            <div class="typo-section-header-sq">
-                                <h2 class="text-align-center-sq">Blog</h2>
-                            </div>
-                            <div class="magic-grid article-sq hover-scale">
-                                @foreach($blogs as $blog)
-                                    <div class="item">
-                                        <div class="item-inner">
-                                            <a class="image-sq"
-                                               href="{{url('blog-detail/'.@$blog['lang']->where('language_id',$lang_id)->first()->slug.'')}}">
+
+                    <div class="typo-section-sq bottom-big">
+                        <div class="typo-section-header-sq">
+                            <h2 class="text-align-center-sq">Blog</h2>
+                            <p class="text-align-center-sq"> Nunc sit amet velit nibh. Proin consectetur, ante quis
+                                tristique mattis, massa massa condimentum enim.</p>
+                        </div>
+
+
+                        <div class="magic-grid article-sq hover-scale">
+
+
+                            @foreach($blogs as $blog)
+                                <div class="item">
+                                    <div class="item-inner">
+                                        <a class="image-sq" href="{{url('blog-detail/'.@$blog['lang']->where('language_id',$lang_id)->first()->slug.'')}}">
                     	                <span class="image-wrapper">
                     	                    <span class="image-inner">
                     	                        <img class="image-sq"
@@ -348,24 +366,25 @@
                                                      alt="{{$blog['lang']->where('language_id',$lang_id)->first()->title}}">
                     	                    </span>
                     	                </span>
-                                            </a>
+                                        </a>
 
-                                            <div class="typo-sq">
-                                                <p class="typo-title-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
-                                                <a href="{{url('blog-detail/'.@$blog['lang']->where('language_id',$lang_id)->first()->slug.'')}}"
-                                                   class="read-more-sq">Devamını Oku... <i
-                                                            class="icon icon-arrow-right-122"></i></a>
-                                            </div>
-
+                                        <div class="typo-sq">
+                                            <p class="typo-title-sq">{{$blog['lang']->where('language_id',$lang_id)->first()->title}}</p>
+                                            <a href="{{url('blog-detail/'.@$blog['lang']->where('language_id',$lang_id)->first()->slug.'')}}" class="read-more-sq">Devamını Oku... <i  class="icon icon-arrow-right-122"></i></a>
                                         </div>
+
                                     </div>
-                                @endforeach
-                            </div>
-                            <a href="{{route('all_blogs')}}" class="more-trigger" data-more="Tümünü Görüntüle">
-                                <i class="icon icon-arrow-down-122"></i>
-                            </a>
+                                </div>
+                            @endforeach
+
+
                         </div>
-                    @endif
+
+                        <a href="article_listing.html" class="more-trigger" data-more="View More">
+                            <i class="icon icon-arrow-down-122"></i>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -571,45 +590,43 @@
 @endsection
 
 @section('javascript')
-    <script>
-        function favorite(w, c, i) {
-            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}})
-            if (w == null || c == '') {
-                alert("Beğeni ve Favorilere Ekleme yapmak için Lütfen Kullanıcı Girişi yapınız!")
-            } else {
-                $.ajax({
-                    type: "POST",
-                    url: "account/fav",
-                    data: 'w=' + w + '&c=' + c,
-                    success: function (data) {
-                        if (data.confirm == 1) {
-                            $(i).html('<i class="icon icon-check-22"></i>');
-                        } else {
-                            $(i).html('<i class="icon icon-add-wishlist"></i>');
-                        }
-                    }
-                });
+<script>
+function favorite(w,c,i){
+    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}})
+    if(w == null || c == ''){
+        alert("Beğeni ve Favorilere Ekleme yapmak için Lütfen Kullanıcı Girişi yapınız!")
+    }else{
+        $.ajax({
+            type: "POST",
+            url: "account/fav",
+            data:'w='+w+'&c='+c,
+            success: function(data){
+                if(data.confirm==1){
+                    $(i).html('<i class="icon icon-check-22"></i>');
+                }else{
+                    $(i).html('<i class="icon icon-add-wishlist"></i>');
+                }
             }
-        }
-
-        function like(w, c, i) {
-            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}})
-            if (w == null || c == '') {
-                alert("Beğeni ve Favorilere Ekleme yapmak için Lütfen Kullanıcı Girişi yapınız!")
-            } else {
-                $.ajax({
-                    type: "POST",
-                    url: "account/like",
-                    data: 'w=' + w + '&c=' + c,
-                    success: function (data) {
-                        if (data.confirm == 1) {
-                            $(i).html('<i class="icon icon-heart"></i> ' + data.count);
-                        }
-                    }
-                });
+        });
+    }
+}
+function like(w,c,i){
+    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}})
+    if(w == null || c == ''){
+        alert("Beğeni ve Favorilere Ekleme yapmak için Lütfen Kullanıcı Girişi yapınız!")
+    }else{
+        $.ajax({
+            type: "POST",
+            url: "account/like",
+            data:'w='+w+'&c='+c,
+            success: function(data){
+                if(data.confirm==1){
+                    $(i).html('<i class="icon icon-heart"></i> '+ data.count);
+                }
             }
-        }
-
-        /**/
-    </script>
+        });
+    }
+}
+/**/
+</script>
 @endsection

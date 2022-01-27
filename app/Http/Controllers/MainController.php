@@ -149,6 +149,7 @@ class MainController extends Controller
     {
         $data['categories'] = $this->rentCategoryRepository->all();
         $data['lang_id'] = $this->lang_id;
+        $data['category'] = $this->rentCategoryRepository->getslug($slug);
         return view('pages/category_detail', $data);
     }
 
@@ -309,6 +310,14 @@ class MainController extends Controller
             return response()->json(['warning' => true], 200);
         }
     }
+
+    public function villaCalculate(Request $request)
+    {
+        return  $this->reservationRepository->calculate($request);
+    }
+
+
+
     public function favorite(Request $request)
     {
         $result = $this->villaRepository->fav($request);

@@ -92,7 +92,7 @@ abstract class PackageServiceProvider extends ServiceProvider
         }
 
         if ($this->package->hasViews) {
-            $this->loadViewsFrom($this->package->basePath('/../resources/views'), $this->package->viewNamespace());
+            $this->loadViewsFrom($this->package->basePath('/../resources/views'), $this->package->shortName());
         }
 
         foreach ($this->package->viewComponents as $componentClass => $prefix) {

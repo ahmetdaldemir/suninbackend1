@@ -117,7 +117,7 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
                 $record->id = Str::uuid()->toString();
                 $record->rent_category_id = $data->category_id;
                 $record->name = $value;
-                $record->slug = $value;
+                $record->slug =  Str::slug($value);;
                 $record->lang_id = $key;
                 $record->description = @$data->description[$key];
                 $record->meta = @$data->meta[$key];

@@ -2,11 +2,14 @@
 
 use App\Models\Customer;
 use App\Models\Reservation;
+use App\Models\VillaContract;
 use App\Repositories\BaseRepository;
-use Illuminate\Support\Carbon;
+
+//use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class ReservationRepository extends BaseRepository implements ReservationRepositoryInterface
 {
@@ -14,29 +17,30 @@ class ReservationRepository extends BaseRepository implements ReservationReposit
     {
         return Reservation::find($id);
     }
+
     public function create(object $data)
     {
         $diff = Carbon::parse(implode("-", array_reverse(explode("/", $data->checkin))));
 
-        if($data->newuser==1){
+        if ($data->newuser == 1) {
             $customer_id = Str::uuid()->toString();
             $customerSave = new Customer();
-            $customerSave->id           = $customer_id;
-            $customerSave->fullName     = $data->fullname;
-            $customerSave->email        = $data->email;
-            $customerSave->password     = Hash::make('123456');
-            $customerSave->phone        = $data->phone;
-            $customerSave->tc           = $data->tc;
-            $customerSave->taxTitle     = '';
-            $customerSave->tax          = '';
-            $customerSave->taxNumber    = $data->tc;
-            $customerSave->taxAddress   = $data->address;
-            $customerSave->address      = $data->address;
-            $customerSave->city         = $data->city;
-            $customerSave->country      = $data->country;
-            $customerSave->is_einvoice  = 0;
-            $customerSave->is_status    = 1;
-            $customerSave->tenant_id    = $this->getTenantId();
+            $customerSave->id = $customer_id;
+            $customerSave->fullName = $data->fullname;
+            $customerSave->email = $data->email;
+            $customerSave->password = Hash::make('123456');
+            $customerSave->phone = $data->phone;
+            $customerSave->tc = $data->tc;
+            $customerSave->taxTitle = '';
+            $customerSave->tax = '';
+            $customerSave->taxNumber = $data->tc;
+            $customerSave->taxAddress = $data->address;
+            $customerSave->address = $data->address;
+            $customerSave->city = $data->city;
+            $customerSave->country = $data->country;
+            $customerSave->is_einvoice = 0;
+            $customerSave->is_status = 1;
+            $customerSave->tenant_id = $this->getTenantId();
             $customerSave->save();
         }
 
@@ -52,7 +56,7 @@ class ReservationRepository extends BaseRepository implements ReservationReposit
         $save->price_day = $data->price_day; //varchar(255)
         $save->discount = $data->discount; //varchar(255)
         $save->total_price = $data->total_price; //varchar(255)
-        $save->rest = ($data->total_price-$data->deposit); //varchar(255)
+        $save->rest = ($data->total_price - $data->deposit); //varchar(255)
         $save->deposit = $data->deposit; //varchar(255)
         $save->cleaning = $data->cleaning; //varchar(255)
         $save->currency_id = $data->currency_id; //varchar(255)
@@ -65,6 +69,7 @@ class ReservationRepository extends BaseRepository implements ReservationReposit
         $save->save();
         return $id;
     }
+
     public function update(object $data)
     {
         Reservation::find($data)->update($data);
@@ -81,5 +86,23 @@ class ReservationRepository extends BaseRepository implements ReservationReposit
     public function all()
     {
         // TODO: Implement all() method.
+    }
+
+    public function calculate($data)
+    {
+        $reservation = Reservation::where('villa_id', $data->id)->where('checkin', '<=', $data->checkout)->where('checkout', '>=', $data->checkin)->first();
+        if (!isset($reservation)) {
+            $explode1 = explode('/', $data->cdate);
+            $explode2 = explode('/', $data->checkindate);
+             $villacontract = VillaContract::where('villa_id', $data->id)->where('startDate', '<=', $explode1[2] . "-" . $explode1[1] . "-" . $explode1[0])->where('finishDate', '>=', $explode2[2] . "-" . $explode2[1] . "-" . $explode2[0])->first();
+             if(isset($villacontract))
+             {
+                 return $villacontract;
+             }else{
+                 return "Contract Bulunamadı";
+             }
+        } else {
+            return $reservation;
+        }
     }
 }

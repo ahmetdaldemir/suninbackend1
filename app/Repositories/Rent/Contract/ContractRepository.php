@@ -47,18 +47,22 @@ class ContractRepository implements ContractRepositoryInterface
 
     public function update(object $data)
     {
-        $result = VillaContract::find($data->id);
-        $result->startDate = Carbon::parse($data->startDate)->format('Y-m-d');
-        $result->finishDate = Carbon::parse($data->finishDate)->format('Y-m-d');
-        $result->currency = $data->currency;
-        $result->price = $data->price;
-        $result->commission = $data->commission;
-        $result->deposit = $data->deposit;
-        $result->discount_type = $data->discount_type;
-        $result->discount = $data->discount;
-        $result->minday = $data->minday;
-        $result->is_active = $data->is_active;
-        $result->save();
+        if($data->startDate != null)
+        {
+            $result = VillaContract::find($data->id);
+            $result->startDate = Carbon::parse($data->startDate)->format('Y-m-d');
+            $result->finishDate = Carbon::parse($data->finishDate)->format('Y-m-d');
+            $result->currency = $data->currency;
+            $result->price = $data->price;
+            $result->commission = $data->commission;
+            $result->deposit = $data->deposit;
+            $result->discount_type = $data->discount_type;
+            $result->discount = $data->discount;
+            $result->minday = $data->minday;
+            $result->is_active = $data->is_active;
+            $result->save();
+        }
+
     }
 
     public function copy(object $data)

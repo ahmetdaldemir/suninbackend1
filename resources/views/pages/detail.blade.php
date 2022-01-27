@@ -3,9 +3,9 @@
 
 
 @section('style')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="{{asset("view/custom/font-awesome.min.css")}}"/>
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.16.1/daterangepicker.min.css"/>
+          href="{{asset("view/custom/daterangepicker.min.css")}}"/>
 @endsection
 
 @section('content')
@@ -106,6 +106,8 @@
                                                         <label class="placeholder" data-placeholder="Giriş"></label>
 
                                                         <div class="relative">
+                                                            <input name="checkindate" id="checkindate" type="hidden"   value="" >
+
                                                             <input name="checkin" type="text" class="filter" value=""
                                                                    required placeholder="{{__('Giriş')}}"
                                                                    autocomplete="off">
@@ -115,19 +117,15 @@
                                                     </div>
 
                                                     <div class="check-out calendar-sq" id="rangeend">
-
                                                         <label class="placeholder" data-placeholder="Çıkış"></label>
-
-                                                        <input name="checkout" type="text" class="filter" value=""
-                                                               required placeholder="{{__('Çıkış')}}"
-                                                               autocomplete="off">
-
+                                                        <input name="cdate" id="cdate" type="hidden">
+                                                        <input name="checkout" id="checkout" type="text" class="filter" value=""  required placeholder="{{__('Çıkış')}}" autocomplete="off">
                                                     </div>
 
                                                     <div class="guests">
                                                         <label class="placeholder" data-placeholder="Kişi"></label>
 
-                                                        <select name="guest" size="12" class="dropdown" required>
+                                                        <select id="guest" name="guest" size="12" class="dropdown" required>
                                                             <option value="1" selected>1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -404,8 +402,7 @@
                                 </div>
                             </div>
                             <form action="#" class="" style="width: 100%;">
-                                <input id="reviews-search" type="text" placeholder="Search reviews" value="" required=""
-                                       style="width: 90%;float:left">
+                                <input id="reviews-search" type="text" placeholder="Search reviews" value="" required=""  style="width: 90%;float:left">
                                 <button style="width: 9%;float:right;    height: 50px;"><label><i
                                                 style="    color: #fff;font-weight: 900;" class="icon icon-search"></i></label>
                                 </button>
@@ -422,9 +419,8 @@
                                             <img src="{{asset('view/images/avatar/avatar_01.jpg')}}" alt="">
                                         </a>
                                         <a class="name-sq" href="#>{{$comment->fullname}}</a>
-                                    </div>
 
-                                    <div class=" comment-sq">
+                                    <div class="comment-sq">
                                         <span class="date-sq"><?php $x = new DateTime($comment->created_at); $x->format('d-m-Y'); ?></span>
                                         {{$comment->description}}
                                     </div>
@@ -483,69 +479,4 @@
         </div>
     </div>
 
-@endsection
-@section('javascript')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-date-range-picker/0.16.1/jquery.daterangepicker.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-            $('#villaReservation').on('click', '#calculate', function () {
-                let c = $('input[name=checkin]').val()
-                alert(c)
-            });
-            $('#villaReservation').on('click', '.villacheck', function () {
-                let data = $('#villaReservation').serialize()
-                $.ajax({
-                    url: '/villaCheck',
-                    type: 'POST',
-                    data: data,
-                    success: function (data) {
-                        if (data.url) {
-                            window.location.replace(data.url);
-                        } else {
-                            alert('Belitilen günlerde müsaitlik bulunmuyor');
-                        }
-                    }
-                });
-            });
-        });
-        var highlightdates = [moment('22.12.2017', 'DD.MM.YYYY'), moment('24.01.2018', 'DD.MM.YYYY')]
-
-        $(document).ready(function () {
-
-            $('#date-range12').dateRangePicker(
-                {
-                    inline: true,
-                    container: '#date-range12-container',
-                    alwaysOpen: true,
-                    format: 'DD.MM.YYYY',
-                    separator: ' to ',
-                    language: 'tr',
-                    showTopbar: false,
-                    showWeekNumbers: false,
-                    extraClass: 'date-range-picker19',
-                    monthSelect: true,
-                    yearSelect: true,
-                    customArrowPrevSymbol: '<a href="#" class="fa-blok fa fa-arrow-circle-left"></a>',
-                    customArrowNextSymbol: '<a href="#" class="fa-blok fa fa-arrow-circle-right"></a>',
-                    //maxDays: 7,
-                    minDays: 3,
-                    startDate: moment(),
-                    startOfWeek: 'monday',
-                    customTopBar: 'Tarih Aralığı Seçiniz',
-                    showDateFilter: function (time, date) {
-                        var doHighlight = highlightdates.some(function (item) {
-                            //alert(item.isSame(moment(time), 'day'))
-                            return (item.isSame(moment(time), 'day') && item.isSame(moment(time), 'month') && item.isSame(moment(time), 'year'))
-                        })
-                        return '<div ' + (doHighlight ? 'class="highlight"' : '') + ' style="padding:0 5px;">' +
-                            '<span style="font-weight:bold">' + date + '</span>' +
-                            '<div style="opacity:0.3;">$' + Math.round(Math.random() * 999) + '</div>' +
-                            '</div>';
-                    }
-
-                })
-        });
-    </script>
 @endsection

@@ -270,6 +270,18 @@ var SQ = SQ || {};
                         return day + '/' + month + '/' + year;
                     }
                 },
+                onChange: function(date){
+                    var day = date.getDate();
+                    if (day.length < 2) {
+                        day = '0' + day;
+                    }
+                    var month = date.getMonth() + 1;
+                    if (month.length < 2) {
+                        month = '0' + month;
+                    }
+                    var year = date.getFullYear();
+                    $("#checkindate").val(year + '-' + month + '-' + day);
+                },
                 className: {
                     prevIcon: "icon icon-arrow-left-122",
                     nextIcon: "icon icon-arrow-right-122"
@@ -279,7 +291,7 @@ var SQ = SQ || {};
             $('#rangeend').calendar({
                 type: 'date',
                 startCalendar: $('#rangestart'),
-               // endCalendar: alert('test'),//$('#calculate'),
+                //endCalendar: alert('test'),//$('#calculate'),
                 formatter: {
                     date: function (date, settings) {
                         if (!date) return '';
@@ -292,8 +304,21 @@ var SQ = SQ || {};
                             month = '0' + month;
                         }
                         var year = date.getFullYear();
+                        $("input#checkout").val(day + '/' + month + '/' + year);
                         return day + '/' + month + '/' + year;
                     }
+                },
+                onChange: function(date){
+                    var day = date.getDate();
+                    if (day.length < 2) {
+                        day = '0' + day;
+                    }
+                    var month = date.getMonth() + 1;
+                    if (month.length < 2) {
+                        month = '0' + month;
+                    }
+                    var year = date.getFullYear();
+                    $("#checkoutdate").val(year + '-' + month + '-' + day);
                 },
                 className: {
                     prevIcon: "icon icon-arrow-left-122",

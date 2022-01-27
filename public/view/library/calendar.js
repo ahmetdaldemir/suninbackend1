@@ -612,7 +612,7 @@
              }
          },
          onChange: function (e, t) {
-             return !0
+             return  e;
          },
          onShow: function () {},
          onVisible: function () {},
