@@ -71,6 +71,7 @@
         <div class="sq-slick hero-big slide-up-sq" data-mobile-arrows="false" data-tablet-arrows="false"
              data-mobile-dots="true" data-tablet-dots="true" data-fade="true" data-speed="500" data-ease="linear">
             <!-- .slide-up .fade .top .bottom -->
+            @if(1==3)
             @foreach($sliders as $slider)
                 <div class="">
                     @if($slider['lang'] != NULL)
@@ -92,6 +93,7 @@
                     </div>
                 </div>
             @endforeach
+            @endif
 
         </div>
     </div>
