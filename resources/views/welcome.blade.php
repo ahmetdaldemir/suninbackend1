@@ -72,7 +72,7 @@
              data-mobile-dots="true" data-tablet-dots="true" data-fade="true" data-speed="500" data-ease="linear">
             <!-- .slide-up .fade .top .bottom -->
             @if(1==3)
-            @foreach($sliders as $slider)
+            @foreach($sliders as $slider123)
                 <div class="">
                     @if($slider['lang'] != NULL)
                     <div class="caption-content" style="margin-top: 150px;">
