@@ -16,7 +16,7 @@ Route::get('/clear-cache', function () {
 
 //Route::get('/imageslink', function () { Artisan::call('storage:link');});
 
-Route::domain('rent.suninturkey.xyz')->group(function () {
+Route::domain('rent.sahilvillam.com')->group(function () {
 
     /**Villalar**/
     Route::get('/', 'App\Http\Controllers\Rent\DashboardController@index');
@@ -170,7 +170,7 @@ Route::domain('rent.suninturkey.xyz')->group(function () {
     Route::get('reservation/search', 'App\Http\Controllers\Rent\ReservationController@search')->name('reservation/search');
 });
 /////------------------------------------------------------------------------------------------------------////
-Route::domain('suninturkey.xyz')->middleware('checkDomain')->group(function () {
+Route::domain('sahilvillam.com')->middleware('checkDomain')->group(function () {
 
 
 //Route::get('/', function(){
