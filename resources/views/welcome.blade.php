@@ -74,7 +74,7 @@
             @if(1==3)
             @foreach($sliders as $slider123)
                 <div class="">
-                    @if($slider['lang'] != NULL)
+                    @if($slider123['lang'] != NULL)
                     <div class="caption-content" style="margin-top: 150px;">
                         <h1 class="font-weight-extrabold-sq">{{$slider['lang']->where('language_id',$lang_id)->first()->title ?? NULL}}</h1>
                     </div>
