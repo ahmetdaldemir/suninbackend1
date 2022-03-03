@@ -1,142 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en-US">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Standard Meta -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="SeventhQueen"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="Poco admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords"
-          content="admin template, Poco admin template, dashboard template, flat admin template, responsive admin template, web app (Laravel 8)">
-    <meta name="author" content="pixelstrap">
-    <link rel="shortcut icon" href="{{asset('public/assets/images/favicon.png')}}" type="image/x-icon">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('view/less/base.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('view/less/header.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('view/less/theme.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('view/less/main.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('view/icon/style.css')}}">
-    <link rel="stylesheet" type="text/css"
-          href="https://code.jquery.com/ui/1.13.0-rc.3/themes/smoothness/jquery-ui.css">
-    <link rel="icon" href="{{asset('view/images/ico/favicon.ico')}}">
-    @yield('style')
+    <link rel="stylesheet" type="text/css" href="{{asset('public/view/less/base.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/view/less/header.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/view/less/theme.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/view/icon/style.css')}}">
+    <link rel="icon" href="{{asset('public/view/images/ico/favicon.ico')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,900;1,200&display=swap"
+          rel="stylesheet')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/view/less/main.css')}}">
 
-    <script src="{{asset('view/library/modernizr-custom.js')}}"></script>
-    <title>@yield('title')</title>
+    <script src="{{asset('public/view/library/modernizr-custom.js')}}"></script>
+    <script src="https://kit.fontawesome.com/6a766525cc.js" crossorigin="anonymous"></script>
+
+    <title>SahilVillam</title>
 
 </head>
 <body class="no-transition">
 <div id="page-wrapper">
-    @include('layout.header',$categories)
+    @include('layout.header')
     @yield('content')
     @include('layout.footer')
-    @include('layout.script')
-    @yield('javascript')
-    <script>
-        /**/
-        $(document).ready(function () {
-            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-            $(".twelve").on('click', '.add-wishlist', function () {
-                alert("teset");
-                let w = $(this).attr('data-id');
-                $.ajax({
-                    type: "POST",
-                    url: "account/wishlist",
-                    data: 'w=' + w,
-                    success: function (data) {
-                        if (data.confirm == 1) {
-                            $(this).html('<i class="icon icon-check-22"></i>');
-                        } else {
-                            $(this).html('<i class="icon icon-add-wishlist"></i>');
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-    <script src="{{asset("view/custom/moment.min.js")}}"></script>
-    <script src="{{asset("view/custom/jquery.daterangepicker.min.js")}}"></script>
-    <script>
-        $("#guest").change(function () {
-            let data = $('#villaReservation').serialize()
-            $.ajax({
-                url: '/villaCalculate',
-                type: 'POST',
-                data: data,
-                success: function (data) {
-                    console.log(data);
-                }
-            });
-        });
-
-        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}})
-        $(document).ready(function () {
-            $('#checkoutdate').change(function () {
-                let c = $('input[name=checkoutdate]').val()
-                alert(c)
-            });
-            $('#villaReservation').on('click', '.villacheck', function () {
-                let data = $('#villaReservation').serialize()
-                $.ajax({
-                    url: '/villaCheck',
-                    type: 'POST',
-                    data: data,
-                    success: function (data) {
-                        if (data.url) {
-                            window.location.replace(data.url);
-                        } else {
-                            alert('Belitilen günlerde müsaitlik bulunmuyor');
-                        }
-                    }
-                });
-            });
-        });
-        var highlightdates = [moment('22.12.2017', 'DD.MM.YYYY'), moment('24.01.2018', 'DD.MM.YYYY')]
-
-        $(document).ready(function () {
-
-            $('#date-range12').dateRangePicker(
-                {
-                    inline: true,
-                    container: '#date-range12-container',
-                    alwaysOpen: true,
-                    format: 'DD.MM.YYYY',
-                    autoApply : true,
-                    separator: ' to ',
-                    language: 'tr',
-                    showTopbar: false,
-                    showWeekNumbers: false,
-                    extraClass: 'date-range-picker19',
-                    monthSelect: true,
-                    yearSelect: true,
-                    customArrowPrevSymbol: '<a href="#" class="fa-blok fa fa-arrow-circle-left"></a>',
-                    customArrowNextSymbol: '<a href="#" class="fa-blok fa fa-arrow-circle-right"></a>',
-                    //maxDays: 7,
-                    minDays: 3,
-                    startDate: moment(),
-                    startOfWeek: 'monday',
-                    customTopBar: 'Tarih Aralığı Seçiniz',
-                    showDateFilter: function (time, date) {
-                        var doHighlight = highlightdates.some(function (item) {
-                            //alert(item.isSame(moment(time), 'day'))
-                            return (item.isSame(moment(time), 'day') && item.isSame(moment(time), 'month') && item.isSame(moment(time), 'year'))
-                        })
-                        return '<div ' + (doHighlight ? 'class="highlight"' : '') + ' style="padding:0 5px;">' +
-                            '<span style="font-weight:bold">' + date + '</span>' +
-                            '<div style="opacity:0.3;">$' + Math.round(Math.random() * 999) + '</div>' +
-                            '</div>';
-                    }, function(start, end, label) {
-                        alert(start);
-                    }
-                });
-            $(".month-wrapper").on('click', '.last-date-selected', function () {
-                $(".last-date-selected").click(function () {
-                    alert($(".first-date-selected").html());
-                });
-            });
-        });
-    </script>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous')}}"></script>
+<script src="{{asset('public/view/library/main.js')}}"></script>
+
+<script src="{{asset('public/view/library/jquery-2.2.0.min.js')}}"></script>
+<script src="{{asset('public/view/library/flexmenu.js')}}"></script>
+<script src="{{asset('public/view/library/nouislider.min.js')}}"></script>
+<script src="{{asset('public/view/library/wNumb.js')}}"></script>
+
+<script src="{{asset('public/view/library/jrespond.min.js')}}"></script>
+<script src="{{asset('public/view/library/scrollspy.min.js')}}"></script>
+
+<script src="{{asset('public/view/library/visibility.js')}}"></script>
+
+<script src="{{asset('public/view/library/accordion.js')}}"></script>
+<script src="{{asset('public/view/library/dropdown-custom.js')}}"></script>
+<script src="{{asset('public/view/library/sticky.js')}}"></script>
+
+<script src="{{asset('public/view/library/page-transition.js')}}"></script>
+<script src="{{asset('public/view/library/checkbox.js')}}"></script>
+<script src="{{asset('public/view/library/transition.js')}}"></script>
+<script src="{{asset('public/view/library/sidebar.js')}}"></script>
+
+<script src="{{asset('public/view/library/modal.js')}}"></script>
+<script src="{{asset('public/view/library/dimmer.js')}}"></script>
+
+<!-- Datepicker -->
+<script src="{{asset('view/library/popup.js')}}"></script>
+<script src="{{asset('view/library/calendar.js')}}"></script>
+
+<!-- Slick -->
+<script src="{{asset('view/library/slick.js')}}"></script>
+
+<script src="{{asset('view/library/header.js')}}"></script>
+<script src="{{asset('view/library/functions.js')}}"></script>
+
 </body>
+
 </html>

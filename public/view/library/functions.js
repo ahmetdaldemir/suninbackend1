@@ -126,13 +126,13 @@ var SQ = SQ || {};
 		        SQ.main.modalUItrigger(this);
 		        return false;
 	        });
-
+				
 			/* Slick next / prev */
-
+			
 			$('.sq-next-button').click(function() {
                 $('.sq-slick').slick("slickNext");
              });
-
+			
 			$('.sq-prev-button').click(function() {
                 $('.sq-slick').slick("slickPrev");
              });
@@ -233,55 +233,11 @@ var SQ = SQ || {};
               }
             });
 
-            var calendarOpts = {
-                type: 'date',
-                formatter: {
-                    date: function (date, settings) {
-                        if (!date) return '';
-                        var day = date.getDate() + '';
-                        if (day.length < 2) {
-                            day = '0' + day;
-                        }
-                        var month = (date.getMonth() + 1) + '';
-                        if (month.length < 2) {
-                            month = '0' + month;
-                        }
-                        var year = date.getFullYear();
-                        return day + '/' + month + '/' + year;
-                    }
-                }
-            };
 
             $('#rangestart').calendar({
                 type: 'date',
                 endCalendar: $('#rangeend'),
-                formatter: {
-                    date: function (date, settings) {
-                        if (!date) return '';
-                        var day = date.getDate();
-                        if (day.length < 2) {
-                            day = 'x' + day;
-                        }
-                        var month = date.getMonth() + 1;
-                        if (month.length < 2) {
-                            month = 'x' + month;
-                        }
-                        var year = date.getFullYear();
-                        return day + '/' + month + '/' + year;
-                    }
-                },
-                onChange: function(date){
-                    var day = date.getDate();
-                    if (day.length < 2) {
-                        day = '0' + day;
-                    }
-                    var month = date.getMonth() + 1;
-                    if (month.length < 2) {
-                        month = '0' + month;
-                    }
-                    var year = date.getFullYear();
-                    $("#checkindate").val(year + '-' + month + '-' + day);
-                },
+                //inline: true,
                 className: {
                     prevIcon: "icon icon-arrow-left-122",
                     nextIcon: "icon icon-arrow-right-122"
@@ -291,35 +247,7 @@ var SQ = SQ || {};
             $('#rangeend').calendar({
                 type: 'date',
                 startCalendar: $('#rangestart'),
-                //endCalendar: alert('test'),//$('#calculate'),
-                formatter: {
-                    date: function (date, settings) {
-                        if (!date) return '';
-                        var day = date.getDate();
-                        if (day.length < 2) {
-                            day = '0' + day;
-                        }
-                        var month = date.getMonth() + 1;
-                        if (month.length < 2) {
-                            month = '0' + month;
-                        }
-                        var year = date.getFullYear();
-                        $("input#checkout").val(day + '/' + month + '/' + year);
-                        return day + '/' + month + '/' + year;
-                    }
-                },
-                onChange: function(date){
-                    var day = date.getDate();
-                    if (day.length < 2) {
-                        day = '0' + day;
-                    }
-                    var month = date.getMonth() + 1;
-                    if (month.length < 2) {
-                        month = '0' + month;
-                    }
-                    var year = date.getFullYear();
-                    $("#checkoutdate").val(year + '-' + month + '-' + day);
-                },
+                //inline: true,
                 className: {
                     prevIcon: "icon icon-arrow-left-122",
                     nextIcon: "icon icon-arrow-right-122"
@@ -419,7 +347,7 @@ var SQ = SQ || {};
 
             /* Slick Carousel  */
             SQ.main.slickCarousel();
-            setTimeout(function(){
+            setTimeout(function(){ 
                     $(".sq-slick").css("opacity", "1");
 			}, 400);
 
@@ -799,8 +727,8 @@ var SQ = SQ || {};
                    centerPadding: $centerPadding,
                    variableWidth: $variableWidth
                });
-
-
+                
+                
             });
         },
 

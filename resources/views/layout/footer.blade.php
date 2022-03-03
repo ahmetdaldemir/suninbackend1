@@ -1,86 +1,84 @@
+<!--FOOTER-->
 <div id="footer">
+
     <div class="footer-top">
-        <div class="ui grid container">
+
+        <div class="container-xxl">
             <div class="row">
-                <div class="ui six wide tablet four wide computer column">
-                    <h5>My Villa</h5>
-
-
+                <div class="mt-3 col-lg-3 col-md-6 col-12">
+                    <h5>İLETİŞİM BİLGİLERİ</h5>
                     <ul class="list-default-sq">
-                        <li><a href="">Hakkımızda</a></li>
-                        <li><a href="">SSS </a></li>
-                        <li><a href="">Destek</a></li>
-                        <li><a href="">Kiralama Şartları</a></li>
+                        <li>
+                            <a href=""><i class="fa-regular fa-map"></i>Adres:<span>Kalkan şehitler cad Kaş/Antalya</span></a>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-phone"></i>Telefon:<span>05434344444</span> </a></li>
+                        <li><a href=""><i class="fa-regular fa-envelope"></i>E-Mail Adresimiz:<span>info@sahilvillam.com</span></a></li>
+
+                    </ul>
+                </div>
+                <div class="mt-3 col-lg-3 col-md-6 col-12">
+                    <h5>YARDIM DESTEK</h5>
+                    <ul class="list-default-sq">
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>Rezervasyonlarım</a></li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>SSS</a></li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>Destek</a></li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>Kiralama Şartları</a></li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>Banka Hesapları</a></li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>İptal Şartları</a></li>
                     </ul>
 
                 </div>
-                <div class="ui six wide tablet four wide computer column">
-                    <h5>My Villa</h5>
+                <div class="mt-3 col-lg-3 col-md-6 col-12')}}">
 
-                    <ul class="list-default-sq">
-                        <li><a href="">Hakkımızda</a></li>
-                        <li><a href="">SSS </a></li>
-                        <li><a href="">Destek</a></li>
-                        <li><a href="">Kiralama Şartları</a></li>
+                    <h5>KİRALIK VİLLA TİPLERİ</h5>
+
+
+                    <ul class="list-default-sq')}}">
+                        <li>
+                            <a href=""><i class="fa-regular fa-circle-dot"></i>Balayı Villaları</a>
+                        </li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>Muhafazakar Villalar </a></li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>Çocuk Havuzlu Villalar </a></li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>Lüks Villalar </a></li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>Havuz Isıtmalı Villalar </a></li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>Denzi Manzaralı Villalar </a></li>
+                        <li><a href=""><i class="fa-regular fa-circle-dot"></i>Kiralık Apartlar</a></li>
+
                     </ul>
 
                 </div>
-                <div class="ui twelve wide tablet four wide computer column">
-                    <h5>My Villa</h5>
-                    <img src="{{asset('view/images/credit_card_image.jpg')}}">
+                <div class="mt-3 col-lg-3 col-md-6 col-12')}}">
+
+
+                    <img src="{{asset('view/images/guvenli-odeme3.png')}}">
                 </div>
-                <div class="ui six wide tablet four wide computer column">
-                    <h5>Bölgeler</h5>
 
-                    <ul class="list-default-sq">
-                        <li><a href="">Kuşadası</a></li>
-                        <li><a href="">Kemer</a></li>
-                        <li><a href="">Kaş</a></li>
-                        <li><a href="">Marmaris</a></li>
-                    </ul>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-md-9 col-12">
+                    <a href="" class="footer-logo">
+                        ©Copyright 2022 | Tüm Hakları Saklıdır.              </a>
                 </div>
-                <div class="ui six wide tablet four wide computer column">
-                    <h5></h5>
+                <div class="col-md-3 col-12')}}">
+                    <ul class="social-links-sq list-style-inline-sq list-default-sq">
+                        <li><a href="" class="fb')}}"><i class="icon icon-logo-facebook2"></i></a></li>
 
-                    <ul class="list-default-sq">
-                        <h5>&nbsp;</h5>
-                        <li><a href="">Fethiye</a></li>
-                        <li><a href="">Dalyan </a></li>
-                        <li><a href="">Bodrum</a></li>
-                        <li><a href="">Kayaköy</a></li>
-                    </ul>
+                        <li><a href="" class="tw"><i class="fa-brands fa-instagram"></i></a></li>
 
-                </div>
-                <div class="ui six wide tablet four wide computer column">
-                    <h5></h5>
-
-                    <ul class="list-default-sq">
-                        <h5>&nbsp;</h5>
-                        <li><a href="">Marmaris</a></li>
-                        <li><a href="">Datça </a></li>
-                        <li><a href="">Gökova</a></li>
-                        <li><a href="">Side</a></li>
+                        <li><a href="" class="gp"><i class="fa-brands fa-twitter"></i></a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-<div class="footer-bottom">
-    <div class="ui grid container">
-        <div class="row">
-            <div class="ui twelve wide mobile eight wide computer column">
-                <a href="" class="footer-logo"><img src="{{asset('view/images/logo.svg')}}" srcset="{{asset('view/images/logo.svg')}} 1x, {{asset('view/images/logo.svg')}} 2x" alt="mybnb logo" >
-                    © My Villa <?php echo date('Y');  ?></a>
-            </div>
-            <div class="ui twelve wide mobile four wide computer column">
-                <ul class="social-links-sq list-style-inline-sq list-default-sq">
-                    <li><a href="" class="fb"><i class="icon icon-logo-facebook2"></i></a></li>
 
-                    <li><a href="" class="tw"><i class="icon icon-logo-twitter-bird2"></i></a></li>
-
-                    <li><a href="" class="gp"><i class="icon icon-logo-circle-google-plus-22"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div></div>
+</div>

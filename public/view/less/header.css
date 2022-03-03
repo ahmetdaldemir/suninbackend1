@@ -125,11 +125,8 @@ on .header-item:
 .header-section.equal-header-items .header-item {
   width: 33.3%;
 }
-@media only screen and (max-width: 767px) {
-  .header-section.equal-mobile-header-items .header-item {
-    width: 33.3%;
-  }
-}
+
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header-section.equal-tablet-header-items .header-item {
     width: 33.3%;
@@ -194,7 +191,7 @@ on .header-item:
     Header - All Transitions
 ------------------------------------------------*/
 /* Using for header-resize, header-slide-up, header-menu-default, and header-transparent */
-.header-section.header-sticky.is-sticky {
+.header-section.header-sticky.is-sticky{
   /* bottom have transition on margin */
 }
 .header-section.header-sticky.is-sticky .header-content {
@@ -272,7 +269,7 @@ on .header-item:
 }
 @media only screen and (min-width: 768px) {
   .header-section.ths {
-    height: 70px;
+    height: 100px;
   }
 }
 .header-section.ths .header-content {
@@ -333,7 +330,7 @@ on .header-item:
 }
 .header-section.ths a.item:hover,
 .header-section.ths a.item:focus {
-  color: #F0114C;
+  color: white;
 }
 .header-section.ths input::-moz-placeholder {
   color: #8f8f8f;
@@ -374,59 +371,59 @@ on .header-item:
 .header-section.ths .ui.dropdown .menu .selected.item,
 .header-section.ths input[type="checkbox"]:checked + label:before,
 .header-section.ths input[type="radio"]:checked + label:before {
-  border-color: #F0114C;
+  border-color: white;
 }
 .header-section.ths input[type="checkbox"]:checked + label:before,
 .header-section.ths input[type="radio"]:checked + label:before {
-  background-color: #F0114C;
+  background-color: white;
 }
 .header-section.ths select {
   background-image: linear-gradient(45deg, transparent 50%, #1f1f1f), linear-gradient(135deg, #1f1f1f, transparent 50%);
 }
 .header-section.ths select:focus,
 .header-section.ths select:active {
-  background-image: linear-gradient(45deg, transparent 50%, #F0114C), linear-gradient(135deg, #F0114C, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, white), linear-gradient(135deg, white, transparent 50%);
 }
 .header-section.ths .ui.dropdown .menu > .item:not(.active):hover {
   background-color: transparent;
-  color: #F0114C;
+  color: white;
 }
 .header-section.ths .ui.dropdown .menu .selected.item {
-  background-color: #F0114C;
+  background-color: white;
   color: white;
 }
 .header-section.ths .calendar-sq .ui.table tbody tr td.link.today:before {
-  background: #F0114C;
-  border-color: #F0114C;
+  background: white;
+  border-color: white;
 }
 .header-section.ths .calendar-sq .ui.table tbody tr td.link.focus:not(.today),
 .header-section.ths .calendar-sq .ui.table tbody tr td.link.range:not(.today) {
-  color: #F0114C;
+  color: white;
 }
 .header-section.ths .calendar-sq .ui.table tbody tr td.link.focus:before,
 .header-section.ths .calendar-sq .ui.table tbody tr td.link.active:before,
 .header-section.ths .calendar-sq .ui.table tbody tr td.link.active.focus:before,
 .header-section.ths .calendar-sq .ui.table tbody tr td.link.range.focus:before {
-  border-color: #F0114C;
+  border-color: white;
 }
 .header-section.ths .calendar-sq .ui.table tbody tr td.link.active:before,
 .header-section.ths .calendar-sq .ui.table tbody tr td.link.active.focus:before {
-  background: #F0114C;
+  background: white;
 }
 .header-section.ths .hamburger .hamburger-box .hamburger-inner,
 .header-section.ths .hamburger .hamburger-box .hamburger-inner:before,
 .header-section.ths .hamburger .hamburger-box .hamburger-inner:after {
-  background-color: #1f1f1f;
+  background-color: black;
 }
 .header-section.ths .price-range-slider .noUi-handle {
-  border-color: #F0114C;
+  border-color: white;
 }
 .header-section.ths .price-range-slider .noUi-active,
 .header-section.ths .price-range-slider .noUi-connect {
-  background: #F0114C;
+  background: white;
 }
 .header-section.ths .price-range-slider .noUi-background {
-  background: #bcbcbc;
+  background: white;
 }
 .header-section.ths .fltp.search-sq input[type="text"]:focus,
 .header-section.ths .fltp.search-sq input[type="text"]:valid {
@@ -499,7 +496,7 @@ on .header-item:
 }
 .ths.header-transparent.is-transparent input[type="checkbox"]:checked + label:before,
 .ths.header-transparent.is-transparent input[type="radio"]:checked + label:before {
-  background-color: #F0114C;
+  background-color: white;
 }
 .ths.header-transparent.is-transparent select {
   background-image: linear-gradient(45deg, transparent 50%, #fff), linear-gradient(135deg, #fff, transparent 50%);
@@ -513,12 +510,12 @@ on .header-item:
   color: #BEBEBE;
 }
 .ths.header-transparent.is-transparent .ui.dropdown .menu .selected.item {
-  background-color: #BEBEBE;
+  background-color: white;
   color: white;
 }
 .ths.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.today:before {
-  background: #F0114C;
-  border-color: #F0114C;
+  background: white;
+  border-color: white;
 }
 .ths.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.focus:not(.today),
 .ths.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.range:not(.today) {
@@ -532,7 +529,7 @@ on .header-item:
 }
 .ths.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.active:before,
 .ths.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.active.focus:before {
-  background: #BEBEBE;
+  background: white;
 }
 .ths.header-transparent.is-transparent .hamburger .hamburger-box .hamburger-inner,
 .ths.header-transparent.is-transparent .hamburger .hamburger-box .hamburger-inner:before,
@@ -693,7 +690,7 @@ on .header-item:
 }
 .ths .menu-default.burger-sidemenu-styles a.item:hover,
 .ths .menu-default.burger-sidemenu-styles a.item:focus {
-  color: #F0114C;
+  color: white;
 }
 .ths .menu-default.burger-sidemenu-styles input::-moz-placeholder {
   color: #8f8f8f;
@@ -737,68 +734,68 @@ on .header-item:
 .ths .menu-default.burger-sidemenu-styles .ui.dropdown .menu .selected.item,
 .ths .menu-default.burger-sidemenu-styles input[type="checkbox"]:checked + label:before,
 .ths .menu-default.burger-sidemenu-styles input[type="radio"]:checked + label:before {
-  border-color: #F0114C;
+  border-color: white;
 }
 .ths .menu-default.burger-sidemenu-styles input[type="checkbox"]:checked + label:before,
 .ths .menu-default.burger-sidemenu-styles input[type="radio"]:checked + label:before {
-  background-color: #F0114C;
+  background-color: white;
 }
 .ths .menu-default.burger-sidemenu-styles select {
   background-image: linear-gradient(45deg, transparent 50%, #1f1f1f), linear-gradient(135deg, #1f1f1f, transparent 50%);
 }
 .ths .menu-default.burger-sidemenu-styles select:focus,
 .ths .menu-default.burger-sidemenu-styles select:active {
-  background-image: linear-gradient(45deg, transparent 50%, #F0114C), linear-gradient(135deg, #F0114C, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, white), linear-gradient(135deg, white, transparent 50%);
 }
 .ths .menu-default.burger-sidemenu-styles .ui.dropdown .menu > .item:not(.active):hover {
   background-color: transparent;
-  color: #F0114C;
+  color: white;
 }
 .ths .menu-default.burger-sidemenu-styles .ui.dropdown .menu .selected.item {
-  background-color: #F0114C;
+  background-color: white;
   color: white;
 }
 .ths .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.today:before {
-  background: #F0114C;
-  border-color: #F0114C;
+  background: white;
+  border-color: white;
 }
 .ths .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.focus:not(.today),
 .ths .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.range:not(.today) {
-  color: #F0114C;
+  color: white;
 }
 .ths .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.focus:before,
 .ths .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.active:before,
 .ths .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.active.focus:before,
 .ths .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.range.focus:before {
-  border-color: #F0114C;
+  border-color: white;
 }
 .ths .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.active:before,
 .ths .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.active.focus:before {
-  background: #F0114C;
+  background: white;
 }
 .ths .menu-default.burger-sidemenu-styles .hamburger .hamburger-box .hamburger-inner,
 .ths .menu-default.burger-sidemenu-styles .hamburger .hamburger-box .hamburger-inner:before,
 .ths .menu-default.burger-sidemenu-styles .hamburger .hamburger-box .hamburger-inner:after {
-  background-color: #1f1f1f;
+  background-color: white;
 }
 .ths .menu-default.burger-sidemenu-styles .price-range-slider .noUi-connect,
 .ths .menu-default.burger-sidemenu-styles .price-range-slider .noUi-handle {
-  background: #F0114C;
+  background: white;
 }
 .ths .menu-default.burger-sidemenu-styles .price-range-slider .noUi-active,
 .ths .menu-default.burger-sidemenu-styles .price-range-slider .noUi-active {
-  border-color: #F0114C;
+  border-color: white;
 }
 .ths .menu-default.burger-sidemenu-styles .price-range-slider .price-range-placeholder {
   color: #1f1f1f;
 }
 .ths .menu-default.burger-sidemenu-styles .price-range-slider .noUi-background {
-  background: #bcbcbc;
+  background: white;
 }
 @media only screen and (max-width: 767px) {
   .ths .menu-default.burger-sidemenu-styles .price-range-slider .noUi-connect,
   .ths .menu-default.burger-sidemenu-styles .price-range-slider .noUi-background {
-    box-shadow: 0px 1px 0px 0px #F0114C, 0px -1px 0px 0px #F0114C;
+    box-shadow: 0px 1px 0px 0px white, 0px -1px 0px 0px white;
   }
   .ths .menu-default.burger-sidemenu-styles .price-range-slider .mobile-big-sq .noUi-background {
     box-shadow: 0px 1px 0px 0px #d2d2d2, 0px -1px 0px 0px #d2d2d2;
@@ -835,7 +832,7 @@ on .header-item:
 .ths .menu-default.burger-modal-styles a.item:hover,
 .ths .menu-default.burger-modal-styles a.item:focus,
 .ths .menu-default.burger-modal-styles .fltp.modal-icons .ui.dropdown .menu .item.selected {
-  color: #F0114C;
+  color: white;
 }
 .ths .menu-default.burger-modal-styles input::-moz-placeholder {
   color: #8f8f8f;
@@ -876,7 +873,7 @@ on .header-item:
   border-color: #8f8f8f !important;
 }
 .ths .menu-default.burger-modal-styles hr {
-  background-color: #8f8f8f;
+  background-color: white;
 }
 .ths .menu-default.burger-modal-styles input:focus,
 .ths .menu-default.burger-modal-styles select:focus,
@@ -887,67 +884,67 @@ on .header-item:
 .ths .menu-default.burger-modal-styles input[type="checkbox"]:checked + label:before,
 .ths .menu-default.burger-modal-styles input[type="radio"]:checked + label:before,
 .ths .menu-default.burger-modal-styles .fltp.modal-icons .ui.dropdown .menu .item.selected {
-  border-color: #F0114C;
+  border-color: white;
 }
 .ths .menu-default.burger-modal-styles .fltp .ui.dropdown.active,
 .ths .menu-default.burger-modal-styles .fltp .ui.dropdown.active .menu {
-  border-color: #F0114C !important;
+  border-color: white !important;
 }
 .ths .menu-default.burger-modal-styles input[type="checkbox"]:checked + label:before,
 .ths .menu-default.burger-modal-styles input[type="radio"]:checked + label:before {
-  background-color: #F0114C;
+  background-color: white;
 }
 .ths .menu-default.burger-modal-styles select {
   background-image: linear-gradient(45deg, transparent 50%, #1f1f1f), linear-gradient(135deg, #1f1f1f, transparent 50%);
 }
 .ths .menu-default.burger-modal-styles select:focus,
 .ths .menu-default.burger-modal-styles select:active {
-  background-image: linear-gradient(45deg, transparent 50%, #F0114C), linear-gradient(135deg, #F0114C, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, white), linear-gradient(135deg, white, transparent 50%);
 }
 .ths .menu-default.burger-modal-styles .ui.dropdown .menu > .item:not(.active):hover {
   background-color: transparent;
-  color: #F0114C;
+  color: white;
 }
 .ths .menu-default.burger-modal-styles .ui.dropdown .menu .selected.item {
-  background-color: #F0114C;
+  background-color: white;
   color: white;
 }
 .ths .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.today:before {
-  background: #F0114C;
-  border-color: #F0114C;
+  background: white;
+  border-color: white;
 }
 .ths .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.focus:not(.today),
 .ths .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.range:not(.today) {
-  color: #F0114C;
+  color: white;
 }
 .ths .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.focus:before,
 .ths .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.active:before,
 .ths .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.active.focus:before,
 .ths .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.range.focus:before {
-  border-color: #F0114C;
+  border-color: white;
 }
 .ths .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.active:before,
 .ths .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.active.focus:before {
-  background: #F0114C;
+  background: white;
 }
 .ths .menu-default.burger-modal-styles .hamburger .hamburger-box .hamburger-inner,
 .ths .menu-default.burger-modal-styles .hamburger .hamburger-box .hamburger-inner:before,
 .ths .menu-default.burger-modal-styles .hamburger .hamburger-box .hamburger-inner:after {
-  background-color: #1f1f1f;
+  background-color: white;
 }
 .ths .menu-default.burger-modal-styles .price-range-slider .noUi-handle {
-  border-color: #F0114C;
+  border-color: white;
 }
 .ths .menu-default.burger-modal-styles .price-range-slider .noUi-active,
 .ths .menu-default.burger-modal-styles .price-range-slider .noUi-connect {
-  background: #F0114C;
+  background: white;
 }
 .ths .menu-default.burger-modal-styles .price-range-slider .noUi-background {
-  background: #bcbcbc;
+  background: white;
 }
 @media only screen and (max-width: 767px) {
   .ths .menu-default.burger-modal-styles .price-range-slider .noUi-connect {
-    box-shadow: 0px 1px 0px 0px #F0114C, 0px -1px 0px 0px #F0114C;
+    box-shadow: 0px 1px 0px 0px white, 0px -1px 0px 0px white;
   }
 }
 .ths .menu-default.burger-modal-styles .has-megamenu > .submenu > .item {
@@ -1049,7 +1046,7 @@ on .header-item:
 }
 .header-section.mhs a.item:hover,
 .header-section.mhs a.item:focus {
-  color: #F0114C;
+  color: white;
 }
 .header-section.mhs input::-moz-placeholder {
   color: #b6b6b6;
@@ -1090,59 +1087,59 @@ on .header-item:
 .header-section.mhs .ui.dropdown .menu .selected.item,
 .header-section.mhs input[type="checkbox"]:checked + label:before,
 .header-section.mhs input[type="radio"]:checked + label:before {
-  border-color: #F0114C;
+  border-color: white;
 }
 .header-section.mhs input[type="checkbox"]:checked + label:before,
 .header-section.mhs input[type="radio"]:checked + label:before {
-  background-color: #F0114C;
+  background-color: white;
 }
 .header-section.mhs select {
   background-image: linear-gradient(45deg, transparent 50%, #6D6D6D), linear-gradient(135deg, #6D6D6D, transparent 50%);
 }
 .header-section.mhs select:focus,
 .header-section.mhs select:active {
-  background-image: linear-gradient(45deg, transparent 50%, #F0114C), linear-gradient(135deg, #F0114C, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, white), linear-gradient(135deg, white, transparent 50%);
 }
 .header-section.mhs .ui.dropdown .menu > .item:not(.active):hover {
   background-color: transparent;
-  color: #F0114C;
+  color: white;
 }
 .header-section.mhs .ui.dropdown .menu .selected.item {
-  background-color: #F0114C;
+  background-color: white;
   color: white;
 }
 .header-section.mhs .calendar-sq .ui.table tbody tr td.link.today:before {
-  background: #FD386C;
+  background: white;
   border-color: #FD386C;
 }
 .header-section.mhs .calendar-sq .ui.table tbody tr td.link.focus:not(.today),
 .header-section.mhs .calendar-sq .ui.table tbody tr td.link.range:not(.today) {
-  color: #F0114C;
+  color: white;
 }
 .header-section.mhs .calendar-sq .ui.table tbody tr td.link.focus:before,
 .header-section.mhs .calendar-sq .ui.table tbody tr td.link.active:before,
 .header-section.mhs .calendar-sq .ui.table tbody tr td.link.active.focus:before,
 .header-section.mhs .calendar-sq .ui.table tbody tr td.link.range.focus:before {
-  border-color: #F0114C;
+  border-color: white;
 }
 .header-section.mhs .calendar-sq .ui.table tbody tr td.link.active:before,
 .header-section.mhs .calendar-sq .ui.table tbody tr td.link.active.focus:before {
-  background: #F0114C;
+  background: white;
 }
 .header-section.mhs .hamburger .hamburger-box .hamburger-inner,
 .header-section.mhs .hamburger .hamburger-box .hamburger-inner:before,
 .header-section.mhs .hamburger .hamburger-box .hamburger-inner:after {
-  background-color: #6D6D6D;
+  background-color: white;
 }
 .header-section.mhs .price-range-slider .noUi-handle {
   border-color: #FD386C;
 }
 .header-section.mhs .price-range-slider .noUi-active,
 .header-section.mhs .price-range-slider .noUi-connect {
-  background: #FD386C;
+  background: white;
 }
 .header-section.mhs .price-range-slider .noUi-background {
-  background: #d3d3d3;
+  background: white;
 }
 .header-section.mhs .fltp.search-sq input[type="text"]:focus,
 .header-section.mhs .fltp.search-sq input[type="text"]:valid {
@@ -1215,7 +1212,7 @@ on .header-item:
 }
 .mhs.header-transparent.is-transparent input[type="checkbox"]:checked + label:before,
 .mhs.header-transparent.is-transparent input[type="radio"]:checked + label:before {
-  background-color: #F0114C;
+  background-color: white;
 }
 .mhs.header-transparent.is-transparent select {
   background-image: linear-gradient(45deg, transparent 50%, yellow), linear-gradient(135deg, yellow, transparent 50%);
@@ -1233,7 +1230,7 @@ on .header-item:
   color: white;
 }
 .mhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.today:before {
-  background: #c31b8f;
+  background: white;
   border-color: #c31b8f;
 }
 .mhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.focus:not(.today),
@@ -1248,7 +1245,7 @@ on .header-item:
 }
 .mhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.active:before,
 .mhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.active.focus:before {
-  background: red;
+  background: white;
 }
 .mhs.header-transparent.is-transparent .hamburger .hamburger-box .hamburger-inner,
 .mhs.header-transparent.is-transparent .hamburger .hamburger-box .hamburger-inner:before,
@@ -1501,7 +1498,7 @@ on .header-item:
 }
 .mhs .menu-default.burger-sidemenu-styles input[type="checkbox"]:checked + label:before,
 .mhs .menu-default.burger-sidemenu-styles input[type="radio"]:checked + label:before {
-  background-color: red;
+  background-color: white;
 }
 .mhs .menu-default.burger-sidemenu-styles select {
   background-image: linear-gradient(45deg, transparent 50%, #fff), linear-gradient(135deg, #fff, transparent 50%);
@@ -1515,7 +1512,7 @@ on .header-item:
   color: red;
 }
 .mhs .menu-default.burger-sidemenu-styles .ui.dropdown .menu .selected.item {
-  background-color: red;
+  background-color: white;
   color: white;
 }
 .mhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.today:before {
@@ -1534,7 +1531,7 @@ on .header-item:
 }
 .mhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.active:before,
 .mhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.active.focus:before {
-  background: red;
+  background: white;
 }
 .mhs .menu-default.burger-sidemenu-styles .hamburger .hamburger-box .hamburger-inner,
 .mhs .menu-default.burger-sidemenu-styles .hamburger .hamburger-box .hamburger-inner:before,
@@ -1553,7 +1550,7 @@ on .header-item:
   color: #fff;
 }
 .mhs .menu-default.burger-sidemenu-styles .price-range-slider .noUi-background {
-  background: #4d4d4d;
+  background: white;
 }
 @media only screen and (max-width: 767px) {
   .mhs .menu-default.burger-sidemenu-styles .price-range-slider .noUi-connect,
@@ -1595,7 +1592,7 @@ on .header-item:
 .mhs .menu-default.burger-modal-styles a.item:hover,
 .mhs .menu-default.burger-modal-styles a.item:focus,
 .mhs .menu-default.burger-modal-styles .fltp.modal-icons .ui.dropdown .menu .item.selected {
-  color: #F0114C;
+  color: white;
 }
 .mhs .menu-default.burger-modal-styles input::-moz-placeholder {
   color: #b6b6b6;
@@ -1636,7 +1633,7 @@ on .header-item:
   border-color: #b6b6b6 !important;
 }
 .mhs .menu-default.burger-modal-styles hr {
-  background-color: #b6b6b6;
+  background-color: white;
 }
 .mhs .menu-default.burger-modal-styles input:focus,
 .mhs .menu-default.burger-modal-styles select:focus,
@@ -1647,63 +1644,63 @@ on .header-item:
 .mhs .menu-default.burger-modal-styles input[type="checkbox"]:checked + label:before,
 .mhs .menu-default.burger-modal-styles input[type="radio"]:checked + label:before,
 .mhs .menu-default.burger-modal-styles .fltp.modal-icons .ui.dropdown .menu .item.selected {
-  border-color: #F0114C;
+  border-color: white;
 }
 .mhs .menu-default.burger-modal-styles .fltp .ui.dropdown.active,
 .mhs .menu-default.burger-modal-styles .fltp .ui.dropdown.active .menu {
-  border-color: #F0114C !important;
+  border-color: white !important;
 }
 .mhs .menu-default.burger-modal-styles input[type="checkbox"]:checked + label:before,
 .mhs .menu-default.burger-modal-styles input[type="radio"]:checked + label:before {
-  background-color: #F0114C;
+  background-color: white;
 }
 .mhs .menu-default.burger-modal-styles select {
   background-image: linear-gradient(45deg, transparent 50%, #6D6D6D), linear-gradient(135deg, #6D6D6D, transparent 50%);
 }
 .mhs .menu-default.burger-modal-styles select:focus,
 .mhs .menu-default.burger-modal-styles select:active {
-  background-image: linear-gradient(45deg, transparent 50%, #F0114C), linear-gradient(135deg, #F0114C, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, white), linear-gradient(135deg, white, transparent 50%);
 }
 .mhs .menu-default.burger-modal-styles .ui.dropdown .menu > .item:not(.active):hover {
   background-color: transparent;
-  color: #F0114C;
+  color: white;
 }
 .mhs .menu-default.burger-modal-styles .ui.dropdown .menu .selected.item {
-  background-color: #F0114C;
+  background-color: white;
   color: white;
 }
 .mhs .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.today:before {
-  background: #FD386C;
+  background: white;
   border-color: #FD386C;
 }
 .mhs .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.focus:not(.today),
 .mhs .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.range:not(.today) {
-  color: #F0114C;
+  color: white;
 }
 .mhs .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.focus:before,
 .mhs .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.active:before,
 .mhs .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.active.focus:before,
 .mhs .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.range.focus:before {
-  border-color: #F0114C;
+  border-color: white;
 }
 .mhs .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.active:before,
 .mhs .menu-default.burger-modal-styles .calendar-sq .ui.table tbody tr td.link.active.focus:before {
-  background: #F0114C;
+  background: white;
 }
 .mhs .menu-default.burger-modal-styles .hamburger .hamburger-box .hamburger-inner,
 .mhs .menu-default.burger-modal-styles .hamburger .hamburger-box .hamburger-inner:before,
 .mhs .menu-default.burger-modal-styles .hamburger .hamburger-box .hamburger-inner:after {
-  background-color: #6D6D6D;
+  background-color: white;
 }
 .mhs .menu-default.burger-modal-styles .price-range-slider .noUi-handle {
   border-color: #FD386C;
 }
 .mhs .menu-default.burger-modal-styles .price-range-slider .noUi-active,
 .mhs .menu-default.burger-modal-styles .price-range-slider .noUi-connect {
-  background: #FD386C;
+  background: white;
 }
 .mhs .menu-default.burger-modal-styles .price-range-slider .noUi-background {
-  background: #d3d3d3;
+  background: white;
 }
 @media only screen and (max-width: 767px) {
   .mhs .menu-default.burger-modal-styles .price-range-slider .noUi-connect {
@@ -1732,7 +1729,7 @@ on .header-item:
   }
 }
 .header-section.bhs .header-content {
-  background: #D3E7FF;
+  background: white;
   font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 16px;
   letter-spacing: 0.3px;
@@ -1749,7 +1746,7 @@ on .header-item:
   }
 }
 .header-section.bhs.header-boxed .header-content > .ui.container {
-  background: #D3E7FF;
+  background: white;
 }
 .header-section.bhs.header-boxed.header-slide-up.header-sticky.is-sticky .header-content > .ui.container:before {
   background: transparent;
@@ -1858,11 +1855,11 @@ on .header-item:
   color: #00a04a;
 }
 .header-section.bhs .ui.dropdown .menu .selected.item {
-  background-color: #00a04a;
+  background-color: white;
   color: white;
 }
 .header-section.bhs .calendar-sq .ui.table tbody tr td.link.today:before {
-  background: #c31b8f;
+  background: white;
   border-color: #c31b8f;
 }
 .header-section.bhs .calendar-sq .ui.table tbody tr td.link.focus:not(.today),
@@ -1882,21 +1879,21 @@ on .header-item:
 .header-section.bhs .hamburger .hamburger-box .hamburger-inner,
 .header-section.bhs .hamburger .hamburger-box .hamburger-inner:before,
 .header-section.bhs .hamburger .hamburger-box .hamburger-inner:after {
-  background-color: #000;
+  background-color: white;
 }
 .header-section.bhs .price-range-slider .noUi-handle {
   border-color: #c31b8f;
 }
 .header-section.bhs .price-range-slider .noUi-active,
 .header-section.bhs .price-range-slider .noUi-connect {
-  background: #c31b8f;
+  background: white;
 }
 .header-section.bhs .price-range-slider .noUi-background {
-  background: #94a2b3;
+  background: white;
 }
 .header-section.bhs .fltp.search-sq input[type="text"]:focus,
 .header-section.bhs .fltp.search-sq input[type="text"]:valid {
-  background-color: #D3E7FF;
+  background-color: white;
 }
 @media only screen and (max-width: 991px) {
   .header-section.bhs .fltp.search-sq input[type="text"]:focus,
@@ -1965,40 +1962,40 @@ on .header-item:
 }
 .bhs.header-transparent.is-transparent input[type="checkbox"]:checked + label:before,
 .bhs.header-transparent.is-transparent input[type="radio"]:checked + label:before {
-  background-color: #F0114C;
+  background-color: white;
 }
 .bhs.header-transparent.is-transparent select {
   background-image: linear-gradient(45deg, transparent 50%, yellow), linear-gradient(135deg, yellow, transparent 50%);
 }
 .bhs.header-transparent.is-transparent select:focus,
 .bhs.header-transparent.is-transparent select:active {
-  background-image: linear-gradient(45deg, transparent 50%, red), linear-gradient(135deg, red, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, white), linear-gradient(135deg, white, transparent 50%);
 }
 .bhs.header-transparent.is-transparent .ui.dropdown .menu > .item:not(.active):hover {
   background-color: transparent;
   color: red;
 }
 .bhs.header-transparent.is-transparent .ui.dropdown .menu .selected.item {
-  background-color: red;
+  background-color: white;
   color: white;
 }
 .bhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.today:before {
-  background: #c31b8f;
+  background: white;
   border-color: #c31b8f;
 }
 .bhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.focus:not(.today),
 .bhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.range:not(.today) {
-  color: red;
+  color: white;
 }
 .bhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.focus:before,
 .bhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.active:before,
 .bhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.active.focus:before,
 .bhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.range.focus:before {
-  border-color: red;
+  border-color: white;
 }
 .bhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.active:before,
 .bhs.header-transparent.is-transparent .calendar-sq .ui.table tbody tr td.link.active.focus:before {
-  background: red;
+  background: white;
 }
 .bhs.header-transparent.is-transparent .hamburger .hamburger-box .hamburger-inner,
 .bhs.header-transparent.is-transparent .hamburger .hamburger-box .hamburger-inner:before,
@@ -2172,7 +2169,7 @@ on .header-item:
 }
 .header-section.header-slide-up.header-sticky.is-sticky.bhs .header-content > .ui.container:before {
   content: '';
-  background: #D3E7FF;
+  background: white;
 }
 .header-section.header-slide-up.header-sticky.is-sticky.bhs.is-slide-up .header-content > .ui.container {
   margin-top: -50px;
@@ -2378,25 +2375,25 @@ on .header-item:
 .bhs .menu-default.burger-sidemenu-styles .ui.dropdown .menu .selected.item,
 .bhs .menu-default.burger-sidemenu-styles input[type="checkbox"]:checked + label:before,
 .bhs .menu-default.burger-sidemenu-styles input[type="radio"]:checked + label:before {
-  border-color: red;
+  border-color: white;
 }
 .bhs .menu-default.burger-sidemenu-styles input[type="checkbox"]:checked + label:before,
 .bhs .menu-default.burger-sidemenu-styles input[type="radio"]:checked + label:before {
-  background-color: red;
+  background-color: white;
 }
 .bhs .menu-default.burger-sidemenu-styles select {
   background-image: linear-gradient(45deg, transparent 50%, #fff), linear-gradient(135deg, #fff, transparent 50%);
 }
 .bhs .menu-default.burger-sidemenu-styles select:focus,
 .bhs .menu-default.burger-sidemenu-styles select:active {
-  background-image: linear-gradient(45deg, transparent 50%, red), linear-gradient(135deg, red, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, white), linear-gradient(135deg, white, transparent 50%);
 }
 .bhs .menu-default.burger-sidemenu-styles .ui.dropdown .menu > .item:not(.active):hover {
   background-color: transparent;
   color: red;
 }
 .bhs .menu-default.burger-sidemenu-styles .ui.dropdown .menu .selected.item {
-  background-color: red;
+  background-color: white;
   color: white;
 }
 .bhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.today:before {
@@ -2405,17 +2402,17 @@ on .header-item:
 }
 .bhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.focus:not(.today),
 .bhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.range:not(.today) {
-  color: red;
+  color: white;
 }
 .bhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.focus:before,
 .bhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.active:before,
 .bhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.active.focus:before,
 .bhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.range.focus:before {
-  border-color: red;
+  border-color: white;
 }
 .bhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.active:before,
 .bhs .menu-default.burger-sidemenu-styles .calendar-sq .ui.table tbody tr td.link.active.focus:before {
-  background: red;
+  background: white;
 }
 .bhs .menu-default.burger-sidemenu-styles .hamburger .hamburger-box .hamburger-inner,
 .bhs .menu-default.burger-sidemenu-styles .hamburger .hamburger-box .hamburger-inner:before,
@@ -2434,7 +2431,7 @@ on .header-item:
   color: #fff;
 }
 .bhs .menu-default.burger-sidemenu-styles .price-range-slider .noUi-background {
-  background: #4d4d4d;
+  background: white;
 }
 @media only screen and (max-width: 767px) {
   .bhs .menu-default.burger-sidemenu-styles .price-range-slider .noUi-connect,
@@ -2449,7 +2446,7 @@ on .header-item:
     Bottom Header Sidemenu
 --------------------------------------*/
 .bhs .menu-default.burger-modal-styles {
-  background: #D3E7FF;
+  background: white;
   /* COLORS */
 }
 .bhs .menu-default.burger-modal-styles .item {
@@ -2517,7 +2514,7 @@ on .header-item:
   border-color: #6a7380 !important;
 }
 .bhs .menu-default.burger-modal-styles hr {
-  background-color: #6a7380;
+  background-color: white;
 }
 .bhs .menu-default.burger-modal-styles input:focus,
 .bhs .menu-default.burger-modal-styles select:focus,
@@ -2577,14 +2574,14 @@ on .header-item:
   background-color: #000;
 }
 .bhs .menu-default.burger-modal-styles .price-range-slider .noUi-handle {
-  border-color: #c31b8f;
+  border-color: white;
 }
 .bhs .menu-default.burger-modal-styles .price-range-slider .noUi-active,
 .bhs .menu-default.burger-modal-styles .price-range-slider .noUi-connect {
-  background: #c31b8f;
+  background: white;
 }
 .bhs .menu-default.burger-modal-styles .price-range-slider .noUi-background {
-  background: #94a2b3;
+  background: #fff;
 }
 @media only screen and (max-width: 767px) {
   .bhs .menu-default.burger-modal-styles .price-range-slider .noUi-connect {
@@ -2742,7 +2739,7 @@ on .header-item:
 }
 @media only screen and (min-width: 768px) {
   .sticky-element.is-sticky.under-ths.ths-is-sticky > * {
-    top: 70px;
+    top: 150px;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -2753,9 +2750,7 @@ on .header-item:
 .sticky-element.is-sticky.under-ths.ths-is-sticky.ths-is-resized > * {
   top: 50px;
 }
-.sticky-element.is-sticky.under-ths.ths-is-sticky.ths-is-slide-up > * {
-  top: 0;
-}
+
 @media only screen and (min-width: 992px) {
   .sticky-element.is-sticky.under-ths.ths-is-sticky.ths-is-slide-up > * {
     max-height: 100%;
@@ -2793,16 +2788,12 @@ on .header-item:
     margin-top: -50px;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 992px) {
   .property-section-default {
     min-height: calc(100% - 50px - 50px);
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .property-section-default {
-    height: auto;
-  }
-}
+
 @media only screen and (min-width: 992px) {
   .property-section-default {
     height: calc(100% - (70px + 70px));
@@ -2841,7 +2832,7 @@ body.search-visible.modal-is-open .ths {
     padding-left: 58px;
   }
 }
-@media only screen and (max-width: 991px) and only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) and (max-width: 767px) {
   body.search-visible.modal-is-open .ths .header-content .header-item .fltp.search-sq input[type="text"]:focus,
   body.search-visible.modal-is-open .ths .header-content .header-item .fltp.search-sq input[type="text"]:valid {
     width: 80%;
@@ -3039,10 +3030,9 @@ body.search-visible.modal-is-open .modal .modal-trigger.close-sq {
   margin: 0 20px;
   outline: none;
 }
-.menu-default > ul li .item:not(input):hover,
-.menu-default > ul li .item:not(input):focus {
-  color: #F0114C;
-}
+
+
+
 .menu-default > ul > li > .submenu .item {
   width: 100%;
 }
@@ -3059,9 +3049,9 @@ body.search-visible.modal-is-open .modal .modal-trigger.close-sq {
   order: inherit;
 }
 .menu-default .item img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  width: 27px;
+  height: 18px;
+ 
   order: inherit;
 }
 .menu-default .item span + img {
@@ -3509,7 +3499,7 @@ body.search-visible.modal-is-open .modal .modal-trigger.close-sq {
 .filters-icon-container > .icon {
   font-size: 20px;
   margin-right: 14px !important;
-  color: #F0114C;
+  color: white;
 }
 /* Burger Default*/
 /* Usual Classes */
@@ -3600,7 +3590,7 @@ body.search-visible.modal-is-open .modal .modal-trigger.close-sq {
   bottom: 0;
   z-index: 111;
   transition: all 500ms ease;
-  background: #d5e5ff;
+  background: #fff;
 }
 @media only screen and (max-width: 767px) {
   .menu-default.burger-sidemenu-styles {
@@ -3628,7 +3618,7 @@ body.search-visible.modal-is-open .modal .modal-trigger.close-sq {
   margin: 0;
   padding: 50px;
   z-index: 1;
-  background: #d5e5ff;
+  background: #fff;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -4238,8 +4228,8 @@ body {
   display: none;
 }
 .menu-default.burger-modal-styles > ul .fltp.modal-icons .ui.dropdown .menu .item.selected {
-  color: #F0114C;
-  border-color: #F0114C;
+  color: white;
+  border-color: white;
 }
 .menu-default.burger-modal-styles > ul .fltp.modal-icons.two-columns .ui.dropdown.selection > .menu .item {
   width: calc((100% - 20px*(2 - 1))/2);
@@ -4440,5 +4430,5 @@ body.modal-is-open.burger-modal-styles #page-wrapper {
   }
 }
 .mhs .header-content .menu-default li.active > a {
-  color: #F0114C;
+  color: white;
 }

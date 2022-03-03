@@ -471,10 +471,10 @@
              hideOnScroll: !1
          },
          text: {
-             days: ["S", "M", "T", "W", "T", "F", "S"],
-             months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-             monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-             today: "Today",
+             days: ["P", "S", "Ç", "P", "C", "C", "P"],
+             months: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+             monthsShort: ["Ock", "Şub", "Mar", "Nisan", "May", "Haz", "Tem", "Ağus", "Eyl", "Ekm", "Kasm", "Aral"],
+             today: "Bugün",
              now: "Now",
              am: "AM",
              pm: "PM"
@@ -612,7 +612,7 @@
              }
          },
          onChange: function (e, t) {
-             return  e;
+             return !0
          },
          onShow: function () {},
          onVisible: function () {},
@@ -658,3 +658,4 @@
          }
      }
  })(jQuery, window, document);
+

@@ -1,0 +1,77 @@
+.header-top { 
+    width: 100%;
+    background: #38B3D0;
+    padding: 20px;
+    color: #fff;
+}
+.header-box {    
+    display: flex !important;
+    justify-content:space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    }
+.h-search-top { margin-top: 150px;}
+
+.mar-con{margin: 50px !important; }
+.v-ic { width: 100%; display: flex;}
+
+.header-bg { background: #fff; padding: 20px 20px !important; color: #186A7E; display: flex;  justify-content: space-evenly !important;}
+
+.top-1 { margin-right:30px; justify-content: baseline !important;}
+.top-2 { margin-right:30px; justify-content: baseline !important;}
+.top-3 { margin-right:30px; justify-content: baseline !important;}
+
+.hero-search-button { background-color: #FFCB05 !important; color: #186A7E !important; font-weight: bold !important;}
+.hero-search-button .icon {font-weight: bold !important; color: #186A7E !important;}
+.button-sq-top {
+    padding: 10px 20px;
+    background-color: #FFCB05; !important;
+    color: #186A7E !important;
+    justify-content: end;
+
+    -webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+.v-icon { background: #fff;  margin:0 10px 30px 0; display: flex; flex-wrap: wrap; justify-content: space-around; align-content: baseline;  padding: 30px; width: 100%; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; -webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;}
+.v-icon .img { height: 75px; margin-bottom: 10px;}
+.v-icon a { text-align: center;  }
+.v-icon a:hover { background: ;}
+.button-sq {background-color: #FFCB05; !important; color: #186A7E !important; border: none;}
+.button-sq:hover{background-color: #38B3D0; !important; color: #186A7E !important; border: none;}
+.typo-section-sq .typo-section-header-sq { padding-top: 50px !important; padding-bottom: 50px !important;}
+
+.caption-content { margin-top: 200px !important;}
+.property-item .property-item-inner .main-details { background:#38B3D0 !important; height: auto; left: 0 !important; padding: 10px; width: 100% !important; }
+.property-item .property-item-inner .main-details .icons-row .icons-column { color: #fff !important; font-weight: bold !important;}
+.property-item .property-item-inner p span { font-weight: 600;}
+
+.property-item .property-item-inner .property-name { flex-direction: row; padding: 10px; justify-content: space-between !important;} 
+.property-item .property-item-inner .property-name .title-row { display: flex; justify-content: space-between;}
+.property-item .property-item-inner .property-name .title-sq { font-weight: bold !important; font-size: 24px !important;}
+.property-item .property-item-inner  .property-fl {display: flex; justify-content: space-between; padding: 15px 15px; color:#186A7E ; border-top: 1px solid #e8e8e8;}
+
+.property-item { height: 485px !important; padding: 10px; background: #fff;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; -webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;}
+.property-item .property-item-inner { height: 350px !important;}
+.property-item .property-item-inner .price-tag-sq { background-color: #38B3D0 !important;}
+.responsive {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+.image-sq  {box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important; -webkit-border-radius: 10px !important;-moz-border-radius: 10px !important; border-radius: 10px !important;}
+.image-wrapper {-webkit-border-radius: 10px !important;-moz-border-radius: 10px !important; border-radius: 10px !important;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important; }
+@media only screen and (max-width: 480px) {
+    .mar-con {margin: 10px !important;}
+    .v-icon { text-align: center; flex-direction: column; justify-content: center !important; align-items: center;}
+    .v-icon .img { margin-bottom: 10px; }
+    .v-icon a { margin-bottom: 20px;}
+    .v-icon p { margin-bottom: 20px;}
+    .top-1 { margin-bottom: 25px !important; }
+    .top-2 {display: none;}
+    .h-search-top { margin-top: 0px;}
+    .mar-con { justify-content: center;}
+    .property-item .property-item-inner { height: 250px !important;}
+    .property-item { height: 440px !important;}
+    .property-item .property-item-inner  .property-fl { flex-direction: column;}
+    }
