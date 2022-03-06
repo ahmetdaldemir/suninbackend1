@@ -28,7 +28,7 @@ class UserRepository implements UserRepositoryInterface
     {
         $session = session()->get('rent_session');
         $data = [];
-        $results = User::where('tenant_id', $session['tenant_id'])->get();
+        $results = User::where('tenant_id', "67667cb9-3933-40ab-b248-02a7f819f870")->get();
         foreach ($results as $result) {
             $data[] = array(
                 'id' => $result->id,
@@ -54,7 +54,7 @@ class UserRepository implements UserRepositoryInterface
         $result->name = $data->name;
         $result->password = $data->password;
         $result->email = $data->email;
-        $result->tenant_id = $session['tenant_id'];
+        $result->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870";
         $result->save();
     }
 

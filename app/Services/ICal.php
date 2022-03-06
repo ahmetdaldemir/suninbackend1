@@ -16,7 +16,7 @@ class ICal
 
     public function __construct(string $code)
     {
-        $this->domain = "https://www.suninturkey.com";
+        $this->domain = "https://www.sahilvillam.com";
         $this->code = $code;
     }
 

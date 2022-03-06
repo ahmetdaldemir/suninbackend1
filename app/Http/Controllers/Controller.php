@@ -52,14 +52,15 @@ class Controller extends BaseController
 
     public function getCache()
     {
-        $x = ltrim(request()->getRequestUri(),"/?");
-        $y =   Cache::get($x);
-        if($y == null)
-        {
-            return redirect('sunintukey.xyz/app');
-        }
-        $this->tenant_id = $y['tenant_id'];
-        Session::put('rent_session', $y);
+//        $x = ltrim(request()->getRequestUri(),"/?");
+//        $y =   Cache::get($x);
+//        if($y == null)
+//        {
+//            return redirect('sahilvillam.com/app');
+//        }
+//        $this->tenant_id = $y['tenant_id'];
+//        Session::put('rent_session', $y);
+        Session::put('rent_session', "67667cb9-3933-40ab-b248-02a7f819f870");
     }
 
 

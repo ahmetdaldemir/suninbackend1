@@ -88,7 +88,7 @@ class MainController extends Controller
         $data['lang_id'] = $this->lang_id;
         $data['sliders'] = $this->sliderRepository->all();
         $data['destinations'] = $this->rentDestinationRepository->all();
-        //dd($data['villas']);
+        // dd($data['destinations']);
         return view('welcome', $data);
     }
 

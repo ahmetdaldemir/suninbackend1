@@ -56,7 +56,7 @@ class VillaController extends Controller
     public function index()
     {
         $data['villa'] = $this->villaRepository->all();
-        //dd($data);
+        // dd($data['villa']);
         //$month_name = array("January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December");
         //$gunlerIng = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
         $month_name = array("Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran","Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık");

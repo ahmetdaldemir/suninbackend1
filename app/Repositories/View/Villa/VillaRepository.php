@@ -272,7 +272,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         $villa->i_cal = $data->type; //varchar(255)
         $villa->destination_id = $data->destination_id; //char(36)
         $villa->tenant_id = $data->tenant_id; //char(36)
-        $villa->owner_id = $session['tenant_id']; //char(36)
+        $villa->owner_id = "67667cb9-3933-40ab-b248-02a7f819f870"; //char(36)
         $villa->video = $data->video;
         $villa->save();
 
@@ -365,7 +365,7 @@ class VillaRepository extends BaseRepository implements VillaRepositoryInterface
         $villa->airport_distance = $data->airport_distance; //varchar(255)
         $villa->i_cal = $data->type; //varchar(255)
         $villa->destination_id = $data->destination_id; //char(36)
-        $villa->tenant_id = $session['tenant_id']; //char(36)
+        $villa->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870"; //char(36)
         $villa->owner_id = $data->owner_id; //char(36)
         $blog->save();
 

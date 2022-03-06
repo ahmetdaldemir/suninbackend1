@@ -12,7 +12,7 @@ class SliderRepository extends BaseRepository implements SliderRepositoryInterfa
         foreach ($result as $slider) {
             $data[] = array(
                 'id' => $slider->id,
-                'category' => $slider,
+                'slider' => $slider,
                 'lang' => $slider->get_data()
             );
         }

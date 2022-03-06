@@ -61,7 +61,8 @@ class VillaRepository implements VillaRepositoryInterface
     {
         $session = session()->get('rent_session');
         $data = [];
-        $villas = Villa::where('owner_id',$session['tenant_id'])->get();
+        $villas = Villa::where('owner_id','482923fd-cd41-45a2-b9d6-14b1e9f5227b')->get();
+        // $villas = Villa::where('owner_id',"67667cb9-3933-40ab-b248-02a7f819f870")->get();
         foreach ($villas as $villa) {
             $data[] = array(
                 'id' => $villa->id,
@@ -111,7 +112,7 @@ class VillaRepository implements VillaRepositoryInterface
         $villa->i_cal = $data->type; //varchar(255)
         $villa->destination_id = json_encode($data->destination_id); //char(36)
         $villa->tenant_id = $data->tenant_id; //char(36)
-        $villa->owner_id = $session['tenant_id']; //char(36)
+        $villa->owner_id = "67667cb9-3933-40ab-b248-02a7f819f870"; //char(36)
         $villa->video = $data->videos;
         $villa->save();
 

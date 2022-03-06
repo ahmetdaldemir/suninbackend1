@@ -15,7 +15,7 @@ class SettingsRepository implements SettingsRepositoryInterface
     public function get()
     {
         $session = session()->get('rent_session');
-        $data = Setting::where('tenant_id', $session['tenant_id'])->first();
+        $data = Setting::where('tenant_id', "67667cb9-3933-40ab-b248-02a7f819f870")->first();
         if(empty($data['id'])){
             $setting = new Setting();
             $setting->id = Str::uuid()->toString();
@@ -31,9 +31,9 @@ class SettingsRepository implements SettingsRepositoryInterface
             $setting->google_tag_manager = '';
             $setting->google_analytics = '';
             $setting->languages = '';
-            $setting->tenant_id = $session['tenant_id'];
+            $setting->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870";
             $setting->save();
-            $data = Setting::where('tenant_id', $session['tenant_id'])->first();
+            $data = Setting::where('tenant_id', "67667cb9-3933-40ab-b248-02a7f819f870")->first();
         }
         return $data;
     }
@@ -42,7 +42,7 @@ class SettingsRepository implements SettingsRepositoryInterface
     {
         $session = session()->get('rent_session');
         $data = [];
-        $results = Setting::where('tenant_id', $session['tenant_id'])->get();
+        $results = Setting::where('tenant_id', "67667cb9-3933-40ab-b248-02a7f819f870")->get();
         foreach ($results as $result) {
             $data[] = array(
                 'id' => $result->id,
@@ -67,7 +67,7 @@ class SettingsRepository implements SettingsRepositoryInterface
         $result = new Blog();
         $result->id = $id;
         $result->image = $image;
-        $result->tenant_id = $session['tenant_id'];
+        $result->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870";
         $result->save();
 
         foreach ($data->title as $key => $value) {
@@ -98,7 +98,7 @@ class SettingsRepository implements SettingsRepositoryInterface
         }else{
             $favicon = 'global/'. $data->favicon_image;
         }
-        $setting = Setting::where('tenant_id', $session['tenant_id'])->first();
+        $setting = Setting::where('tenant_id', "67667cb9-3933-40ab-b248-02a7f819f870")->first();
         $setting->logo = $logo_image;
         $setting->favicon = @$favicon;
         $setting->phone = @$data->phone;

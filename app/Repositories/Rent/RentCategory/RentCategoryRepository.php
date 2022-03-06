@@ -31,7 +31,7 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
         $category_data = array();
         $session = session()->get('rent_session');
         $categories = Category::all();
-        $rentcategories = RentCategory::where('tenant_id',$session['tenant_id'])->get();
+        $rentcategories = RentCategory::where('tenant_id',"67667cb9-3933-40ab-b248-02a7f819f870")->get();
         foreach ($rentcategories as $result) {
             $data[] = array(
                 'id' => $result->id,
@@ -78,7 +78,7 @@ class RentCategoryRepository implements RentCategoryRepositoryInterface
         $save->id = $id;
         $save->category_id = $data[0]->id; //text
         $save->image = $data[0]->image; //text
-        $save->tenant_id = $session['tenant_id']; //char(36)
+        $save->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870"; //char(36)
         $save->save();
 
         foreach ($data['lang'] as $lang) {

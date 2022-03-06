@@ -31,7 +31,7 @@ class SliderRepository implements SliderRepositoryInterface
     {
         $session = session()->get('rent_session');
         $data = [];
-        $results = Slider::where('tenant_id', $session['tenant_id'])->get();
+        $results = Slider::where('tenant_id', "67667cb9-3933-40ab-b248-02a7f819f870")->get();
         foreach ($results as $result) {
             $data[] = array(
                 'id' => $result->id,
@@ -57,7 +57,7 @@ class SliderRepository implements SliderRepositoryInterface
         $result->id = $id;
         $result->image = $image;
         $result->status = $data->status;
-        $result->tenant_id = $session['tenant_id'];
+        $result->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870";
         $result->save();
 
         foreach ($data->title as $key => $value) {

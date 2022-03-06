@@ -50,7 +50,7 @@ class RentPageRepository implements RentPageRepositoryInterface
         $module_data = array();
         $session = session()->get('rent_session');
         $pages = Page::all();
-        $rentpages = RentPage::where('tenant_id',$session['tenant_id'])->get();
+        $rentpages = RentPage::where('tenant_id',"67667cb9-3933-40ab-b248-02a7f819f870")->get();
         foreach ($rentpages as $rentpage) {
             $page_data[$rentpage['page_id']] = array(
                 'id' => $rentpage['id'],
@@ -86,7 +86,7 @@ class RentPageRepository implements RentPageRepositoryInterface
         $save->id = $id;
         $save->page_id = $data[0]->id; //text
         $save->image = ''; //text
-        $save->tenant_id = $session['tenant_id']; //char(36)
+        $save->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870"; //char(36)
         $save->save();
     }
 

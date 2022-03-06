@@ -113,7 +113,7 @@
                     url: '/api/login',
                     data: $(this).serialize(),
                     success: function(response) {
-                        window.location.href = `https://${response.type}.suninturkey.xyz?${response.axios}`;
+                        window.location.href = `http://${response.type}.sahilvillam.com?${response.axios}`;
                     },
                     error: function(error) {
                         $('#submit').removeClass('disabled');

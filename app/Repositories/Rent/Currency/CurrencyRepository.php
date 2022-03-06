@@ -49,7 +49,7 @@ class CurrencyRepository implements CurrencyRepositoryInterface
         $result = new Currency();
         $result->id = $id;
         $result->status = $data->status;
-        $result->tenant_id = $session['tenant_id'];
+        $result->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870";
         $result->save();
         return redirect()->back();
     }

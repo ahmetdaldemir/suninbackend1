@@ -32,7 +32,7 @@ class ModuleRepository implements ModuleRepositoryInterface
         $module_data = array();
         $session = session()->get('rent_session');
         $modules = Module::all();
-        $rentmodules = RentModule::where('tenant_id',$session['tenant_id'])->get();
+        $rentmodules = RentModule::where('tenant_id',"67667cb9-3933-40ab-b248-02a7f819f870")->get();
 
         foreach ($rentmodules as $rentmodule) {
             $module_data[$rentmodule['module_id']] = array(
@@ -76,7 +76,7 @@ class ModuleRepository implements ModuleRepositoryInterface
         $save->content = ''; //text
         $save->type = $module[0]->type; //text
         $save->status = 0; //text
-        $save->tenant_id = $session['tenant_id']; //char(36)
+        $save->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870"; //char(36)
         $save->save();
     }
 

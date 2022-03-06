@@ -41,7 +41,7 @@ class RentDestinationRepository implements RentDestinationRepositoryInterface
         $module_data = array();
         $session = session()->get('rent_session');
         $destinations = Destination::all();
-        $rentdestinations = RentDestination::where('tenant_id', $session['tenant_id'])->get();
+        $rentdestinations = RentDestination::where('tenant_id', "67667cb9-3933-40ab-b248-02a7f819f870")->get();
         foreach ($rentdestinations as $rentdestination) {
             $module_data[$rentdestination['destination_id']] = array(
                 'id' => $rentdestination['id'],
@@ -83,7 +83,7 @@ class RentDestinationRepository implements RentDestinationRepositoryInterface
             $save->id = $id;
             $save->destination_id = $item->id;
             $save->image = '';
-            $save->tenant_id = $session['tenant_id'];
+            $save->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870";
             $save->save();
 
             $newid= $save->id;

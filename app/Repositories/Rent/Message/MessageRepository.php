@@ -15,7 +15,7 @@ class MessageRepository implements MessageRepositoryInterface
     public function all()
     {
         $session = session()->get('rent_session');
-        return Message::where('reply','0')->where('tenant_id',$session['tenant_id'])->get();
+        return Message::where('reply','0')->where('tenant_id',"67667cb9-3933-40ab-b248-02a7f819f870")->get();
     }
 
     public function delete($id)
@@ -41,7 +41,7 @@ class MessageRepository implements MessageRepositoryInterface
         $result->phone = '';
         $result->comment = $data->comment;
         $result->is_read = 1;
-        $result->tenant_id = $session['tenant_id'];
+        $result->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870";
         $result->save();
     }
 

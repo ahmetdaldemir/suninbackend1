@@ -2,497 +2,205 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b4a6bfa-9c82-47d5-8e32-aff7b3921f6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/view/icon/Icon_" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/icon/fonts/Icon_" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/apart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/england.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/guvenli-odeme3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/hero/hero_big_28.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/hero/hero_big_29.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/hero/hero_big_30.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/hero/hero_big_31.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/ico/Icon_" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/logo-svsiz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/property/1853fb66-24b3-4513-999f-3791c953ff50.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/property/2982436d-f924-448d-9294-1bd429a99aa9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/property/LIV_0889.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/property/blog.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/property/hakkimizda.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/property/holiday.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/property/kalkan.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/property/patara.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/sahil-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/ssl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/turkey.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/images/whatsapp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/less/components/Icon_" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/less/components/header-menu-default/Icon_" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/Icon_" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/library/Icon_" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view/library/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/icon/fonts/icon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/icon/fonts/icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/icon/fonts/icon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/icon/fonts/icon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/icon/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/clock.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/credit_card_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/facebook.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/honeymoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/ico/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/ico/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/icon-google-plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/kids.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/fethiye.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/gocek.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/kas.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/kemer.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_photo_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_photo_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/paypal_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/pets.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/phone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_big_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_big_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_big_03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_big_04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_big_05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_08.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_09.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/sea.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/securty.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/twitter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/villa.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/images/winter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/accordion.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/accordion.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/articles.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/articles.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/button-sq.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/button-sq.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/calendar.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/calendar.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/container.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/container.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/dashboard.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/dashboard.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/debug.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/default.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/default.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/dimmer.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/dimmer.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/divided-container.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/divided-container.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/dropdown.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/dropdown.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/floating-placeholder.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/floating-placeholder.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/footer.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/footer.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/general.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/general.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/grid.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/grid.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/hamburger.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/hamburger.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-menu-default.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-menu-default.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-menu-default/burger-default.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-menu-default/burger-modal.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-menu-default/burger-sidemenu.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-menu-default/burger-sticky.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-menu-default/flex-menu.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-menu-default/general.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-menu-default/megamenu.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-menu-default/special.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/bottom-header-general.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/bottom-header-modal.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/bottom-header-resize.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/bottom-header-sidemenu.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/bottom-header-slide-up.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/bottom-header-sticky.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/bottom-header-transparent.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/general.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/items-floating-placeholder.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/items-input-select.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/middle-header-general.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/middle-header-modal.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/middle-header-resize.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/middle-header-sidemenu.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/middle-header-slide-up.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/middle-header-sticky.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/middle-header-transparent.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/special.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/top-header-general.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/top-header-modal.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/top-header-resize.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/top-header-sidemenu.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/top-header-slide-up.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/top-header-sticky.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/header-section-module/top-header-transparent.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/hero-search-horizontal.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/hero-search-horizontal.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/hero-search-vertical.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/hero-search-vertical.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/icon.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/icon.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/image-wrapper.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/image-wrapper.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/layout.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/layout.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/logo.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/logo.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/map.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/map.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/modal.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/modal.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/photo-grid.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/photo-grid.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/popup.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/popup.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/price-range.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/price-range.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/progressbar.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/progressbar.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/promo-section.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/promo-section.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/property-item.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/property-item.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/property-section-boxed.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/property-section-boxed.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/property-section-default.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/property-section-default.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/property-sticky-element.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/property-sticky-element.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/reviews.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/reviews.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/sections.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/sections.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/shadow.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/shadow.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/site.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/slick-full-page-search.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/slick-full-page-search.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/slick.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/slick.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/sticky-element.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/sticky-element.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/table.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/table.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/transition.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/transition.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/user-info.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/user-info.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/wp-default.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/components/wp-default.variables" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/less/theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/accordion.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/charts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/checkbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/clipboard.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/dimmer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/dropdown-custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/flexmenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/flexmenu.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/functions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/highlight.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/highlight.pack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/jquery-2.2.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/jquery.fancybox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/jrespond.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/modernizr-custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/nouislider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/nouislider.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/page-transition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/scrollMonitor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/scrollspy.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/sidebar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/slick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/sticky.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/transition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/visibility.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/view1/library/wNumb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/header1.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/view_layout1.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/welcome1.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/custom/daterangepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/custom/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/custom/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/custom/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/custom/jquery.daterangepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/custom/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/avatar_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/avatar_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/avatar_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/avatar_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/avatar_05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/avatar_06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/avatar_07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/avatar_08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/avatar_09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/avatar_10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/default_avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/avatar/my_avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/blog/blog_image_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/blog/blog_image_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/blog/blog_image_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/blog/blog_image_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/blog/blog_image_05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/blog/blog_image_06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/host/host_11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/logo-mybnb-transparent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/logo-mybnb-transparent@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/logo-mybnb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/logo-mybnb@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/fethiye.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/gocek.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/kas.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/kemer.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_photo_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_photo_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_photo_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_photo_04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/magic_grid/marmaris.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/modal/modal_background_001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/promo_section/22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/promo_section/33.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/promo_section/promo_section_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/promo_section/promo_section_02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/property/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/property/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/property/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/property/cover_photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/property/property_little_03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/property/property_little_07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/property/property_little_10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/property/property_little_12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/suninlogo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/suninlogo2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/suninlogo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/images/suninlogo3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/less/base.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/less/base.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/less/datetemplate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/less/header.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/less/header.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/less/theme.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/less/theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/view/less/variables.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/custom/daterangepicker.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/custom/daterangepicker.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/custom/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/custom/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/custom/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/custom/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/custom/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/custom/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/custom/jquery.daterangepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/custom/jquery.daterangepicker.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/custom/moment.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/custom/moment.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/ajax-loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/ajax-loader.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/avatar_01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/avatar_01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/avatar_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/avatar_02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/avatar_03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/avatar_03.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/avatar_04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/avatar_04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/avatar_05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/avatar_05.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/avatar_06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/avatar_06.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/avatar_07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/avatar_07.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/avatar_08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/avatar_08.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/avatar_09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/avatar_09.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/avatar_10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/avatar_10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/default_avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/default_avatar.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/avatar/my_avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/avatar/my_avatar.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/blog/blog_image_01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/blog/blog_image_01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/blog/blog_image_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/blog/blog_image_02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/blog/blog_image_03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/blog/blog_image_03.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/blog/blog_image_04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/blog/blog_image_04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/blog/blog_image_05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/blog/blog_image_05.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/blog/blog_image_06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/blog/blog_image_06.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/clock.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/credit_card_image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/credit_card_image.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/facebook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/facebook.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/honeymoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/honeymoon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_03.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_05.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_06.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_07.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_08.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_09.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/host/host_11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/host/host_11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/ico/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/ico/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/ico/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/ico/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/icon-google-plus.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/icon-google-plus.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/instagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/instagram.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/kids.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/kids.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/logo-mybnb-transparent.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/logo-mybnb-transparent.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/logo-mybnb-transparent@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/logo-mybnb-transparent@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/logo-mybnb.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/logo-mybnb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/logo-mybnb@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/logo-mybnb@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/fethiye.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/fethiye.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/gocek.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/gocek.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/kas.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/kas.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/kemer.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/kemer.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_article_01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_article_02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_article_03.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_article_04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_article_05.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_article_06.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_article_07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_article_07.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_01.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_category_special_01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_category_special_02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_category_special_03.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_category_special_04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_category_special_05.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_category_special_06.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_category_special_07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_category_special_07.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_photo_01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/magic_grid_photo_01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_photo_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/magic_grid_photo_02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_photo_03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_photo_03.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/magic_grid_photo_04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/magic_grid_photo_04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/magic_grid/marmaris.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/magic_grid/marmaris.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/modal/modal_background_001.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/modal/modal_background_001.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/paypal_image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/paypal_image.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/pets.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/pets.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/phone.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/phone.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/promo_section/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/promo_section/22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/promo_section/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/promo_section/33.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/promo_section/promo_section_01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/promo_section/promo_section_01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/promo_section/promo_section_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/promo_section/promo_section_02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/property/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/property/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/property/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/cover_photo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/property/cover_photo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_big_01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_big_01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_big_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_big_02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_big_03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_big_03.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_big_04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_big_04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_big_05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_big_05.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_little_01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_little_02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_03.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_04.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_little_04.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_05.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_little_05.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_little_06.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_07.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_07.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_08.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_little_08.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_09.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_little_09.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/property/property_little_11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/property/property_little_12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/property/property_little_12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/sea.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/sea.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/securty.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/securty.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/suninlogo1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/suninlogo1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/suninlogo2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/suninlogo2.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/suninlogo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/suninlogo2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/suninlogo3.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/images/suninlogo3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/twitter.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/twitter.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/villa.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/villa.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/images/winter.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/images/winter.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/base.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/less/base.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/base.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/less/base.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/accordion.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/accordion.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/articles.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/articles.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/articles.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/articles.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/button-sq.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/button-sq.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/calendar.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/calendar.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/calendar.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/calendar.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/container.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/container.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/dashboard.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/dashboard.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/dashboard.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/dashboard.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/default.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/default.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/dimmer.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/dimmer.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/divided-container.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/divided-container.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/dropdown.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/dropdown.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/floating-placeholder.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/floating-placeholder.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/floating-placeholder.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/floating-placeholder.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/footer.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/footer.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/footer.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/footer.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/general.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/general.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/general.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/grid.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/grid.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/hamburger.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/hamburger.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/hamburger.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/hamburger.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-menu-default.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-menu-default.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-menu-default/burger-default.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-menu-default/burger-default.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-menu-default/burger-modal.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-menu-default/burger-modal.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-menu-default/burger-sidemenu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-menu-default/burger-sidemenu.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-menu-default/burger-sticky.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-menu-default/burger-sticky.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-menu-default/flex-menu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-menu-default/flex-menu.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-menu-default/general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-menu-default/general.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-menu-default/megamenu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-menu-default/megamenu.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-menu-default/special.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-menu-default/special.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-general.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-modal.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-modal.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-resize.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-resize.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-sidemenu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-sidemenu.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-slide-up.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-slide-up.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-sticky.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-sticky.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-transparent.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/bottom-header-transparent.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/general.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/items-floating-placeholder.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/items-floating-placeholder.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/items-input-select.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/items-input-select.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-general.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-modal.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-modal.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-resize.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-resize.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-sidemenu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-sidemenu.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-slide-up.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-slide-up.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-sticky.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-sticky.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-transparent.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/middle-header-transparent.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/special.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/special.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-general.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-modal.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-modal.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-resize.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-resize.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-sidemenu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-sidemenu.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-slide-up.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-slide-up.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-sticky.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-sticky.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-transparent.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/header-section-module/top-header-transparent.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/hero-search-horizontal.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/hero-search-horizontal.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/hero-search-horizontal.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/hero-search-horizontal.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/hero-search-vertical.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/hero-search-vertical.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/hero-search-vertical.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/hero-search-vertical.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/icon.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/icon.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/image-wrapper.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/image-wrapper.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/image-wrapper.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/image-wrapper.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/layout.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/layout.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/logo.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/logo.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/map.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/map.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/map.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/map.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/modal.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/modal.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/photo-grid.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/photo-grid.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/photo-grid.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/photo-grid.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/popup.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/popup.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/price-range.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/price-range.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/price-range.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/price-range.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/progressbar.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/progressbar.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/progressbar.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/progressbar.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/promo-section.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/promo-section.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/promo-section.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/promo-section.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/property-item.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/property-item.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/property-item.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/property-item.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/property-section-boxed.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/property-section-boxed.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/property-section-boxed.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/property-section-boxed.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/property-section-default.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/property-section-default.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/property-section-default.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/property-section-default.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/property-sticky-element.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/property-sticky-element.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/property-sticky-element.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/property-sticky-element.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/reviews.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/reviews.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/reviews.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/reviews.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/sections.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/sections.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/sections.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/sections.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/shadow.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/shadow.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/site.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/site.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/slick-full-page-search.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/slick-full-page-search.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/slick-full-page-search.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/slick-full-page-search.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/slick.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/slick.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/slick.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/slick.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/sticky-element.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/sticky-element.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/sticky-element.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/sticky-element.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/table.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/table.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/transition.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/transition.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/user-info.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/user-info.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/user-info.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/user-info.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/components/wp-default.variables" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/components/wp-default.variables" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/datetemplate.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/less/datetemplate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/header.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/less/header.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/header.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/less/header.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/less/mixins.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/less/theme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/theme.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/less/theme.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/less/theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/less/variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/view1/less/variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/accordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/accordion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/charts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/charts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/checkbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/checkbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/clipboard.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/clipboard.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/dimmer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/dimmer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/dropdown-custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/dropdown-custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/highlight.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/highlight.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/highlight.pack.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/highlight.pack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/jquery-2.2.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/jquery-2.2.0.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/nouislider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/nouislider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/nouislider.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/nouislider.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/page-transition.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/page-transition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/slick.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/slick.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/sticky.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/sticky.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/transition.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/transition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/view/library/visibility.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/view/library/visibility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/view_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/view_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.0c29c34b.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.0c29c34b.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.0c29c34b.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.0c29c34b.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.40ab9f64.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.40ab9f64.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.40ab9f64.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.40ab9f64.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.578f166c.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.578f166c.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.578f166c.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.578f166c.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.a33c576f.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.a33c576f.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.a33c576f.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.a33c576f.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.b05d8a0f.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.b05d8a0f.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.b05d8a0f.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.b05d8a0f.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.d7f4c5ef.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.d7f4c5ef.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.d7f4c5ef.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.d7f4c5ef.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.de22c3b2.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.de22c3b2.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.de22c3b2.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.de22c3b2.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.e5d5cabb.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.e5d5cabb.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.e5d5cabb.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.e5d5cabb.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.fd657aa8.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.fd657aa8.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/static/js/main.fd657aa8.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/admin/static/js/main.fd657aa8.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Rent/VillaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Blog/BlogRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Blog/BlogRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Comment/CommentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Comment/CommentRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Contract/ContractRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Contract/ContractRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Currency/CurrencyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Currency/CurrencyRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Customer/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Customer/CustomerRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Message/MessageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Message/MessageRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Module/ModuleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Module/ModuleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Page/RentPageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Page/RentPageRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RentCategory/RentCategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RentCategory/RentCategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RentDestination/RentDestinationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RentDestination/RentDestinationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/RentPage/RentPageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/RentPage/RentPageRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Reservation/ReservationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Reservation/ReservationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Settings/SettingsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Settings/SettingsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Slider/SliderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Slider/SliderRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Slider/SliderRepos�tory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Slider/SliderReposþtory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/User/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/User/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Rent/Villa/VillaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Slider/SliderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Slider/SliderRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/View/Villa/VillaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ICal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ICal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/static/js/main.0c29c34b.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/static/js/main.0c29c34b.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/static/js/main.0c29c34b.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/static/js/main.0c29c34b.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/scss/theme/_color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/scss/theme/_color.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/customCity.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/customCity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/villaApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/villaApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/css/datatables.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/css/datatables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/css/select2.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/css/select2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/js/ImagesApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/js/ImagesApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/js/MessageApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/js/MessageApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/js/PaymentApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/js/PaymentApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/js/blogApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/js/blogApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/js/contractApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/js/contractApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/js/customCity.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/js/customCity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/js/sliderApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/js/sliderApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/rent/js/villaApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/rent/js/villaApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/blog_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/blog_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/category_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/category_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/reservationdetail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reservationdetail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/reservationpayment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reservationpayment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/indexcreate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/indexcreate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/indexedit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/indexedit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/category/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/comment/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/comment/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/contracts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/contracts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/currency/currency.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/currency/currency.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/currency/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/currency/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/customers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/customers/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/customers/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/customers/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/customers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/customers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/destination/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/destination/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/destination/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/destination/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/destination/indexcreate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/destination/indexcreate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/destination/indexedit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/destination/indexedit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/destination/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/destination/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/index/tenant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/index/tenant.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/module/bestsales.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/module/bestsales.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/module/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/module/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/module/specials.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/module/specials.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/module/vitrin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/module/vitrin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/pages/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/pages/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/pages/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/pages/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/pages/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/pages/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/reservation/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/reservation/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/reservation/new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/reservation/new.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/reservation/payment.bladde.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/reservation/payment.bladde.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/reservation/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/reservation/payment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/slider/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/slider/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/tenants/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/tenants/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/tenants/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/tenants/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/tenants/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/tenants/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/tenants/tenant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/tenants/tenant.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/user/agents.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/user/agents.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/user/branches.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/user/branches.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/user/contracts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/user/contracts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/user/messages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/user/messages.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/user/permission.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/user/permission.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/user/roles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/user/roles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/comment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/images.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/images.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/rent/villa/tenant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/rent/villa/tenant.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -712,7 +420,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -863,7 +571,10 @@
       <workItem from="1645984709441" duration="14000" />
       <workItem from="1646159625794" duration="1259000" />
       <workItem from="1646206929085" duration="6209000" />
-      <workItem from="1646295331310" duration="4190000" />
+      <workItem from="1646295331310" duration="4656000" />
+      <workItem from="1646388161909" duration="3136000" />
+      <workItem from="1646416781164" duration="4211000" />
+      <workItem from="1646581130793" duration="617000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1633334253832</created>
@@ -952,6 +663,14 @@
     </state>
     <state x="743" y="274" width="424" height="491" key="FileChooserDialogImpl/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1641899390608" />
     <state x="743" y="286" key="FileChooserDialogImpl/0.24.1920.1056/1920.0.1920.1080@0.24.1920.1056" timestamp="1644756633442" />
+    <state x="182" y="101" width="1536" height="843" key="MergeDialog" timestamp="1646302701537">
+      <screen x="0" y="24" width="1920" height="1008" />
+    </state>
+    <state x="182" y="101" width="1536" height="843" key="MergeDialog/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1646302701537" />
+    <state x="591" y="278" width="728" height="482" key="MultipleFileMergeDialog" timestamp="1646302701538">
+      <screen x="0" y="24" width="1920" height="1008" />
+    </state>
+    <state x="591" y="278" width="728" height="482" key="MultipleFileMergeDialog/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1646302701538" />
     <state x="755" y="441" width="399" height="156" key="NewPhpFileDialog" timestamp="1646299801625">
       <screen x="0" y="24" width="1920" height="1008" />
     </state>
@@ -960,14 +679,16 @@
       <screen x="0" y="24" width="1920" height="1008" />
     </state>
     <state x="449" y="151" width="1022" height="737" key="SettingsEditor/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1642253199413" />
-    <state x="100" y="100" width="1720" height="832" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1641834420077">
-      <screen x="0" y="24" width="1920" height="1008" />
+    <state x="100" y="104" width="1720" height="872" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1646490719380">
+      <screen x="0" y="24" width="1920" height="1056" />
     </state>
     <state x="100" y="100" width="1720" height="832" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1641834420077" />
-    <state x="651" y="255" width="622" height="548" key="find.popup" timestamp="1643202148744">
-      <screen x="0" y="24" width="1920" height="1008" />
+    <state x="100" y="104" width="1720" height="872" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.24.1920.1056/1920.0.1920.1080@0.24.1920.1056" timestamp="1646490719380" />
+    <state x="651" y="266" width="622" height="608" key="find.popup" timestamp="1646490767514">
+      <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="651" y="255" width="622" height="548" key="find.popup/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1643202148744" />
+    <state x="651" y="255" width="622" height="580" key="find.popup/0.24.1920.1008/1920.0.1920.1080@0.24.1920.1008" timestamp="1646388777710" />
+    <state x="651" y="266" width="622" height="608" key="find.popup/0.24.1920.1056/1920.0.1920.1080@0.24.1920.1056" timestamp="1646490767514" />
     <state x="856" y="232" width="197" height="580" key="ftp.server.browser" timestamp="1646207147574">
       <screen x="0" y="24" width="1920" height="1008" />
     </state>

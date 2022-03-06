@@ -40,7 +40,7 @@ class ContractRepository implements ContractRepositoryInterface
         $result->minday = $data->minday;
         $result->is_active = $data->is_active;
         $result->villa_id = $data->villa_id;
-        $result->tenant_id = $session['tenant_id'];
+        $result->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870";
         $result->save();
         return $result->id;
     }

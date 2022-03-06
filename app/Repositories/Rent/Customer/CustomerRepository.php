@@ -38,7 +38,7 @@ class CustomerRepository implements CustomerRepositoryInterface
         $result->address = $data->taxAddress;
         $result->is_einvoice = $data->is_einvoice;
         $result->is_status = $data->is_status;
-        $result->tenant_id = $session['tenant_id'];
+        $result->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870";
         $result->save();
     }
 

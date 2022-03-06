@@ -43,7 +43,7 @@ class ReservationRepository implements ReservationRepositoryInterface
         $customerSave->address = $data->taxAddress;
         $customerSave->is_einvoice = $data->is_einvoice;
         $customerSave->is_status = 1;
-        $customerSave->tenant_id = $session['tenant_id'];
+        $customerSave->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870";
         $customerSave->save();
 
         $checkin = Carbon::parse($data->checkin);
@@ -60,7 +60,7 @@ class ReservationRepository implements ReservationRepositoryInterface
         $save->price = $data->price; //varchar(255)
         $save->deposit = $data->deposit; //varchar(255)
         $save->status_id = '4464d45e-52a2-11ec-bf63-0242ac130002'; //varchar(255)
-        $save->tenant_id = $session['tenant_id']; //char(36)
+        $save->tenant_id = "67667cb9-3933-40ab-b248-02a7f819f870"; //char(36)
         $save->save();
         return $id;
     }
@@ -74,7 +74,7 @@ class ReservationRepository implements ReservationRepositoryInterface
     {
         $session = session()->get('rent_session');
         $data = [];
-        $villas = Villa::where('owner_id',$session['tenant_id'])->get();
+        $villas = Villa::where('owner_id',"67667cb9-3933-40ab-b248-02a7f819f870")->get();
         foreach ($villas as $villa) {
             $data[] = array(
                 'id' => $villa->id,

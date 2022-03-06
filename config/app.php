@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://suninturkey.xyz'),
+    'url' => env('APP_URL', 'https://sahilvillam.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
