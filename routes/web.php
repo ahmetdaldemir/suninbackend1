@@ -199,7 +199,7 @@ Route::domain('sahilvillam.com')->middleware('checkDomain')->group(function () {
     });
 
 
-    Route::get('/', [MainController::class, 'index'])->name('index');
+    Route::get('/', [MainController::class, 'index']);
     Route::get('/contact', [MainController::class, 'contact']);
     Route::get('/blog', [MainController::class, 'blog']);
     Route::get('page/{slug}', [MainController::class, 'about']);
@@ -224,6 +224,7 @@ Route::domain('sahilvillam.com')->middleware('checkDomain')->group(function () {
     Route::post('villaCheck',  [MainController::class, 'villaCheck']);
     Route::post('villaCalculate',  [MainController::class, 'villaCalculate']);
     Route::get('reservation/detail',  [MainController::class, 'reservationDetail']);
+    Route::get('/reservation_detail',  [MainController::class, 'reservationDetail']);
     Route::post('reservation/action',  [MainController::class, 'reservationAction']);
     Route::get('reservation/payment/{reservation_id}',  [MainController::class, 'reservationPayment']);
     Route::get('blog-detail/{slug}',  [MainController::class, 'blog_detail']);

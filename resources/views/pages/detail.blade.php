@@ -4,189 +4,325 @@
 
 @section('style')
     <link rel="stylesheet" href="{{asset("view/custom/font-awesome.min.css")}}"/>
-    <link rel="stylesheet"
-          href="{{asset("view/custom/daterangepicker.min.css")}}"/>
+    <link rel="stylesheet" href="{{asset("view/custom/daterangepicker.min.css")}}"/>
 @endsection
 
 @section('content')
-
     <div class="property-section-default">
-
-        <div class="image-wrapper">
+        <div class="image-wrapper" style="opacity: 1;">
             <div class="image-inner">
-                <img class="image-sq slick-img" src="{{Storage::url($villa['villa']->image)}}" alt=""
-                     data-gallery="gallery"
-                     data-caption="Cover Photo">
+                <div class="foto-goster">
+                    <span><i class="fa-solid fa-images"></i>Fotoğrafları Görüntüle</span>
+                </div>
+                <img class="image-sq slick-img"
+                     src="{{Storage::url($villa['villa']->image)}}" alt="" data-gallery="gallery"
+                     data-caption="Cover Photo"
+                     style="width: 1349px; height: 955px; margin-top: -477px; margin-left: 0px; top: 50%; left: 0px;">
+                --&gt;
             </div>
         </div>
 
         <div class="property-main-content">
-            <div class="ui grid container stackable app layout right side">
+            <div class="container-xl stackable app layout right side">
                 <div class="row">
-                    <div class="ui column main-column">
-                        <h1 class="title-sq">{{$villa['lang'][0]->title}}</h1>
-
-                        <div class="rating-sq">
-                            <span>9.4</span>
-                            <i class="icon icon-heart-line"></i>
-                        </div>
-
-                        <div class="location-sq">
-                            <i class="icon icon-location-pin-2"></i>
-                            Romania, Bucuresti
-                        </div>
-
-                        <div class="icons-row">
-                            <div class="icons-column">
-                                <i class="icon icon-account-group-5"></i>
-                                {{$villa['villa']->capacity}} Guests
-                            </div>
-                            <div class="icons-column">
-                                <i class="icon icon-door-simple"></i>
-                                {{$villa['villa']->bedrooms}} Bedrooms
-                            </div>
-                            <div class="icons-column">
-                                <i class="icon icon-bed-double"></i>
-                                {{$villa['villa']->rooms}} Beds
-                            </div>
-                            <div class="icons-column">
-                                <i class="icon icon-bath-tub"></i>
-                                {{$villa['villa']->bathrooms}} Baths
-                            </div>
-                            <div class="icons-column">
-                                <i class="icon icon-bath-tub"></i>
-                                {{$villa['villa']->central_distance}} Central
-                            </div>
-                            <div class="icons-column">
-                                <i class="icon icon-bath-tub"></i>
-                                {{$villa['villa']->plaj_distance}} Plaj
-                            </div>
-                            <div class="icons-column">
-                                <i class="icon icon-bath-tub"></i>
-                                {{$villa['villa']->hospital_distance}} Plaj
-                            </div>
-                            <div class="icons-column">
-                                <i class="icon icon-air-conditioner"></i>
-                                {{$villa['villa']->airport_distance}} Plaj
+                    <div class="col-lg-9 col-md-8">
+                        <div class="property-genel">
+                            <h1 class="title-sq">{{$villa['lang'][0]->title}}</h1>
+                            <div class="icons-row">
+                                <div class="icons-column1">
+                                    <i class="icon icon-location-pin-2"></i> Kaş
+                                </div>
+                                <div class="icons-column1">
+                                    <i class="icon icon-account-group-5"></i>
+                                    {{$villa['villa']->capacity}} Guests
+                                </div>
+                                <div class="icons-column1">
+                                    <i class="fa-solid fa-water-ladder"></i>
+                                    Özel Havuzlu
+                                </div>
+                                <div class="icons-column1">
+                                    <i class="icon icon-bed-double"></i>
+                                    {{$villa['villa']->bedrooms}} Bedrooms
+                                </div>
+                                <div class="icons-column1">
+                                    <i class="icon icon-bath-tub"></i>
+                                    {{$villa['villa']->bathrooms}} Baths
+                                </div>
                             </div>
                         </div>
-
                     </div>
 
-                    <div class="ui column side-column">
-
+                    <div class="col-lg-3 col-md-4">
                         <div class="property-sticky-box-wrapper">
-
-                            <div class="sticky-element sticky-desktop sticky-large-desktop under-ths burger-mobile-modal search-visible"
-                                 data-burger="menu04">
-
+                            <div class="sticky-element sticky-desktop sticky-large-desktop under-ths burger-mobile-modal search-visible ths-is-sticky reverse"
+                                 data-burger="menu04" style="height: 0px;">
                                 <a href=""
                                    class="modal-trigger close-sq hamburger hamburger-spin item hidden-tablet hidden-desktop hidden-large-desktop"
                                    data-trigger-for="menu04">
-                                        <span class="hamburger-box">
-                                          <span class="hamburger-inner"></span>
-                                        </span>
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
                                 </a>
 
                                 <div class="property-sticky-box">
                                     <div class="price-tag-sq">
-                                        <span class="price-sq">{{$villa['price']}}<!--&euro;--></span>
-                                        <span class="per-sq" data-text-mobile="/ " data-text=" ">Gecelik Fiyat</span>
+                                        <span class="price-sq">{{$villa['price']}}<i
+                                                    class="fa-solid fa-turkish-lira-sign"></i></span>
+                                        <span class="per-sq" data-text-mobile="/ " data-text="">Gecelik</span>
                                     </div>
 
                                     <div class="button-sq font-weight-extrabold-sq mobile-fixed-trigger hidden-desktop hidden-large-desktop hidden-tablet modal-trigger"
-                                         data-trigger-for="menu04">Instant Booking
+                                         data-trigger-for="menu04">
+                                        Rezervasyon Yap
                                     </div>
 
                                     <div class="mobile-fixed-section">
                                         <div class="sticky-box-content">
-                                            <form id="villaReservation">
+                                            <form action="{{url('reservation_detail')}}">
                                                 <div class="main-infos inline-check-in">
-                                                    <div class="check-in calendar-sq" id="rangestart">
+                                                    <div class="check-in calendar-sq" id="sticky-box-rangestart">
                                                         <label class="placeholder" data-placeholder="Giriş"></label>
-
                                                         <div class="relative">
-                                                            <input name="checkindate" id="checkindate" type="hidden"   value="" >
-
-                                                            <input name="checkin" type="text" class="filter" value=""
-                                                                   required placeholder="{{__('Giriş')}}"
-                                                                   autocomplete="off">
-                                                            <i class="icon icon-little-arrow filters-arrow"></i>
+                                                            <div class="ui popup calendar-sq">
+                                                                <table class="ui celled center aligned unstackable table seven column day">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th colspan="7"><span
+                                                                            class="link">Mart 2022</span><span
+                                                                            class="prev link"><i
+                                                                                class="icon icon-arrow-left-122"></i></span><span
+                                                                            class="next link"><i
+                                                                                class="icon icon-arrow-right-122"></i></span>
+                                                                        </th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>P</th>
+                                                                        <th>S</th>
+                                                                        <th>Ç</th>
+                                                                        <th>P</th>
+                                                                        <th>C</th>
+                                                                        <th>C</th>
+                                                                        <th>P</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td class="link disabled">27</td>
+                                                                        <td class="link disabled">28</td>
+                                                                        <td class="link">1</td>
+                                                                        <td class="link">2</td>
+                                                                        <td class="link">3</td>
+                                                                        <td class="link">4</td>
+                                                                        <td class="link">5</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="link today focus">6</td>
+                                                                        <td class="link">7</td>
+                                                                        <td class="link">8</td>
+                                                                        <td class="link">9</td>
+                                                                        <td class="link">10</td>
+                                                                        <td class="link">11</td>
+                                                                        <td class="link">12</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="link">13</td>
+                                                                        <td class="link">14</td>
+                                                                        <td class="link">15</td>
+                                                                        <td class="link">16</td>
+                                                                        <td class="link">17</td>
+                                                                        <td class="link">18</td>
+                                                                        <td class="link">19</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="link">20</td>
+                                                                        <td class="link">21</td>
+                                                                        <td class="link">22</td>
+                                                                        <td class="link">23</td>
+                                                                        <td class="link">24</td>
+                                                                        <td class="link">25</td>
+                                                                        <td class="link">26</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="link">27</td>
+                                                                        <td class="link">28</td>
+                                                                        <td class="link">29</td>
+                                                                        <td class="link">30</td>
+                                                                        <td class="link">31</td>
+                                                                        <td class="link disabled">1</td>
+                                                                        <td class="link disabled">2</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="link disabled">3</td>
+                                                                        <td class="link disabled">4</td>
+                                                                        <td class="link disabled">5</td>
+                                                                        <td class="link disabled">6</td>
+                                                                        <td class="link disabled">7</td>
+                                                                        <td class="link disabled">8</td>
+                                                                        <td class="link disabled">9</td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <input type="text" class="filter" name="checkin" value="" required=""
+                                                                   placeholder="Tarih">
+                                                            <i class="icon1 icon-little-arrow filters-arrow"></i>
                                                         </div>
-
                                                     </div>
 
-                                                    <div class="check-out calendar-sq" id="rangeend">
+                                                    <div class="check-out calendar-sq" id="sticky-box-rangeend">
+                                                        <div class="ui popup calendar-sq">
+                                                            <table class="ui celled center aligned unstackable table seven column day">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th colspan="7"><span
+                                                                        class="link">Mart 2022</span><span
+                                                                        class="prev link"><i
+                                                                            class="icon icon-arrow-left-122"></i></span><span
+                                                                        class="next link"><i
+                                                                            class="icon icon-arrow-right-122"></i></span>
+                                                                    </th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>P</th>
+                                                                    <th>S</th>
+                                                                    <th>Ç</th>
+                                                                    <th>P</th>
+                                                                    <th>C</th>
+                                                                    <th>C</th>
+                                                                    <th>P</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td class="link disabled">27</td>
+                                                                    <td class="link disabled">28</td>
+                                                                    <td class="link">1</td>
+                                                                    <td class="link">2</td>
+                                                                    <td class="link">3</td>
+                                                                    <td class="link">4</td>
+                                                                    <td class="link">5</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="link today focus">6</td>
+                                                                    <td class="link">7</td>
+                                                                    <td class="link">8</td>
+                                                                    <td class="link">9</td>
+                                                                    <td class="link">10</td>
+                                                                    <td class="link">11</td>
+                                                                    <td class="link">12</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="link">13</td>
+                                                                    <td class="link">14</td>
+                                                                    <td class="link">15</td>
+                                                                    <td class="link">16</td>
+                                                                    <td class="link">17</td>
+                                                                    <td class="link">18</td>
+                                                                    <td class="link">19</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="link">20</td>
+                                                                    <td class="link">21</td>
+                                                                    <td class="link">22</td>
+                                                                    <td class="link">23</td>
+                                                                    <td class="link">24</td>
+                                                                    <td class="link">25</td>
+                                                                    <td class="link">26</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="link">27</td>
+                                                                    <td class="link">28</td>
+                                                                    <td class="link">29</td>
+                                                                    <td class="link">30</td>
+                                                                    <td class="link">31</td>
+                                                                    <td class="link disabled">1</td>
+                                                                    <td class="link disabled">2</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="link disabled">3</td>
+                                                                    <td class="link disabled">4</td>
+                                                                    <td class="link disabled">5</td>
+                                                                    <td class="link disabled">6</td>
+                                                                    <td class="link disabled">7</td>
+                                                                    <td class="link disabled">8</td>
+                                                                    <td class="link disabled">9</td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                         <label class="placeholder" data-placeholder="Çıkış"></label>
-                                                        <input name="cdate" id="cdate" type="hidden">
-                                                        <input name="checkout" id="checkout" type="text" class="filter" value=""  required placeholder="{{__('Çıkış')}}" autocomplete="off">
+
+                                                        <input type="text" class="filter" name="checkout" value="" required=""
+                                                               placeholder="Tarih">
                                                     </div>
 
                                                     <div class="guests">
-                                                        <label class="placeholder" data-placeholder="Kişi"></label>
-
-                                                        <select id="guest" name="guest" size="12" class="dropdown" required>
-                                                            <option value="1" selected>1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                            <option value="6">6</option>
-                                                            <option value="7">7</option>
-                                                            <option value="8">8</option>
-                                                            <option value="9">9</option>
-                                                            <option value="10">10</option>
-                                                            <option value="11">11</option>
-                                                            <option value="12">12</option>
-                                                        </select>
-
+                                                        <label class="placeholder" data-placeholder="Kişi Sayısı"></label>
+                                                        <div class="dropdown selection ui" tabindex="0">
+                                                            <select name="guest" size="12" required="">
+                                                                <option value="1" selected="">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                                <option value="10">10</option>
+                                                                <option value="11">11</option>
+                                                                <option value="12">12</option>
+                                                            </select><i class="dropdown icon"></i>
+                                                            <div class="text">1</div>
+                                                            <div class="menu" tabindex="-1">
+                                                                <div class="item active selected" data-value="1">1</div>
+                                                                <div class="item" data-value="2">2</div>
+                                                                <div class="item" data-value="3">3</div>
+                                                                <div class="item" data-value="4">4</div>
+                                                                <div class="item" data-value="5">5</div>
+                                                                <div class="item" data-value="6">6</div>
+                                                                <div class="item" data-value="7">7</div>
+                                                                <div class="item" data-value="8">8</div>
+                                                                <div class="item" data-value="9">9</div>
+                                                                <div class="item" data-value="10">10</div>
+                                                                <div class="item" data-value="11">11</div>
+                                                                <div class="item" data-value="12">12</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="calculations">
-                                                <!--<div class="calc-row">
-                                                        <div class="calc-column"><p class="desc">Hasar Depozitosu</p></div>
-                                                        <div class="calc-column"><p class="price-sq">{{$villa['villa']->service}}</p></div>
-                                                    </div>-->
-
                                                     <div class="calc-row">
-                                                        <div class="calc-column"><p class="desc">Temizlik Ücreti</p>
+                                                        <div class="calc-column">
+                                                            <p class="desc">Ön Ödeme</p>
                                                         </div>
-                                                        <div class="calc-column"><p
-                                                                    class="price-sq">{{$villa['villa']->cleaning}}</p>
+                                                        <div class="calc-column">
+                                                            <p class="price-sq">
+                                                                <i class="fa-solid fa-turkish-lira-sign"></i>657
+                                                            </p>
                                                         </div>
                                                     </div>
 
                                                     <div class="calc-row">
-                                                        <div id="calculate">hesap</div>
-                                                        <div class="calc-column"><p class="desc">{{__('Toplam')}}</p>
+                                                        <div class="calc-column">
+                                                            <p class="desc">Toplam Ödeme</p>
                                                         </div>
-                                                        <div class="calc-column"><p class="price-sq">&euro;657</p></div>
+                                                        <div class="calc-column">
+                                                            <p class="price-sq">
+                                                                <i class="fa-solid fa-turkish-lira-sign"></i>657
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="villa_id" value="{{$villa['villa']->id}}"/>
-
-                                                <button type="button"
-                                                        class="button-sq fullwidth-sq font-weight-extrabold-sq villacheck">
+                                                <button class="button-sq1 fullwidth-sq font-weight-extrabold-sq" type="submit">Rezervasyon Yap</button>
+                                                <a href="{{url('reservation_detail')}}"
+                                                   class="button-sq1 fullwidth-sq font-weight-extrabold-sq">
                                                     Rezervasyon Yap
-                                                </button>
-
+                                                </a>
                                             </form>
                                         </div>
-
-                                        <div class="sticky-box-wishlist">
-                                            <div class="wishlist-sq">
-                                                <a href=""><i class="icon icon-filter-heart"></i>Favorilere Ekle</a>
-                                            </div>
-                                            <div class="aux-info-sq">
-                                                <p>-</p>
-                                            </div>
-                                            <div class="share-sq">
-                                                <a href=""><i class="icon icon-share"></i>Paylaş</a>
-                                            </div>
-                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -194,289 +330,396 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-    <!-- grid -->
-    <div class="ui grid container stackable app layout right side">
-
+    <div class="container stackable app layout right side">
         <div class="row">
+            <div class="col-lg-9" role="main">
+                <div class="genel-box">
+                    <div class="section-container" id="section-01">
+                        <div class="typo-section-sq top-default bottom-default gnl-margin-top">
+                            <h3>{{$villa['lang'][0]->title}}</h3>
+                            {!! $villa['lang'][0]->description !!}
+                            <p class="pool-property">
+                                <span>Havuz Ölçüleri:</span>Uzunluk: 8mt. En: 3.5 mt.
+                                Derinlik: 155 cm.
+                            </p>
+                        </div>
 
-            <div class="ui column main-column" role="main">
-
-                <div class="section-container" id="section-02">
-                    <div class="typo-section-sq bottom-default">
-                        <h3>Photos</h3>
-
-                        <div class="photo-grid grid-5">
-                            <?php foreach($villa['images'] as $image){ ?>
-                            <div class="photo-item">
-                                <div class="image-wrapper">
-                                    <img class="image-sq slick-img" src="{{Storage::url($image->image)}}" alt=""
-                                         data-gallery="gallery" data-caption="Photo 01">
-                                </div>
+                        <div class="typo-section-sq bottom-default">
+                            <div class="typo-section-sq">
+                                <h3>Genel Özellikler</h3>
                             </div>
-                            <?php } ?>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-                <div class="section-container" id="section-01">
-
-                    <div class="typo-section-sq top-default bottom-default">
-                        <h3>Villa Hakkında</h3>
-
-                        {{$villa['lang'][0]->description}}
-                        <hr/>
-                        <div class="button-sq small-sq see-through-sq modal-ui-trigger" data-trigger-for="contact">
-                            Mesaj Gönder
-                        </div>
-
-                        <div class="button-sq link-sq small-sq float-right-sq">
-                            <i class="icon icon-share"></i>
-                            Paylaş
-                        </div>
-
-                    </div>
-
-                    <div class="typo-section-sq bottom-default">
-                        <h5>Bilinmesi Gerekenler</h5>
-                        <div class="ui grid moved">
-                            @if(!empty($villa_service))
-                                <div class="twelve wide mobile six wide tablet six wide computer column">
-                                    <ul class="description-list">
-                                        @foreach($services as $service)
-                                            @if(in_array($service['id'],$villa_service))
-                                                <li>
-                                                    <div>
-                                                        <p>{{@$service['lang']->where('lang_id',$lang_id)->first()->title}}</p>
-                                                    </div>
-                                                </li>
-                                            @endif
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            <div class="twelve wide mobile six wide tablet six wide computer column">
-                                <ul class="description-list">
-                                    <li>
-                                        <i class="icon icon-building-7"></i>
-                                        <div>
-                                            <p>Villa Tipi:</p>
-                                            <strong>{{$villa['villa']->type}}</strong>
+                            <div class="container">
+                                <div class="row">
+                                    <?php $idx = 0?>
+                                    @for($i=0;$i < 3;$i++)
+                                        <div class="col-md-4 col-sm-6 col-12">
+                                            <ul class="description-list">
+                                                @for($j=0;$j < 5;$j++)
+                                                    <li>
+                                                        <i class="fa-solid fa-thumbtack"></i>
+                                                        <div>
+                                                            <p>{{$properties[$idx]['lang']->where('lang_id',$villa['lang'][0]['id'])->first()->title ?? NULL}}</p>
+                                                        </div>
+                                                    </li>
+                                                    <?php $idx++?>
+                                                @endfor
+                                            </ul>
                                         </div>
-                                    </li>
-
-                                    <li>
-                                        <i class="icon icon-door-simple"></i>
-                                        <div>
-                                            <p>Oda Sayısı:</p>
-                                            <strong>{{$villa['villa']->rooms}}</strong>
-
+                                    @endfor
+                                </div>
+                            </div>
+                        </div>
+                        <div class="typo-section-sq bottom-default">
+                            <div class="typo-section-sq" id="section-05">
+                                <h3>Mesafeler</h3>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="mesafe">
+                                            <i class="fa-solid fa-plane-departure"></i>
+                                            <span>Dalaman Havalimanı</span>
+                                            <span>{{$villa['villa']['airport_distance']}}</span>
                                         </div>
-                                    </li>
-
-                                    <li>
-                                        <i class="icon icon-house"></i>
-                                        <div><p>Giriş Çıkış / Saati:</p>
-                                            <strong>14:00</strong> / <strong>11:00</strong></div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="typo-section-sq bottom-default">
-                        <h5>Özellikler</h5>
-                        <div class="ui grid moved">
-                            @if(!empty($villa_property))
-                                <div class="twelve wide mobile six wide tablet six wide computer">
-                                    <ul class="description-list">
-                                        @foreach($properties as $property)
-                                            @if(in_array($property['id'],$villa_property))
-                                                <li style="width: 30%;">
-                                                    <i class="icon icon-pin2"></i>
-                                                    <div>
-                                                        <p>{{$property['lang']->where('lang_id',$lang_id)->first()->title}}</p>
-                                                    </div>
-                                                </li>
-                                            @endif
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="typo-section-sq bottom-default">
-                        <h5>Kiralama Şartları</h5>
-                        <div class="ui grid moved">
-                            @if(!empty($villa_regulation))
-                                <div class="twelve wide column">
-                                    <ul class="description-list">
-                                        @foreach($regulations as $regulation)
-                                            @if(in_array($regulation['id'],$villa_regulation))
-                                                <li style="width: 30%;">
-                                                    <div>
-                                                        <p>{{@$regulation['lang']->where('lang_id',$lang_id)->first()->title}}</p>
-                                                    </div>
-                                                </li>
-                                            @endif
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="ui column side-column"></div>
-        </div>
-    </div>
-
-    <div class="section-container" id="section-03">
-        <div class="ui grid container stackable app layout right side">
-            <div class="stretched row">
-                <div class="ui column main-column" role="main">
-                    <div class="typo-section-sq">
-                        <h3>Takvim</h3>
-                    </div>
-                </div>
-                <div class="ui column side-column"></div>
-            </div>
-        </div>
-        <div class="ui grid container stackable app layout right side">
-            <div class="row">
-                <div class="ui twelve wide computer twelve wide tablet column">
-                    <input type="hidden" id="date-range12" size="40" value="">
-                    <div id="date-range12-container" style="width:100%;"></div>
-                    <input type="hidden" name="villa_id" value="{{$villa['villa']->id}}"/>
-                    <!--<button type="button" class="button-sq fullwidth-sq font-weight-extrabold-sq villacheck">Rezervasyon Yap</button>-->
-                </div>
-            </div>
-        </div>
-
-        <div class="ui grid container stackable app layout right side">
-            <div class="stretched row">
-                <div class="ui column main-column" role="main">
-                    <div class="typo-section-sq">
-                        <h3>Location</h3>
-                    </div>
-                </div>
-                <div class="ui column side-column"></div>
-            </div>
-        </div>
-        <div class="ui grid xfluid">
-            <div class="row">
-                <div class="ui twelve wide computer twelve wide tablet column">
-                    <div class="map-wrapper">
-                        {!! $villa['villa']->map !!}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="ui grid container stackable app layout right side">
-        <div class="stretched row">
-            <div class="ui column main-column" role="main">
-                <div class="section-container" id="section-04">
-
-                    <div class="typo-section-sq top-default bottom-default">
-                        <h3>Yorum & Puanlama</h3>
-                        <div class="reviews-header">
-                            <div class="rating-big">
-                                <div class="rating-badge">
-                                    <span>9.2</span>
-                                    <i class="icon icon-heart"></i>
-                                </div>
-                                <div class="rating-info">
-                                    <p>More than <strong>95%</strong> of guests recommend this place</p>
-                                </div>
-                            </div>
-                            <form action="#" class="" style="width: 100%;">
-                                <input id="reviews-search" type="text" placeholder="Search reviews" value="" required=""  style="width: 90%;float:left">
-                                <button style="width: 9%;float:right;    height: 50px;"><label><i
-                                                style="    color: #fff;font-weight: 900;" class="icon icon-search"></i></label>
-                                </button>
-                            </form>
-                        </div>
-
-
-                        <div class="reviews-feed">
-                            @foreach($villa['comments'] as $comment)
-                                <div class="reviews-row">
-
-                                    <div class="review-meta">
-                                        <a class="avatar-sq verified-sq" href="vendor_details.html">
-                                            <img src="{{asset('view/images/avatar/avatar_01.jpg')}}" alt="">
-                                        </a>
-                                        <a class="name-sq" href="#>{{$comment->fullname}}</a>
-
-                                    <div class="comment-sq">
-                                        <span class="date-sq"><?php $x = new DateTime($comment->created_at); $x->format('d-m-Y'); ?></span>
-                                        {{$comment->description}}
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="mesafe">
+                                            <i class="fa-solid fa-globe"></i>
+                                            <span>Merkez</span>
+                                            <span>{{$villa['villa']['central_distance']}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="mesafe">
+                                            <i class="fa-solid fa-umbrella-beach"></i>
+                                            <span>Kalkan Halk Plajı</span>
+                                            <span>{{$villa['villa']['plaj_distance']}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="mesafe">
+                                            <i class="fa-solid fa-basket-shopping"></i>
+                                            <span>Market</span>
+                                            <span>{{$villa['villa']['market_distance']}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="mesafe">
+                                            <i class="fa-solid fa-hospital"></i>
+                                            <span>Kalkan Sağlık Ocağı</span>
+                                            <span>{{$villa['villa']['hospital_distance']}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="mesafe">
+                                            <i class="fa-solid fa-utensils"></i>
+                                            <span>Restaurant</span>
+                                            <span>{{$villa['villa']['restaurant_distance']}}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            </div>
+                        </div>
 
+                        <div class="typo-section-sq bottom-default">
+                            <div class="typo-section-sq" id="section-04">
+                                <h3>Müsaitlik Takvimi</h3>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6 takvim" id="examplecalendar1">
+                                            <div class="calendar-sq" tabindex="0">
+                                                <table class="ui celled center aligned unstackable table seven column day">
+                                                    <thead>
+                                                    <tr>
+                                                        <th colspan="7">
+                                                            <span class="link">Mart 2022</span><span class="prev link">
+                                                                <i class="icon icon-arrow-left-122"></i>
+                                                            </span>
+                                                            <span  class="next link">
+                                                                <i class="icon icon-arrow-right-122"></i>
+                                                            </span>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>P</th>
+                                                        <th>S</th>
+                                                        <th>Ç</th>
+                                                        <th>P</th>
+                                                        <th>C</th>
+                                                        <th>C</th>
+                                                        <th>P</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="link disabled">27</td>
+                                                        <td class="link disabled">28</td>
+                                                        <td class="link">1</td>
+                                                        <td class="link">2</td>
+                                                        <td class="link">3</td>
+                                                        <td class="link">4</td>
+                                                        <td class="link">5</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="link today focus">6</td>
+                                                        <td class="link">7</td>
+                                                        <td class="link">8</td>
+                                                        <td class="link">9</td>
+                                                        <td class="link">10</td>
+                                                        <td class="link">11</td>
+                                                        <td class="link">12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="link">13</td>
+                                                        <td class="link">14</td>
+                                                        <td class="link">15</td>
+                                                        <td class="link">16</td>
+                                                        <td class="link">17</td>
+                                                        <td class="link">18</td>
+                                                        <td class="link">19</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="link">20</td>
+                                                        <td class="link">21</td>
+                                                        <td class="link">22</td>
+                                                        <td class="link">23</td>
+                                                        <td class="link">24</td>
+                                                        <td class="link">25</td>
+                                                        <td class="link">26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="link">27</td>
+                                                        <td class="link">28</td>
+                                                        <td class="link">29</td>
+                                                        <td class="link">30</td>
+                                                        <td class="link">31</td>
+                                                        <td class="link disabled">1</td>
+                                                        <td class="link disabled">2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="link disabled">3</td>
+                                                        <td class="link disabled">4</td>
+                                                        <td class="link disabled">5</td>
+                                                        <td class="link disabled">6</td>
+                                                        <td class="link disabled">7</td>
+                                                        <td class="link disabled">8</td>
+                                                        <td class="link disabled">9</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 alt-info-bar">
+                                            <ul>
+                                                <li>
+                                                    <i class="fa-solid fa-square"></i>Boş Günler
+                                                </li>
+                                                <li><i class="fa-solid fa-square"></i>Dolu</li>
+                                                <li><i class="fa-solid fa-square"></i>Rezerve</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="typo-section-sq" id="section-05">
+                                <h3>Fiyatlar</h3>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="villa-fiyat-info">
+                                            <div class="row">
+                                                <div class="col-sm-9 col-12">
+                                                    <div class="konaklama">
+                                                        1 Nisan 2022 - 30 Nisan 2022
+                                                    </div>
+                                                    <div class="min-konak">
+                                                        Minimum Kiralama:<span> 5 Gece</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3 col-12 fiyat">
+                                                    <div class="konaklama">4.800 TL</div>
+                                                    <div class="min-konak">
+                                                        <span>Haftalık</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="villa-fiyat-info">
+                                            <div class="row">
+                                                <div class="col-sm-9 col-12">
+                                                    <div class="konaklama">
+                                                        1 Nisan 2022 - 30 Nisan 2022
+                                                    </div>
+                                                    <div class="min-konak">
+                                                        Minimum Kiralama:<span> 5 Gece</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3 col-12 fiyat">
+                                                    <div class="konaklama">4.800 TL</div>
+                                                    <div class="min-konak">
+                                                        <span>Haftalık</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="villa-fiyat-info">
+                                            <div class="row">
+                                                <div class="col-sm-9 col-12">
+                                                    <div class="konaklama">
+                                                        1 Nisan 2022 - 30 Nisan 2022
+                                                    </div>
+                                                    <div class="min-konak">
+                                                        Minimum Kiralama:<span> 5 Gece</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3 col-12 fiyat">
+                                                    <div class="konaklama">4.800 TL</div>
+                                                    <div class="min-konak">
+                                                        <span>Haftalık</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="villa-fiyat-info">
+                                            <div class="row">
+                                                <div class="col-sm-9 col-12">
+                                                    <div class="konaklama">
+                                                        1 Nisan 2022 - 30 Nisan 2022
+                                                    </div>
+                                                    <div class="min-konak">
+                                                        Minimum Kiralama:<span> 5 Gece</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3 col-12 fiyat">
+                                                    <div class="konaklama">4.800 TL</div>
+                                                    <div class="min-konak">
+                                                        <span>Haftalık</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="villa-fiyat-info">
+                                            <div class="row">
+                                                <div class="col-sm-9 col-12">
+                                                    <div class="konaklama">
+                                                        1 Nisan 2022 - 30 Nisan 2022
+                                                    </div>
+                                                    <div class="min-konak">
+                                                        Minimum Kiralama:<span> 5 Gece</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3 col-12 fiyat">
+                                                    <div class="konaklama">4.800 TL</div>
+                                                    <div class="min-konak">
+                                                        <span>Haftalık</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="villa-fiyat-info">
+                                            <div class="row">
+                                                <div class="col-sm-9 col-12">
+                                                    <div class="konaklama">
+                                                        1 Nisan 2022 - 30 Nisan 2022
+                                                    </div>
+                                                    <div class="min-konak">
+                                                        Minimum Kiralama:<span> 5 Gece</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3 col-12 fiyat">
+                                                    <div class="konaklama">4.800 TL</div>
+                                                    <div class="min-konak">
+                                                        <span>Haftalık</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-container" id="section-02">
+                        <div class="typo-section-sq bottom-default">
+                            <h3>Fotoğraflar</h3>
+                            <div class="photo-grid ui grid-5">
+                                <!-- stilleri dinamik olarak düzenlenecek -->
+
+                                <div class="photo-item">
+                                    <div class="image-wrapper" style="opacity: 1;">
+                                        <img class="image-sq slick-img" src="{{Storage::url($villa['images'][0]->image)}}"
+                                             alt="" data-gallery="gallery" data-caption="Photo 02"
+                                             style="width: 513px; height: 384px; margin-top: -192px; margin-left: 0px; top: 50%; left: 0px;">
+                                    </div>
+                                </div>
+                                <div class="photo-item">
+                                    <div class="image-wrapper" style="opacity: 1;">
+                                        <img class="image-sq slick-img" src="{{Storage::url($villa['images'][1]->image)}}"
+                                             alt="" data-gallery="gallery" data-caption="Photo 03"
+                                             style="width: 513px; height: 384px; margin-top: -192px; margin-left: 0px; top: 50%; left: 0px;">
+                                    </div>
+                                </div>
+                                <div class="photo-item">
+                                    <div class="image-wrapper" style="opacity: 1;">
+                                        <a data-items="Fotoğrafları Göster(12)">
+                                            <img class="image-sq slick-img"
+                                                 src="{{Storage::url($villa['images'][2]->image)}}"
+                                                 alt="" data-gallery="gallery" data-caption="Photo 04"
+                                                 style="width: 342px; height: 257px; margin-top: 0px; margin-left: -171px; top: 0px; left: 50%;">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="photo-item">
+                                    <div class="image-wrapper" style="opacity: 1;">
+                                        <img class="image-sq slick-img" src="assets/images/property/property_big_05.jpg"
+                                             alt="" data-gallery="gallery" data-caption="Photo 05"
+                                             style="width: 684px; height: 513px; margin-top: 0px; margin-left: -342px; top: 0px; left: 50%;">
+                                    </div>
+                                </div>
+                                <div class="photo-item d-none">
+                                    <div class="image-wrapper" style="opacity: 1;">
+                                        <img class="image-sq slick-img" src="assets/images/property/property_big_05.jpg"
+                                             alt="" data-gallery="gallery" data-caption="Photo 06"
+                                             style="height: 100px; margin-top: 0px; top: 50%; left: 0px; width: 100px; margin-left: 0px;">
+                                    </div>
+                                </div>
+                                <div class="photo-item d-none">
+                                    <div class="image-wrapper" style="opacity: 1;">
+                                        <img class="image-sq slick-img" src="assets/images/property/property_big_05.jpg"
+                                             alt="" data-gallery="gallery" data-caption="Photo 07"
+                                             style="height: 100px; margin-top: 0px; top: 50%; left: 0px; width: 100px; margin-left: 0px;">
+                                    </div>
+                                </div>
+                                <div class="photo-item d-none">
+                                    <div class="image-wrapper" style="opacity: 1;">
+                                        <img class="image-sq slick-img" src="assets/images/property/property_big_05.jpg"
+                                             alt="" data-gallery="gallery" data-caption="Photo 08"
+                                             style="height: 100px; margin-top: 0px; top: 50%; left: 0px; width: 100px; margin-left: 0px;">
+                                    </div>
+                                </div>
+                                <!-- stilleri dinamik olarak düzenlenecek -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-container" id="section-03">
+                        <div class="typo-section-sq">
+                            <h3>Konum</h3>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10820.651879292811!2d29.4119601434745!3d36.26380198283328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c02cd0df202115%3A0x75fbdb7bfae9cdf8!2sKalkan%2C%2007580%20Ka%C5%9F%2FAntalya!5e0!3m2!1str!2str!4v1645374380374!5m2!1str!2str"
+                                        width="1300" height="400" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
-            <div class="ui column side-column"></div>
         </div>
     </div>
-
-
-    <div class="ui modal small" data-for="contact">
-        <i class="icon icon-close close-modal"></i>
-        <div class="header center">
-            <h3>Contact Form</h3>
-        </div>
-
-        <div class="content">
-            <p>Donec non quam vitae justo mattis vestibulum a nec nisi. Morbi mi felis, ultrices vitae risus
-                consectetur, porta ultrices sapien.</p>
-            <div class="div-c inline-2">
-                <div class="divided-column">
-                    <label>Name</label>
-                    <input type="text" placeholder=" ">
-                </div>
-
-                <div class="divided-column">
-                    <label>Title</label>
-                    <input type="text" placeholder=" ">
-                </div>
-            </div>
-
-            <div class="div-c">
-                <label>Message</label>
-                <textarea cols="30" rows="10" placeholder=" "></textarea>
-            </div>
-        </div>
-
-        <div class="actions">
-            <div class="div-c inline-2">
-                <div class="divided-column">
-                    <div class="button-sq cancel-sq fullwidth-sq">Cancel</div>
-                </div>
-
-                <div class="divided-column">
-                    <div class="button-sq fullwidth-sq">Send</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
+    @dump($villa)
 @endsection

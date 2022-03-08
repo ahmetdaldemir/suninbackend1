@@ -31,7 +31,7 @@
             <div class="ui container-xl grid " >
                 <div class="header-item header-left flex-order-tablet-second flex-order-mobile-second flex-grow-tablet-true flex-grow-mobile-true">
 
-                    <a href="index.html" class="logo item">
+                    <a href="/" class="logo item">
                         <img src="{{asset('public/view/images/logo-svsiz.png')}}" alt="mybnb logo" class="logo-transparent">
 
 
@@ -62,7 +62,7 @@
 
                         <ul class="main-menu">
 
-                            <li><a href="index.html" class="item">
+                            <li><a href="/" class="item">
                                     <span>ANA SAYFA</span>
                                 </a>
                             </li>

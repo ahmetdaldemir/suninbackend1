@@ -125,6 +125,7 @@ class MainController extends Controller
         $data['services'] = $this->serviceRepository->all();
         $data['villa'] = $this->villaRepository->getslug($slug);
 
+
         foreach ($data['villa']['propertys'] as $property) {
             $data['villa_property'][] = $property['property_id'];
         }
@@ -412,4 +413,12 @@ class MainController extends Controller
         $data['lang_id'] = $this->lang_id;
         return view("pages/account/index",$data);
     }
+    public function reservation_detail()
+    {
+        $data["account"] = Auth::guard("web-user")->user();
+        $data['categories'] = $this->rentCategoryRepository->all();
+        $data['lang_id'] = $this->lang_id;
+        return view("pages/account/index",$data);
+    }
+
 }
